@@ -141,35 +141,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c20b1655f3958664a8efb8164fcf3e3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  InlineVector: {x: 0, y: 0}
-  MinimumFloat: 0
-  MinimumInt: 0
-  MaximumFloat: 0
-  MaximumInt: 0
-  ShowConditional: 1
-  ConditionalString: 
-  Asset: {fileID: 0}
-  IntMinMaxSlider: 0
-  IntMinMaxSliderMax: 0
-  FloatMinMaxSlider: 0
-  FloatMinMaxSliderMax: 0
-  StringPopup: 
-  IntPopup: 0
+  IntPopup: 5
+  StringPopup: Yes
+  Asset: {fileID: 11400000, guid: c7559cdbc33f04af1a5a42d2aa5b40a5, type: 3}
+  PopupFlags: 3
+  ButtonFlags: 13
+  Buttons: 3
   StringList:
-    _list: []
+    _items:
+    - Tiger
+    - Lion
+    - Monkey
+  IntArray:
+    _items: 000000000700000004000000fdffffff
   StringDictionary:
-    _keys: []
-    _values: []
-  ArrayList:
-    _array: 0000000000000000000000000000000000000000
+    _keys:
+    - Shark
+    - Whale
+    - Shrimp
+    _values:
+    - Great White
+    - Orca
+    - Mantis
+  InlineVector: {x: 5, y: 8}
+  ShowConditional: 1
+  ConditionalString: Show Conditional is checked!
   Disabled: 0
-  PopupFlags: 0
-  ButtonFlags: 0
-  Buttons: 0
-  SnapInt: 0
-  SnapFloat: 0
-  IntSlider: 0
-  FloatSlider: 0
+  MaximumFloat: 100
+  MaximumInt: 100
+  MinimumFloat: 3.47
+  MinimumInt: 87
+  IntSlider: 75
+  FloatSlider: 5.625
+  IntMinMaxSlider: 2
+  IntMinMaxSliderMax: 6
+  FloatMinMaxSlider: 3.5
+  FloatMinMaxSliderMax: 7.5
+  SnapInt: 30
+  SnapFloat: 5.5
 --- !u!4 &464669167
 Transform:
   m_ObjectHideFlags: 0

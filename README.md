@@ -1,6 +1,8 @@
 # Unity Utilities
 
-A collection of general purpose utilities for use with Unity. Right now this consists of mostly editor controls and helper classes but more will be added. Contributions and feedback are welcome.
+A collection of MIT licensed general purpose utilities for use with Unity. Right now this consists of mostly editor controls and helper classes but more will be added. Contributions and feedback are welcome.
+
+![example](Documentation/example.png)
 
 ## Drawer Attributes
 
@@ -24,13 +26,19 @@ Add this to a string field to show a popup instead of the default text box. The 
 
 **AssetPopup**
 
-Add this to a ScriptableObject or ScriptableObject derived field to show a popup listing the available assets of the correct type instead of the default asset picker. This will list assets based on their structure in the project folder so for some things it can be easier to find them with this rather than the default asset picker which instead provides a search function. The popup will also provide an option for creating a new asset of the field type or a type derived from the field type.
+Add this to a ScriptableObject or ScriptableObject derived field to show a popup listing the available assets of the correct type instead of the default asset picker. This will list assets based on their structure in the project folder so for some things it can be easier to find them with this rather than the default asset picker which instead provides a search function.
 
 ```c#
 [AssetPopup] public TimelineAsset Timeline;
 ```
 
-AssetPopup has an optional *ShowEdit* property that when set to `true` (the default) will show an edit button that when clicked opens the selected asset in the inspector.
+Configuration properties:
+
+| Property		| Description	| Default	|
+| ------------- | ------------- | --------- |
+| ShowNone		| Show a none option in the popup that sets the field value to `null` when selected	| `true`	|
+| ShowEdit		| Show an edit button next to the popup to select the selected object in the inspector	| `true`	|
+| ShowCreate	| Add a Create submenu to the end of the popup that will create and select a new asset of a specified type when selected	| `true`	|
 
 **FlagsPopup**
 
@@ -42,7 +50,7 @@ Add this to an enum field to show a series of buttons for selecting the enum val
 
 **ListDisplay**
 
-Add this to a SerializableList derived type to show a much more user friendly list editor than Unity's default. The implementation is based on Unity's undocumented ReorderableList class with lots of improvements.
+Add this to a SerializedList or SerializedArray derived type to show a much more user friendly list editor than Unity's default. The implementation is based on Unity's undocumented ReorderableList class with lots of improvements.
 
 Configuration properties:
 
@@ -55,13 +63,13 @@ Configuration properties:
 | InlineChildren	| When the list contains structures, display the fields of each item rather than the item itself	| `false`	|
 | UseAssetPopup		| When the list contains Unity Objects, show a popup selector instead of the default asset picker	| `null`	|
 | ShowEditButton	| When the list contains Unity Objects, show a button next to each item that selects the item in the inspector	| `false`	|
-| EmptyText			| When the list is empty display this text - use an empty string to hide the label - null will show the default text	| `null`	|
+| EmptyText			| When the list is empty display this text - use an empty string to hide the label - null will show the default text "List is Empty"	| `null`	|
 
 Further customization is possible by directly using the ListControl (or one of it's subclasses) in a custom Editor or ObjectControl.
 
 **DictionaryDisplay**
 
-Add this to a SerializableDictionary derived type to show a dictionary editor (by default dictionary editing is unsupported by Unity). This uses the same internals as ListDisplay.
+Add this to a SerializedDictionary derived type to show a dictionary editor (by default dictionary editing is unsupported by Unity). This uses the same internals as ListDisplay.
 
 Configuration properties:
 
@@ -72,14 +80,29 @@ Configuration properties:
 | AllowCollapse		| Show a button in the header that collapses and expands the dictionary contents - the collapsed state is persisted	| `true`	|
 | InlineChildren	| When the dictionary contains structures, display the fields of each item rather than the item itself	| `false`	|
 | ShowEditButton	| When the dictionary contains Unity Objects, show a button next to each item that selects the item in the inspector	| `false`	|
-| AddLabel			| When AllowAdd is `true` display this text in the add popup - use an empty string to hide the label - null will show the default text |
-| EmptyText			| When the dictionary is empty display this text - use an empty string to hide the label - null will show the default text	| `null`	|
+| AddLabel			| When AllowAdd is `true` display this text in the add popup - use an empty string to hide the label - null will show the default text "Add Item"	|
+| EmptyText			| When the dictionary is empty display this text - use an empty string to hide the label - null will show the default text "List is Empty"	| `null`	|
 
 Like ListDisplay, further customization can be made by using DictionaryControl from a custom Editor or ObjectControl.
 
 **InlineDisplay**
 
 Add this to a class or struct type with a *Serializable* attribute to show the fields of the class or struct inline rather than in a foldout. Optionally set the *PropagateLabel* field on the attribute (the default is `false`) to specify the label of the owning field should be used rather than the label for each of the fields in the class or struct. This can be useful for wrapper classes that contain a single field.
+
+**ConditionalDisplay**
+
+Add this to any field to hide the field in the inspector unless a different field is holding a specified value. Set the property name in the attribute constructor as well as the dependent value using named arguments. The dependent property can be a string, enum, int, float, bool, or Object. If it is an Object, the field is displayed based on whether the Object is null or not. If *HasReference* is `true` (the default) the field will be displayed when the property value is not `null`, If *HasReference* is `false` the field will be displayed when the property value is `null`.
+
+```c#
+public bool ShowConditional = true;
+[ConditionalDisplay(nameof(ShowConditional), BoolValue = true)] public string ConditionalString;
+```
+
+Unfortunately, when using this attribute only the default editor for the field will be used. If the field type has a custom PropertyDrawer it will be ignored due to the way Unity internally resolves property drawers.
+
+**DisableInInspector**
+
+Add this to any field to disable editing of the field (while still showing it) in the inspector.
 
 **Maximum**
 
@@ -105,21 +128,6 @@ Add this to an int or float field to show a two value slider instead of the defa
 **Snap**
 
 Add this to an int or float field to round the selected value to be a multiple of a specified value. Set the snap value in the attribute constructor.
-
-**ConditionalDisplay**
-
-Add this to any field to hide the field in the inspector unless a different field is holding a specified value. Set the property name in the attribute constructor as well as the dependent value using named arguments. The dependent property can be a string, enum, int, float, bool, or Object. If it is an Object, the field is displayed based on whether the Object is null or not. If *HasReference* is `true` (the default) the field will be displayed when the property value is not `null`, If *HasReference* is `false` the field will be displayed when the property value is `null`.
-
-```c#
-public bool ShowConditional = true;
-[ConditionalDisplay(nameof(ShowConditional), BoolValue = true)] public string ConditionalString;
-```
-
-Unfortunately, when using this attribute only the default editor for the field will be used. If the field type has a custom PropertyDrawer it will be ignored due to the way Unity internally resolves property drawers.
-
-**DisableInInspector**
-
-Add this to any field to disable editing of the field (while still showing it) in the inspector.
 
 ## Wrapper Classes
 

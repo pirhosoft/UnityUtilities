@@ -22,10 +22,9 @@ namespace PiRhoSoft.UtilityEditor
 			if (property.propertyType == SerializedPropertyType.Integer)
 			{
 				var values = (attribute as IntPopupAttribute).Values;
-				var options = (attribute as IntPopupAttribute).Names;
-				var index = EditorGUI.IntPopup(position, label, property.intValue, options.Select(option => new GUIContent(option)).ToArray(), values);
-				if (index >= 0 && index < options.Length)
-					property.intValue = values[index];
+				var options = (attribute as IntPopupAttribute).Names.Select(option => new GUIContent(option)).ToArray();
+
+				EditorGUI.IntPopup(position, property, options, values, label);
 			}
 			else
 			{

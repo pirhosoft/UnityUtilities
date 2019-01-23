@@ -106,7 +106,7 @@ namespace PiRhoSoft.UtilityEditor
 		private void DrawItemAsAssetPopup(Rect position, SerializedProperty listProperty, int index)
 		{
 			var property = listProperty.GetArrayElementAtIndex(index);
-			AssetPopupDrawer.Draw(position, GUIContent.none, property, _assetListType, false);
+			AssetPopupDrawer.Draw(position, GUIContent.none, property, _assetListType, true, false, true);
 		}
 	}
 

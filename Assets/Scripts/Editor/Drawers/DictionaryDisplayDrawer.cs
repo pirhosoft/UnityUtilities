@@ -38,7 +38,7 @@ namespace PiRhoSoft.UtilityEditor
 						_dictionaryControl.MakeDrawableInline();
 
 					if (attribute.AllowAdd)
-						_dictionaryControl.MakeAddable(IconButton.CustomAdd, string.IsNullOrEmpty(attribute.AddLabel) ? null : new Label(attribute.AddLabel));
+						_dictionaryControl.MakeAddable(IconButton.CustomAdd, attribute.AddLabel == null ? new Label("Add Item") : (attribute.AddLabel == "" ? null : new Label(attribute.AddLabel)));
 
 					if (attribute.AllowRemove)
 						_dictionaryControl.MakeRemovable(IconButton.Remove);
