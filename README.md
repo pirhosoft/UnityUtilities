@@ -4,9 +4,23 @@ A collection of MIT licensed general purpose utilities for use with Unity. Right
 
 ![example](Documentation/example.png)
 
+## Usage
+
+**Using the Release Package**
+
+1. download the unitypackage from the [releases page](https://github.com/pirhosoft/UnityUtilities/releases/latest)
+2. in Unity, select *Assets/Import Package/Custom Package...* from the main menu
+3. navigate to the downloaded file and open it
+4. in the dialog, leave all files selected and click import
+
+**Using the Source**
+
+1. clone this repository
+2. copy the *Assets/PiRhoSoft Utilities* folder to the *Assets* folder in your project
+
 ## Drawer Attributes
 
-These attributes are added to serializable fields in editable classes (MonoBehaviours or ScriptableObjects) to enable custom drawing for the field.
+These attributes are added to serializable fields in editable classes (MonoBehaviours or ScriptableObjects) to enable custom drawing for the field. All attributes are in the ```PiRhoSoft.UtilityEngine``` namespace.
 
 **IntPopup**
 
