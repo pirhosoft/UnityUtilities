@@ -9,44 +9,42 @@ namespace PiRhoSoft.UtilityEngine
 
 	public class SerializedArray<T> : ICloneable, IList, IStructuralComparable, IStructuralEquatable, ICollection, IEnumerable
 	{
-		public T[] Array => _array;
+		[SerializeField] protected T[] _items; // this is protected so it can be found by the editor
 
-		// This is protected so it can be found by the editor.
-		[SerializeField] protected T[] _array;
+		public T[] Array => _items;
+		public int Length => _items.Length;
 
 		public SerializedArray(int count)
 		{
-			_array = new T[count];
+			_items = new T[count];
 		}
 
 		public T this[int index]
 		{
-			get { return _array[index]; }
-			set { _array[index] = value; }
+			get { return _items[index]; }
+			set { _items[index] = value; }
 		}
-
-		public int Length => _array.Length;
 
 		#region ICollection Implementation
 
 		int ICollection.Count
 		{
-			get { return ((ICollection)_array).Count; }
+			get { return ((ICollection)_items).Count; }
 		}
 
 		public bool IsSynchronized
 		{
-			get { return _array.IsSynchronized; }
+			get { return _items.IsSynchronized; }
 		}
 
 		public object SyncRoot
 		{
-			get { return _array.SyncRoot; }
+			get { return _items.SyncRoot; }
 		}
 
 		public void CopyTo(Array array, int index)
 		{
-			_array.CopyTo(array, index);
+			_items.CopyTo(array, index);
 		}
 
 		#endregion
@@ -55,7 +53,7 @@ namespace PiRhoSoft.UtilityEngine
 
 		public object Clone()
 		{
-			return _array.Clone();
+			return _items.Clone();
 		}
 
 		#endregion
@@ -64,7 +62,7 @@ namespace PiRhoSoft.UtilityEngine
 
 		int IStructuralComparable.CompareTo(object other, IComparer comparer)
 		{
-			return ((IStructuralComparable)_array).CompareTo(other, comparer);
+			return ((IStructuralComparable)_items).CompareTo(other, comparer);
 		}
 
 		#endregion
@@ -73,12 +71,12 @@ namespace PiRhoSoft.UtilityEngine
 
 		bool IStructuralEquatable.Equals(object other, IEqualityComparer comparer)
 		{
-			return ((IStructuralEquatable)_array).Equals(other, comparer);
+			return ((IStructuralEquatable)_items).Equals(other, comparer);
 		}
 
 		int IStructuralEquatable.GetHashCode(IEqualityComparer comparer)
 		{
-			return ((IStructuralEquatable)_array).GetHashCode(comparer);
+			return ((IStructuralEquatable)_items).GetHashCode(comparer);
 		}
 
 		#endregion
@@ -87,7 +85,7 @@ namespace PiRhoSoft.UtilityEngine
 
 		public IEnumerator GetEnumerator()
 		{
-			return _array.GetEnumerator();
+			return _items.GetEnumerator();
 		}
 
 		#endregion
@@ -96,53 +94,53 @@ namespace PiRhoSoft.UtilityEngine
 
 		object IList.this[int index]
 		{
-			get { return _array[index]; }
-			set { ((IList)_array)[index] = value; }
+			get { return _items[index]; }
+			set { ((IList)_items)[index] = value; }
 		}
 
 		public bool IsFixedSize
 		{
-			get { return _array.IsFixedSize; }
+			get { return _items.IsFixedSize; }
 		}
 
 		public bool IsReadOnly
 		{
-			get { return _array.IsReadOnly; }
+			get { return _items.IsReadOnly; }
 		}
 
 		int IList.Add(object value)
 		{
-			return ((IList)_array).Add(value);
+			return ((IList)_items).Add(value);
 		}
 
 		void IList.Clear()
 		{
-			((IList)_array).Clear();
+			((IList)_items).Clear();
 		}
 
 		bool IList.Contains(object value)
 		{
-			return ((IList)_array).Contains(value);
+			return ((IList)_items).Contains(value);
 		}
 
 		int IList.IndexOf(object value)
 		{
-			return ((IList)_array).IndexOf(value);
+			return ((IList)_items).IndexOf(value);
 		}
 
 		void IList.Insert(int index, object value)
 		{
-			((IList)_array).Insert(index, value);
+			((IList)_items).Insert(index, value);
 		}
 
 		void IList.Remove(object value)
 		{
-			((IList)_array).Remove(value);
+			((IList)_items).Remove(value);
 		}
 
 		void IList.RemoveAt(int index)
 		{
-			((IList)_array).RemoveAt(index);
+			((IList)_items).RemoveAt(index);
 		}
 
 		#endregion

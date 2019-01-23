@@ -23,6 +23,8 @@ namespace PiRhoSoft.UtilityEditor
 
 		public sealed override void Draw(Rect position, SerializedProperty property, GUIContent label)
 		{
+			// switch the undo scope from the property to the object
+
 			using (new EditObjectScope(property.serializedObject))
 			{
 				using (new UndoScope(property.serializedObject.targetObject, false))

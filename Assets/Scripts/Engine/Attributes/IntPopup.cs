@@ -5,11 +5,12 @@ namespace PiRhoSoft.UtilityEngine
 	public class IntPopupAttribute : PropertyAttribute
 	{
 		public int[] Values { get; private set; }
-		public string[] Options { get; private set; }
-		public IntPopupAttribute(int[] values, string[] options)
+		public string[] Names { get; private set; }
+
+		public IntPopupAttribute(int[] values, string[] names)
 		{
 			Values = values;
-			Options = options;
+			Names = names;
 		}
 	}
 }

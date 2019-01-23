@@ -11,9 +11,9 @@ namespace PiRhoSoft.UtilityEditor
 		public string Tooltip;
 		public string IconName;
 
-		public TextButton(string title, string tooltip = "", string iconName = "")
+		public TextButton(string label, string tooltip = "", string iconName = "")
 		{
-			Label = title;
+			Label = label;
 			Tooltip = tooltip;
 			IconName = iconName;
 		}

@@ -7,6 +7,8 @@ namespace PiRhoSoft.UtilityEditor
 	[CustomPropertyDrawer(typeof(InlineDisplayAttribute))]
 	public class InlineDisplayDrawer : PropertyDrawer
 	{
+		#region Static Interface
+
 		public static float GetHeight(SerializedProperty property)
 		{
 			var height = 0.0f;
@@ -57,6 +59,10 @@ namespace PiRhoSoft.UtilityEditor
 			}
 		}
 
+		#endregion
+
+		#region Drawer Interface
+
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
 			return GetHeight(property);
@@ -67,9 +73,11 @@ namespace PiRhoSoft.UtilityEditor
 			var useLabel = (attribute as InlineDisplayAttribute).PropagateLabel;
 
 			if (useLabel)
-				label.tooltip = GuiHelper.GetTooltip(fieldInfo);
+				label.tooltip = Label.GetTooltip(fieldInfo);
 
 			Draw(position, property, useLabel ? label : null);
 		}
+
+		#endregion
 	}
 }

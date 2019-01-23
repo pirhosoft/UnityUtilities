@@ -14,14 +14,14 @@ namespace PiRhoSoft.UtilityEditor
 		private PropertyListControl _listControl = new PropertyListControl();
 		private Type _assetListType;
 
-		private static BoolPreference GetOpenPreference(SerializedProperty property, bool openByDefault)
+		private static string GetOpenPreference(SerializedProperty property)
 		{
-			return new BoolPreference(property.serializedObject.targetObject.GetType().Name + "." + property.propertyPath + ".IsOpen", openByDefault);
+			return property.serializedObject.targetObject.GetType().Name + "." + property.propertyPath + ".IsOpen";
 		}
 
 		public override void Setup(SerializedProperty property, FieldInfo fieldInfo)
 		{
-			_property = property.FindPropertyRelative("_list") ?? property.FindPropertyRelative("_array");
+			_property = property.FindPropertyRelative("_items");
 
 			if (_property == null || !_property.isArray)
 			{
@@ -35,12 +35,12 @@ namespace PiRhoSoft.UtilityEditor
 				if (attribute != null)
 				{
 					_listControl.Setup(_property);
-					_assetListType = attribute.UseAssetList;
+					_assetListType = attribute.UseAssetPopup;
 
 					if (attribute.InlineChildren)
 						_listControl.MakeDrawable(DrawItemInline).MakeCustomHeight(GetItemInlineHeight);
-					else if (attribute.UseAssetList != null)
-						_listControl.MakeDrawable(DrawItemAsAssetList).MakeCustomHeight(GetItemAssetListHeight);
+					else if (attribute.UseAssetPopup != null)
+						_listControl.MakeDrawable(DrawItemAsAssetPopup).MakeCustomHeight(GetItemAssetPopupHeight);
 
 					if (attribute.AllowAdd)
 						_listControl.MakeAddable(IconButton.Add);
@@ -55,7 +55,7 @@ namespace PiRhoSoft.UtilityEditor
 						_listControl.MakeReorderable();
 
 					if (attribute.AllowCollapse)
-						_listControl.MakeCollapsable(GetOpenPreference(property, true));
+						_listControl.MakeCollapsable(GetOpenPreference(property));
 
 					if (attribute.EmptyText != null)
 						_listControl.MakeEmptyLabel(new Label(attribute.EmptyText));
@@ -98,15 +98,15 @@ namespace PiRhoSoft.UtilityEditor
 			InlineDisplayDrawer.Draw(position, property, null);
 		}
 
-		private float GetItemAssetListHeight(int index)
+		private float GetItemAssetPopupHeight(int index)
 		{
 			return AssetPopupDrawer.GetHeight();
 		}
 
-		private void DrawItemAsAssetList(Rect position, SerializedProperty listProperty, int index)
+		private void DrawItemAsAssetPopup(Rect position, SerializedProperty listProperty, int index)
 		{
 			var property = listProperty.GetArrayElementAtIndex(index);
-			AssetPopupDrawer.Draw(position, property, GUIContent.none, _assetListType, false);
+			AssetPopupDrawer.Draw(position, GUIContent.none, property, _assetListType, false);
 		}
 	}
 

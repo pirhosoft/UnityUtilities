@@ -11,7 +11,7 @@ namespace PiRhoSoft.UtilityEngine
 		public bool AllowCollapse = true;
 		public bool ShowEditButton = false;
 		public bool InlineChildren = false;
-		public Type UseAssetList = null;
+		public Type UseAssetPopup = null;
 		public string EmptyText = null;
 	}
 }

@@ -11,16 +11,15 @@ namespace PiRhoSoft.UtilityEngine
 	[Serializable]
 	public class SerializedList<T> : ICollection<T>, IEnumerable<T>, IEnumerable, IList<T>, IReadOnlyCollection<T>, IReadOnlyList<T>, ICollection, IList
 	{
-		public List<T> List => _list;
+		[SerializeField] protected List<T> _items = new List<T>(); // this is protected so it can be found by the editor
 
-		// This is protected so it can be found by the editor.
-		[SerializeField] protected List<T> _list = new List<T>();
+		public List<T> List => _items;
 
 		#region ICollection<T> Implementation
 
 		public int Count
 		{
-			get { return _list.Count; }
+			get { return _items.Count; }
 		}
 
 		bool ICollection<T>.IsReadOnly
@@ -30,27 +29,27 @@ namespace PiRhoSoft.UtilityEngine
 
 		public void Add(T item)
 		{
-			_list.Add(item);
+			_items.Add(item);
 		}
 
 		public bool Remove(T item)
 		{
-			return _list.Remove(item);
+			return _items.Remove(item);
 		}
 
 		public void Clear()
 		{
-			_list.Clear();
+			_items.Clear();
 		}
 
 		public bool Contains(T item)
 		{
-			return _list.Contains(item);
+			return _items.Contains(item);
 		}
 
 		public void CopyTo(T[] array, int arrayIndex)
 		{
-			_list.CopyTo(array, arrayIndex);
+			_items.CopyTo(array, arrayIndex);
 		}
 
 		#endregion
@@ -69,7 +68,7 @@ namespace PiRhoSoft.UtilityEngine
 
 		void ICollection.CopyTo(Array array, int index)
 		{
-			((ICollection)_list).CopyTo(array, index);
+			((ICollection)_items).CopyTo(array, index);
 		}
 
 		#endregion
@@ -78,7 +77,7 @@ namespace PiRhoSoft.UtilityEngine
 
 		public IEnumerator<T> GetEnumerator()
 		{
-			return _list.GetEnumerator();
+			return _items.GetEnumerator();
 		}
 
 		#endregion
@@ -87,7 +86,7 @@ namespace PiRhoSoft.UtilityEngine
 
 		IEnumerator IEnumerable.GetEnumerator()
 		{
-			return _list.GetEnumerator();
+			return _items.GetEnumerator();
 		}
 
 		#endregion
@@ -96,23 +95,23 @@ namespace PiRhoSoft.UtilityEngine
 
 		public T this[int index]
 		{
-			get { return _list[index]; }
-			set { _list[index] = value; }
+			get { return _items[index]; }
+			set { _items[index] = value; }
 		}
 
 		public int IndexOf(T item)
 		{
-			return _list.IndexOf(item);
+			return _items.IndexOf(item);
 		}
 
 		public void Insert(int index, T item)
 		{
-			_list.Insert(index, item);
+			_items.Insert(index, item);
 		}
 
 		public void RemoveAt(int index)
 		{
-			_list.RemoveAt(index);
+			_items.RemoveAt(index);
 		}
 
 		#endregion
@@ -121,8 +120,8 @@ namespace PiRhoSoft.UtilityEngine
 
 		object IList.this[int index]
 		{
-			get { return _list[index]; }
-			set { ((IList)_list)[index] = value; }
+			get { return _items[index]; }
+			set { ((IList)_items)[index] = value; }
 		}
 
 		bool IList.IsFixedSize
@@ -137,27 +136,27 @@ namespace PiRhoSoft.UtilityEngine
 
 		int IList.Add(object value)
 		{
-			return ((IList)_list).Add(value);
+			return ((IList)_items).Add(value);
 		}
 
 		void IList.Insert(int index, object value)
 		{
-			((IList)_list).Insert(index, value);
+			((IList)_items).Insert(index, value);
 		}
 
 		void IList.Remove(object value)
 		{
-			((IList)_list).Remove(value);
+			((IList)_items).Remove(value);
 		}
 
 		bool IList.Contains(object value)
 		{
-			return ((IList)_list).Contains(value);
+			return ((IList)_items).Contains(value);
 		}
 
 		int IList.IndexOf(object value)
 		{
-			return ((IList)_list).IndexOf(value);
+			return ((IList)_items).IndexOf(value);
 		}
 
 		#endregion

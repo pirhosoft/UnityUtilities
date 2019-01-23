@@ -15,7 +15,7 @@ namespace PiRhoSoft.UtilityEditor
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
 			// the label passed to PropertyDrawers from Unity does not have the tooltip resolved
-			label.tooltip = GuiHelper.GetTooltip(fieldInfo);
+			label.tooltip = Label.GetTooltip(fieldInfo);
 
 			var control = GetControl(property);
 			control.Draw(position, property, label);

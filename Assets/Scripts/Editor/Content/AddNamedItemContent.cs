@@ -28,7 +28,7 @@ namespace PiRhoSoft.UtilityEditor
 
 			using (new InvalidScope(clean || _nameValid))
 			{
-				create |= GuiHelper.TextEnterField("NewItemName", GUIContent.none, ref _name);
+				create |= EnterFieldDrawer.DrawString("NewItemName", GUIContent.none, ref _name);
 
 				if (_focusName)
 				{

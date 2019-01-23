@@ -17,7 +17,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			label.tooltip = GuiHelper.GetTooltip(fieldInfo);
+			label.tooltip = Label.GetTooltip(fieldInfo);
 
 			// Use GetEndProperty instead of NextVisible since the max property should have a HideInInspector attribute
 			// which would make NextVisible skip it.
@@ -53,8 +53,8 @@ namespace PiRhoSoft.UtilityEditor
 
 					EditorGUI.MinMaxSlider(sliderRect, ref minimum, ref maximum, slider.MinimumValue, slider.MaximumValue);
 
-					minimum = MathHelper.Snap(minimum, slider.SnapValue);
-					maximum = MathHelper.Snap(maximum, slider.SnapValue);
+					minimum = SnapDrawer.Snap(minimum, slider.SnapValue);
+					maximum = SnapDrawer.Snap(maximum, slider.SnapValue);
 
 					minProperty.floatValue = Mathf.Clamp(minimum, slider.MinimumValue, maximum);
 					maxProperty.floatValue = Mathf.Clamp(maximum, minimum, slider.MaximumValue);
@@ -66,8 +66,8 @@ namespace PiRhoSoft.UtilityEditor
 
 					EditorGUI.MinMaxSlider(sliderRect, ref minimum, ref maximum, slider.MinimumValue, slider.MaximumValue);
 
-					var min = Mathf.RoundToInt(MathHelper.Snap(minimum, slider.SnapValue));
-					var max = Mathf.RoundToInt(MathHelper.Snap(maximum, slider.SnapValue));
+					var min = Mathf.RoundToInt(SnapDrawer.Snap(minimum, slider.SnapValue));
+					var max = Mathf.RoundToInt(SnapDrawer.Snap(maximum, slider.SnapValue));
 
 					minProperty.intValue = Mathf.Clamp(min, Mathf.RoundToInt(slider.MinimumValue), max);
 					maxProperty.intValue = Mathf.Clamp(max, min, Mathf.RoundToInt(slider.MaximumValue));

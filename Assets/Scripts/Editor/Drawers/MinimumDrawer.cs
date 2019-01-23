@@ -71,7 +71,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		#endregion
 
-		#region Virtual Interface
+		#region Drawer Interface
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
@@ -80,7 +80,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			label.tooltip = GuiHelper.GetTooltip(fieldInfo);
+			label.tooltip = Label.GetTooltip(fieldInfo);
 			Draw(position, property, label, (attribute as MinimumAttribute).MinimumValue);
 		}
 

@@ -13,9 +13,9 @@ namespace PiRhoSoft.UtilityEditor
 		private DictionaryControl _dictionaryControl = new DictionaryControl();
 		private GUIContent _label;
 
-		private static BoolPreference GetOpenPreference(SerializedProperty property, bool openByDefault)
+		private static string GetOpenPreference(SerializedProperty property)
 		{
-			return new BoolPreference(property.serializedObject.targetObject.GetType().Name + "." + property.propertyPath + ".IsOpen", openByDefault);
+			return property.serializedObject.targetObject.GetType().Name + "." + property.propertyPath + ".IsOpen";
 		}
 
 		public override void Setup(SerializedProperty property, FieldInfo fieldInfo)
@@ -44,7 +44,7 @@ namespace PiRhoSoft.UtilityEditor
 						_dictionaryControl.MakeRemovable(IconButton.Remove);
 
 					if (attribute.AllowCollapse)
-						_dictionaryControl.MakeCollapsable(GetOpenPreference(property, true));
+						_dictionaryControl.MakeCollapsable(GetOpenPreference(property));
 
 					if (attribute.ShowEditButton)
 						_dictionaryControl.MakeEditable(IconButton.Edit);

@@ -39,9 +39,9 @@ namespace PiRhoSoft.UtilityEditor
 		public static float ItemDefaultHeight = EditorGUIUtility.singleLineHeight;
 		public const float ItemPadding = 5.0f;
 
-		public ReorderableList List { get; private set; }
+		public ReorderableList List { get; private set; } // this is Unity's undocumented list class that does the bulk of the drawing and layout
 
-		private BoolPreference _collapsablePreference;
+		private string _collapsablePreference;
 		private Label _emptyLabel;
 		private ReorderableList.ElementHeightCallbackDelegate _getElementHeight;
 		private bool _canReorder = false;
@@ -74,10 +74,10 @@ namespace PiRhoSoft.UtilityEditor
 			Visible = _isVisible;
 		}
 
-		public ListControl MakeCollapsable(BoolPreference preference)
+		public ListControl MakeCollapsable(string preferenceName)
 		{
-			_collapsablePreference = preference;
-			Visible = _collapsablePreference.Value;
+			_collapsablePreference = preferenceName;
+			Visible = EditorPrefs.GetBool(_collapsablePreference, true);
 			return this;
 		}
 
@@ -238,13 +238,17 @@ namespace PiRhoSoft.UtilityEditor
 
 		public void Draw(GUIContent label)
 		{
-			PreDraw(label);
-			List.DoLayoutList();
-			PostDraw();
+			var height = GetHeight();
+			var rect = EditorGUILayout.GetControlRect(false, height);
+
+			Draw(rect, label);
 		}
 
 		public void Draw(Rect position, GUIContent label)
 		{
+			// DoList respects the current indent level when drawing labels and it shouldn't - the workaround is to
+			// temporarily set the indent back to 0
+
 			RectHelper.TakeIndent(ref position);
 			var indent = EditorGUI.indentLevel;
 			EditorGUI.indentLevel = 0;
@@ -265,7 +269,7 @@ namespace PiRhoSoft.UtilityEditor
 		private void PostDraw()
 		{
 			if (_collapsablePreference != null)
-				_collapsablePreference.Value = Visible;
+				EditorPrefs.SetBool(_collapsablePreference, Visible);
 
 			ProcessClickedButton();
 		}
@@ -294,7 +298,7 @@ namespace PiRhoSoft.UtilityEditor
 				{
 					var buttonRect = RectHelper.TakeLeadingIcon(ref buttonsRect);
 
-					if (GuiHelper.IconButton(buttonRect, _headerButtons[i].Icon))
+					if (GUI.Button(buttonRect, _headerButtons[i].Icon.Content, GUIStyle.none))
 						SetClickedButton(-1, i, buttonRect);
 				}
 			}
@@ -316,7 +320,7 @@ namespace PiRhoSoft.UtilityEditor
 				{
 					var buttonRect = RectHelper.AdjustHeight(RectHelper.TakeLeadingIcon(ref buttonsRect), ItemDefaultHeight, RectVerticalAlignment.Top);
 
-					if (GuiHelper.IconButton(buttonRect, _itemButtons[i].Icon))
+					if (GUI.Button(buttonRect, _itemButtons[i].Icon.Content, GUIStyle.none))
 						SetClickedButton(index, i, buttonRect);
 				}
 

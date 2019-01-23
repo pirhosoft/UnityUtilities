@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using PiRhoSoft.UtilityEngine;
 using UnityEditor;
 using UnityEngine;
 
@@ -12,57 +11,29 @@ namespace PiRhoSoft.UtilityEditor
 		public Type Type;
 		public bool HasNone;
 		public bool HasCreate;
-		public int PrependedSlots;
-		public int AppendedSlots;
 
 		public GUIContent[] Names;
 		public List<ScriptableObject> Assets;
-		public List<Type> Types;
+		public TypeList Types;
+
+		#region Lookup
 
 		public int GetIndex(ScriptableObject asset)
 		{
-			var index = Assets.IndexOf(asset) + PrependedSlots;
+			var index = Assets.IndexOf(asset);
 
 			if (HasNone)
 			{
-				if (index >= 0)
-					index += 2;
-				else
-					index = 0;
+				if (index >= 0) index += 2; // skip 'None' and separator
+				else index = 0;
 			}
 
 			return index;
 		}
 
-		public int GetIndex(Type type)
-		{
-			if (Types != null)
-			{
-				var index = Types.IndexOf(type);
-
-				if (index >= 0)
-				{
-					if (HasNone)
-						index += 2;
-
-					index += Assets.Count + 1 + PrependedSlots;
-				}
-
-				return index;
-			}
-			else
-			{
-				return -1;
-			}
-		}
-
 		public ScriptableObject GetAsset(int index)
 		{
-			if (HasNone)
-				index -= 2;
-
-			index -= PrependedSlots;
-
+			if (HasNone) index -= 2;  // skip 'None' and separator
 			return index >= 0 && index < Assets.Count ? Assets[index] : null;
 		}
 
@@ -70,18 +41,18 @@ namespace PiRhoSoft.UtilityEditor
 		{
 			if (Types != null)
 			{
-				if (HasNone)
-					index -= 2;
+				if (HasNone) index -= 2; // skip 'None' and separator
+				index -= Assets.Count + 1; // skip assets and separator
 
-				index -= Assets.Count + 1 + PrependedSlots;
-
-				return index >= 0 && index < Types.Count ? Types[index] : null;
+				return Types.GetType(index);
 			}
 			else
 			{
 				return null;
 			}
 		}
+
+		#endregion
 	}
 
 	public class AssetHelper : AssetPostprocessor
@@ -90,30 +61,30 @@ namespace PiRhoSoft.UtilityEditor
 
 		static void OnPostprocessAllAssets(string[] importedAssets, string[] deletedAssets, string[] movedAssets, string[] movedFromAssetPaths)
 		{
-			foreach (var list in _assetLists)
-			{
-				list.Value.Names = null;
-				list.Value.Assets = null;
-				list.Value.Types = null;
-			}
+			_assetLists.Clear(); // no reason to figure out what actually changed - just clear all the lists so they are rebuilt on next access
+		}
+
+		#region Creation
+
+		public static AssetType CreateAsset<AssetType>(string name) where AssetType : ScriptableObject
+		{
+			return CreateAsset(name, typeof(AssetType)) as AssetType;
 		}
 
 		public static AssetType GetOrCreateAsset<AssetType>(string name) where AssetType : ScriptableObject
 		{
-			return GetAsset<AssetType>() ?? CreateAsset<AssetType>(name);
+			var asset = GetAsset<AssetType>();
+
+			if (asset == null)
+				asset = CreateAsset<AssetType>(name);
+
+			return asset;
 		}
 
-		public static AssetType CreateAsset<AssetType>(string name) where AssetType : ScriptableObject
+		public static ScriptableObject CreateAsset(string name, Type type)
 		{
-			return CreateAsset<AssetType>(name, typeof(AssetType));
-		}
-
-		public static AssetType CreateAsset<AssetType>(string name, Type type) where AssetType : ScriptableObject
-		{
-			var asset = ScriptableObject.CreateInstance(type) as AssetType;
-			var path = "Assets/" + name + ".asset";
-
-			asset.name = name;
+			var asset = ScriptableObject.CreateInstance(type);
+			var path = AssetDatabase.GenerateUniqueAssetPath("Assets/" + name + ".asset");
 
 			AssetDatabase.CreateAsset(asset, path);
 			AssetDatabase.SaveAssets();
@@ -121,88 +92,111 @@ namespace PiRhoSoft.UtilityEditor
 			return asset;
 		}
 
-		public static AssetType CreateChildAssetWithUndo<AssetType>(ScriptableObject parent, IList<AssetType> assets, string name) where AssetType : ScriptableObject
+		public static ScriptableObject GetOrCreateAsset(string name, Type type)
 		{
-			return CreateChildAssetWithUndo(parent, assets, typeof(AssetType), name);
-		}
+			var asset = GetAsset(type);
 
-		public static AssetType CreateChildAssetWithUndo<AssetType>(ScriptableObject parent, IList<AssetType> assets, Type assetType, string name) where AssetType : ScriptableObject
-		{
-			var asset = ScriptableObject.CreateInstance(assetType) as AssetType;
-			asset.name = name;
-			asset.hideFlags = HideFlags.HideInHierarchy;
-
-			using (new UndoScope(parent, true))
-			{
-				assets.Add(asset);
-
-				Undo.RegisterCreatedObjectUndo(asset, "Undo create");
-				AssetDatabase.AddObjectToAsset(asset, parent);
-				AssetDatabase.ImportAsset(AssetDatabase.GetAssetPath(parent));
-			}
+			if (asset == null)
+				asset = CreateAsset(name, type);
 
 			return asset;
 		}
 
-		public static void DestroyChildAssetWithUndo<AssetType>(ScriptableObject parent, List<AssetType> assets, int index) where AssetType : ScriptableObject
+		#endregion
+
+		#region Lookup
+
+		public static AssetType GetAsset<AssetType>() where AssetType : ScriptableObject
 		{
-			var asset = assets[index];
-			assets.RemoveAt(index);
-			Undo.DestroyObjectImmediate(asset);
-			AssetDatabase.ImportAsset(AssetDatabase.GetAssetPath(parent));
+			return FindAssets<AssetType>().FirstOrDefault();
 		}
 
-		public static void RenameChildAssetWithUndo(ScriptableObject parent, ScriptableObject asset, string newName)
+		public static AssetType GetAssetWithId<AssetType>(string id) where AssetType : ScriptableObject
 		{
-			using (new UndoScope(asset, true))
-				asset.name = newName;
+			var path = AssetDatabase.GUIDToAssetPath(id);
+			return GetAssetAtPath<AssetType>(path);
 		}
 
-		public static string GetPath(ScriptableObject asset)
+		public static AssetType GetAssetAtPath<AssetType>(string path) where AssetType : ScriptableObject
 		{
-			var path = AssetDatabase.GetAssetPath(asset);
-			var slash = path.LastIndexOf('/');
-
-			return path.Substring(0, slash + 1);
+			return AssetDatabase.LoadAssetAtPath<AssetType>(path);
 		}
 
-		public static string FindCommonPath<AssetType>(List<AssetType> assets) where AssetType : ScriptableObject
+		public static ScriptableObject GetAsset(Type assetType)
 		{
-			return StringHelper.FindCommonPath(assets.Select(asset => GetPath(asset)));
+			return FindAssets(assetType).FirstOrDefault();
 		}
 
-		public static AssetList GetAssetList<AssetType>(bool includeNone, bool includeCreate, int prepended = 0, int appended = 0) where AssetType : ScriptableObject
+		public static ScriptableObject GetAssetWithId(string id, Type type)
 		{
-			return GetAssetList(typeof(AssetType), includeNone, includeCreate, prepended, appended);
+			var path = AssetDatabase.GUIDToAssetPath(id);
+			return GetAssetAtPath(path, type);
 		}
 
-		public static AssetList GetAssetList(Type assetType, bool includeNone, bool includeCreate, int prepended = 0, int appended = 0)
+		public static ScriptableObject GetAssetAtPath(string path, Type type)
 		{
-			var listName = string.Format("{0}-{1}-{2}-{3}-{4}", includeNone, includeCreate, prepended, appended, assetType.AssemblyQualifiedName);
+			return AssetDatabase.LoadAssetAtPath(path, type) as ScriptableObject;
+		}
+
+		#endregion
+
+		#region Listing
+
+		public static List<AssetType> ListAssets<AssetType>() where AssetType : ScriptableObject
+		{
+			return FindAssets<AssetType>().ToList();
+		}
+
+		public static IEnumerable<AssetType> FindAssets<AssetType>() where AssetType : ScriptableObject
+		{
+			return FindAssets(typeof(AssetType)).Select(asset => asset as AssetType);
+		}
+
+		public static List<ScriptableObject> ListAssets(Type assetType)
+		{
+			return FindAssets(assetType).ToList();
+		}
+
+		public static IEnumerable<ScriptableObject> FindAssets(Type assetType)
+		{
+			// This query seems to occassionally miss finding some objects. Renaming, moving, or modifying the missing
+			// object seems to fix it but the underlying cause is unknown. It might have something to do with loading
+			// objects whose serialized representation has changed in which case AssetDatabase.ForceReserializeAssets
+			// might also fix it. That could be exposed as a workaround with a refresh button in the AssetPopup ui.
+
+			var query = string.Format("t:{0}", assetType);
+			return AssetDatabase.FindAssets(query).Select(id => GetAssetWithId(id, assetType));
+		}
+
+		public static AssetList GetAssetList<AssetType>(bool includeNone, bool includeCreate) where AssetType : ScriptableObject
+		{
+			return GetAssetList(typeof(AssetType), includeNone, includeCreate);
+		}
+
+		public static AssetList GetAssetList(Type assetType, bool includeNone, bool includeCreate)
+		{
+			// include the settings in the name so lists of the same type can be created with different settings
+			var listName = string.Format("{0}-{1}-{2}", includeNone, includeCreate, assetType.AssemblyQualifiedName);
 
 			AssetList list;
 			if (!_assetLists.TryGetValue(listName, out list))
 			{
-				list = new AssetList { Type = assetType, HasNone = includeNone, HasCreate = includeCreate, PrependedSlots = prepended, AppendedSlots = appended };
+				list = new AssetList { Type = assetType, HasNone = includeNone, HasCreate = includeCreate };
 				_assetLists.Add(listName, list);
 			}
 
 			if (list.Assets == null)
 			{
 				list.Assets = ListAssets(assetType);
-				list.Types = includeCreate ? TypeHelper.ListDerivedTypes(assetType) : null;
+				list.Types = includeCreate ? TypeHelper.GetTypeList(assetType, false) : null;
 
-				var index = prepended;
-				var count = prepended + appended;
+				var index = 0;
+				var count = 0;
 				var prefix = FindCommonPath(list.Assets);
 
-				if (includeNone)
-					count += 2;
-
+				if (includeNone) count += 2; // 'None' and separator
 				count += list.Assets.Count;
-
-				if (includeCreate)
-					count += list.Types.Count + 1;
+				if (includeCreate) count += list.Types.Names.Length + 1; // separator and types
 
 				list.Names = new GUIContent[count];
 
@@ -222,65 +216,49 @@ namespace PiRhoSoft.UtilityEditor
 				if (includeCreate)
 				{
 					list.Names[index++] = new GUIContent("");
-					list.Types = list.Types.OrderBy(type => type.Name).ToList();
 
-					foreach (var type in list.Types)
-					{
-						var name = "Create/" + ObjectNames.NicifyVariableName(type.Name);
-						list.Names[index++] = new GUIContent(name);
-					}
+					foreach (var name in list.Types.Names)
+						list.Names[index++] = new GUIContent("Create/" + name.text);
 				}
 			}
 
 			return list;
 		}
 
-		public static AssetType GetAsset<AssetType>() where AssetType : ScriptableObject
+		private static string GetPath(ScriptableObject asset)
 		{
-			return FindAssets<AssetType>().FirstOrDefault();
+			var path = AssetDatabase.GetAssetPath(asset);
+			var slash = path.LastIndexOf('/');
+
+			return path.Substring(0, slash + 1);
 		}
 
-		public static List<AssetType> ListAssets<AssetType>() where AssetType : ScriptableObject
+		private static string FindCommonPath<AssetType>(List<AssetType> assets) where AssetType : ScriptableObject
 		{
-			return FindAssets<AssetType>().ToList();
+			var paths = assets.Select(asset => GetPath(asset));
+			var prefix = paths.FirstOrDefault() ?? "";
+
+			foreach (var path in paths)
+			{
+				var index = 0;
+				var count = Math.Min(prefix.Length, path.Length);
+
+				for (; index < count; index++)
+				{
+					if (prefix[index] != path[index])
+						break;
+				}
+
+				prefix = prefix.Substring(0, index);
+
+				var slash = prefix.LastIndexOf('/');
+				if (slash != prefix.Length - 1)
+					prefix = slash >= 0 ? prefix.Substring(0, slash + 1) : "";
+			}
+
+			return prefix;
 		}
 
-		public static IEnumerable<AssetType> FindAssets<AssetType>() where AssetType : ScriptableObject
-		{
-			return FindAssets(typeof(AssetType)).Select(asset => asset as AssetType);
-		}
-
-		public static List<ScriptableObject> ListAssets(Type assetType)
-		{
-			return FindAssets(assetType).ToList();
-		}
-
-		public static IEnumerable<ScriptableObject> FindAssets(Type assetType)
-		{
-			var query = string.Format("t:{0}", assetType);
-			return AssetDatabase.FindAssets(query).Select(id => GetAssetWithId(id, assetType));
-		}
-
-		public static AssetType GetAssetWithId<AssetType>(string id) where AssetType : ScriptableObject
-		{
-			var path = AssetDatabase.GUIDToAssetPath(id);
-			return GetAssetAtPath<AssetType>(path);
-		}
-
-		public static AssetType GetAssetAtPath<AssetType>(string path) where AssetType : ScriptableObject
-		{
-			return AssetDatabase.LoadAssetAtPath<AssetType>(path);
-		}
-
-		public static ScriptableObject GetAssetWithId(string id, Type type)
-		{
-			var path = AssetDatabase.GUIDToAssetPath(id);
-			return GetAssetAtPath(path, type);
-		}
-
-		public static ScriptableObject GetAssetAtPath(string path, Type type)
-		{
-			return AssetDatabase.LoadAssetAtPath(path, type) as ScriptableObject;
-		}
+		#endregion
 	}
 }

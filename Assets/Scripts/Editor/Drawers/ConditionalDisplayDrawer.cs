@@ -23,7 +23,7 @@ namespace PiRhoSoft.UtilityEditor
 
 			if (GetVisible(property))
 			{
-				label.tooltip = GuiHelper.GetTooltip(fieldInfo);
+				label.tooltip = Label.GetTooltip(fieldInfo);
 				EditorGUI.PropertyField(position, property, label, true);
 			}
 		}

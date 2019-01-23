@@ -17,12 +17,12 @@ namespace PiRhoSoft.UtilityEditor
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			label.tooltip = GuiHelper.GetTooltip(fieldInfo);
+			label.tooltip = Label.GetTooltip(fieldInfo);
 
 			if (property.propertyType == SerializedPropertyType.Integer)
 			{
 				var values = (attribute as IntPopupAttribute).Values;
-				var options = (attribute as IntPopupAttribute).Options;
+				var options = (attribute as IntPopupAttribute).Names;
 				var index = EditorGUI.IntPopup(position, label, property.intValue, options.Select(option => new GUIContent(option)).ToArray(), values);
 				if (index >= 0 && index < options.Length)
 					property.intValue = values[index];

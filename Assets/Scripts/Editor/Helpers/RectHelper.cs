@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 
 namespace PiRhoSoft.UtilityEditor
@@ -21,10 +22,18 @@ namespace PiRhoSoft.UtilityEditor
 	{
 		public static float VerticalSpace = EditorGUIUtility.standardVerticalSpacing;
 		public static float HorizontalSpace = EditorGUIUtility.standardVerticalSpacing;
-		public static float HorizontalPadding = 4.0f;
 		public static float IconWidth = EditorGUIUtility.singleLineHeight;
 		public static float LineHeight = EditorGUIUtility.singleLineHeight + VerticalSpace;
-		public static float IndentWidth = 15.0f;
+
+		// these margin values seem consistent but it is hard to track down where they are actually set in order to
+		// find the style(s) they are read from
+		public static float LeftMargin = 14.0f;
+		public static float RightMargin = 4.0f;
+
+		public static float CurrentIndentWidth => GetIndentWidth(EditorGUI.indentLevel);
+		public static float CurrentLabelWidth => EditorGUIUtility.labelWidth - CurrentIndentWidth;
+		public static float CurrentFieldWidth => CurrentViewWidth - EditorGUIUtility.labelWidth;
+		public static float CurrentViewWidth => GetContextWidth() - LeftMargin - RightMargin;
 
 		public static Rect TakeLine(ref Rect full)
 		{
@@ -59,30 +68,15 @@ namespace PiRhoSoft.UtilityEditor
 			return TakeWidth(ref full, HorizontalSpace);
 		}
 
-		public static Rect TakeHorizontalPadding(ref Rect full)
-		{
-			return TakeWidth(ref full, HorizontalPadding);
-		}
-
 		public static void TakeIndent(ref Rect full)
 		{
-			// this is not in the Unity documentation despite being publicly accessible
-			full = EditorGUI.IndentedRect(full);
+			TakeWidth(ref full, CurrentIndentWidth);
 		}
 
 		public static Rect TakeLabel(ref Rect full)
 		{
-			return TakeWidth(ref full, EditorGUIUtility.labelWidth);
-		}
-
-		public static Rect TakeIndentedLabel(ref Rect full)
-		{
-			var indent = full.width - EditorGUI.IndentedRect(full).width;
-			var rect = new Rect(full.x + indent, full.y, EditorGUIUtility.labelWidth - indent, full.height);
-
-			TakeWidth(ref full, EditorGUIUtility.labelWidth);
-
-			return rect;
+			TakeIndent(ref full);
+			return TakeWidth(ref full, CurrentLabelWidth);
 		}
 
 		public static Rect TakeLeadingIcon(ref Rect full)
@@ -143,6 +137,45 @@ namespace PiRhoSoft.UtilityEditor
 			}
 
 			return new Rect(rect.x + offset, rect.y, width, rect.height);
+		}
+
+		public static float GetIndentWidth(int levels)
+		{
+			var indent = 15.0f; // this is the value of kIndentPerLevel at the time of writing
+			var prop = typeof(EditorGUI).GetProperty("kIndentPerLevel", BindingFlags.NonPublic | BindingFlags.Static);
+
+			if (prop != null)
+			{
+				try
+				{
+					indent = (float)prop.GetValue(null);
+				}
+				catch
+				{
+				}
+			}
+
+			return indent * levels;
+		}
+
+		private static float GetContextWidth()
+		{
+			var prop = typeof(EditorGUIUtility).GetProperty("contextWidth", BindingFlags.NonPublic | BindingFlags.Static);
+
+			if (prop != null)
+			{
+				try
+				{
+					return (float)prop.GetValue(null);
+				}
+				catch
+				{
+				}
+			}
+
+			// this doesn't account for the scroll bar but at least it's a good estimate if the internal representation
+			// of contextWidth changes in future releases
+			return EditorGUIUtility.currentViewWidth;
 		}
 	}
 }

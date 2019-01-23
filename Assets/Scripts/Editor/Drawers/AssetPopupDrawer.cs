@@ -17,24 +17,28 @@ namespace PiRhoSoft.UtilityEditor
 			return EditorGUIUtility.singleLineHeight;
 		}
 
-		public static T Draw<T>(GUIContent label, T asset, bool showEditButton) where T : ScriptableObject
+		public static AssetType Draw<AssetType>(GUIContent label, AssetType asset, bool showEditButton) where AssetType : ScriptableObject
 		{
-			var rect = EditorGUILayout.GetControlRect(false, GetHeight());
+			var height = GetHeight();
+			var rect = EditorGUILayout.GetControlRect(false, height);
+
 			return Draw(rect, label, asset, showEditButton);
 		}
 
-		public static T Draw<T>(Rect position, GUIContent label, T asset, bool showEditButton) where T : ScriptableObject
+		public static AssetType Draw<AssetType>(Rect position, GUIContent label, AssetType asset, bool showEditButton) where AssetType : ScriptableObject
 		{
-			return Draw(position, label, asset, typeof(T), showEditButton) as T;
+			return Draw(position, label, asset, typeof(AssetType), showEditButton) as AssetType;
 		}
 
 		public static void Draw(GUIContent label, SerializedProperty property, Type type, bool showEditButton)
 		{
-			var rect = EditorGUILayout.GetControlRect(false, GetHeight());
-			Draw(rect, property, label, type, showEditButton);
+			var height = GetHeight();
+			var rect = EditorGUILayout.GetControlRect(false, height);
+
+			Draw(rect, label, property, type, showEditButton);
 		}
 
-		public static void Draw(Rect position, SerializedProperty property, GUIContent label, Type type, bool showEditButton)
+		public static void Draw(Rect position, GUIContent label, SerializedProperty property, Type type, bool showEditButton)
 		{
 			if (property.propertyType == SerializedPropertyType.ObjectReference && typeof(ScriptableObject).IsAssignableFrom(type))
 			{
@@ -47,23 +51,9 @@ namespace PiRhoSoft.UtilityEditor
 			}
 		}
 
-		private static ScriptableObject Draw(Rect position, GUIContent label, ScriptableObject asset, Type type, bool showEditButton)
-		{
-			if (showEditButton && asset != null)
-			{
-				var editRect = RectHelper.TakeTrailingIcon(ref position);
-
-				if (GuiHelper.IconButton(editRect, IconButton.Edit))
-					Selection.activeObject = asset;
-			}
-
-			GuiHelper.AssetPopup(position, label, type, ref asset);
-			return asset;
-		}
-
 		#endregion
 
-		#region Virtual Interface
+		#region Drawer Interface
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
@@ -72,7 +62,32 @@ namespace PiRhoSoft.UtilityEditor
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			Draw(position, property, label, fieldInfo.FieldType, (attribute as AssetPopupAttribute).ShowEdit);
+			Draw(position, label, property, fieldInfo.FieldType, (attribute as AssetPopupAttribute).ShowEdit);
+		}
+
+		#endregion
+
+		#region Drawing
+
+		private static ScriptableObject Draw(Rect position, GUIContent label, ScriptableObject asset, Type type, bool showEditButton)
+		{
+			if (showEditButton)
+			{
+				var editRect = RectHelper.TakeTrailingIcon(ref position);
+
+				if (asset != null)
+				{
+					if (GUI.Button(editRect, IconButton.Edit.Content, GUIStyle.none))
+						Selection.activeObject = asset;
+				}
+			}
+
+			var list = AssetHelper.GetAssetList(type, true, false);
+			var index = list.GetIndex(asset);
+
+			index = EditorGUI.Popup(position, label, index, list.Names);
+
+			return list.GetAsset(index);
 		}
 
 		#endregion

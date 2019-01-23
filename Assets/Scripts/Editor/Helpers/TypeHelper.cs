@@ -8,76 +8,45 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public class TypeList
 	{
-		public int Count;
-		public Type Type;
+		public Type BaseType;
+		public bool HasNone;
+
 		public GUIContent[] Names;
-		public Type[] Types;
-	}
+		public List<Type> Types;
 
-	public class ListedType
-	{
-		public Type Type;
-		public string Name;
+		#region Lookup
 
-		public ListedType(Type type)
+		public int GetIndex(Type type)
 		{
-			Type = type;
-			Name = type.Name;
-		}
+			var index = Types.IndexOf(type);
 
-		public ListedType(string name)
-		{
-			Type = null;
-			Name = name;
-		}
-
-		internal ListedType(IEnumerable<Type> types, Type rootType, Type type)
-		{
-			Type = type;
-			Name = Type.Name;
-
-			if (type != rootType)
+			if (HasNone)
 			{
-				if (types.Any(t => t.BaseType == type))
-					Name += "/" + Type.Name;
-
-				type = type.BaseType;
+				if (index >= 0) index += 2; // skip 'None' and separator
+				else index = 0;
 			}
 
-			while (type != rootType)
-			{
-				Name = type.Name + "/" + Name;
-				type = type.BaseType;
-			}
+			return index;
 		}
+
+		public Type GetType(int index)
+		{
+			if (HasNone) index -= 2;  // skip 'None' and separator
+			return index >= 0 && index < Types.Count ? Types[index] : null;
+		}
+
+		#endregion
 	}
 
 	public static class TypeHelper
 	{
-		private static Dictionary<Type, TypeList> _derivedTypeLists = new Dictionary<Type, TypeList>();
+		private static Dictionary<string, TypeList> _derivedTypeLists = new Dictionary<string, TypeList>();
 
-		public static TypeList GetTypeList<T>(params ListedType[] prependedTypes)
+		#region Attributes
+
+		public static bool HasAttribute<AttributeType>(Type type) where AttributeType : Attribute
 		{
-			TypeList list;
-			if (!_derivedTypeLists.TryGetValue(typeof(T), out list))
-			{
-				list = new TypeList { Type = typeof(T) };
-				_derivedTypeLists.Add(typeof(T), list);
-			}
-
-			if (list.Types == null)
-			{
-				var allTypes = ListDerivedTypes<T>();
-				var listedTypes = allTypes.Select(type => new ListedType(allTypes, typeof(T), type)).OrderBy(type => type.Name);
-
-				var types = prependedTypes.Concat(listedTypes);
-
-				list.Types = types.Select(type => type.Type).ToArray();
-				list.Names = types.Select(type => new GUIContent(type.Name)).ToArray();
-				list.Count = list.Types.Length;
-			}
-
-			return list;
+			return GetAttribute<AttributeType>(type) != null;
 		}
 
 		public static AttributeType GetAttribute<AttributeType>(Type type) where AttributeType : Attribute
@@ -92,6 +61,27 @@ namespace PiRhoSoft.UtilityEditor
 			return attributes != null && attributes.Length > 0 ? attributes[0] as AttributeType : null;
 		}
 
+		public static bool HasAttribute(Type type, Type attributeType)
+		{
+			return GetAttribute(type, attributeType) != null;
+		}
+
+		public static Attribute GetAttribute(Type type, Type attributeType)
+		{
+			var attributes = type.GetCustomAttributes(attributeType, false);
+			return attributes != null && attributes.Length > 0 ? attributes[0] as Attribute : null;
+		}
+
+		public static Attribute GetAttribute(FieldInfo field, Type attributeType)
+		{
+			var attributes = field.GetCustomAttributes(attributeType, false);
+			return attributes != null && attributes.Length > 0 ? attributes[0] as Attribute : null;
+		}
+
+		#endregion
+
+		#region Creation
+
 		public static T CreateInstance<T>(Type type) where T : class
 		{
 			if (type != null && !type.IsAbstract && typeof(T).IsAssignableFrom(type) && type.GetConstructor(Type.EmptyTypes) != null)
@@ -100,88 +90,109 @@ namespace PiRhoSoft.UtilityEditor
 			return null;
 		}
 
-		public static bool IsCreatableAs(Type baseType, Type type)
-		{
-			return baseType.IsAssignableFrom(type) && type.GetConstructor(Type.EmptyTypes) != null;
-		}
-
 		public static bool IsCreatableAs<BaseType>(Type type)
 		{
 			return IsCreatableAs(typeof(BaseType), type);
 		}
 
-		public static IEnumerable<Type> ListTypes(Func<Type, bool> predicate)
+		public static bool IsCreatableAs(Type baseType, Type type)
 		{
-			return AppDomain.CurrentDomain.GetAssemblies()
-				.Where(assembly => !assembly.IsDynamic)
-				.SelectMany(t => t.GetTypes())
-				.Where(predicate);
+			return baseType.IsAssignableFrom(type) && type.GetConstructor(Type.EmptyTypes) != null;
+		}
+
+		#endregion
+
+		#region Listing
+
+		public static List<Type> ListDerivedTypes<BaseType>()
+		{
+			return FindTypes(type => IsCreatableAs<BaseType>(type)).ToList();
 		}
 
 		public static List<Type> ListDerivedTypes(Type baseType)
 		{
-			// TODO: There are a lot of assemblies so it might make sense to filter the list a bit. There isn't a
-			// specific way to do that, but something like this might work: https://stackoverflow.com/questions/5160051/c-sharp-how-to-get-non-system-assemblies
+			return FindTypes(type => IsCreatableAs(baseType, type)).ToList();
+		}
 
-			var types = new List<Type>();
-			var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(assembly => !assembly.IsDynamic);
+		public static List<Type> ListTypesWithAttribute<AttributeType>() where AttributeType : Attribute
+		{
+			return FindTypes(type => HasAttribute<AttributeType>(type)).ToList();
+		}
 
-			foreach (var assembly in assemblies)
+		public static List<Type> ListTypesWithAttribute(Type attributeType)
+		{
+			return FindTypes(type => HasAttribute(type, attributeType)).ToList();
+		}
+
+		public static IEnumerable<Type> FindTypes(Func<Type, bool> predicate)
+		{
+			// There are a lot of assemblies so it might make sense to filter the list a bit. There isn't a specific
+			// way to do that, but something like this would work: https://stackoverflow.com/questions/5160051/c-sharp-how-to-get-non-system-assemblies
+
+			return AppDomain.CurrentDomain.GetAssemblies()
+				.Where(assembly => !assembly.IsDynamic) // GetExportedTypes throws an exception when called on dynamic assemblies
+				.SelectMany(t => t.GetExportedTypes())
+				.Where(predicate);
+		}
+
+		public static TypeList GetTypeList<T>(bool includeNone)
+		{
+			return GetTypeList(typeof(T), includeNone);
+		}
+
+		public static TypeList GetTypeList(Type baseType, bool includeNone)
+		{
+			// include the settings in the name so lists of the same type can be created with different settings
+			var listName = string.Format("{0}-{1}", includeNone, baseType.AssemblyQualifiedName);
+
+			TypeList list;
+			if (!_derivedTypeLists.TryGetValue(listName, out list))
 			{
-				foreach (var type in assembly.GetExportedTypes())
-				{
-					if (IsCreatableAs(baseType, type))
-						types.Add(type);
-				}
+				list = new TypeList { BaseType = baseType, HasNone = includeNone };
+				_derivedTypeLists.Add(listName, list);
 			}
 
-			return types;
-		}
-
-		public static List<Type> ListDerivedTypes<BaseType>()
-		{
-			return ListDerivedTypes(typeof(BaseType));
-		}
-
-		public static List<Type> ListDerivedTypesWithAttribute<BaseType, AttributeType>() where AttributeType : Attribute
-		{
-			var types = new List<Type>();
-			var assemblies = AppDomain.CurrentDomain.GetAssemblies().Where(assembly => !assembly.IsDynamic);
-
-			foreach (var assembly in assemblies)
+			if (list.Types == null)
 			{
-				foreach (var type in assembly.GetExportedTypes())
-				{
-					if (IsCreatableAs<BaseType>(type))
-					{
-						var attribute = GetAttribute<AttributeType>(type);
-						if (attribute != null)
-							types.Add(type);
-					}
-				}
+				var types = ListDerivedTypes(baseType);
+				var ordered = types.Select(type => new ListedType(types, baseType, type)).OrderBy(type => type.Name);
+				var none = includeNone ? new List<GUIContent> { new GUIContent("None"), new GUIContent("") } : new List<GUIContent>();
+
+				list.Types = ordered.Select(type => type.Type).ToList();
+				list.Names = Enumerable.Concat(none, ordered.Select(type => new GUIContent(type.Name))).ToArray();
 			}
 
-			return types;
+			return list;
 		}
 
-		public static List<Type> ListEnumsWithAttribute<AttributeType>() where AttributeType : Attribute
+		private class ListedType
 		{
-			var types = new List<Type>();
+			public Type Type;
+			public string Name;
 
-			foreach (var assembly in AppDomain.CurrentDomain.GetAssemblies())
+			public ListedType(IEnumerable<Type> types, Type rootType, Type type)
 			{
-				foreach (var type in assembly.GetExportedTypes())
+				Type = type;
+				Name = Type.Name;
+
+				// repeat the name for types that have derivations so they appear in their own submenu (otherwise they wouldn't be selectable)
+				if (type != rootType)
 				{
-					if (type.IsEnum)
-					{
-						var attribute = GetAttribute<AttributeType>(type);
-						if (attribute != null)
-							types.Add(type);
-					}
+					if (types.Any(t => t.BaseType == type))
+						Name += "/" + Type.Name;
+
+					type = type.BaseType;
+				}
+
+				// prepend all parent type names up to but not including the root type
+				while (type != rootType)
+				{
+					Name = type.Name + "/" + Name;
+					type = type.BaseType;
 				}
 			}
-
-			return types;
 		}
+
+		#endregion
 	}
 }

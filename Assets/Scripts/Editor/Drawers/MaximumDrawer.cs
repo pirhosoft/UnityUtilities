@@ -9,6 +9,8 @@ namespace PiRhoSoft.UtilityEditor
 	{
 		public const string _invalidTypeWarning = "Invalid type for Maximum on field {0}: Maximum can only be applied to int or float fields";
 
+		#region Static Interface
+
 		public static float GetHeight()
 		{
 			return EditorGUIUtility.singleLineHeight;
@@ -67,6 +69,10 @@ namespace PiRhoSoft.UtilityEditor
 				Debug.LogWarningFormat(_invalidTypeWarning, property.propertyPath);
 		}
 
+		#endregion
+
+		#region Drawer Interface
+
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
 			return GetHeight();
@@ -74,8 +80,10 @@ namespace PiRhoSoft.UtilityEditor
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			label.tooltip = GuiHelper.GetTooltip(fieldInfo);
+			label.tooltip = Label.GetTooltip(fieldInfo);
 			Draw(position, property, label, (attribute as MaximumAttribute).MaximumValue);
 		}
+
+		#endregion
 	}
 }

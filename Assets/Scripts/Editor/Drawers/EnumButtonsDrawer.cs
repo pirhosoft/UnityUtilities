@@ -9,49 +9,52 @@ namespace PiRhoSoft.UtilityEditor
 	[CustomPropertyDrawer(typeof(EnumButtonsAttribute))]
 	public class EnumButtonsDrawer : PropertyDrawer
 	{
-		private const string _invalidTypeWarning = "Invalid type for EnumButtonsDisplayDrawer on field {0}: EnumButtonsDisplay can only be applied to Enum fields";
-		private const float _minWidth = 40.0f;
+		private const string _invalidTypeWarning = "Invalid type for EnumButtonsDrawer on field {0}: EnumButtons can only be applied to Enum fields";
 
 		#region Static Interface
 
-		public static float GetHeight(int count, bool useLabel)
+		public static float GetHeight(int count, bool useLabel, float minimumButtonWidth)
 		{
-			var width = useLabel ? EditorGUIUtility.currentViewWidth - EditorGUIUtility.labelWidth - RectHelper.IndentWidth - RectHelper.HorizontalPadding : EditorGUIUtility.currentViewWidth;
-			GetButtonInfo(width, count, out float buttonWidth, out int rows, out int columns);
+			var width = useLabel ? RectHelper.CurrentFieldWidth - RectHelper.CurrentIndentWidth : RectHelper.CurrentViewWidth;
+			GetButtonInfo(width, minimumButtonWidth, count, out float buttonWidth, out int rows, out int columns);
 			return EditorGUIUtility.singleLineHeight * rows;
 		}
 
-		public static int Draw(GUIContent label, int value, Type type, int count)
+		public static int Draw(GUIContent label, int value, Type type, int count, float minimumButtonWidth)
 		{
-			var rect = EditorGUILayout.GetControlRect(false, GetHeight(count, label != null));
-			return Draw(rect, label, value, type);
+			var height = GetHeight(count, !string.IsNullOrEmpty(label.text), minimumButtonWidth);
+			var rect = EditorGUILayout.GetControlRect(false, height);
+
+			return Draw(rect, label, value, type, minimumButtonWidth);
 		}
 
-		public static int Draw(Rect position, GUIContent label, int value, Type type)
+		public static int Draw(Rect position, GUIContent label, int value, Type type, float minimumButtonWidth)
 		{
-			var rect = position;
-			if (label != null)
-				rect = EditorGUI.PrefixLabel(position, label);
-
+			var rect = EditorGUI.PrefixLabel(position, label);
 			var flags = TypeHelper.GetAttribute<FlagsAttribute>(type) != null;
 			var values = Enum.GetValues(type);
 			var names = Enum.GetNames(type).Select(name => new GUIContent(name)).ToArray();
 
-			GetButtonInfo(rect.width, values.Length, out float buttonWidth, out int rows, out int columns);
-			return flags ? DrawButtonFlags(rect, buttonWidth, rows, columns, value, values, names) : DrawButtons(rect, buttonWidth, rows, columns, value, values, names);
+			GetButtonInfo(rect.width, minimumButtonWidth, values.Length, out float buttonWidth, out int rows, out int columns);
+
+			return flags
+				? DrawButtonFlags(rect, buttonWidth, rows, columns, value, values, names)
+				: DrawButtons(rect, buttonWidth, rows, columns, value, values, names);
 		}
 
-		public static void Draw(SerializedProperty property, GUIContent label, Type type, int count)
+		public static void Draw(SerializedProperty property, GUIContent label, Type type, int count, float minimumButtonWidth)
 		{
-			var rect = EditorGUILayout.GetControlRect(false, GetHeight(count, label != null));
-			Draw(rect, property, label, type);
+			var height = GetHeight(count, !string.IsNullOrEmpty(label.text), minimumButtonWidth);
+			var rect = EditorGUILayout.GetControlRect(false, height);
+
+			Draw(rect, property, label, type, minimumButtonWidth);
 		}
 
-		public static void Draw(Rect position, SerializedProperty property, GUIContent label, Type type)
+		public static void Draw(Rect position, SerializedProperty property, GUIContent label, Type type, float minimumButtonWidth)
 		{
 			if (property.propertyType == SerializedPropertyType.Enum)
 			{
-				property.intValue = Draw(position, label, property.intValue, type);
+				property.intValue = Draw(position, label, property.intValue, type, minimumButtonWidth);
 			}
 			else
 			{
@@ -62,13 +65,13 @@ namespace PiRhoSoft.UtilityEditor
 
 		#endregion
 
-		#region Virtual Interface
+		#region Drawer Interface
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
 			if (property.propertyType == SerializedPropertyType.Enum)
 			{
-				return GetHeight(Enum.GetValues(fieldInfo.FieldType).Length, label != null);
+				return GetHeight(Enum.GetValues(fieldInfo.FieldType).Length, !string.IsNullOrEmpty(label.text), (attribute as EnumButtonsAttribute).MinimumWidth);
 			}
 			else
 			{
@@ -79,33 +82,34 @@ namespace PiRhoSoft.UtilityEditor
 
 		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
 		{
-			label.tooltip = GuiHelper.GetTooltip(fieldInfo);
-			Draw(position, property, label, fieldInfo.FieldType);
+			label.tooltip = Label.GetTooltip(fieldInfo);
+			Draw(position, property, label, fieldInfo.FieldType, (attribute as EnumButtonsAttribute).MinimumWidth);
 		}
 
 		#endregion
 
 		#region Drawing
 
-		private static void GetButtonInfo(float width, int count, out float buttonWidth, out int rows, out int columns)
+		private static void GetButtonInfo(float width, float minimumButtonWidth, int count, out float buttonWidth, out int rows, out int columns)
 		{
-			if (width < _minWidth)
+			if (width < minimumButtonWidth)
 			{
 				buttonWidth = width;
 				rows = count;
 				columns = 1;
-				return;
 			}
-
-			rows = 1;
-			columns = count;
-			buttonWidth = width / count;
-
-			while (buttonWidth < _minWidth)
+			else
 			{
-				rows++;
-				columns = Mathf.CeilToInt(count / (float)rows);
-				buttonWidth = width / columns;
+				rows = 1;
+				columns = count;
+				buttonWidth = width / count;
+
+				while (buttonWidth < minimumButtonWidth)
+				{
+					rows++;
+					columns = Mathf.CeilToInt(count / (float)rows);
+					buttonWidth = width / columns;
+				}
 			}
 		}
 
