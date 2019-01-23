@@ -29,7 +29,7 @@ Add this to a string field to show a popup instead of the default text box. The 
 Add this to a ScriptableObject or ScriptableObject derived field to show a popup listing the available assets of the correct type instead of the default asset picker. This will list assets based on their structure in the project folder so for some things it can be easier to find them with this rather than the default asset picker which instead provides a search function.
 
 ```c#
-[AssetPopup] public TimelineAsset Timeline;
+[AssetPopup] public ScriptableObject Asset;
 ```
 
 Configuration properties:
@@ -44,9 +44,18 @@ Configuration properties:
 
 Add this to an enum field to show Unity's EnumFlagsField (which lets you select multiple values) instead of the default enum popup (which only lets you select one value).
 
+```c#
+[FlagsPopup] public Buttons PopupFlags;
+```
+
 **EnumButtons**
 
 Add this to an enum field to show a series of buttons for selecting the enum value rather than the default popup. If the enum type has the *Flags* attribute, the buttons will be toggleable and support multiple selections. Optionally set the *MinimumWidth* property (the default is 40) on the attribute to specify the smallest each button will be displayed, potentially making the field wrap to more lines in the inspector.
+
+```c#
+[Flags]
+[EnumButtons] public Buttons ButtonFlags;
+```
 
 **ListDisplay**
 
@@ -67,6 +76,10 @@ Configuration properties:
 
 Further customization is possible by directly using the ListControl (or one of it's subclasses) in a custom Editor or ObjectControl.
 
+```c#
+[ListDisplay] public StringList StringList = new StringList();
+```
+
 **DictionaryDisplay**
 
 Add this to a SerializedDictionary derived type to show a dictionary editor (by default dictionary editing is unsupported by Unity). This uses the same internals as ListDisplay.
@@ -85,9 +98,17 @@ Configuration properties:
 
 Like ListDisplay, further customization can be made by using DictionaryControl from a custom Editor or ObjectControl.
 
+```c#
+[DictionaryDisplay] public StringDictionary StringDictionary = new StringDictionary();
+```
+
 **InlineDisplay**
 
 Add this to a class or struct type with a *Serializable* attribute to show the fields of the class or struct inline rather than in a foldout. Optionally set the *PropagateLabel* field on the attribute (the default is `false`) to specify the label of the owning field should be used rather than the label for each of the fields in the class or struct. This can be useful for wrapper classes that contain a single field.
+
+```c#
+[InlineDisplay] public Vector2 InlineVector;
+```
 
 **ConditionalDisplay**
 
@@ -104,17 +125,33 @@ Unfortunately, when using this attribute only the default editor for the field w
 
 Add this to any field to disable editing of the field (while still showing it) in the inspector.
 
+```c#
+[DisableInInspector] public float Disabled;
+```
+
 **Maximum**
 
 Add this to an int or float field to disallow selecting of a value higher than a specified value. Set the maximum value in the attribute constructor.
+
+```c#
+[Maximum(100.0f)] public float MaximumFloat;
+```
 
 **Minimum**
 
 Add this to an int or float field to disallow selecting of a value lower than a specified value. Set the minimum value in the attribute constructor.
 
+```c#
+[Minimum(0.0f)] public float MinimumFloat;
+```
+
 **Slider**
 
 Add this to an int or float field to show a slider instead of the default text box. Set the minimum, maximum, and snap values in the attribute constructor.
+
+```c#
+[Slider(0.0f, 10.0f, 1.125f)] public float FloatSlider;
+```
 
 **MinMaxSlider**
 
@@ -128,6 +165,10 @@ Add this to an int or float field to show a two value slider instead of the defa
 **Snap**
 
 Add this to an int or float field to round the selected value to be a multiple of a specified value. Set the snap value in the attribute constructor.
+
+```c#
+[Snap(0.5f)] public float SnapFloat;
+```
 
 ## Wrapper Classes
 
