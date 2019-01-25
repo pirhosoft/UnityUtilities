@@ -7,30 +7,19 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public class Label : StaticContent
 	{
-		public string Text;
-		public string Tooltip;
-
-		public Label(string text, string tooltip = "")
-		{
-			Text = text;
-			Tooltip = tooltip;
-		}
-
-		public Label(string text, Type type, string property)
-		{
-			Text = text;
-			Tooltip = GetTooltip(type, property);
-		}
+		public string Text { get; private set; }
+		public string Tooltip { get; private set; }
 
 		public Label(Type type, string property)
 		{
-			Text = ObjectNames.NicifyVariableName(property);
+			Text = property;
 			Tooltip = GetTooltip(type, property);
 		}
 
 		protected override GUIContent Create()
 		{
-			return new GUIContent(Text, Tooltip);
+			var text = ObjectNames.NicifyVariableName(Text);
+			return new GUIContent(text, Tooltip);
 		}
 
 		#region Tooltips

@@ -5,8 +5,6 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public class TextButton : StaticContent
 	{
-		public static readonly TextButton CreateButton = new TextButton("Create", "Create this item", IconButton.AddName);
-
 		public string Label;
 		public string Tooltip;
 		public string IconName;

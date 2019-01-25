@@ -9,6 +9,11 @@ namespace PiRhoSoft.UtilityEditor
 	public class ListDisplayAttributeControl : PropertyControl
 	{
 		private const string _invalidTypeWarning = "Invalid type for ListDisplay on field {0}: ListDisplay can only be applied to SerializedList or SerializedArray fields";
+
+		private static IconButton _addButton = new IconButton(IconButton.Add, "Add an item to this list");
+		private static IconButton _editButton = new IconButton(IconButton.Edit, "Edit this item");
+		private static IconButton _removeButton = new IconButton(IconButton.Remove, "Remove this item from the list");
+
 		private SerializedProperty _property;
 		private GUIContent _label;
 		private PropertyListControl _listControl = new PropertyListControl();
@@ -43,13 +48,13 @@ namespace PiRhoSoft.UtilityEditor
 						_listControl.MakeDrawable(DrawItemAsAssetPopup).MakeCustomHeight(GetItemAssetPopupHeight);
 
 					if (attribute.AllowAdd)
-						_listControl.MakeAddable(IconButton.Add);
+						_listControl.MakeAddable(_addButton);
 
 					if (attribute.ShowEditButton)
-						_listControl.MakeEditable(IconButton.Edit);
+						_listControl.MakeEditable(_editButton);
 
 					if (attribute.AllowRemove)
-						_listControl.MakeRemovable(IconButton.Remove);
+						_listControl.MakeRemovable(_removeButton);
 
 					if (attribute.AllowReorder)
 						_listControl.MakeReorderable();
@@ -58,7 +63,7 @@ namespace PiRhoSoft.UtilityEditor
 						_listControl.MakeCollapsable(GetOpenPreference(property));
 
 					if (attribute.EmptyText != null)
-						_listControl.MakeEmptyLabel(new Label(attribute.EmptyText));
+						_listControl.MakeEmptyLabel(new GUIContent(attribute.EmptyText));
 				}
 			}
 		}

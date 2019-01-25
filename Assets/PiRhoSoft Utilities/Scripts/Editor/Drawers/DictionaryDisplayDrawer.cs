@@ -9,6 +9,10 @@ namespace PiRhoSoft.UtilityEditor
 	{
 		public const string _invalidTypeWarning = "Invalid type for DictionaryDisplay on field {0}: DictionaryDisplay can only be applied to IEditableDictionary fields";
 
+		private static IconButton _addButton = new IconButton(IconButton.CustomAdd, "Add an item to this dictionary");
+		private static IconButton _editButton = new IconButton(IconButton.Edit, "Edit this item");
+		private static IconButton _removeButton = new IconButton(IconButton.Remove, "Remove this item from the dictionary");
+
 		private IEditableDictionary _dictionary;
 		private DictionaryControl _dictionaryControl = new DictionaryControl();
 		private GUIContent _label;
@@ -38,19 +42,19 @@ namespace PiRhoSoft.UtilityEditor
 						_dictionaryControl.MakeDrawableInline();
 
 					if (attribute.AllowAdd)
-						_dictionaryControl.MakeAddable(IconButton.CustomAdd, attribute.AddLabel == null ? new Label("Add Item") : (attribute.AddLabel == "" ? null : new Label(attribute.AddLabel)));
+						_dictionaryControl.MakeAddable(_addButton, attribute.AddLabel == null ? new GUIContent("Add Item") : (attribute.AddLabel == "" ? GUIContent.none : new GUIContent(attribute.AddLabel)));
 
 					if (attribute.AllowRemove)
-						_dictionaryControl.MakeRemovable(IconButton.Remove);
+						_dictionaryControl.MakeRemovable(_removeButton);
 
 					if (attribute.AllowCollapse)
 						_dictionaryControl.MakeCollapsable(GetOpenPreference(property));
 
 					if (attribute.ShowEditButton)
-						_dictionaryControl.MakeEditable(IconButton.Edit);
+						_dictionaryControl.MakeEditable(_editButton);
 
 					if (attribute.EmptyText != null)
-						_dictionaryControl.MakeEmptyLabel(new Label(attribute.EmptyText));
+						_dictionaryControl.MakeEmptyLabel(new GUIContent(attribute.EmptyText));
 				}
 			}
 		}

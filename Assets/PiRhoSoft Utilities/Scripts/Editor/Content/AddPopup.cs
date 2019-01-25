@@ -14,11 +14,13 @@ namespace PiRhoSoft.UtilityEditor
 
 	public class AddPopup : PopupWindowContent
 	{
+		private static readonly TextButton _createButton = new TextButton("Create", "Create this item", IconButton.Add);
+
 		private IAddContent _content;
-		private Label _label;
+		private GUIContent _label;
 		private bool _valid = true;
 
-		public AddPopup(IAddContent content, Label label)
+		public AddPopup(IAddContent content, GUIContent label)
 		{
 			_content = content;
 			_label = label;
@@ -29,16 +31,16 @@ namespace PiRhoSoft.UtilityEditor
 			var width = 200.0f;
 			var height = 4 + _content.GetHeight() + 20 + 2; // padding, content, button, padding
 
-			if (_label != null)
-				height += 20; // label, spacing
+			if (_label != GUIContent.none)
+				height += EditorGUIUtility.singleLineHeight + 4; // label, spacing
 
 			return new Vector2(width, height);
 		}
 
 		public override void OnGUI(Rect rect)
 		{
-			if (_label != null)
-				EditorGUILayout.LabelField(_label.Content);
+			if (_label != GUIContent.none)
+				EditorGUILayout.LabelField(_label);
 			
 			var create = false;
 
@@ -51,7 +53,7 @@ namespace PiRhoSoft.UtilityEditor
 			}
 
 			using (new EditorGUI.DisabledScope(!_valid))
-				create |= GUILayout.Button(TextButton.CreateButton.Content);
+				create |= GUILayout.Button(_createButton.Content);
 
 			if (create)
 			{

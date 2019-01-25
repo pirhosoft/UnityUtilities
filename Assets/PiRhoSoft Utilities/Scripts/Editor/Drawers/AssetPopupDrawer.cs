@@ -10,6 +10,8 @@ namespace PiRhoSoft.UtilityEditor
 	{
 		private const string _invalidTypeWarning = "Invalid type for AssetPopup on field {0}: AssetPopup can only be applied to ScriptableObject fields";
 
+		private static readonly IconButton _editButton = new IconButton(IconButton.Edit, "Edit this object");
+
 		#region Static Interface
 
 		public static float GetHeight()
@@ -79,7 +81,7 @@ namespace PiRhoSoft.UtilityEditor
 
 				if (asset != null)
 				{
-					if (GUI.Button(editRect, IconButton.Edit.Content, GUIStyle.none))
+					if (GUI.Button(editRect, _editButton.Content, GUIStyle.none))
 						Selection.activeObject = asset;
 				}
 			}

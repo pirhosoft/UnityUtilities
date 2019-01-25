@@ -39,10 +39,13 @@ namespace PiRhoSoft.UtilityEditor
 		public static float ItemDefaultHeight = EditorGUIUtility.singleLineHeight;
 		public const float ItemPadding = 5.0f;
 
+		private static IconButton _expandButton = new IconButton(IconButton.Collapsed, "Expand the contents of this list");
+		private static IconButton _collapseButton = new IconButton(IconButton.Expanded, "Collapse the contents of this list");
+
 		public ReorderableList List { get; private set; } // this is Unity's undocumented list class that does the bulk of the drawing and layout
 
 		private string _collapsablePreference;
-		private Label _emptyLabel;
+		private GUIContent _emptyLabel;
 		private ReorderableList.ElementHeightCallbackDelegate _getElementHeight;
 		private bool _canReorder = false;
 		private Action<int, int> _onReorder;
@@ -81,7 +84,7 @@ namespace PiRhoSoft.UtilityEditor
 			return this;
 		}
 
-		public ListControl MakeEmptyLabel(Label label)
+		public ListControl MakeEmptyLabel(GUIContent label)
 		{
 			_emptyLabel = label;
 			return this;
@@ -284,7 +287,7 @@ namespace PiRhoSoft.UtilityEditor
 			{
 				var arrowRect = RectHelper.TakeLeadingIcon(ref labelRect);
 
-				EditorGUI.LabelField(arrowRect, Visible ? IconButton.Collapse.Content : IconButton.Expand.Content);
+				EditorGUI.LabelField(arrowRect, Visible ? _collapseButton.Content : _expandButton.Content);
 
 				if (GUI.Button(rect, GUIContent.none, GUIStyle.none))
 					Visible = !Visible;
@@ -331,7 +334,7 @@ namespace PiRhoSoft.UtilityEditor
 		private void DrawEmpty(Rect rect)
 		{
 			if (Visible && _emptyLabel != null)
-				EditorGUI.LabelField(rect, _emptyLabel.Content);
+				EditorGUI.LabelField(rect, _emptyLabel);
 			else
 				ReorderableList.defaultBehaviours.DrawNoneElement(rect, false);
 		}

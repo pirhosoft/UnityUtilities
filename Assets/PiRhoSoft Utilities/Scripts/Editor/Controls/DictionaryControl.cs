@@ -48,7 +48,7 @@ namespace PiRhoSoft.UtilityEditor
 			return this;
 		}
 
-		public DictionaryControl MakeAddable(IconButton icon, Label label = null, Action<IEditableDictionary, string> callback = null)
+		public DictionaryControl MakeAddable(IconButton icon, GUIContent label, Action<IEditableDictionary, string> callback = null)
 		{
 			MakeHeaderButton(icon, new AddPopup(new AddItemContent(this), label));
 			_customAdd = callback;
