@@ -4,11 +4,33 @@ using UnityEngine;
 
 namespace PiRhoSoft.UtilityEditor
 {
-	[CustomPropertyDrawer(typeof(ConditionalDisplayAttribute))]
 	public class ConditionalDisplayDrawer : PropertyDrawer
 	{
-		private const string _invalidPropertyWarning = "Invalid Property for ConditionalDisplay on {0}: the referenced field {1} could not be found";
-		private const string _invalidPropertyType = "Invalid Property for ConditionalDisplay on {0}: the referenced field {1} must be an int, bool, float, string, enum, or Object";
+		private const string _invalidPropertyTypeWarning = "Invalid Property for ConditionalDisplay: the field {0} must be an int, bool, float, string, enum, or Object";
+
+		protected bool IsVisible(SerializedProperty property)
+		{
+			var condition = attribute as ConditionalDisplayAttribute;
+
+			switch (property.propertyType)
+			{
+				case SerializedPropertyType.Integer: return property.intValue == condition.IntValue;
+				case SerializedPropertyType.Boolean: return property.boolValue == condition.BoolValue;
+				case SerializedPropertyType.Float: return property.floatValue == condition.FloatValue;
+				case SerializedPropertyType.String: return property.stringValue == condition.StringValue;
+				case SerializedPropertyType.ObjectReference: return property.objectReferenceValue == condition.HasReference;
+				case SerializedPropertyType.Enum: return property.intValue == condition.EnumValue;
+				default: Debug.LogWarningFormat(_invalidPropertyTypeWarning, property.propertyPath); break;
+			}
+
+			return true;
+		}
+	}
+
+	[CustomPropertyDrawer(typeof(ConditionalDisplaySelfAttribute))]
+	public class ConditionalDisplaySelfDrawer : ConditionalDisplayDrawer
+	{
+		private const string _invalidPropertyNameWarning = "Invalid Property for ConditionalDisplaySelf on {0}: the referenced field {1} could not be found";
 
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
@@ -19,7 +41,7 @@ namespace PiRhoSoft.UtilityEditor
 		{
 			// EditorGUI.PropertyField internally knows not to use PropertyDrawers when inside a PropertyDrawer. That
 			// does mean this will bypass any custom drawers for the field type, but at least it won't infinitely
-			// recurse. If this is the case then use ConditionalDrawNextAttribute instead.
+			// recurse. If this is the case then use ConditionalDrawOtherAttribute instead.
 
 			if (GetVisible(property))
 			{
@@ -30,35 +52,53 @@ namespace PiRhoSoft.UtilityEditor
 
 		private bool GetVisible(SerializedProperty property)
 		{
-			return GetVisible(property, attribute as ConditionalDisplayAttribute);
-		}
+			var reference = PropertyHelper.GetSibling(property, (attribute as ConditionalDisplayAttribute).Property);
 
-		private bool GetVisible(SerializedProperty property, ConditionalDisplayAttribute attribute)
-		{
-			var path = property.propertyPath;
-			var index = property.propertyPath.LastIndexOf('.');
-			var conditionPath = index > 0 ? path.Substring(0, index) + "." + attribute.Property : attribute.Property;
-			var conditionProperty = property.serializedObject.FindProperty(conditionPath);
-
-			if (conditionProperty != null)
-			{
-				switch (conditionProperty.propertyType)
-				{
-					case SerializedPropertyType.Integer: return conditionProperty.intValue == attribute.IntValue;
-					case SerializedPropertyType.Boolean: return conditionProperty.boolValue == attribute.BoolValue;
-					case SerializedPropertyType.Float: return conditionProperty.floatValue == attribute.FloatValue;
-					case SerializedPropertyType.String: return conditionProperty.stringValue == attribute.StringValue;
-					case SerializedPropertyType.ObjectReference: return conditionProperty.objectReferenceValue == attribute.HasReference;
-					case SerializedPropertyType.Enum: return conditionProperty.intValue == attribute.EnumValue;
-					default: Debug.LogWarningFormat(_invalidPropertyType, property.propertyPath, attribute.Property); break;
-				}
-			}
+			if (reference != null)
+				return IsVisible(reference);
 			else
-			{
-				Debug.LogWarningFormat(_invalidPropertyWarning, property.propertyPath, attribute.Property);
-			}
+				Debug.LogWarningFormat(_invalidPropertyNameWarning, property.propertyPath, reference.propertyPath);
 
 			return true;
+		}
+	}
+
+	[CustomPropertyDrawer(typeof(ConditionalDisplayOtherAttribute))]
+	public class ConditionalDisplayOtherDrawer : ConditionalDisplayDrawer
+	{
+		private const string _invalidPropertyNameWarning = "Invalid Property for ConditionalDisplayOther on {0}: the referenced field {1} could not be found";
+
+		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+		{
+			var height = EditorGUI.GetPropertyHeight(property);
+
+			if (IsVisible(property))
+			{
+				var reference = PropertyHelper.GetSibling(property, (attribute as ConditionalDisplayAttribute).Property);
+				height += reference != null ? EditorGUI.GetPropertyHeight(reference) : 0;
+			}
+
+			return height;
+		}
+
+		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+		{
+			label.tooltip = Label.GetTooltip(fieldInfo);
+
+			var rect = RectHelper.TakeHeight(ref position, EditorGUI.GetPropertyHeight(property));
+
+			EditorGUI.PropertyField(rect, property, label);
+
+			if (IsVisible(property))
+			{
+				var nextRect = RectHelper.TakeVerticalSpace(ref position);
+				var reference = PropertyHelper.GetSibling(property, (attribute as ConditionalDisplayAttribute).Property);
+
+				if (reference != null)
+					EditorGUI.PropertyField(nextRect, reference);
+				else
+					Debug.LogWarningFormat(_invalidPropertyNameWarning, property.propertyPath, reference.propertyPath);
+			}
 		}
 	}
 }

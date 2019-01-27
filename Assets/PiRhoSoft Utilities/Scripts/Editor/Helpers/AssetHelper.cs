@@ -192,7 +192,8 @@ namespace PiRhoSoft.UtilityEditor
 
 				var index = 0;
 				var count = 0;
-				var prefix = FindCommonPath(list.Assets);
+				var paths = list.Assets.Select(asset => GetPath(asset));
+				var prefix = FindCommonPath(paths);
 
 				if (includeNone) count += 2; // 'None' and separator
 				count += list.Assets.Count;
@@ -233,9 +234,12 @@ namespace PiRhoSoft.UtilityEditor
 			return path.Substring(0, slash + 1);
 		}
 
-		private static string FindCommonPath<AssetType>(List<AssetType> assets) where AssetType : ScriptableObject
+		#endregion
+
+		#region Helpers
+
+		public static string FindCommonPath(IEnumerable<string> paths)
 		{
-			var paths = assets.Select(asset => GetPath(asset));
 			var prefix = paths.FirstOrDefault() ?? "";
 
 			foreach (var path in paths)

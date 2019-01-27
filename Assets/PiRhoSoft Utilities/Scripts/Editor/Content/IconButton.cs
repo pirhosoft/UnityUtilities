@@ -11,6 +11,9 @@ namespace PiRhoSoft.UtilityEditor
 		public const string Edit = "UnityEditor.InspectorWindow";
 		public const string Expanded = "IN foldout focus on";
 		public const string Collapsed = "IN foldout focus";
+		public const string Refresh = "d_preAudioLoopOff";
+		public const string Load = "SceneLoadIn";
+		public const string Unload = "SceneLoadOut";
 
 		public string IconName;
 		public string Tooltip;

@@ -26,7 +26,7 @@ namespace PiRhoSoft.UtilityEditor
 		{
 			var attribute = TypeHelper.GetAttribute<DictionaryDisplayAttribute>(fieldInfo);
 
-			_dictionary = GetObject<IEditableDictionary>(property);
+			_dictionary = PropertyHelper.GetObject<IEditableDictionary>(property);
 
 			if (_dictionary == null)
 			{

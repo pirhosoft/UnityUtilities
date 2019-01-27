@@ -23,14 +23,18 @@ namespace PiRhoSoft.UtilityEditor
 			if (property.propertyType == SerializedPropertyType.Float)
 			{
 				var value = EditorGUI.Slider(position, label, property.floatValue, slider.MinimumValue, slider.MaximumValue);
-				value = SnapDrawer.Snap(value, slider.SnapValue);
+				value = MathHelper.Snap(value, slider.SnapValue);
 				property.floatValue = Mathf.Clamp(value, slider.MinimumValue, slider.MaximumValue);
 			}
 			else if (property.propertyType == SerializedPropertyType.Integer)
 			{
-				var value = EditorGUI.IntSlider(position, label, property.intValue, Mathf.RoundToInt(slider.MinimumValue), Mathf.RoundToInt(slider.MaximumValue));
-				value = Mathf.RoundToInt(SnapDrawer.Snap(value, slider.SnapValue));
-				property.intValue = Mathf.Clamp(value, Mathf.RoundToInt(slider.MinimumValue), Mathf.RoundToInt(slider.MaximumValue));
+				var minimum = Mathf.RoundToInt(slider.MinimumValue);
+				var maximum = Mathf.RoundToInt(slider.MaximumValue);
+				var snap = Mathf.RoundToInt(slider.SnapValue);
+
+				var value = EditorGUI.IntSlider(position, label, property.intValue, minimum, maximum);
+				value = MathHelper.Snap(value, snap);
+				property.intValue = Mathf.Clamp(value, minimum, maximum);
 			}
 			else
 			{

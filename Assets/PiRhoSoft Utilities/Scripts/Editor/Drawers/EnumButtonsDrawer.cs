@@ -28,6 +28,14 @@ namespace PiRhoSoft.UtilityEditor
 			return Draw(rect, label, value, type, minimumButtonWidth);
 		}
 
+		public static int Draw(GUIContent label, int value, bool flags, Array values, GUIContent[] names, float minimumButtonWidth)
+		{
+			var height = GetHeight(values.Length, !string.IsNullOrEmpty(label.text), minimumButtonWidth);
+			var rect = EditorGUILayout.GetControlRect(false, height);
+
+			return Draw(rect, label, value, flags, values, names, minimumButtonWidth);
+		}
+
 		public static int Draw(Rect position, GUIContent label, int value, Type type, float minimumButtonWidth)
 		{
 			var rect = EditorGUI.PrefixLabel(position, label);
@@ -35,11 +43,16 @@ namespace PiRhoSoft.UtilityEditor
 			var values = Enum.GetValues(type);
 			var names = Enum.GetNames(type).Select(name => new GUIContent(name)).ToArray();
 
-			GetButtonInfo(rect.width, minimumButtonWidth, values.Length, out float buttonWidth, out int rows, out int columns);
+			return Draw(rect, label, value, flags, values, names, minimumButtonWidth);
+		}
+
+		public static int Draw(Rect position, GUIContent label, int value, bool flags, Array values, GUIContent[] names, float minimumButtonWidth)
+		{
+			GetButtonInfo(position.width, minimumButtonWidth, values.Length, out float buttonWidth, out int rows, out int columns);
 
 			return flags
-				? DrawButtonFlags(rect, buttonWidth, rows, columns, value, values, names)
-				: DrawButtons(rect, buttonWidth, rows, columns, value, values, names);
+				? DrawButtonFlags(position, buttonWidth, rows, columns, value, values, names)
+				: DrawButtons(position, buttonWidth, rows, columns, value, values, names);
 		}
 
 		public static void Draw(SerializedProperty property, GUIContent label, Type type, int count, float minimumButtonWidth)

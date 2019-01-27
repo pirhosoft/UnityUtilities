@@ -12,7 +12,7 @@ namespace PiRhoSoft.UtilityEditor
 		
 		public sealed override void Setup(SerializedProperty property, FieldInfo fieldInfo)
 		{
-			var target = GetObject<T>(property);
+			var target = PropertyHelper.GetObject<T>(property);
 			Setup(target, property, fieldInfo);
 		}
 

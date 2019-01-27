@@ -4,7 +4,7 @@ namespace PiRhoSoft.UtilityEngine
 {
 	public class ConditionalDisplayAttribute : PropertyAttribute
 	{
-		public string Property { get; private set; }
+		public string Property { get; protected set; }
 
 		public string StringValue;
 		public int EnumValue = 0;
@@ -12,7 +12,15 @@ namespace PiRhoSoft.UtilityEngine
 		public float FloatValue = 0.0f;
 		public bool BoolValue = true;
 		public bool HasReference = true;
+	}
 
-		public ConditionalDisplayAttribute(string property) => Property = property;
+	public class ConditionalDisplaySelfAttribute : ConditionalDisplayAttribute
+	{
+		public ConditionalDisplaySelfAttribute(string property) => Property = property;
+	}
+
+	public class ConditionalDisplayOtherAttribute : ConditionalDisplayAttribute
+	{
+		public ConditionalDisplayOtherAttribute(string property) => Property = property;
 	}
 }
