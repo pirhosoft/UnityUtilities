@@ -14,12 +14,12 @@ namespace PiRhoSoft.UtilityEditor
 
 			switch (property.propertyType)
 			{
-				case SerializedPropertyType.Integer: return property.intValue == condition.IntValue;
-				case SerializedPropertyType.Boolean: return property.boolValue == condition.BoolValue;
-				case SerializedPropertyType.Float: return property.floatValue == condition.FloatValue;
-				case SerializedPropertyType.String: return property.stringValue == condition.StringValue;
-				case SerializedPropertyType.ObjectReference: return property.objectReferenceValue == condition.HasReference;
-				case SerializedPropertyType.Enum: return property.intValue == condition.EnumValue;
+				case SerializedPropertyType.Integer: return condition.Invert ? property.intValue != condition.IntValue : property.intValue == condition.IntValue;
+				case SerializedPropertyType.Boolean: return condition.Invert ? !property.boolValue : property.boolValue;
+				case SerializedPropertyType.Float: return condition.Invert ? property.floatValue != condition.FloatValue : property.floatValue == condition.FloatValue;
+				case SerializedPropertyType.String: return condition.Invert ? property.stringValue != condition.StringValue : property.stringValue == condition.StringValue;
+				case SerializedPropertyType.ObjectReference: return condition.Invert ? property.objectReferenceValue == null : property.objectReferenceValue != null;
+				case SerializedPropertyType.Enum: return condition.Invert ? property.intValue != condition.EnumValue : property.intValue == condition.EnumValue;
 				default: Debug.LogWarningFormat(_invalidPropertyTypeWarning, property.propertyPath); break;
 			}
 

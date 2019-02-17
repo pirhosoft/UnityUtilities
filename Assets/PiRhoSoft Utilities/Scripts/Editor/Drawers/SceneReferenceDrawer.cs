@@ -98,8 +98,8 @@ namespace PiRhoSoft.UtilityEditor
 
 			if (attribute != null)
 			{
-				var method = fieldInfo.DeclaringType.GetMethod(attribute.Creator, BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic);
-				Action creator = () => method?.Invoke(null, null);
+				var method = fieldInfo.DeclaringType.GetMethod(attribute.Creator, BindingFlags.Static | BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+				void creator() => method?.Invoke(method.IsStatic ? null : property.serializedObject.targetObject, null);
 
 				Draw(position, _temporary, label, attribute.Name, creator);
 			}

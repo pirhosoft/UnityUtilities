@@ -1,4 +1,5 @@
 ﻿using UnityEditor;
+using UnityEditor.SceneManagement;
 using UnityEngine;
 
 namespace PiRhoSoft.UtilityEditor
@@ -19,6 +20,7 @@ namespace PiRhoSoft.UtilityEditor
 
 			EditorGUI.BeginChangeCheck();
 			Undo.RecordObject(objectToTrack, objectToTrack.name);
+			PrefabUtility.RecordPrefabInstancePropertyModifications(objectToTrack);
 		}
 
 		public UndoScope(SerializedObject serializedObject)
@@ -42,7 +44,13 @@ namespace PiRhoSoft.UtilityEditor
 				var changed = EditorGUI.EndChangeCheck();
 
 				if (_object && (changed || _forceDirty))
-					EditorUtility.SetDirty(_object);
+				{
+					EditorUtility.SetDirty(_object); // Set dirty doesn't mark scene as dirty
+					if (_object is GameObject obj)
+						EditorSceneManager.MarkSceneDirty(obj.scene);
+					else if (_object is MonoBehaviour behaviour)
+						EditorSceneManager.MarkSceneDirty(behaviour.gameObject.scene);
+				}
 			}
 
 			Undo.CollapseUndoOperations(_group);

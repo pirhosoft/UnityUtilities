@@ -38,8 +38,10 @@ namespace PiRhoSoft.UtilityEditor
 
 				if (attribute != null)
 				{
-					if (attribute.InlineChildren)
-						_dictionaryControl.MakeDrawableInline();
+					if (attribute.AssetType != null)
+						_dictionaryControl.MakeDrawable(ListItemDisplayType.AssetPopup, attribute.AssetType);
+					else if (attribute.ItemDisplay != ListItemDisplayType.Normal)
+						_dictionaryControl.MakeDrawable(attribute.ItemDisplay, null);
 
 					if (attribute.AllowAdd)
 						_dictionaryControl.MakeAddable(_addButton, attribute.AddLabel == null ? new GUIContent("Add Item") : (attribute.AddLabel == "" ? GUIContent.none : new GUIContent(attribute.AddLabel)));

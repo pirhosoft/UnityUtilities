@@ -46,6 +46,26 @@ namespace PiRhoSoft.UtilityEditor
 				Handles.DrawLine(start, end);
 		}
 
+		public static void DrawCircle(Vector2 position, float radius, Color color)
+		{
+			using (new HandleColorScope(color))
+				Handles.DrawSolidDisc(position, Vector3.back, radius);
+		}
+
+		public static void DrawBezier(Vector2 start, Vector2 end, Color color)
+		{
+			var direction = end - start;
+			var dirFactor = Mathf.Clamp(direction.magnitude, 20.0f, 80.0f);
+
+			direction.Normalize();
+			var project = Vector3.Project(direction, Vector3.right);
+
+			var startTan = start + (Vector2)project * dirFactor;
+			var endTan = end - (Vector2)project * dirFactor;
+
+			Handles.DrawBezier(start, end, startTan, endTan, color, null, 3.0f);
+		}
+
 		public static Rect BoundsHandle(Rect bounds, Vector2 snap, Color rectangleOutline, Color rectangleFill, Color circleOutline, Color circleFill, float handleSize = _handleSize)
 		{
 			var selectedPosition = MoveHandle(bounds.center, bounds.size, snap, rectangleOutline, rectangleFill);
@@ -226,30 +246,33 @@ namespace PiRhoSoft.UtilityEditor
 			_pointsCache[2] = HandleUtility.WorldToGUIPoint((Vector3)position - b - b2);
 			_pointsCache[3] = HandleUtility.WorldToGUIPoint((Vector3)position - b + b2);
 			_pointsCache[4] = _pointsCache[0];
-			bool flag = false;
-			int num = 4;
-			for (int i = 0; i < 5; i++)
+
+			var flag = false;
+			var num = 4;
+
+			for (var i = 0; i < 5; i++)
 			{
 				if (_pointsCache[i].y > mousePosition.y != _pointsCache[num].y > mousePosition.y && mousePosition.x < (_pointsCache[num].x - _pointsCache[i].x) * (mousePosition.y - _pointsCache[i].y) / (_pointsCache[num].y - _pointsCache[i].y) + _pointsCache[i].x)
-				{
 					flag = !flag;
-				}
+
 				num = i;
 			}
+
 			if (!flag)
 			{
-				float num2 = -1f;
+				var num2 = -1f;
 				num = 1;
-				for (int j = 0; j < 4; j++)
+
+				for (var j = 0; j < 4; j++)
 				{
-					float num4 = HandleUtility.DistancePointToLineSegment(mousePosition, _pointsCache[j], _pointsCache[num++]);
+					var num4 = HandleUtility.DistancePointToLineSegment(mousePosition, _pointsCache[j], _pointsCache[num++]);
 					if (num4 < num2 || num2 < 0f)
-					{
 						num2 = num4;
-					}
 				}
+
 				return num2;
 			}
+
 			return 0f;
 		}
 	}

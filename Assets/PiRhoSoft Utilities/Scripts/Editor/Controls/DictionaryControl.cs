@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using PiRhoSoft.UtilityEngine;
 using UnityEditor;
 using UnityEditorInternal;
@@ -8,16 +9,22 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public class DictionaryControl : ListControl
 	{
+		private static readonly IconButton _collapseButton = new IconButton(IconButton.Expanded, "Collapse this entry's fields");
+		private static readonly IconButton _expandButton = new IconButton(IconButton.Collapsed, "Expand this entry's fields");
+
 		private SerializedProperty _rootProperty;
 		private SerializedProperty _keysProperty;
 		private SerializedProperty _valuesProperty;
 		private IEditableDictionary _dictionary;
-
-		private bool _drawInline = false;
+		
 		private Action<IEditableDictionary, string> _customAdd;
 		private Action<IEditableDictionary, string> _customEdit;
 		private Action<IEditableDictionary, string> _customRemove;
 		private Action<Rect, IEditableDictionary, string> _customDraw;
+
+		private ListItemDisplayType _itemDisplay = ListItemDisplayType.Normal;
+		private List<bool> _isExpanded = new List<bool>();
+		private Type _assetPopupType;
 
 		public DictionaryControl Setup(SerializedProperty property, IEditableDictionary dictionary)
 		{
@@ -35,10 +42,13 @@ namespace PiRhoSoft.UtilityEditor
 			return this;
 		}
 
-		public DictionaryControl MakeDrawableInline()
+		public DictionaryControl MakeDrawable(ListItemDisplayType itemDisplay, Type assetPopupType = null)
 		{
-			MakeCustomHeight(GetItemInlineHeight);
-			_drawInline = true;
+			MakeCustomHeight(GetItemHeight);
+
+			_itemDisplay = itemDisplay;
+			_assetPopupType = assetPopupType;
+
 			return this;
 		}
 
@@ -50,21 +60,21 @@ namespace PiRhoSoft.UtilityEditor
 
 		public DictionaryControl MakeAddable(IconButton icon, GUIContent label, Action<IEditableDictionary, string> callback = null)
 		{
-			MakeHeaderButton(icon, new AddPopup(new AddItemContent(this), label));
+			MakeHeaderButton(icon, new AddPopup(new AddItemContent(this), label), Color.white);
 			_customAdd = callback;
 			return this;
 		}
 
 		public DictionaryControl MakeRemovable(IconButton icon, Action<IEditableDictionary, string> callback = null)
 		{
-			MakeItemButton(icon, Remove);
+			MakeItemButton(icon, Remove, Color.white);
 			_customRemove = callback;
 			return this;
 		}
 
 		public DictionaryControl MakeEditable(IconButton icon, Action<IEditableDictionary, string> callback = null)
 		{
-			MakeItemButton(icon, Edit);
+			MakeItemButton(icon, Edit, Color.white);
 			_customEdit = callback;
 			return this;
 		}
@@ -100,23 +110,96 @@ namespace PiRhoSoft.UtilityEditor
 			_valuesProperty.DeleteArrayElementAtIndex(index);
 		}
 
-		private float GetItemInlineHeight(int index)
+		public float GetItemHeight(int index)
 		{
 			var property = _valuesProperty.GetArrayElementAtIndex(index);
-			return InlineDisplayDrawer.GetHeight(property);
+
+			switch (_itemDisplay)
+			{
+				case ListItemDisplayType.Normal:
+				{
+					return EditorGUI.GetPropertyHeight(property);
+				}
+				case ListItemDisplayType.Inline:
+				{
+					using (new EditorGUI.IndentLevelScope(1))
+						return RectHelper.LineHeight + InlineDisplayDrawer.GetHeight(property);
+				}
+				case ListItemDisplayType.Foldout:
+				{
+					using (new EditorGUI.IndentLevelScope(1))
+					{
+						var expanded = IsExpanded(index);
+						return expanded ? RectHelper.LineHeight + InlineDisplayDrawer.GetHeight(property) : EditorGUIUtility.singleLineHeight;
+					}
+				}
+				case ListItemDisplayType.AssetPopup:
+				{
+					return AssetPopupDrawer.GetHeight();
+				}
+			}
+
+			return 0.0f;
 		}
 
 		public void DoDefaultDraw(Rect rect, string key, int index)
 		{
-			var labelRect = RectHelper.TakeWidth(ref rect, rect.width * 0.25f);
-			var value = _valuesProperty.GetArrayElementAtIndex(index);
+			var property = _valuesProperty.GetArrayElementAtIndex(index);
 
-			EditorGUI.LabelField(labelRect, key);
+			switch (_itemDisplay)
+			{
+				case ListItemDisplayType.Normal:
+				{
+					var labelRect = RectHelper.TakeWidth(ref rect, rect.width * 0.25f);
 
-			if (_drawInline)
-				InlineDisplayDrawer.Draw(rect, value, null);
-			else
-				EditorGUI.PropertyField(rect, value, GUIContent.none);
+					EditorGUI.LabelField(labelRect, key);
+					EditorGUI.PropertyField(rect, property, GUIContent.none);
+
+					break;
+				}
+				case ListItemDisplayType.Inline:
+				{
+					var labelRect = RectHelper.TakeLine(ref rect);
+
+					EditorGUI.LabelField(labelRect, key, EditorStyles.boldLabel);
+					
+					using (new EditorGUI.IndentLevelScope(1))
+						InlineDisplayDrawer.Draw(rect, property, null);
+
+					break;
+				}
+				case ListItemDisplayType.Foldout:
+				{
+					var expanded = IsExpanded(index);
+					var labelRect = expanded ? RectHelper.TakeLine(ref rect) : RectHelper.TakeWidth(ref rect, rect.width * 0.25f);
+					var foldoutRect = RectHelper.TakeLeadingIcon(ref labelRect);
+
+					using (ColorScope.Color(new Color(0.3f, 0.3f, 0.3f)))
+					{
+						if (GUI.Button(foldoutRect, expanded ? _collapseButton.Content : _expandButton.Content, GUIStyle.none))
+							SetExpanded(index, !expanded);
+					}
+
+					EditorGUI.LabelField(labelRect, key, EditorStyles.boldLabel);
+
+					if (expanded)
+					{
+						using (new EditorGUI.IndentLevelScope(1))
+							InlineDisplayDrawer.Draw(rect, property, null);
+					}
+
+					break;
+				}
+				case ListItemDisplayType.AssetPopup:
+				{
+					var labelRect = RectHelper.TakeWidth(ref rect, rect.width * 0.25f);
+
+					EditorGUI.LabelField(labelRect, key);
+					AssetPopupDrawer.Draw(rect, GUIContent.none, property, _assetPopupType, true, false, true);
+
+					break;
+				}
+			}
 		}
 
 		private void PrepareForEdit()
@@ -183,6 +266,19 @@ namespace PiRhoSoft.UtilityEditor
 				_customDraw(rect, _dictionary, key);
 			else
 				DoDefaultDraw(rect, key, index);
+		}
+
+		private bool IsExpanded(int index)
+		{
+			return index < _isExpanded.Count ? _isExpanded[index] : false;
+		}
+
+		private void SetExpanded(int index, bool isExpanded)
+		{
+			while (_isExpanded.Count <= index)
+				_isExpanded.Add(false);
+
+			_isExpanded[index] = isExpanded;
 		}
 
 		private class AddItemContent : AddNamedItemContent

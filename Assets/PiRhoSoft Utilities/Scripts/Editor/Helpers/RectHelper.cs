@@ -33,7 +33,9 @@ namespace PiRhoSoft.UtilityEditor
 		public static float CurrentIndentWidth => GetIndentWidth(EditorGUI.indentLevel);
 		public static float CurrentLabelWidth => EditorGUIUtility.labelWidth - CurrentIndentWidth;
 		public static float CurrentFieldWidth => CurrentViewWidth - EditorGUIUtility.labelWidth;
-		public static float CurrentViewWidth => GetContextWidth() - LeftMargin - RightMargin;
+		public static float CurrentViewWidth => GetContextWidth() - LeftMargin - RightMargin - ContextMargin;
+
+		public static float ContextMargin { get; set; }
 
 		public static Rect TakeLine(ref Rect full)
 		{
@@ -103,6 +105,15 @@ namespace PiRhoSoft.UtilityEditor
 			var offset = full.width - width;
 			var rect = new Rect(full.x + offset, full.y, width, full.height);
 			full = new Rect(full.x, full.y, offset, full.height);
+			return rect;
+		}
+
+		public static Rect Inset(Rect rect, float padding)
+		{
+			TakeWidth(ref rect, padding);
+			TakeTrailingWidth(ref rect, padding);
+			TakeHeight(ref rect, padding);
+			TakeTrailingHeight(ref rect, padding);
 			return rect;
 		}
 

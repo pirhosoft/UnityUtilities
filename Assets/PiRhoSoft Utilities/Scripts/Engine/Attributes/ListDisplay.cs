@@ -3,6 +3,14 @@ using UnityEngine;
 
 namespace PiRhoSoft.UtilityEngine
 {
+	public enum ListItemDisplayType
+	{
+		Normal,
+		Inline,
+		Foldout,
+		AssetPopup
+	}
+
 	public class ListDisplayAttribute : PropertyAttribute
 	{
 		public bool AllowAdd = true;
@@ -10,8 +18,8 @@ namespace PiRhoSoft.UtilityEngine
 		public bool AllowReorder = true;
 		public bool AllowCollapse = true;
 		public bool ShowEditButton = false;
-		public bool InlineChildren = false;
-		public Type UseAssetPopup = null;
+		public ListItemDisplayType ItemDisplay = ListItemDisplayType.Normal;
+		public Type AssetType = null;
 		public string EmptyText = null;
 	}
 }

@@ -24,6 +24,16 @@ namespace PiRhoSoft.UtilityEngine
 			return snap > 0.0f ? Mathf.Round(value / snap) * snap : value;
 		}
 
+		public static int Wrap(int value, int size)
+		{
+			return (value % size + size) % size;
+		}
+
+		public static float Wrap(float value, float length)
+		{
+			return Mathf.Repeat(value, length);
+		}
+
 		public static int LeastCommonMultiple(int a, int b)
 		{
 			var num1 = a > b ? a : b;

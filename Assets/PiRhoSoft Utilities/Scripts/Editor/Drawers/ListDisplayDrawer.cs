@@ -1,5 +1,4 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using PiRhoSoft.UtilityEngine;
 using UnityEditor;
 using UnityEngine;
@@ -17,7 +16,6 @@ namespace PiRhoSoft.UtilityEditor
 		private SerializedProperty _property;
 		private GUIContent _label;
 		private PropertyListControl _listControl = new PropertyListControl();
-		private Type _assetListType;
 
 		private static string GetOpenPreference(SerializedProperty property)
 		{
@@ -40,12 +38,11 @@ namespace PiRhoSoft.UtilityEditor
 				if (attribute != null)
 				{
 					_listControl.Setup(_property);
-					_assetListType = attribute.UseAssetPopup;
 
-					if (attribute.InlineChildren)
-						_listControl.MakeDrawable(DrawItemInline).MakeCustomHeight(GetItemInlineHeight);
-					else if (attribute.UseAssetPopup != null)
-						_listControl.MakeDrawable(DrawItemAsAssetPopup).MakeCustomHeight(GetItemAssetPopupHeight);
+					if (attribute.AssetType != null)
+						_listControl.MakeDrawable(ListItemDisplayType.AssetPopup, attribute.AssetType);
+					else if (attribute.ItemDisplay != ListItemDisplayType.Normal)
+						_listControl.MakeDrawable(attribute.ItemDisplay, null);
 
 					if (attribute.AllowAdd)
 						_listControl.MakeAddable(_addButton);
@@ -89,29 +86,6 @@ namespace PiRhoSoft.UtilityEditor
 			{
 				EditorGUI.PropertyField(position, property, label);
 			}
-		}
-
-		private float GetItemInlineHeight(int index)
-		{
-			var property = _property.GetArrayElementAtIndex(index);
-			return InlineDisplayDrawer.GetHeight(property);
-		}
-
-		private void DrawItemInline(Rect position, SerializedProperty listProperty, int index)
-		{
-			var property = listProperty.GetArrayElementAtIndex(index);
-			InlineDisplayDrawer.Draw(position, property, null);
-		}
-
-		private float GetItemAssetPopupHeight(int index)
-		{
-			return AssetPopupDrawer.GetHeight();
-		}
-
-		private void DrawItemAsAssetPopup(Rect position, SerializedProperty listProperty, int index)
-		{
-			var property = listProperty.GetArrayElementAtIndex(index);
-			AssetPopupDrawer.Draw(position, GUIContent.none, property, _assetListType, true, false, true);
 		}
 	}
 

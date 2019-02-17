@@ -38,6 +38,7 @@ namespace PiRhoSoft.UtilityEditor
 		public static float CollapsedHeight = EditorGUIUtility.singleLineHeight * 0.5f;
 		public static float ItemDefaultHeight = EditorGUIUtility.singleLineHeight;
 		public const float ItemPadding = 5.0f;
+		public const float TotalMargin = 12.0f; // measured as the width of the rect passed to Draw minus the width of the rect passed to DrawElement
 
 		private static IconButton _expandButton = new IconButton(IconButton.Collapsed, "Expand the contents of this list");
 		private static IconButton _collapseButton = new IconButton(IconButton.Expanded, "Collapse the contents of this list");
@@ -98,27 +99,27 @@ namespace PiRhoSoft.UtilityEditor
 			return this;
 		}
 
-		public ListControl MakeHeaderButton(IconButton icon, Action<Rect> callback)
+		public ListControl MakeHeaderButton(IconButton icon, Action<Rect> callback, Color color)
 		{
-			_headerButtons.Add(new HeaderButton { Icon = icon, Callback = callback });
+			_headerButtons.Add(new HeaderButton { Icon = icon, Callback = callback, Color = color });
 			return this;
 		}
 
-		public ListControl MakeHeaderButton(IconButton icon, GenericMenu menu)
+		public ListControl MakeHeaderButton(IconButton icon, GenericMenu menu, Color color)
 		{
-			_headerButtons.Add(new HeaderButton { Icon = icon, Menu = menu });
+			_headerButtons.Add(new HeaderButton { Icon = icon, Menu = menu, Color = color });
 			return this;
 		}
 
-		public ListControl MakeHeaderButton(IconButton icon, PopupWindowContent popup)
+		public ListControl MakeHeaderButton(IconButton icon, PopupWindowContent popup, Color color)
 		{
-			_headerButtons.Add(new HeaderButton { Icon = icon, Popup = popup});
+			_headerButtons.Add(new HeaderButton { Icon = icon, Popup = popup, Color = color });
 			return this;
 		}
 
-		public ListControl MakeItemButton(IconButton icon, Action<Rect, int> callback)
+		public ListControl MakeItemButton(IconButton icon, Action<Rect, int> callback, Color color)
 		{
-			_itemButtons.Add(new ItemButton { Icon = icon, Callback = callback });
+			_itemButtons.Add(new ItemButton { Icon = icon, Callback = callback, Color = color });
 			return this;
 		}
 
@@ -151,7 +152,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		#region Moving
 
-		private void ElementsMoved(ReorderableList list, int oldIndex, int newIndex)
+		protected virtual void ElementsMoved(ReorderableList list, int oldIndex, int newIndex)
 		{
 			_onReorder?.Invoke(oldIndex, newIndex);
 		}
@@ -162,7 +163,8 @@ namespace PiRhoSoft.UtilityEditor
 
 		public float GetHeight()
 		{
-			return Visible ? List.GetHeight() : HeaderHeight + CollapsedHeight;
+			using (new ContextMarginScope(TotalMargin + GetItemButtonsWidth()))
+				return Visible ? List.GetHeight() : HeaderHeight + CollapsedHeight;
 		}
 
 		private float GetElementHeight(int index)
@@ -180,6 +182,7 @@ namespace PiRhoSoft.UtilityEditor
 			public Action<Rect> Callback;
 			public PopupWindowContent Popup;
 			public GenericMenu Menu;
+			public Color Color;
 
 			public void Press(Rect rect)
 			{
@@ -196,6 +199,7 @@ namespace PiRhoSoft.UtilityEditor
 		{
 			public IconButton Icon;
 			public Action<Rect, int> Callback;
+			public Color Color;
 
 			public void Press(Rect rect, int index)
 			{
@@ -235,6 +239,16 @@ namespace PiRhoSoft.UtilityEditor
 			ClearClickedButton();
 		}
 
+		private float GetHeaderButtonsWidth()
+		{
+			return (RectHelper.IconWidth + RectHelper.HorizontalSpace) * _headerButtons.Count;
+		}
+
+		private float GetItemButtonsWidth()
+		{
+			return (RectHelper.IconWidth + RectHelper.HorizontalSpace) * _itemButtons.Count;
+		}
+
 		#endregion
 
 		#region Drawing
@@ -256,9 +270,12 @@ namespace PiRhoSoft.UtilityEditor
 			var indent = EditorGUI.indentLevel;
 			EditorGUI.indentLevel = 0;
 
-			PreDraw(label);
-			List.DoList(position);
-			PostDraw();
+			using (new ContextMarginScope(TotalMargin + GetItemButtonsWidth()))
+			{
+				PreDraw(label);
+				List.DoList(position);
+				PostDraw();
+			}
 
 			EditorGUI.indentLevel = indent;
 		}
@@ -279,7 +296,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		private void DrawHeader(Rect rect)
 		{
-			var buttonsWidth = (RectHelper.IconWidth + RectHelper.HorizontalSpace) * _headerButtons.Count;
+			var buttonsWidth = GetHeaderButtonsWidth();
 			var buttonsRect = RectHelper.TakeTrailingWidth(ref rect, buttonsWidth);
 			var labelRect = new Rect(rect);
 
@@ -299,10 +316,14 @@ namespace PiRhoSoft.UtilityEditor
 			{
 				for (var i = 0; i < _headerButtons.Count; i++)
 				{
+					var button = _headerButtons[i];
 					var buttonRect = RectHelper.TakeLeadingIcon(ref buttonsRect);
 
-					if (GUI.Button(buttonRect, _headerButtons[i].Icon.Content, GUIStyle.none))
-						SetClickedButton(-1, i, buttonRect);
+					using (ColorScope.ContentColor(button.Color))
+					{
+						if (GUI.Button(buttonRect, button.Icon.Content, GUIStyle.none))
+							SetClickedButton(-1, i, buttonRect);
+					}
 				}
 			}
 		}
@@ -316,15 +337,19 @@ namespace PiRhoSoft.UtilityEditor
 			if (Visible && index < List.count)
 			{
 				var elementRect = RectHelper.AdjustHeight(rect, rect.height - ItemPadding, RectVerticalAlignment.Middle);
-				var buttonsWidth = (RectHelper.IconWidth + RectHelper.HorizontalSpace) * _itemButtons.Count;
+				var buttonsWidth = GetItemButtonsWidth();
 				var buttonsRect = RectHelper.TakeTrailingWidth(ref elementRect, buttonsWidth);
 
 				for (var i = 0; i < _itemButtons.Count; i++)
 				{
+					var button = _itemButtons[i];
 					var buttonRect = RectHelper.AdjustHeight(RectHelper.TakeLeadingIcon(ref buttonsRect), ItemDefaultHeight, RectVerticalAlignment.Top);
 
-					if (GUI.Button(buttonRect, _itemButtons[i].Icon.Content, GUIStyle.none))
-						SetClickedButton(index, i, buttonRect);
+					using (ColorScope.ContentColor(button.Color))
+					{
+						if (GUI.Button(buttonRect, button.Icon.Content, GUIStyle.none))
+							SetClickedButton(index, i, buttonRect);
+					}
 				}
 
 				Draw(elementRect, index);

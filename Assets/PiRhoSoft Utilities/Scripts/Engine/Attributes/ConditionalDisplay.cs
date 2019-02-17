@@ -10,8 +10,7 @@ namespace PiRhoSoft.UtilityEngine
 		public int EnumValue = 0;
 		public int IntValue = 0;
 		public float FloatValue = 0.0f;
-		public bool BoolValue = true;
-		public bool HasReference = true;
+		public bool Invert = false;
 	}
 
 	public class ConditionalDisplaySelfAttribute : ConditionalDisplayAttribute

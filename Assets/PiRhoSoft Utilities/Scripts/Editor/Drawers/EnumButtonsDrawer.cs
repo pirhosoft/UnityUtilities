@@ -15,7 +15,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		public static float GetHeight(int count, bool useLabel, float minimumButtonWidth)
 		{
-			var width = useLabel ? RectHelper.CurrentFieldWidth - RectHelper.CurrentIndentWidth : RectHelper.CurrentViewWidth;
+			var width = useLabel ? RectHelper.CurrentFieldWidth : RectHelper.CurrentViewWidth;
 			GetButtonInfo(width, minimumButtonWidth, count, out float buttonWidth, out int rows, out int columns);
 			return EditorGUIUtility.singleLineHeight * rows;
 		}
@@ -38,21 +38,22 @@ namespace PiRhoSoft.UtilityEditor
 
 		public static int Draw(Rect position, GUIContent label, int value, Type type, float minimumButtonWidth)
 		{
-			var rect = EditorGUI.PrefixLabel(position, label);
 			var flags = TypeHelper.GetAttribute<FlagsAttribute>(type) != null;
 			var values = Enum.GetValues(type);
-			var names = Enum.GetNames(type).Select(name => new GUIContent(name)).ToArray();
+			var names = Enum.GetNames(type).Select(name => new GUIContent(ObjectNames.NicifyVariableName(name))).ToArray();
 
-			return Draw(rect, label, value, flags, values, names, minimumButtonWidth);
+			return Draw(position, label, value, flags, values, names, minimumButtonWidth);
 		}
 
 		public static int Draw(Rect position, GUIContent label, int value, bool flags, Array values, GUIContent[] names, float minimumButtonWidth)
 		{
-			GetButtonInfo(position.width, minimumButtonWidth, values.Length, out float buttonWidth, out int rows, out int columns);
+			var rect = EditorGUI.PrefixLabel(position, label);
+
+			GetButtonInfo(rect.width, minimumButtonWidth, values.Length, out float buttonWidth, out int rows, out int columns);
 
 			return flags
-				? DrawButtonFlags(position, buttonWidth, rows, columns, value, values, names)
-				: DrawButtons(position, buttonWidth, rows, columns, value, values, names);
+				? DrawButtonFlags(rect, buttonWidth, rows, columns, value, values, names)
+				: DrawButtons(rect, buttonWidth, rows, columns, value, values, names);
 		}
 
 		public static void Draw(SerializedProperty property, GUIContent label, Type type, int count, float minimumButtonWidth)
