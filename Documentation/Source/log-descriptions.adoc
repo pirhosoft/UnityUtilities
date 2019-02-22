@@ -1,0 +1,30 @@
+[#manual/log-descriptions]
+## Log Descriptions
+
+### Warnings
+
+UHUVIHU:: {0}'s HelpURL attribute is {1} and should be {2}
+--
+--
+
+UHUVMHU:: {0} does not have a HelpURL attribute
+--
+--
+
+ULDII:: {0} '{1}' on type '{2}' has duplicate id '{3}'
+--
+--
+
+ULDMI:: {0} '{1}' on type '{2}' does not have an id
+--
+--
+
+URIP:: Invalid Resource location: the {0} at path {1} should be beneath a folder called 'Resources' so it can be loaded at runtime
+--
+--
+
+USBSI:: A second instance of SingletonBehaviour type {0} was created
+--
+--
+
+### Errors

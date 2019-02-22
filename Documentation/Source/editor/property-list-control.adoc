@@ -1,0 +1,41 @@
+[#editor/property-list-control]
+
+## PropertyListControl
+
+PiRhoSoft.UtilityEditor.PropertyListControl : <<editor/list-control,ListControl>>
+
+### Description
+
+### Constructors
+
+PropertyListControl()::
+
+### Public Methods
+
+{Decorator} <<editor/property-list-control,PropertyListControl>> Setup({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property)::
+
+{Decorator} <<editor/property-list-control,PropertyListControl>> MakeDrawable({Decorator} link:engine/list-item-display-type.html[ListItemDisplayType] itemDisplay, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] assetPopupType)::
+
+{Decorator} <<editor/property-list-control,PropertyListControl>> MakeDrawable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`3[Action^]<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> callback)::
+
+{Decorator} <<editor/property-list-control,PropertyListControl>> MakeAddable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`1[Action^]<https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^]> callback)::
+
+{Decorator} <<editor/property-list-control,PropertyListControl>> MakeRemovable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^], https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^]> callback)::
+
+{Decorator} <<editor/property-list-control,PropertyListControl>> MakeEditable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^], https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^]> callback)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultAdd()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultEdit({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultRemove({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetItemHeight({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultDraw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] ElementsMoved({Decorator} https://docs.unity3d.com/ScriptReference/ReorderableList.html[ReorderableList^] list, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] oldIndex, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] newIndex)::

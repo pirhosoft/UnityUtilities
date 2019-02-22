@@ -1,0 +1,67 @@
+[#editor/rect-helper]
+
+## RectHelper
+
+PiRhoSoft.UtilityEditor.RectHelper
+
+### Description
+
+### Static Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _VerticalSpace_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _HorizontalSpace_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _IconWidth_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _LineHeight_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _LeftMargin_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _RightMargin_::
+
+### Static Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] CurrentIndentWidth
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] CurrentLabelWidth
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] CurrentFieldWidth
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] CurrentViewWidth
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] ContextMargin
+
+### Static Methods
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLine({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeHeight({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] height)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingHeight({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] height)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeVerticalSpace({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeHorizontalSpace({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] TakeIndent({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLabel({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLeadingIcon({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingIcon({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeWidth({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingWidth({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] Inset({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] padding)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] Adjust({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] height, {Decorator} <<editor/rect-horizontal-alignment,RectHorizontalAlignment>> horizontal, {Decorator} <<editor/rect-vertical-alignment,RectVerticalAlignment>> vertical)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] AdjustHeight({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] height, {Decorator} <<editor/rect-vertical-alignment,RectVerticalAlignment>> alignment)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] AdjustWidth({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width, {Decorator} <<editor/rect-horizontal-alignment,RectHorizontalAlignment>> alignment)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetIndentWidth({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] levels)::

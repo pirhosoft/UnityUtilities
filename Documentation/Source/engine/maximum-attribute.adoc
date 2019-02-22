@@ -1,0 +1,17 @@
+[#engine/maximum-attribute]
+
+## MaximumAttribute
+
+PiRhoSoft.UtilityEngine.MaximumAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+MaximumAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] maximum)::
+
+MaximumAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] maximum)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] MaximumValue

@@ -1,0 +1,15 @@
+[#editor/rect-horizontal-alignment]
+
+## RectHorizontalAlignment
+
+PiRhoSoft.UtilityEditor.RectHorizontalAlignment
+
+### Description
+
+### Values
+
+<<editor/rect-horizontal-alignment,RectHorizontalAlignment>> _Left_::
+
+<<editor/rect-horizontal-alignment,RectHorizontalAlignment>> _Center_::
+
+<<editor/rect-horizontal-alignment,RectHorizontalAlignment>> _Right_::

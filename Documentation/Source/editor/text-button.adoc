@@ -1,0 +1,23 @@
+[#editor/text-button]
+
+## TextButton
+
+PiRhoSoft.UtilityEditor.TextButton : <<editor/static-content,StaticContent>>
+
+### Description
+
+### Constructors
+
+TextButton({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] tooltip, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] iconName)::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Label_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Tooltip_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _IconName_::
+
+### Protected Methods
+
+{Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] Create()::

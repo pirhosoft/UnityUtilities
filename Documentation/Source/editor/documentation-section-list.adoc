@@ -1,0 +1,11 @@
+[#editor/documentation-section-list]
+
+## DocumentationSectionList
+
+PiRhoSoft.UtilityEditor.DocumentationSectionList : link:engine/serialized-list.html[SerializedList]<<<editor/documentation-section,DocumentationSection>>>
+
+### Description
+
+### Constructors
+
+DocumentationSectionList()::

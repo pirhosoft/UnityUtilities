@@ -1,0 +1,23 @@
+[#engine/button-state]
+
+## ButtonState
+
+PiRhoSoft.UtilityEngine.ButtonState : https://docs.microsoft.com/en-us/dotnet/api/System.ValueType[ValueType^]
+
+### Description
+
+### Constructors
+
+ButtonState({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] pressed, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] held, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] released)::
+
+ButtonState({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] button)::
+
+ButtonState({Decorator} https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] key)::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _Pressed_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _Held_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _Released_::

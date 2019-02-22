@@ -1,0 +1,19 @@
+[#editor/access-level]
+
+## AccessLevel
+
+PiRhoSoft.UtilityEditor.AccessLevel
+
+### Description
+
+### Values
+
+<<editor/access-level,AccessLevel>> _Serializable_::
+
+<<editor/access-level,AccessLevel>> _Public_::
+
+<<editor/access-level,AccessLevel>> _Protected_::
+
+<<editor/access-level,AccessLevel>> _Private_::
+
+<<editor/access-level,AccessLevel>> _Internal_::

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace PiRhoSoft.UtilityEditor
 {
@@ -191,6 +192,63 @@ namespace PiRhoSoft.UtilityEditor
 					type = type.BaseType;
 				}
 			}
+		}
+
+		#endregion
+
+		#region Serialization
+
+		// these functions are based on Unity's serialization rules defined here: https://docs.unity3d.com/Manual/script-Serialization.html
+
+		public static List<Type> SerializableTypes = new List<Type>
+		{
+			typeof(bool),
+			typeof(sbyte), typeof(short), typeof(int), typeof(long),
+			typeof(byte), typeof(ushort), typeof(uint), typeof(ulong),
+			typeof(float), typeof(double), typeof(decimal),
+			typeof(char), typeof(string),
+			typeof(Vector2), typeof(Vector3), typeof(Vector4),
+			typeof(Quaternion), typeof(Matrix4x4),
+			typeof(Color), typeof(Color32), typeof(Gradient),
+			typeof(Rect), typeof(RectOffset),
+			typeof(LayerMask), typeof(AnimationCurve), typeof(GUIStyle)
+		};
+
+		public static bool IsSerializable(FieldInfo field)
+		{
+			var included = field.IsPublic || GetAttribute<SerializeField>(field) != null;
+			var excluded = GetAttribute<NonSerializedAttribute>(field) == null;
+			var compatible = !field.IsStatic && !field.IsLiteral && !field.IsInitOnly && IsSerializable(field.FieldType);
+
+			return included && !excluded && compatible;
+		}
+
+		public static bool IsSerializable(Type type)
+		{
+			return IsSerializable(type, false);
+		}
+
+		private static bool IsSerializable(Type type, bool inner)
+		{
+			if (type.IsAbstract)
+				return false; // covers static as well
+
+			if (type.IsEnum)
+				return true;
+
+			if (type.IsGenericType)
+				return !inner && type.GetGenericTypeDefinition() == typeof(List<>) && IsSerializable(type.GetGenericArguments()[0], true);
+
+			if (type.IsArray && IsSerializable(type.GetElementType(), true))
+				return !inner;
+
+			if (typeof(Object).IsAssignableFrom(type))
+				return true;
+
+			if (GetAttribute<SerializableAttribute>(type) != null)
+				return true;
+
+			return SerializableTypes.Contains(type);
 		}
 
 		#endregion

@@ -1,0 +1,41 @@
+[#editor/icon-button]
+
+## IconButton
+
+PiRhoSoft.UtilityEditor.IconButton : <<editor/static-content,StaticContent>>
+
+### Description
+
+### Static Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Add_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _CustomAdd_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Remove_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Edit_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Expanded_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Collapsed_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Refresh_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Load_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Unload_::
+
+### Constructors
+
+IconButton({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] iconName, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] tooltip)::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _IconName_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Tooltip_::
+
+### Protected Methods
+
+{Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] Create()::

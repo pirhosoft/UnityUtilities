@@ -1,0 +1,15 @@
+[#editor/type-popup-drawer]
+
+## TypePopupDrawer
+
+PiRhoSoft.UtilityEditor.TypePopupDrawer
+
+### Description
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] Draw<BaseType>({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] Draw<BaseType>({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::

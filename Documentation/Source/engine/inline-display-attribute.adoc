@@ -1,0 +1,15 @@
+[#engine/inline-display-attribute]
+
+## InlineDisplayAttribute
+
+PiRhoSoft.UtilityEngine.InlineDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+InlineDisplayAttribute()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _PropagateLabel_::

@@ -1,0 +1,11 @@
+[#engine/i-poolable]
+
+## IPoolable
+
+PiRhoSoft.UtilityEngine.IPoolable
+
+### Description
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Reset()::

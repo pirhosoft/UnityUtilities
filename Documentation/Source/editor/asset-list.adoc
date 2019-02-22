@@ -1,0 +1,33 @@
+[#editor/asset-list]
+
+## AssetList
+
+PiRhoSoft.UtilityEditor.AssetList
+
+### Description
+
+### Constructors
+
+AssetList()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] _Type_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _HasNone_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _HasCreate_::
+
+https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][] _Names_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^]> _Assets_::
+
+<<editor/type-list,TypeList>> _Types_::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] GetIndex({Decorator} https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] asset)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] GetAsset({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] GetType({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::

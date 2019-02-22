@@ -178,8 +178,7 @@ namespace PiRhoSoft.UtilityEditor
 			// include the settings in the name so lists of the same type can be created with different settings
 			var listName = string.Format("{0}-{1}-{2}", includeNone, includeCreate, assetType.AssemblyQualifiedName);
 
-			AssetList list;
-			if (!_assetLists.TryGetValue(listName, out list))
+			if (!_assetLists.TryGetValue(listName, out var list))
 			{
 				list = new AssetList { Type = assetType, HasNone = includeNone, HasCreate = includeCreate };
 				_assetLists.Add(listName, list);

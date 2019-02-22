@@ -1,0 +1,17 @@
+[#editor/slider-drawer]
+
+## SliderDrawer
+
+PiRhoSoft.UtilityEditor.SliderDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+
+### Description
+
+### Constructors
+
+SliderDrawer()::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetPropertyHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::

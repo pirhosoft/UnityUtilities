@@ -1,0 +1,20 @@
+{
+  "OutputFolder": "..\\..\\pirhosoft.github.io\\projects\\unity-utilities\\documentation",
+  "SinglePageHtmlFiles": [
+    "Source\\overview.adoc",
+    "Source\\log-descriptions.adoc"
+  ],
+  "MultipageHtmlFiles": [
+    "Source\\all.adoc"
+  ],
+  "PdfFiles": [
+    "Source\\engine-pdf.adoc",
+    "Source\\editor-pdf.adoc"
+  ],
+  "RawFiles": [
+    "Source\\table-of-contents.html"
+  ],
+  "Version": "v10",
+  "GenerateSearch": true,
+  "CopyImages": true
+}

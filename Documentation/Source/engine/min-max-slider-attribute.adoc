@@ -1,0 +1,21 @@
+[#engine/min-max-slider-attribute]
+
+## MinMaxSliderAttribute
+
+PiRhoSoft.UtilityEngine.MinMaxSliderAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+MinMaxSliderAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minValue, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] maxValue, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] snapValue)::
+
+MinMaxSliderAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] minValue, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] maxValue, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] snapValue)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] MinimumValue
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] MaximumValue
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] SnapValue

@@ -1,0 +1,27 @@
+[#editor/log-descriptions]
+
+## LogDescriptions
+
+PiRhoSoft.UtilityEditor.LogDescriptions
+
+### Description
+
+### Constructors
+
+LogDescriptions()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _OutputFile_::
+
+<<editor/documentation-type-category,DocumentationTypeCategory>> _IncludedTypes_::
+
+<<editor/documentation-namespace-list,DocumentationNamespaceList>> _IncludedNamespaces_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _DocumentTemplate_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _MessageTemplate_::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Generate({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] outputFolder)::

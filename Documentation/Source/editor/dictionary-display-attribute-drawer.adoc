@@ -1,0 +1,11 @@
+[#editor/dictionary-display-attribute-drawer]
+
+## DictionaryDisplayAttributeDrawer
+
+PiRhoSoft.UtilityEditor.DictionaryDisplayAttributeDrawer : <<editor/control-drawer,ControlDrawer>><<<editor/dictionary-display-attribute-control,DictionaryDisplayAttributeControl>>>
+
+### Description
+
+### Constructors
+
+DictionaryDisplayAttributeDrawer()::

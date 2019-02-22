@@ -1,0 +1,13 @@
+[#engine/i-pool-info]
+
+## IPoolInfo
+
+PiRhoSoft.UtilityEngine.IPoolInfo
+
+### Description
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Size
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Growth

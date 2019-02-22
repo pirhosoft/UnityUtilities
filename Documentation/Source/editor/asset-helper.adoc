@@ -1,0 +1,47 @@
+[#editor/asset-helper]
+
+## AssetHelper
+
+PiRhoSoft.UtilityEditor.AssetHelper : https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html[AssetPostprocessor^]
+
+### Description
+
+### Static Methods
+
+{Decorator} AssetType CreateAsset<AssetType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name)::
+
+{Decorator} AssetType GetOrCreateAsset<AssetType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] CreateAsset({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] GetOrCreateAsset({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} AssetType GetAsset<AssetType>()::
+
+{Decorator} AssetType GetAssetWithId<AssetType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] id)::
+
+{Decorator} AssetType GetAssetAtPath<AssetType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] path)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] GetAsset({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] assetType)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] GetAssetWithId({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] id, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] GetAssetAtPath({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] path, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<AssetType> ListAssets<AssetType>()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<AssetType> FindAssets<AssetType>()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^]> ListAssets({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] assetType)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^]> FindAssets({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] assetType)::
+
+{Decorator} <<editor/asset-list,AssetList>> GetAssetList<AssetType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeNone, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeCreate)::
+
+{Decorator} <<editor/asset-list,AssetList>> GetAssetList({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] assetType, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeNone, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeCreate)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] FindCommonPath({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<https://docs.microsoft.com/en-us/dotnet/api/System.String[string^]> paths)::
+
+### Constructors
+
+AssetHelper()::

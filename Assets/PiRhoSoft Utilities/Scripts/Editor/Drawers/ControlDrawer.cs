@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace PiRhoSoft.UtilityEditor
 {
-	public class ControlDrawer<T> : PropertyDrawer where T : PropertyControl, new()
+	public class ControlDrawer<ControlType> : PropertyDrawer where ControlType : PropertyControl, new()
 	{
 		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
 		{
@@ -21,20 +21,35 @@ namespace PiRhoSoft.UtilityEditor
 			control.Draw(position, property, label);
 		}
 
-		private Dictionary<string, T> _controls = new Dictionary<string, T>();
+		private class ControlData
+		{
+			public SerializedObject Object;
+			public ControlType Control;
+		}
 
-		private T GetControl(SerializedProperty property)
+		private Dictionary<string, ControlData> _controls = new Dictionary<string, ControlData>();
+
+		private ControlType GetControl(SerializedProperty property)
 		{
 			var path = property.serializedObject.targetObject.name + property.propertyPath;
 
-			if (!_controls.TryGetValue(path, out T control))
+			// if an object is deleted, then a new object with the same name is created (or some other scenarios where
+			// a new serialized object is created wrapping the same object), the property path won't change but the
+			// data in most cases shouldn't be reused
+
+			if (!_controls.TryGetValue(path, out ControlData control) || control.Object != property.serializedObject)
 			{
-				control = new T();
-				control.Setup(property, fieldInfo);
-				_controls.Add(path, control);
+				control = new ControlData
+				{
+					Object = property.serializedObject,
+					Control = new ControlType()
+				};
+
+				control.Control.Setup(property, fieldInfo);
+				_controls[path] = control;
 			}
 
-			return control;
+			return control.Control;
 		}
 	}
 }

@@ -1,0 +1,23 @@
+[#editor/color-scope]
+
+## ColorScope
+
+PiRhoSoft.UtilityEditor.ColorScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+
+### Description
+
+### Static Methods
+
+{Decorator} <<editor/color-scope,ColorScope>> Color({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+
+{Decorator} <<editor/color-scope,ColorScope>> BackgroundColor({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] backgroundColor)::
+
+{Decorator} <<editor/color-scope,ColorScope>> ContentColor({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] contentColor)::
+
+### Constructors
+
+ColorScope({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] backgroundColor, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] contentColor)::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::

@@ -1,0 +1,29 @@
+[#editor/asset-popup-drawer]
+
+## AssetPopupDrawer
+
+PiRhoSoft.UtilityEditor.AssetPopupDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+
+### Description
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+
+{Decorator} AssetType Draw<AssetType>({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} AssetType asset, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showNoneOption, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showEditButton, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showCreateOptions)::
+
+{Decorator} AssetType Draw<AssetType>({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} AssetType asset, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showNoneOption, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showEditButton, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showCreateOptions)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showNoneOption, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showEditButton, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showCreateOptions)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showNoneOption, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showEditButton, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showCreateOptions)::
+
+### Constructors
+
+AssetPopupDrawer()::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetPropertyHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::

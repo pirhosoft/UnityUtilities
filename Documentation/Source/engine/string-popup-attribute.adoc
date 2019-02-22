@@ -1,0 +1,15 @@
+[#engine/string-popup-attribute]
+
+## StringPopupAttribute
+
+PiRhoSoft.UtilityEngine.StringPopupAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+StringPopupAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^][] options)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^][] Options

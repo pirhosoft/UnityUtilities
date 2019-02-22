@@ -1,0 +1,17 @@
+[#engine/snap-attribute]
+
+## SnapAttribute
+
+PiRhoSoft.UtilityEngine.SnapAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+SnapAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] snapValue)::
+
+SnapAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] snapValue)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] SnapValue

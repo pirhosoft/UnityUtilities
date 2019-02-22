@@ -1,0 +1,17 @@
+[#editor/undo-scope]
+
+## UndoScope
+
+PiRhoSoft.UtilityEditor.UndoScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+
+### Description
+
+### Constructors
+
+UndoScope({Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] objectToTrack, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] forceDirty)::
+
+UndoScope({Decorator} https://docs.unity3d.com/ScriptReference/SerializedObject.html[SerializedObject^] serializedObject)::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::

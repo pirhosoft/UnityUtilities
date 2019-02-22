@@ -1,0 +1,11 @@
+[#editor/auto-snapping]
+
+## AutoSnapping
+
+PiRhoSoft.UtilityEditor.AutoSnapping
+
+### Description
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] SetEnabled({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] enabled)::

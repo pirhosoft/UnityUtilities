@@ -8,10 +8,10 @@ namespace PiRhoSoft.UtilityEditor
 		private string _name;
 		private string _default;
 
-		public JsonPreference(string name, string defaultValue)
+		public JsonPreference(string name)
 		{
 			_name = name;
-			_default = defaultValue;
+			_default = "{}";
 		}
 
 		public T Value

@@ -1,0 +1,15 @@
+[#editor/static-style]
+
+## StaticStyle
+
+PiRhoSoft.UtilityEditor.StaticStyle
+
+### Description
+
+### Constructors
+
+StaticStyle({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Func`1[Func^]<https://docs.unity3d.com/ScriptReference/GUIStyle.html[GUIStyle^]> create)::
+
+### Public Properties
+
+{Decorator} https://docs.unity3d.com/ScriptReference/GUIStyle.html[GUIStyle^] Style

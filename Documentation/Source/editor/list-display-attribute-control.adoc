@@ -1,0 +1,19 @@
+[#editor/list-display-attribute-control]
+
+## ListDisplayAttributeControl
+
+PiRhoSoft.UtilityEditor.ListDisplayAttributeControl : <<editor/property-control,PropertyControl>>
+
+### Description
+
+### Constructors
+
+ListDisplayAttributeControl()::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Setup({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo[FieldInfo^] fieldInfo)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::

@@ -1,0 +1,29 @@
+[#editor/scene-reference-drawer]
+
+## SceneReferenceDrawer
+
+PiRhoSoft.UtilityEditor.SceneReferenceDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+
+### Description
+
+### Static Fields
+
+<<editor/icon-button,IconButton>> __loadSceneButton_::
+
+<<editor/icon-button,IconButton>> __unloadSceneButton_::
+
+<<editor/icon-button,IconButton>> __refreshScenesButton_::
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} link:engine/scene-reference.html[SceneReference] scene, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] newSceneName, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action[Action^] creator)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} link:engine/scene-reference.html[SceneReference] scene, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] newSceneName, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action[Action^] newSceneSetup)::
+
+### Constructors
+
+SceneReferenceDrawer()::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::

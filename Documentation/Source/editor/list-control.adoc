@@ -1,0 +1,61 @@
+[#editor/list-control]
+
+## ListControl
+
+PiRhoSoft.UtilityEditor.ListControl
+
+### Description
+
+### Static Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _HeaderHeight_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _CollapsedHeight_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _ItemDefaultHeight_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _ItemPadding_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _TotalMargin_::
+
+### Public Properties
+
+{Decorator} https://docs.unity3d.com/ScriptReference/ReorderableList.html[ReorderableList^] List
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Visible
+
+### Public Methods
+
+{Decorator} <<editor/list-control,ListControl>> MakeCollapsable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] preferenceName)::
+
+{Decorator} <<editor/list-control,ListControl>> MakeEmptyLabel({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+
+{Decorator} <<editor/list-control,ListControl>> MakeReorderable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^], https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^]> callback)::
+
+{Decorator} <<editor/list-control,ListControl>> MakeHeaderButton({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`1[Action^]<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> callback, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+
+{Decorator} <<editor/list-control,ListControl>> MakeHeaderButton({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.unity3d.com/ScriptReference/GenericMenu.html[GenericMenu^] menu, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+
+{Decorator} <<editor/list-control,ListControl>> MakeHeaderButton({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.unity3d.com/ScriptReference/PopupWindowContent.html[PopupWindowContent^] popup, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+
+{Decorator} <<editor/list-control,ListControl>> MakeItemButton({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> callback, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+
+{Decorator} <<editor/list-control,ListControl>> MakeCustomHeight({Decorator} https://docs.unity3d.com/ScriptReference/ElementHeightCallbackDelegate.html[ElementHeightCallbackDelegate^] callback)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+
+### Protected Constructors
+
+ListControl()::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Setup({Decorator} https://docs.unity3d.com/ScriptReference/ReorderableList.html[ReorderableList^] list)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] ElementsMoved({Decorator} https://docs.unity3d.com/ScriptReference/ReorderableList.html[ReorderableList^] list, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] oldIndex, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] newIndex)::

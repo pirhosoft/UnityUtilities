@@ -1,0 +1,37 @@
+[#editor/add-named-item-content]
+
+## AddNamedItemContent
+
+PiRhoSoft.UtilityEditor.AddNamedItemContent : <<editor/i-add-content,IAddContent>>
+
+### Description
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Draw({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] clean)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Validate()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Add()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Reset()::
+
+### Protected Constructors
+
+AddNamedItemContent()::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Add_({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsNameInUse({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight_()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Draw_({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] clean)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Validate_()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Reset_()::

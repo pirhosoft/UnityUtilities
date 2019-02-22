@@ -1,0 +1,25 @@
+[#editor/scene-helper]
+
+## SceneHelper
+
+PiRhoSoft.UtilityEditor.SceneHelper : https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html[AssetPostprocessor^]
+
+### Description
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] RefreshLists()::
+
+{Decorator} <<editor/scene-list,SceneList>> GetSceneList({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeNone, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeCreate)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Scene.html[Scene^] CreateScene({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action[Action^] create)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] AddSceneToBuild({Decorator} https://docs.unity3d.com/ScriptReference/Scene.html[Scene^] scene)::
+
+{Decorator} <<editor/scene-state,SceneState>> CaptureState()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] RestoreState({Decorator} <<editor/scene-state,SceneState>> state)::
+
+### Constructors
+
+SceneHelper()::

@@ -1,0 +1,47 @@
+[#editor/selection-history]
+
+## SelectionHistory
+
+PiRhoSoft.UtilityEditor.SelectionHistory
+
+### Description
+
+### Static Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Window_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _ShowMenu_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _MoveBackMenu_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _MoveForwardMenu_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _EmptyLabel_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _MultipleLabel_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _DeletedLabel_::
+
+<<editor/text-button,TextButton>> _BackButton_::
+
+<<editor/text-button,TextButton>> _ForwardButton_::
+
+### Static Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Current
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.unity3d.com/ScriptReference/Object.html[Object^][]> History
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] CanMoveBack()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] CanMoveForward()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] MoveBack()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] MoveForward()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] GoTo({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Clear()::

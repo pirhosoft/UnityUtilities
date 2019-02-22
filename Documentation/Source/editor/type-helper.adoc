@@ -1,0 +1,49 @@
+[#editor/type-helper]
+
+## TypeHelper
+
+PiRhoSoft.UtilityEditor.TypeHelper
+
+### Description
+
+### Static Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^]> _SerializableTypes_::
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] HasAttribute<AttributeType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} AttributeType GetAttribute<AttributeType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} AttributeType GetAttribute<AttributeType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo[FieldInfo^] field)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] HasAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] attributeType)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Attribute[Attribute^] GetAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] attributeType)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Attribute[Attribute^] GetAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo[FieldInfo^] field, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] attributeType)::
+
+{Decorator} T CreateInstance<T>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsCreatableAs<BaseType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsCreatableAs({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] baseType, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^]> ListDerivedTypes<BaseType>()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^]> ListDerivedTypes({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] baseType)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^]> ListTypesWithAttribute<AttributeType>()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^]> ListTypesWithAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] attributeType)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^]> FindTypes({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Func`2[Func^]<https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^], https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^]> predicate)::
+
+{Decorator} <<editor/type-list,TypeList>> GetTypeList<T>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeNone)::
+
+{Decorator} <<editor/type-list,TypeList>> GetTypeList({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] baseType, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeNone)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsSerializable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo[FieldInfo^] field)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsSerializable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::

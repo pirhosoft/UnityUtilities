@@ -145,7 +145,7 @@ MonoBehaviour:
   StringPopup: Yes
   Asset: {fileID: 11400000, guid: c7559cdbc33f04af1a5a42d2aa5b40a5, type: 3}
   PopupFlags: 3
-  ButtonFlags: 13
+  ButtonFlags: 0
   Buttons: 3
   StringList:
     _items:

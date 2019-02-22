@@ -1,0 +1,17 @@
+[#engine/list-item-display-type]
+
+## ListItemDisplayType
+
+PiRhoSoft.UtilityEngine.ListItemDisplayType
+
+### Description
+
+### Values
+
+<<engine/list-item-display-type,ListItemDisplayType>> _Normal_::
+
+<<engine/list-item-display-type,ListItemDisplayType>> _Inline_::
+
+<<engine/list-item-display-type,ListItemDisplayType>> _Foldout_::
+
+<<engine/list-item-display-type,ListItemDisplayType>> _AssetPopup_::

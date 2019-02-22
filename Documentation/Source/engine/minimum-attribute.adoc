@@ -1,0 +1,17 @@
+[#engine/minimum-attribute]
+
+## MinimumAttribute
+
+PiRhoSoft.UtilityEngine.MinimumAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+MinimumAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimum)::
+
+MinimumAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] minimum)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] MinimumValue

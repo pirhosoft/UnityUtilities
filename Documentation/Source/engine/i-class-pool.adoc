@@ -1,0 +1,15 @@
+[#engine/i-class-pool]
+
+## IClassPool
+
+PiRhoSoft.UtilityEngine.IClassPool<T>
+
+### Description
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Grow()::
+
+{Decorator} T Reserve()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Release({Decorator} T value)::

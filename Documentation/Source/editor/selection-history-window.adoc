@@ -1,0 +1,15 @@
+[#editor/selection-history-window]
+
+## SelectionHistoryWindow
+
+PiRhoSoft.UtilityEditor.SelectionHistoryWindow : https://docs.unity3d.com/ScriptReference/EditorWindow.html[EditorWindow^]
+
+### Description
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Open()::
+
+### Constructors
+
+SelectionHistoryWindow()::

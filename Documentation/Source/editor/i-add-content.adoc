@@ -1,0 +1,19 @@
+[#editor/i-add-content]
+
+## IAddContent
+
+PiRhoSoft.UtilityEditor.IAddContent
+
+### Description
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Draw({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] clean)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Validate()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Add()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Reset()::

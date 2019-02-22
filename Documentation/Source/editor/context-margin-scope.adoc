@@ -1,0 +1,15 @@
+[#editor/context-margin-scope]
+
+## ContextMarginScope
+
+PiRhoSoft.UtilityEditor.ContextMarginScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+
+### Description
+
+### Constructors
+
+ContextMarginScope({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] margin)::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::

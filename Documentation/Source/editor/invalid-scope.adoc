@@ -1,0 +1,17 @@
+[#editor/invalid-scope]
+
+## InvalidScope
+
+PiRhoSoft.UtilityEditor.InvalidScope : <<editor/color-scope,ColorScope>>
+
+### Description
+
+### Static Fields
+
+https://docs.unity3d.com/ScriptReference/Color.html[Color^] _ValidBackground_::
+
+https://docs.unity3d.com/ScriptReference/Color.html[Color^] _InvalidBackground_::
+
+### Constructors
+
+InvalidScope({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] valid)::

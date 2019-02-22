@@ -1,0 +1,17 @@
+[#editor/base64-texture]
+
+## Base64Texture
+
+PiRhoSoft.UtilityEditor.Base64Texture
+
+### Description
+
+### Constructors
+
+Base64Texture({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] base64)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Data
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Texture2D.html[Texture2D^] Texture

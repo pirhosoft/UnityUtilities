@@ -1,0 +1,25 @@
+[#editor/table-of-contents]
+
+## TableOfContents
+
+PiRhoSoft.UtilityEditor.TableOfContents
+
+### Description
+
+### Constructors
+
+TableOfContents()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _OutputFile_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _CodePath_::
+
+<<editor/section-list,SectionList>> _Sections_::
+
+<<editor/template-set,TemplateSet>> _Templates_::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Generate({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] applicationPath, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<<<editor/documentation-category,DocumentationCategory>>> categories, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] outputFolder)::

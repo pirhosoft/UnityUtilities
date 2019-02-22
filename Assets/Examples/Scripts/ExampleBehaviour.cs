@@ -50,7 +50,7 @@ public class ExampleBehaviour : MonoBehaviour
 	[Space]
 
 	public bool ShowConditional = true;
-	[ConditionalDisplaySelf(nameof(ShowConditional), BoolValue = true)] public string ConditionalString;
+	[ConditionalDisplaySelf(nameof(ShowConditional))] public string ConditionalString;
 
 	[DisableInInspector] public float Disabled;
 

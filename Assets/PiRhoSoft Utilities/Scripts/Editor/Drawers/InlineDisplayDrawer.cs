@@ -35,7 +35,7 @@ namespace PiRhoSoft.UtilityEditor
 		{
 			var top = position.y;
 			var end = property.GetEndProperty();
-			var useLabel = label != null;
+			var first = true;
 
 			property.NextVisible(true);
 
@@ -44,18 +44,18 @@ namespace PiRhoSoft.UtilityEditor
 				// Calling GetPropertyHeight changes label to contain the label for property unless the custom label is
 				// passed in so do that if the label is being propagated.
 
-				var height = useLabel ? EditorGUI.GetPropertyHeight(property, label) : EditorGUI.GetPropertyHeight(property);
+				var height = label != null && first ? EditorGUI.GetPropertyHeight(property, label) : EditorGUI.GetPropertyHeight(property);
 				var rect = RectHelper.TakeHeight(ref position, height);
 
-				if (useLabel)
-					EditorGUI.PropertyField(rect, property, label);
+				if (label != null)
+					EditorGUI.PropertyField(rect, property, first ? label : null);
 				else
 					EditorGUI.PropertyField(rect, property);
 
 				RectHelper.TakeHeight(ref position, EditorGUIUtility.standardVerticalSpacing);
 				property.NextVisible(false);
 
-				useLabel = false;
+				first = false;
 			}
 		}
 

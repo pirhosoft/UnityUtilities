@@ -1,0 +1,33 @@
+[#editor/dictionary-control]
+
+## DictionaryControl
+
+PiRhoSoft.UtilityEditor.DictionaryControl : <<editor/list-control,ListControl>>
+
+### Description
+
+### Constructors
+
+DictionaryControl()::
+
+### Public Methods
+
+{Decorator} <<editor/dictionary-control,DictionaryControl>> Setup({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} link:engine/i-editable-dictionary.html[IEditableDictionary] dictionary)::
+
+{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeDrawable({Decorator} link:engine/list-item-display-type.html[ListItemDisplayType] itemDisplay, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] assetPopupType)::
+
+{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeDrawable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`3[Action^]<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> callback)::
+
+{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeAddable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<link:engine/i-editable-dictionary.html[IEditableDictionary], link:engine/i-editable-dictionary.html[IEditableDictionary]> callback)::
+
+{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeRemovable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<link:engine/i-editable-dictionary.html[IEditableDictionary], link:engine/i-editable-dictionary.html[IEditableDictionary]> callback)::
+
+{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeEditable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<link:engine/i-editable-dictionary.html[IEditableDictionary], link:engine/i-editable-dictionary.html[IEditableDictionary]> callback)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetItemHeight({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultDraw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] key, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::

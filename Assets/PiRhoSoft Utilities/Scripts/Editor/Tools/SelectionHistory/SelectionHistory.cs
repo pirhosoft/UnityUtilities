@@ -8,7 +8,7 @@ namespace PiRhoSoft.UtilityEditor
 	public static class SelectionHistory
 	{
 		public const string Window = "History";
-		public const string ShowMenu = "Window/PiRhoSoft Utility/History";
+		public const string ShowMenu = "Window/PiRhoSoft Utility/Selection History";
 		public const string MoveBackMenu = "Edit/Navigation/Move Back &LEFT";
 		public const string MoveForwardMenu = "Edit/Navigation/Move Forward &RIGHT";
 

@@ -1,0 +1,19 @@
+[#editor/input-manager]
+
+## InputManager
+
+PiRhoSoft.UtilityEditor.InputManager
+
+### Description
+
+### Constructors
+
+InputManager()::
+
+### Public Methods
+
+{Decorator} T Create<T>()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Clear()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Update()::

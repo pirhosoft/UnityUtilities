@@ -1,0 +1,73 @@
+[#editor/documentation-generator]
+
+## DocumentationGenerator
+
+PiRhoSoft.UtilityEditor.DocumentationGenerator : https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^]
+
+### Description
+
+### Static Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _CategoryNameTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _CategoryNiceNameTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _CategoryIdTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _TypeNameTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _TypeRawNameTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _TypeNiceNameTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _TypeIdTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _TypeNamespaceTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _TypeFilenameTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _SectionNameTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _SectionNiceNameTag_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _SectionIdTag_::
+
+### Static Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] RootPath
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetCleanName({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetNiceName({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetId({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsTypeIncluded({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} <<editor/documentation-type-category,DocumentationTypeCategory>> includedTypes, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList`1[IList^]<https://docs.microsoft.com/en-us/dotnet/api/System.String[string^]> includedNamespaces)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsTypeIncluded({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList`1[IList^]<https://docs.microsoft.com/en-us/dotnet/api/System.String[string^]> namespaces)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Initialize()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] WriteFile({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] folder, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] filename, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] content)::
+
+### Constructors
+
+DocumentationGenerator()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _OutputDirectory_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<<<editor/documentation-category,DocumentationCategory>>> _Categories_::
+
+<<editor/table-of-contents,TableOfContents>> _TableOfContents_::
+
+<<editor/log-descriptions,LogDescriptions>> _LogDescriptions_::
+
+<<editor/help-url-validator,HelpUrlValidator>> _HelpUrls_::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] SetDefaults()::

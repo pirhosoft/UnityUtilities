@@ -1,0 +1,25 @@
+[#editor/enter-field-drawer]
+
+## EnterFieldDrawer
+
+PiRhoSoft.UtilityEditor.EnterFieldDrawer
+
+### Description
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] DrawInt({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] controlName, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32&[int^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] DrawInt({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] controlName, {Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32&[int^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] DrawFloat({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] controlName, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single&[float^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] DrawFloat({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] controlName, {Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single&[float^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] DrawString({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] controlName, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String&[string^] text)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] DrawString({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] controlName, {Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String&[string^] text)::
+
+### Constructors
+
+EnterFieldDrawer()::

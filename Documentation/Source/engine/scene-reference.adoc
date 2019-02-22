@@ -1,0 +1,35 @@
+[#engine/scene-reference]
+
+## SceneReference
+
+PiRhoSoft.UtilityEngine.SceneReference
+
+### Description
+
+### Static Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<https://docs.microsoft.com/en-us/dotnet/api/System.String[string^], https://docs.microsoft.com/en-us/dotnet/api/System.String[string^]> _SceneMoved_::
+
+### Constructors
+
+SceneReference()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Path_::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsAssigned
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsLoaded
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Scene.html[Scene^] Scene
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Index
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Setup({Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] owner)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Teardown()::

@@ -1,0 +1,15 @@
+[#editor/edit-object-scope]
+
+## EditObjectScope
+
+PiRhoSoft.UtilityEditor.EditObjectScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+
+### Description
+
+### Constructors
+
+EditObjectScope({Decorator} https://docs.unity3d.com/ScriptReference/SerializedObject.html[SerializedObject^] serializedObject)::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::

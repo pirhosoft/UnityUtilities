@@ -1,0 +1,27 @@
+[#editor/type-list]
+
+## TypeList
+
+PiRhoSoft.UtilityEditor.TypeList
+
+### Description
+
+### Constructors
+
+TypeList()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] _BaseType_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _HasNone_::
+
+https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][] _Names_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^]> _Types_::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] GetIndex({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] GetType({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::

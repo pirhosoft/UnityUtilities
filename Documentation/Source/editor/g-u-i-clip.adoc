@@ -1,0 +1,15 @@
+[#editor/g-u-i-clip]
+
+## GUIClip
+
+PiRhoSoft.UtilityEditor.GUIClip
+
+### Description
+
+### Static Properties
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] topmostRect
+
+### Static Methods
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] GetTopRect()::

@@ -1,0 +1,15 @@
+[#editor/scene-state]
+
+## SceneState
+
+PiRhoSoft.UtilityEditor.SceneState
+
+### Description
+
+### Constructors
+
+SceneState()::
+
+### Public Fields
+
+<<editor/scene-data,SceneData>>[] _Scenes_::

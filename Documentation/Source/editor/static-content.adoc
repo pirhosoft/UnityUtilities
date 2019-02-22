@@ -1,0 +1,19 @@
+[#editor/static-content]
+
+## StaticContent
+
+PiRhoSoft.UtilityEditor.StaticContent
+
+### Description
+
+### Public Properties
+
+{Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] Content
+
+### Protected Constructors
+
+StaticContent()::
+
+### Protected Methods
+
+{Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] Create()::

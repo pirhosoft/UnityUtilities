@@ -1,0 +1,27 @@
+[#editor/label]
+
+## Label
+
+PiRhoSoft.UtilityEditor.Label : <<editor/static-content,StaticContent>>
+
+### Description
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetTooltip({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] propertyName)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetTooltip({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo[FieldInfo^] field)::
+
+### Constructors
+
+Label({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] property)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Text
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Tooltip
+
+### Protected Methods
+
+{Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] Create()::

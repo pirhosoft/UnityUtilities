@@ -1,0 +1,17 @@
+[#editor/handle-color-scope]
+
+## HandleColorScope
+
+PiRhoSoft.UtilityEditor.HandleColorScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+
+### Description
+
+### Constructors
+
+HandleColorScope()::
+
+HandleColorScope({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::

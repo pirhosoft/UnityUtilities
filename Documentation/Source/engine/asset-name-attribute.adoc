@@ -1,0 +1,11 @@
+[#engine/asset-name-attribute]
+
+## AssetNameAttribute
+
+PiRhoSoft.UtilityEngine.AssetNameAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+AssetNameAttribute()::

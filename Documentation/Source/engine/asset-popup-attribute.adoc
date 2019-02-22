@@ -1,0 +1,19 @@
+[#engine/asset-popup-attribute]
+
+## AssetPopupAttribute
+
+PiRhoSoft.UtilityEngine.AssetPopupAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+AssetPopupAttribute()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _ShowNone_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _ShowEdit_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _ShowCreate_::

@@ -1,0 +1,47 @@
+[#editor/documentation-category]
+
+## DocumentationCategory
+
+PiRhoSoft.UtilityEditor.DocumentationCategory
+
+### Description
+
+### Constructors
+
+DocumentationCategory()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Name_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _CategoryFilename_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _TypeFilename_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _IncludeInTableOfContents_::
+
+<<editor/documentation-type-category,DocumentationTypeCategory>> _IncludedTypes_::
+
+<<editor/documentation-namespace-list,DocumentationNamespaceList>> _IncludedNamespaces_::
+
+<<editor/documentation-section-list,DocumentationSectionList>> _Sections_::
+
+<<editor/template-set,TemplateSet>> _Templates_::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Id
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] NiceName
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<<<editor/documentation-category,DocumentationCategory>>> AllCategories
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Generate({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<<<editor/documentation-category,DocumentationCategory>>> allCategories, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] outputFolder)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<<<editor/documentation-type,DocumentationType>>> GetTypes()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetLink({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetGenerics({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::

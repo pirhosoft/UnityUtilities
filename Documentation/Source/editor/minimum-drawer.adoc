@@ -1,0 +1,41 @@
+[#editor/minimum-drawer]
+
+## MinimumDrawer
+
+PiRhoSoft.UtilityEditor.MinimumDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+
+### Description
+
+### Static Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] __invalidTypeWarning_::
+
+### Static Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] minimum)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] minimum)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimum)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimum)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] minimum)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] minimum)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimum)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimum)::
+
+### Constructors
+
+MinimumDrawer()::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetPropertyHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::

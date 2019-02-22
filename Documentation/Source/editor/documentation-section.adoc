@@ -1,0 +1,25 @@
+[#editor/documentation-section]
+
+## DocumentationSection
+
+PiRhoSoft.UtilityEditor.DocumentationSection
+
+### Description
+
+### Constructors
+
+DocumentationSection()::
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Name_::
+
+<<editor/declaration-type,DeclarationType>> _IncludedDeclarations_::
+
+<<editor/access-level,AccessLevel>> _IncludedAccessLevels_::
+
+<<editor/member-type,MemberType>> _IncludedMemberTypes_::
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Generate({Decorator} <<editor/documentation-type,DocumentationType>> type, {Decorator} <<editor/documentation-category,DocumentationCategory>> category)::

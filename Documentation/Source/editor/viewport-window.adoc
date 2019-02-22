@@ -1,0 +1,65 @@
+[#editor/viewport-window]
+
+## ViewportWindow
+
+PiRhoSoft.UtilityEditor.ViewportWindow : https://docs.unity3d.com/ScriptReference/EditorWindow.html[EditorWindow^]
+
+### Description
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _ScrollWheelZoomAmount_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _MinimumZoom_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _MaximumZoom_::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] ZoomAmount
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] ViewArea
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Matrix4x4.html[Matrix4x4^] ViewMatrix
+
+### Public Methods
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] WindowToViewport({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] GraphPosition)::
+
+{Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] ViewportToWindow({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] viewportPosition)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] GoTo({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] location, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] zoom)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Reset()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Show({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] location)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] ShowAll({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.unity3d.com/ScriptReference/RectOffset.html[RectOffset^] margin)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Pan({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] screenAmount)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Zoom({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] amount, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] centerPoint)::
+
+### Protected Constructors
+
+ViewportWindow()::
+
+### Protected Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Setup({Decorator} <<editor/input-manager,InputManager>> input)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Teardown()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Process()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] PreDraw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] PostDraw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] UseScrollWheelToZoom()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] UseMouseDragToPan({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] altLeftClick, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] middleClick, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] rightClick)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DrawOffsetBackground({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.unity3d.com/ScriptReference/Texture2D.html[Texture2D^] texture)::

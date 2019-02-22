@@ -1,0 +1,15 @@
+[#editor/float-preference]
+
+## FloatPreference
+
+PiRhoSoft.UtilityEditor.FloatPreference
+
+### Description
+
+### Constructors
+
+FloatPreference({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] defaultValue)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Value

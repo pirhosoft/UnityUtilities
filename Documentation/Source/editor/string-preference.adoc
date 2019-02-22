@@ -1,0 +1,15 @@
+[#editor/string-preference]
+
+## StringPreference
+
+PiRhoSoft.UtilityEditor.StringPreference
+
+### Description
+
+### Constructors
+
+StringPreference({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] defaultValue)::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Value

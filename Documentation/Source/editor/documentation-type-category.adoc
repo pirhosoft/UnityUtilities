@@ -1,0 +1,21 @@
+[#editor/documentation-type-category]
+
+## DocumentationTypeCategory
+
+PiRhoSoft.UtilityEditor.DocumentationTypeCategory
+
+### Description
+
+### Values
+
+<<editor/documentation-type-category,DocumentationTypeCategory>> _Behaviour_::
+
+<<editor/documentation-type-category,DocumentationTypeCategory>> _Asset_::
+
+<<editor/documentation-type-category,DocumentationTypeCategory>> _Class_::
+
+<<editor/documentation-type-category,DocumentationTypeCategory>> _Enum_::
+
+<<editor/documentation-type-category,DocumentationTypeCategory>> _Abstract_::
+
+<<editor/documentation-type-category,DocumentationTypeCategory>> _All_::

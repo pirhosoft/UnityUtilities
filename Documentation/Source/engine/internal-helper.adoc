@@ -1,0 +1,21 @@
+[#engine/internal-helper]
+
+## InternalHelper
+
+PiRhoSoft.UtilityEngine.InternalHelper
+
+### Description
+
+### Static Methods
+
+{Decorator} DelegateType CreateDelegate<DelegateType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo[MethodInfo^] method)::
+
+{Decorator} DelegateType CreateDelegate<DelegateType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] methodName)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Func`1[Func^]<PropertyType> CreateGetDelegate<PropertyType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] propertyName)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`1[Action^]<PropertyType> CreateSetDelegate<PropertyType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] propertyName)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Func`1[Func^]<FieldType> CreateGetField<FieldType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] fieldName)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`1[Action^]<FieldType> CreateSetField<FieldType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] fieldName)::

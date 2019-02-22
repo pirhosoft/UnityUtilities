@@ -1,0 +1,17 @@
+[#engine/priority-queue-node]
+
+## PriorityQueueNode
+
+PiRhoSoft.UtilityEngine.PriorityQueueNode
+
+### Description
+
+### Constructors
+
+PriorityQueueNode()::
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Priority
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] QueueIndex

@@ -1,0 +1,15 @@
+[#editor/rect-vertical-alignment]
+
+## RectVerticalAlignment
+
+PiRhoSoft.UtilityEditor.RectVerticalAlignment
+
+### Description
+
+### Values
+
+<<editor/rect-vertical-alignment,RectVerticalAlignment>> _Top_::
+
+<<editor/rect-vertical-alignment,RectVerticalAlignment>> _Middle_::
+
+<<editor/rect-vertical-alignment,RectVerticalAlignment>> _Bottom_::

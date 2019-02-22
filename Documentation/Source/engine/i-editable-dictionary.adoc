@@ -1,0 +1,13 @@
+[#engine/i-editable-dictionary]
+
+## IEditableDictionary
+
+PiRhoSoft.UtilityEngine.IEditableDictionary : https://docs.microsoft.com/en-us/dotnet/api/System.Collections.ICollection[ICollection^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IDictionary[IDictionary^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable[IEnumerable^]
+
+### Description
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] PrepareForEdit()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] ApplyEdits()::

@@ -1,0 +1,45 @@
+[#editor/list-proxy]
+
+## ListProxy
+
+PiRhoSoft.UtilityEditor.ListProxy : https://docs.microsoft.com/en-us/dotnet/api/System.Collections.ICollection[ICollection^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable[IEnumerable^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]
+
+### Description
+
+### Public Properties
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Count
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] Item
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsFixedSize
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsReadOnly
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsSynchronized
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] SyncRoot
+
+### Public Methods
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Add({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Clear()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Contains({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CopyTo({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Array[Array^] array, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerator[IEnumerator^] GetEnumerator()::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] IndexOf({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Insert({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Remove({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+
+{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] RemoveAt({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+
+### Protected Constructors
+
+ListProxy()::

@@ -1,0 +1,283 @@
+# PiRho Soft Asciidoc Guide
+:icons: font
+:source-highlighter: highlightjs
+:experimental:
+:example-caption!:
+:figure-caption!:
+:table-caption!:
+
+## Asciidoc
+
+* https://asciidoctor.org/docs/user-manual[Asciidoc Manual]
+* https://asciidoctor.org/docs/asciidoc-syntax-quick-reference/[Syntax Reference]
+
+// single line comment
+
+////
+multi
+line
+comment
+////
+
+### Basics
+
+Paragraphs are just plain text split by an empty line.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris a elit sem. Nam et vestibulum metus. Fusce nisi sapien, efficitur eu maximus sed, tristique non ligula. Integer imperdiet porta facilisis. Quisque vel libero elementum nisi mattis maximus sed laoreet dui. Sed vel dictum tortor. Morbi sodales ex nec nulla dictum lobortis. Proin tortor purus, imperdiet id malesuada sed, dignissim non sem. Etiam scelerisque elit at neque tempor, ut condimentum risus ultricies. Vivamus vulputate eu tortor sed viverra. Aenean aliquet finibus tortor, sit amet tincidunt augue posuere ornare. Quisque risus est, maximus a hendrerit sed, eleifend tincidunt odio. Quisque a ante purus. Duis euismod feugiat leo nec ultrices. Curabitur id tempus nunc, ut sollicitudin enim.
+
+Line breaks can be forced with a plus sign at the end like this. +
+The new line will be a part of the same paragraph but separated with a br tag
+
+Text styling: *bold*, _italic_, #highlighted#, ~subscript~, ^superscript^, and `monospace`. Double the symbol to apply the style to part of a word: par**tiallybo**ld. Nesting order matters when applying **__multiple styles__**. Custom classes can be written out [.custom-class]#like this#.
+
+Escape \*symbols* with \ +
++Surround *text* with+ + to escape all contained symbols
+
+#### Block Title
+[.custom-class]
+--
+This is the most basic of blocks. It is used inside other constructs like lists and tables to group content. The title and class are optional and can be applied to any block. 
+--
+
+### Sections
+
+### Level 3 Section
+
+#### Level 4 Section
+
+### Lists
+
+#### Unordered List
+* this is an
+* unordered list
+** with nested items
+** nesting
+*** can
+**** go
+***** deep
+* block content
++
+--
+Block content can be added to items in any of the list types.
+--
+* the end
+
+#### Numbered List
+. this is a
+. numbered list
+.. also with
+.. nested items
+... that go
+.... super
+..... deep
+
+[start=3]
+#### Offset List
+. this list
+. starts at 3
+
+#### Check List
+* [ ] check
+* [x] lists
+* [ ] are
+* [x] done
+* [x] like
+* [ ] this
+
+#### Combined List
+* different
+. list types
+** can be combined
+. with each 
+* other
+
+#### Definition List
+first thing:: definition of the first thing
+second thing:: definition of the second thing
+third thing:: definition of the third thing
+
+#### Question and Answer List
+[qanda]
+How do you do question lists?:: The same as a definition list with the qanda attribute added.
+What about a second entry?:: Obviously that is the same.
+
+### Urls
+
+* Raw urls will be recognized automatically: http://pirhosoft.com
+* Change the label http://pirhosoft.com[like this]
+* Open the link in a new tab http://pirhosoft.com[like this^]
+* For internal links <<page-id,do this>>
+
+This next thing is a horizontal rule
+
+'''
+
+And this next thing is a page break in pdfs
+
+<<<
+
+### Media
+
+.Image
+image::start.png[Alt Text]
+
+.Resized Image
+image::start.png[Alt Text, 200, 200]
+
+.Aligned Image
+[.text-center]
+image::start.png[Alt Text, 200, 200]
+
+Available alignments are text-center, text-left, and text-right
+
+ifdef::backend-multipage_html5[]
+.Floating Image (Html Only)
+[.right]
+image::start.png[Alt Text, 300]
+endif::[]
+
+ifdef::backend-pdf[]
+.Not Floating Image
+image::start.png[Alt Text, 300]
+endif::[]
+
+Fusce non ante nec odio blandit aliquam. Fusce rhoncus risus nec nisi luctus, ut varius sapien ullamcorper. Quisque hendrerit metus a velit rhoncus ultricies non fermentum magna. Proin nec turpis nec massa fringilla blandit. Proin a nunc sed elit semper rutrum id sed sem. Praesent sollicitudin, risus vitae volutpat tempus, mauris ex aliquet orci, ut congue erat dui eget neque. Proin accumsan, turpis a molestie pellentesque, metus lacus pellentesque neque, in efficitur quam metus et libero. Morbi rhoncus nisl sed risus efficitur convallis. Sed ac tincidunt lectus. Suspendisse malesuada vel urna non semper. Nam feugiat sapien nisl, ac blandit tortor faucibus in. Nulla eget orci interdum, luctus nunc eu, consequat risus.
+
+Ut turpis massa, mattis a nisi ut, dignissim sollicitudin ipsum. Vivamus quis fermentum nibh. Vivamus ut rutrum neque, nec facilisis quam. Aenean semper urna eu neque blandit, vel efficitur sapien volutpat. Maecenas aliquam quis mi non sollicitudin. Aenean sodales odio a ipsum sodales cursus. Etiam volutpat libero elit, imperdiet elementum quam cursus non. Interdum et malesuada fames ac ante ipsum primis in faucibus. Vivamus pharetra nisi justo, molestie accumsan tellus blandit et. Praesent porta urna eu aliquam malesuada. Etiam facilisis blandit ligula, ut pellentesque lacus euismod non. In sed malesuada risus. Nam faucibus elit in est maximus gravida.
+
+.Linked Image
+[link=http://pirhosoft.com]
+image::start.png[Alt Text, 200, 200]
+
+#### Inline Images
+--
+Aenean accumsan tellus eu arcu scelerisque, nec tincidunt urna consectetur. image:start.png[Alt Text, 50] Curabitur maximus leo nec auctor pulvinar. Ut velit dui, lobortis vel cursus sit amet, euismod eu eros. Vivamus ipsum magna, venenatis nec nunc ac, elementum gravida ligula. Sed cursus augue id lacus aliquam ornare. Etiam quis mollis turpis. image:start.png[Alt Text, 200, role="left"] In diam massa, mattis facilisis consequat sed, ornare ac ante. Fusce dapibus, enim ac mollis molestie, odio turpis euismod mi, quis lobortis mauris est vitae est. Duis laoreet, nisl ut gravida tempus, ante justo luctus libero, nec semper ante magna nec ex. Maecenas libero velit, feugiat eget sem non, mattis eleifend nisi.
+
+Nunc gravida auctor risus, id pretium odio suscipit quis. Ut suscipit neque non sapien pharetra bibendum non ac neque. Fusce fermentum metus et nunc cursus mollis. In mauris erat, porttitor eu blandit at, accumsan a tellus. Maecenas luctus in lectus quis sodales. Nulla nec nisi eu lorem aliquet lacinia. Donec scelerisque odio ultrices turpis lacinia pulvinar. Quisque non lacus semper, dapibus metus eget, mattis libero. Ut ac turpis nec nunc elementum tristique vitae ac libero. Sed et odio iaculis libero condimentum interdum. Ut lacinia hendrerit cursus. Vivamus luctus fermentum libero, feugiat facilisis lacus.
+--
+
+#### YouTube Video
+video::4xOs599U6OQ[youtube]
+
+#### Icons
+* Key - kbd:[F11]
+* Key Combination - kbd:[Ctrl+Shift+N]
+* Button - btn:[Label]
+* Menu - menu:Menu[Item]
+* Menu Hierarchy - menu:Menu[Submenu > Item]
+* Font Awesome: icon:file[]
+
+### Blocks
+
+#### Literal
+....
+Literal blocks will output all text without doing any transformations.
+Really long lines will show a scrollbar instead of wrapping at the page width. Only actual new lines in the source text will end up as line breaks.
+....
+
+#### Source
+[source,cs]
+----
+// source blocks are the same as literal except they are highlighted with highlight.js
+
+using System;
+
+namespace Namespace
+{
+	class Program <1>
+	{
+		static void Main(string[] args)
+		{
+			var result = 1;
+			var number = int.Parse(args[0]);
+
+			for (var i = number; number > 1; number--) <2>
+				result *= number;
+
+			Console.Write(string.Format("{0} Factorial is {1}", number, result));
+		}
+	}
+}
+----
+<1> Callout 1
+<2> Callout 2
+
+#### Example
+====
+Integer et tempus lectus. Suspendisse feugiat arcu vel sagittis dignissim. Praesent varius, leo id hendrerit hendrerit, mi ipsum viverra urna, ac rutrum elit ex at sapien. Pellentesque varius scelerisque mauris, quis porttitor ex ultrices eget. Morbi porttitor rutrum nisi, id consectetur massa auctor ut. Duis vel vehicula massa, ac laoreet lacus. Aliquam erat volutpat.
+====
+
+Proin condimentum at felis nec semper. Vestibulum venenatis id lectus vel euismod. Cras in dui ac enim ultrices aliquam. Aliquam eu nulla vitae mi varius tempor nec sit amet lectus. Aliquam fringilla eleifend ultricies. Nulla facilisi.
+
+.Sidebar
+****
+Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse vestibulum eu ex non aliquet. Mauris vitae diam hendrerit, porttitor erat nec, sagittis justo. Maecenas ullamcorper augue sit amet felis semper malesuada vel eu risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.
+****
+
+Fusce turpis massa, tincidunt sed ornare id, consequat vel tellus. Duis ornare metus sapien, eget tempor urna suscipit vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. In nec eros sollicitudin, consectetur enim ac, sollicitudin odio.
+
+.Quote
+[quote, Abraham Lincoln, Address delivered at the dedication of the Cemetery at Gettysburg]
+____
+Four score and seven years ago our fathers brought forth on this continent a new nation...
+____
+
+Aliquam commodo eu lectus in lobortis. Sed quis laoreet justo. Sed sed odio molestie, dignissim est vitae, condimentum eros. Vivamus porttitor congue mollis. Nulla ac nisi ipsum. Cras maximus fermentum dolor nec tristique. Donec sollicitudin facilisis turpis. Sed varius varius iaculis. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.
+
+NOTE: Inline note admonition
+
+Proin condimentum at felis nec semper. Vestibulum venenatis id lectus vel euismod. Cras in dui ac enim ultrices aliquam. Aliquam eu nulla vitae mi varius tempor nec sit amet lectus. Aliquam fringilla eleifend ultricies. Nulla facilisi.
+
+[TIP]
+.Block tip Admonition
+====
+Vivamus efficitur ipsum vitae libero tristique molestie. In ornare elementum venenatis. Sed in venenatis eros. Cras efficitur nisi nec augue porttitor, in tristique dolor mollis. Cras ipsum nisl, cursus eget risus et, condimentum eleifend purus. Proin consequat porta tortor id aliquet. Vivamus est purus, euismod sit amet blandit in, volutpat nec mauris. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur tempor consectetur tortor. Pellentesque quis congue leo, quis consequat augue.
+====
+
+Nulla facilisi. Mauris dapibus felis massa. Vestibulum malesuada pharetra porttitor. Cras at posuere ipsum. Nulla dictum ex risus, ornare lobortis erat sodales in. Quisque mollis risus non lobortis pellentesque. Praesent dignissim imperdiet neque, id dignissim arcu pulvinar sit amet. Vivamus ut urna dolor. Nullam orci lorem, mattis eu rhoncus ac, accumsan id nibh. In hac habitasse platea dictumst.
+
+IMPORTANT: Important admonition
+
+Fusce turpis massa, tincidunt sed ornare id, consequat vel tellus. Duis ornare metus sapien, eget tempor urna suscipit vitae. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Interdum et malesuada fames ac ante ipsum primis in faucibus. Nulla facilisi. In nec eros sollicitudin, consectetur enim ac, sollicitudin odio.
+
+CAUTION: Caution admonition
+
+Integer facilisis, nulla sit amet varius fringilla, ante orci aliquam lacus, vitae molestie est nisi vitae diam. Cras dignissim, libero eget facilisis sagittis, tortor sapien sodales risus, at lobortis leo nisi sit amet massa. Maecenas tempus hendrerit urna non rhoncus. Mauris dictum ac nisi id suscipit. Nam ullamcorper leo magna, ut ullamcorper sapien convallis vel. Nulla et risus ante. Vestibulum vestibulum lacinia turpis. Nam mattis dignissim rutrum. Suspendisse faucibus odio dui, vitae lobortis ante feugiat quis.
+
+WARNING: Warning admonition
+
+Nunc vehicula mollis sem a pharetra. Phasellus diam lacus, mollis et elit sed, vehicula fringilla mauris. Sed facilisis vestibulum eros, ut placerat mauris blandit at. Mauris porta eget sem eget congue. Nulla facilisi. In vulputate, lacus a rutrum finibus, augue lectus sagittis justo, in efficitur turpis eros quis nisl.
+
+### Tables
+
+.Table
+|===
+| Row 1 | 1.2 | 1.3
+| Row 2 | 2.2 | 2.3
+| Row 3 | 3.2 | 3.3
+|===
+
+[width=99%]
+.Table With Width
+|===
+| Row 1 | 1.2 | 1.3
+| Row 2 | 2.2 | 2.3
+| Row 3 | 3.2 | 3.3
+|===
+
+.Table With Header
+|===
+| Column 1 | Column 2 | Column 3
+
+| Row 1    | 1.2      | 1.3
+| Row 2    | 2.2      | 2.3
+|===
+
+[cols="1,1,2"]
+.Table With Variable Width Columns
+|===
+| Column 1 | Column 2 | Wide Column 3
+
+| Row 1    | 1.2      | 1.3
+| Row 2    | 2.2      | 2.3
+|===

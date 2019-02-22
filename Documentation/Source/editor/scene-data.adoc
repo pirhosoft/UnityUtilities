@@ -1,0 +1,15 @@
+[#editor/scene-data]
+
+## SceneData
+
+PiRhoSoft.UtilityEditor.SceneData : https://docs.microsoft.com/en-us/dotnet/api/System.ValueType[ValueType^]
+
+### Description
+
+### Public Fields
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _IsActive_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _IsLoaded_::
+
+https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Path_::
