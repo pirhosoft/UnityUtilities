@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-namespace PiRhoSoft.UtilityEngine
+﻿namespace PiRhoSoft.UtilityEngine
 {
 	public interface IReloadable
 	{
@@ -8,8 +6,10 @@ namespace PiRhoSoft.UtilityEngine
 		void OnDisable();
 	}
 
-	public class ReloadOnChangeAttribute : PropertyAttribute
+	public class ReloadOnChangeAttribute : PropertyScopeAttribute
 	{
+		public ReloadOnChangeAttribute() : base(int.MaxValue - 50) { }
+
 		public bool UseAssetPopup = true;
 	}
 }

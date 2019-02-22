@@ -1,12 +1,10 @@
-﻿using UnityEngine;
-
-namespace PiRhoSoft.UtilityEngine
+﻿namespace PiRhoSoft.UtilityEngine
 {
-	public class MaximumAttribute : PropertyAttribute
+	public class MaximumAttribute : PropertyScopeAttribute
 	{
 		public float MaximumValue { get; private set; }
 
-		public MaximumAttribute(float maximum) => MaximumValue = maximum;
-		public MaximumAttribute(int maximum) => MaximumValue = maximum;
+		public MaximumAttribute(float maximum) : base(int.MaxValue - 20) => MaximumValue = maximum;
+		public MaximumAttribute(int maximum) : base(int.MaxValue - 20) => MaximumValue = maximum;
 	}
 }

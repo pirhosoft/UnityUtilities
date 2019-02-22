@@ -1,9 +1,9 @@
-﻿using UnityEngine;
-
-namespace PiRhoSoft.UtilityEngine
+﻿namespace PiRhoSoft.UtilityEngine
 {
-	public class ConditionalDisplayAttribute : PropertyAttribute
+	public abstract class ConditionalDisplayAttribute : PropertyScopeAttribute
 	{
+		protected ConditionalDisplayAttribute() : base(int.MaxValue) { }
+
 		public string Property { get; protected set; }
 
 		public string StringValue;
@@ -15,11 +15,11 @@ namespace PiRhoSoft.UtilityEngine
 
 	public class ConditionalDisplaySelfAttribute : ConditionalDisplayAttribute
 	{
-		public ConditionalDisplaySelfAttribute(string property) => Property = property;
+		public ConditionalDisplaySelfAttribute(string property) : base() => Property = property;
 	}
 
 	public class ConditionalDisplayOtherAttribute : ConditionalDisplayAttribute
 	{
-		public ConditionalDisplayOtherAttribute(string property) => Property = property;
+		public ConditionalDisplayOtherAttribute(string property) : base() => Property = property;
 	}
 }

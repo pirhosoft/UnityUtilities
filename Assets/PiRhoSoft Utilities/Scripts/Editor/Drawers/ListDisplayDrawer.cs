@@ -22,7 +22,7 @@ namespace PiRhoSoft.UtilityEditor
 			return property.serializedObject.targetObject.GetType().Name + "." + property.propertyPath + ".IsOpen";
 		}
 
-		public override void Setup(SerializedProperty property, FieldInfo fieldInfo)
+		public override void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute)
 		{
 			_property = property.FindPropertyRelative("_items");
 
@@ -33,34 +33,32 @@ namespace PiRhoSoft.UtilityEditor
 			}
 			else
 			{
-				var attribute = TypeHelper.GetAttribute<ListDisplayAttribute>(fieldInfo);
+				_listControl.Setup(_property);
 
-				if (attribute != null)
+				if (attribute is ListDisplayAttribute display)
 				{
-					_listControl.Setup(_property);
+					if (display.AssetType != null)
+						_listControl.MakeDrawable(ListItemDisplayType.AssetPopup, display.AssetType);
+					else if (display.ItemDisplay != ListItemDisplayType.Normal)
+						_listControl.MakeDrawable(display.ItemDisplay, null);
 
-					if (attribute.AssetType != null)
-						_listControl.MakeDrawable(ListItemDisplayType.AssetPopup, attribute.AssetType);
-					else if (attribute.ItemDisplay != ListItemDisplayType.Normal)
-						_listControl.MakeDrawable(attribute.ItemDisplay, null);
-
-					if (attribute.AllowAdd)
+					if (display.AllowAdd)
 						_listControl.MakeAddable(_addButton);
 
-					if (attribute.ShowEditButton)
+					if (display.ShowEditButton)
 						_listControl.MakeEditable(_editButton);
 
-					if (attribute.AllowRemove)
+					if (display.AllowRemove)
 						_listControl.MakeRemovable(_removeButton);
 
-					if (attribute.AllowReorder)
+					if (display.AllowReorder)
 						_listControl.MakeReorderable();
 
-					if (attribute.AllowCollapse)
+					if (display.AllowCollapse)
 						_listControl.MakeCollapsable(GetOpenPreference(property));
 
-					if (attribute.EmptyText != null)
-						_listControl.MakeEmptyLabel(new GUIContent(attribute.EmptyText));
+					if (display.EmptyText != null)
+						_listControl.MakeEmptyLabel(new GUIContent(display.EmptyText));
 				}
 			}
 		}

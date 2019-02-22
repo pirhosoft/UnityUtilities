@@ -194,17 +194,25 @@ namespace PiRhoSoft.UtilityEditor
 			{
 				new DocumentationCategory
 				{
-					Name = "Tutorial",
-					IncludeInTableOfContents = true
-				},
-				new DocumentationCategory
-				{
 					Name = "Manual",
 					CategoryFilename = "{CategoryId}.adoc",
 					TypeFilename = "{CategoryId}/{TypeId}.adoc",
 					IncludeInTableOfContents = true,
 					IncludedTypes = DocumentationTypeCategory.Behaviour | DocumentationTypeCategory.Asset | DocumentationTypeCategory.Abstract,
 					IncludedNamespaces = new DocumentationNamespaceList(),
+					ExternalNamespaces = new DocumentationCategory.ExternalNamespaceList
+					{
+						new DocumentationCategory.ExternalNamespace
+						{
+							Namespace = "System.Collections",
+							LinkTemplate = _defaultSystemLink
+						},
+						new DocumentationCategory.ExternalNamespace
+						{
+							Namespace = "Unity",
+							LinkTemplate = _defaultUnityLink
+						}
+					},
 					Templates = new DocumentationCategory.TemplateSet
 					{
 						CategoryFile = _manualDefaultCategoryFile,
@@ -228,11 +236,8 @@ namespace PiRhoSoft.UtilityEditor
 						DecoratorSeparator = _manualDefaultDecoratorSeparator,
 						Parameter = _manualDefaultParameter,
 						ParameterSeparator = _manualDefaultParameterSeparator,
-						SystemLink = _manualDefaultSystemLink,
-						UnityLink = _manualDefaultUnityLink,
-						InternalLink = _manualDefaultInternalLink,
-						CrossLink = _manualDefaultCrossLink,
-						UnknownLink = _manualDefaultUnknownLink
+						InternalLink = _defaultInternalLink,
+						UnknownLink = _defaultUnknownLink
 					},
 					Sections = new DocumentationSectionList
 					{
@@ -250,9 +255,22 @@ namespace PiRhoSoft.UtilityEditor
 					Name = "Reference",
 					CategoryFilename = "{CategoryId}.adoc",
 					TypeFilename = "{CategoryId}/{TypeId}.adoc",
+					IncludeInTableOfContents = true,
 					IncludedTypes = DocumentationTypeCategory.All,
 					IncludedNamespaces = new DocumentationNamespaceList(),
-					IncludeInTableOfContents = true,
+					ExternalNamespaces = new DocumentationCategory.ExternalNamespaceList
+					{
+						new DocumentationCategory.ExternalNamespace
+						{
+							Namespace = "System.Collections",
+							LinkTemplate = _defaultSystemLink
+						},
+						new DocumentationCategory.ExternalNamespace
+						{
+							Namespace = "Unity",
+							LinkTemplate = _defaultUnityLink
+						}
+					},
 					Templates = new DocumentationCategory.TemplateSet
 					{
 						CategoryFile = _referenceDefaultCategoryFile,
@@ -276,11 +294,8 @@ namespace PiRhoSoft.UtilityEditor
 						DecoratorSeparator = _referenceDefaultDecoratorSeparator,
 						Parameter = _referenceDefaultParameter,
 						ParameterSeparator = _referenceDefaultParameterSeparator,
-						SystemLink = _referenceDefaultSystemLink,
-						UnityLink = _referenceDefaultUnityLink,
-						InternalLink = _referenceDefaultInternalLink,
-						CrossLink = _referenceDefaultCrossLink,
-						UnknownLink = _referenceDefaultUnknownLink
+						InternalLink = _defaultInternalLink,
+						UnknownLink = _defaultUnknownLink
 					},
 					Sections = new DocumentationSectionList
 					{
@@ -402,12 +417,22 @@ namespace PiRhoSoft.UtilityEditor
 			};
 		}
 
+		#region Default Link Templates
+
+		private const string _defaultSystemLink = "https://docs.microsoft.com/en-us/dotnet/api/{TypeNamespace}.{TypeRawName}[{TypeName}^]";
+		private const string _defaultUnityLink = "https://docs.unity3d.com/ScriptReference/{TypeName}.html[{TypeName}^]";
+		private const string _defaultInternalLink = "<<{CategoryId}/{TypeId},{TypeNiceName}>>";
+		private const string _defaultCrossLink = "link:{CategoryId}/{TypeId}.html[{TypeName}^]";
+		private const string _defaultUnknownLink = "{TypeName}";
+
+		#endregion
+
 		#region Default Manual Templates
 
 		private const string _manualDefaultCategoryFile = ":imagesdir: {CategoryId}/\n\n{Types}";
 		private const string _manualDefaultType = "include::{TypeFilename}[]";
 		private const string _manualDefaultTypeSeparator = "\n\n<<<\n\n";
-		private const string _manualDefaultTypeFile = @"[#{CategoryId}/{TypeId}]\n\n## {TypeNiceName}\n\n{Sections}\n\nifdef::backend-multipage_html5[]\nlink:reference/{TypeId}.html[Reference]\nendif::[]";
+		private const string _manualDefaultTypeFile = "[#{CategoryId}/{TypeId}]\n\n## {TypeNiceName}\n\n{Sections}\n\nifdef::backend-multipage_html5[]\nlink:reference/{TypeId}.html[Reference]\nendif::[]";
 		private const string _manualDefaultBaseOpener = "";
 		private const string _manualDefaultBaseSeparator = "";
 		private const string _manualDefaultGeneric = "_{Name}_";
@@ -415,21 +440,16 @@ namespace PiRhoSoft.UtilityEditor
 		private const string _manualDefaultGenericCloser = "";
 		private const string _manualDefaultGenericSeparator = "";
 		private const string _manualDefaultSectionSeparator = "";
-		private const string _manualDefaultSection = "### {SectionName}\n{Members}";
+		private const string _manualDefaultSection = "### {SectionName}\n\n{Members}";
 		private const string _manualDefaultConstructor = "";
-		private const string _manualDefaultField = "{Type} _{NiceName}_::\n";
+		private const string _manualDefaultField = "{Type} _{NiceName}_::";
 		private const string _manualDefaultProperty = "";
 		private const string _manualDefaultMethod = "";
-		private const string _manualDefaultMemberSeparator = "\n";
+		private const string _manualDefaultMemberSeparator = "\n\n";
 		private const string _manualDefaultDecorator = "";
 		private const string _manualDefaultDecoratorSeparator = "";
 		private const string _manualDefaultParameter = "";
 		private const string _manualDefaultParameterSeparator = "";
-		private const string _manualDefaultSystemLink = "https://docs.microsoft.com/en-us/dotnet/api/{TypeNamespace}.{TypeRawName}[{TypeName}^]";
-		private const string _manualDefaultUnityLink = "https://docs.unity3d.com/ScriptReference/{TypeName}.html[{TypeName}^]";
-		private const string _manualDefaultInternalLink = "<<{CategoryId}/{TypeId},{TypeNiceName}>>";
-		private const string _manualDefaultCrossLink = "link:{CategoryId}/{TypeId}.html[{TypeName}]";
-		private const string _manualDefaultUnknownLink = "{TypeName}";
 
 		#endregion
 
@@ -438,7 +458,7 @@ namespace PiRhoSoft.UtilityEditor
 		private const string _referenceDefaultCategoryFile = ":imagesdir: {CategoryId}/\n\n{Types}";
 		private const string _referenceDefaultType = "include::{TypeFilename}[]";
 		private const string _referenceDefaultTypeSeparator = "\n\n<<<\n\n";
-		private const string _referenceDefaultTypeFile = @"[#{CategoryId}/{TypeId}]\n\n## {TypeName}\n\n{TypeNamespace}.{TypeName}{Generics}{Bases}\n\n### Description\n\n{Sections}";
+		private const string _referenceDefaultTypeFile = "[#{CategoryId}/{TypeId}]\n\n## {TypeName}\n\n{TypeNamespace}.{TypeName}{Generics}{Bases}\n\n### Description\n\n{Sections}";
 		private const string _referenceDefaultBaseOpener = " : ";
 		private const string _referenceDefaultBaseSeparator = ", ";
 		private const string _referenceDefaultGeneric = "_{Name}_";
@@ -452,15 +472,10 @@ namespace PiRhoSoft.UtilityEditor
 		private const string _referenceDefaultProperty = "{Type} _{Name}_{Decorators}::";
 		private const string _referenceDefaultMethod = "{Type} {Name}({Parameters}){Decorators}::";
 		private const string _referenceDefaultMemberSeparator = "\n\n";
-		private const string _referenceDefaultDecorator = " {Name}";
+		private const string _referenceDefaultDecorator = " _({Name})_";
 		private const string _referenceDefaultDecoratorSeparator = "";
 		private const string _referenceDefaultParameter = "{Type} {Name}{Decorators}";
 		private const string _referenceDefaultParameterSeparator = ", ";
-		private const string _referenceDefaultSystemLink = "https://docs.microsoft.com/en-us/dotnet/api/{TypeNamespace}.{TypeRawName}[{TypeName}^]";
-		private const string _referenceDefaultUnityLink = "https://docs.unity3d.com/ScriptReference/{TypeName}.html[{TypeName}^]";
-		private const string _referenceDefaultInternalLink = "<<{CategoryId}/{TypeId},{TypeName}>>";
-		private const string _referenceDefaultCrossLink = "link:{CategoryId}/{TypeId}.html[{TypeName}]";
-		private const string _referenceDefaultUnknownLink = "{TypeName}";
 
 		#endregion
 

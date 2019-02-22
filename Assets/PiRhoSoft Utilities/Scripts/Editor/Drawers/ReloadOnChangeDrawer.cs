@@ -1,15 +1,30 @@
-﻿using PiRhoSoft.UtilityEngine;
+﻿using System;
+using System.Reflection;
+using PiRhoSoft.UtilityEngine;
 using UnityEditor;
 using UnityEngine;
 
 namespace PiRhoSoft.UtilityEditor
 {
-	[CustomPropertyDrawer(typeof(ReloadOnChangeAttribute))]
-	public class ReloadOnChangeDrawer : PropertyDrawer
+	public class ReloadOnChangeControl : PropertyScopeControl
 	{
 		private const string _notReloadableWarning = "Invalid owner for ReloadOnChange on field {0}: A class containing a field with ReloadOnChange must implement IReloadable";
 
-		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+		private Type _assetType;
+
+		public override void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute)
+		{
+			base.Setup(property, fieldInfo, attribute);
+
+			_assetType = (attribute as ReloadOnChangeAttribute).UseAssetPopup && property.propertyType == SerializedPropertyType.ObjectReference && typeof(ScriptableObject).IsAssignableFrom(fieldInfo.FieldType) ? fieldInfo.FieldType : null;
+		}
+
+		public override float GetHeight(SerializedProperty property, GUIContent label)
+		{
+			return GetNextHeight(property, label);
+		}
+
+		public override void Draw(Rect position, SerializedProperty property, GUIContent label)
 		{
 			using (var changes = new EditorGUI.ChangeCheckScope())
 			{
@@ -18,10 +33,10 @@ namespace PiRhoSoft.UtilityEditor
 				if (reloadable == null)
 					Debug.LogWarningFormat(_notReloadableWarning, property.propertyPath);
 
-				if (property.propertyType == SerializedPropertyType.ObjectReference && typeof(ScriptableObject).IsAssignableFrom(fieldInfo.FieldType) && (attribute as ReloadOnChangeAttribute).UseAssetPopup)
-					AssetPopupDrawer.Draw(position, label, property, fieldInfo.FieldType, true, true, true);
+				if (_assetType != null)
+					AssetPopupDrawer.Draw(position, label, property, _assetType, true, true, true);
 				else
-					EditorGUI.PropertyField(position, property, label);
+					DrawNext(position, property, label);
 
 				if (changes.changed && reloadable != null)
 				{
@@ -33,5 +48,10 @@ namespace PiRhoSoft.UtilityEditor
 				}
 			}
 		}
+	}
+
+	[CustomPropertyDrawer(typeof(ReloadOnChangeAttribute))]
+	public class ReloadOnChangeDrawer : ControlDrawer<ReloadOnChangeControl>
+	{
 	}
 }

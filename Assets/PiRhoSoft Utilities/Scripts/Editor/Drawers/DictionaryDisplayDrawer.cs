@@ -22,10 +22,8 @@ namespace PiRhoSoft.UtilityEditor
 			return property.serializedObject.targetObject.GetType().Name + "." + property.propertyPath + ".IsOpen";
 		}
 
-		public override void Setup(SerializedProperty property, FieldInfo fieldInfo)
+		public override void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute)
 		{
-			var attribute = TypeHelper.GetAttribute<DictionaryDisplayAttribute>(fieldInfo);
-
 			_dictionary = PropertyHelper.GetObject<IEditableDictionary>(property);
 
 			if (_dictionary == null)
@@ -36,27 +34,27 @@ namespace PiRhoSoft.UtilityEditor
 			{
 				_dictionaryControl.Setup(property, _dictionary);
 
-				if (attribute != null)
+				if (attribute is DictionaryDisplayAttribute display)
 				{
-					if (attribute.AssetType != null)
-						_dictionaryControl.MakeDrawable(ListItemDisplayType.AssetPopup, attribute.AssetType);
-					else if (attribute.ItemDisplay != ListItemDisplayType.Normal)
-						_dictionaryControl.MakeDrawable(attribute.ItemDisplay, null);
+					if (display.AssetType != null)
+						_dictionaryControl.MakeDrawable(ListItemDisplayType.AssetPopup, display.AssetType);
+					else if (display.ItemDisplay != ListItemDisplayType.Normal)
+						_dictionaryControl.MakeDrawable(display.ItemDisplay, null);
 
-					if (attribute.AllowAdd)
-						_dictionaryControl.MakeAddable(_addButton, attribute.AddLabel == null ? new GUIContent("Add Item") : (attribute.AddLabel == "" ? GUIContent.none : new GUIContent(attribute.AddLabel)));
+					if (display.AllowAdd)
+						_dictionaryControl.MakeAddable(_addButton, display.AddLabel == null ? new GUIContent("Add Item") : (display.AddLabel == "" ? GUIContent.none : new GUIContent(display.AddLabel)));
 
-					if (attribute.AllowRemove)
+					if (display.AllowRemove)
 						_dictionaryControl.MakeRemovable(_removeButton);
 
-					if (attribute.AllowCollapse)
+					if (display.AllowCollapse)
 						_dictionaryControl.MakeCollapsable(GetOpenPreference(property));
 
-					if (attribute.ShowEditButton)
+					if (display.ShowEditButton)
 						_dictionaryControl.MakeEditable(_editButton);
 
-					if (attribute.EmptyText != null)
-						_dictionaryControl.MakeEmptyLabel(new GUIContent(attribute.EmptyText));
+					if (display.EmptyText != null)
+						_dictionaryControl.MakeEmptyLabel(new GUIContent(display.EmptyText));
 				}
 			}
 		}

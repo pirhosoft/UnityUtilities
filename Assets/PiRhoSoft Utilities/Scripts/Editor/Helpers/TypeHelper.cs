@@ -217,7 +217,7 @@ namespace PiRhoSoft.UtilityEditor
 		public static bool IsSerializable(FieldInfo field)
 		{
 			var included = field.IsPublic || GetAttribute<SerializeField>(field) != null;
-			var excluded = GetAttribute<NonSerializedAttribute>(field) == null;
+			var excluded = GetAttribute<NonSerializedAttribute>(field) != null;
 			var compatible = !field.IsStatic && !field.IsLiteral && !field.IsInitOnly && IsSerializable(field.FieldType);
 
 			return included && !excluded && compatible;

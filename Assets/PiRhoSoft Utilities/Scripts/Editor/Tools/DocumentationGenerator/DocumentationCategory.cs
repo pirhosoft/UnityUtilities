@@ -42,12 +42,19 @@ namespace PiRhoSoft.UtilityEditor
 			[TextArea(2, 8)] public string Decorator = "{Name} ";
 			[TextArea(2, 8)] public string DecoratorSeparator = "";
 
-			public string SystemLink = "{TypeName} (https://docs.microsoft.com/en-us/dotnet/api/{TypeNamespace}.{TypeRawName})";
-			public string UnityLink = "{TypeName} (https://docs.unity3d.com/ScriptReference/{TypeName}.html)";
 			public string InternalLink = "{TypeName}/{TypeNiceName}/{TypeId}: {TypeFilename}";
-			public string CrossLink = "{TypeName}/{TypeNiceName}/{TypeId}: {TypeFilename}";
 			public string UnknownLink = "{TypeName}/{TypeNiceName}/{TypeId}";
 		}
+
+		[Serializable]
+		public class ExternalNamespace
+		{
+			public string Namespace;
+			public string LinkTemplate = "{TypeName}/{TypeNiceName}/{TypeId}: {TypeFilename}";
+		}
+
+		[Serializable]
+		public class ExternalNamespaceList : SerializedList<ExternalNamespace> { }
 
 		public string Name = "";
 		public string CategoryFilename = "Generated/{CategoryId}.txt";
@@ -57,7 +64,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		[EnumButtons] public DocumentationTypeCategory IncludedTypes = DocumentationTypeCategory.All;
 		[ListDisplay] public DocumentationNamespaceList IncludedNamespaces = new DocumentationNamespaceList();
-
+		[ListDisplay(ItemDisplay = ListItemDisplayType.Inline)] public ExternalNamespaceList ExternalNamespaces = new ExternalNamespaceList();
 		[ListDisplay(ItemDisplay = ListItemDisplayType.Inline)] public DocumentationSectionList Sections = new DocumentationSectionList();
 
 		public TemplateSet Templates = new TemplateSet();
@@ -71,17 +78,6 @@ namespace PiRhoSoft.UtilityEditor
 		private const string _arraySuffix = "[]";
 		private const string _genericOpener = "<";
 		private const string _genericCloser = ">";
-
-		private static List<string> _systemNamespaces = new List<string>
-		{
-			"System"
-		};
-
-		private static List<string> _unityNamespaces = new List<string>
-		{
-			"UnityEngine",
-			"UnityEditor"
-		};
 
 		public void Generate(IEnumerable<DocumentationCategory> allCategories, string outputFolder)
 		{
@@ -158,27 +154,18 @@ namespace PiRhoSoft.UtilityEditor
 
 		private string GetTypeLink(Type type)
 		{
-			if (DocumentationGenerator.IsTypeIncluded(type, _systemNamespaces))
-			{
-				return GetTypeLink(type, null, Templates.SystemLink);
-			}
-			else if (DocumentationGenerator.IsTypeIncluded(type, _unityNamespaces))
-			{
-				return GetTypeLink(type, null, Templates.UnityLink);
-			}
-			else if (DocumentationGenerator.IsTypeIncluded(type, IncludedNamespaces))
-			{
-				return GetTypeLink(type, this, Templates.InternalLink);
-			}
-			else
-			{
-				var category = AllCategories.Where(c => DocumentationGenerator.IsTypeIncluded(type, c.IncludedNamespaces)).FirstOrDefault();
+			var category = AllCategories.Where(c => DocumentationGenerator.IsTypeIncluded(type, c.IncludedNamespaces)).FirstOrDefault();
 
-				if (category != null)
-					return GetTypeLink(type, category, Templates.CrossLink);
-				else
-					return GetTypeLink(type, null, Templates.UnknownLink);
+			if (category != null)
+				return GetTypeLink(type, category, Templates.InternalLink);
+
+			foreach (var external in ExternalNamespaces)
+			{
+				if (DocumentationGenerator.IsTypeIncluded(type, new List<string> { external.Namespace }))
+					return GetTypeLink(type, this, external.LinkTemplate);
 			}
+
+			return GetTypeLink(type, null, Templates.UnknownLink);
 		}
 
 		private string GetTypeLink(Type type, DocumentationCategory category, string template)

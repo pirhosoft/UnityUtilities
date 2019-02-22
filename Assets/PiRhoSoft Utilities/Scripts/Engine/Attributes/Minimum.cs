@@ -1,12 +1,10 @@
-﻿using UnityEngine;
-
-namespace PiRhoSoft.UtilityEngine
+﻿namespace PiRhoSoft.UtilityEngine
 {
-	public class MinimumAttribute : PropertyAttribute
+	public class MinimumAttribute : PropertyScopeAttribute
 	{
 		public float MinimumValue { get; private set; }
 
-		public MinimumAttribute(float minimum) => MinimumValue = minimum;
-		public MinimumAttribute(int minimum) => MinimumValue = minimum;
+		public MinimumAttribute(float minimum) : base(int.MaxValue - 30) => MinimumValue = minimum;
+		public MinimumAttribute(int minimum) : base(int.MaxValue - 30) => MinimumValue = minimum;
 	}
 }

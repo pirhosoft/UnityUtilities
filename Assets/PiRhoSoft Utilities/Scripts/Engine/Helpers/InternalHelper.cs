@@ -55,5 +55,25 @@ namespace PiRhoSoft.UtilityEngine
 
 			return null;
 		}
+
+		public static Func<FieldType> CreateGetField<FieldType>(Type type, string fieldName, object obj)
+		{
+			var field = type.GetField(fieldName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+			if (field != null)
+				return () => (FieldType)field.GetValue(obj);
+
+			return null;
+		}
+
+		public static Action<FieldType> CreateSetField<FieldType>(Type type, string fieldName, object obj)
+		{
+			var field = type.GetField(fieldName, BindingFlags.Instance | BindingFlags.Public | BindingFlags.NonPublic);
+
+			if (field != null)
+				return value => field.SetValue(obj, value);
+
+			return null;
+		}
 	}
 }

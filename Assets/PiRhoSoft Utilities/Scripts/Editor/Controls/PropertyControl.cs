@@ -6,7 +6,7 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public abstract class PropertyControl
 	{
-		public abstract void Setup(SerializedProperty property, FieldInfo fieldInfo);
+		public abstract void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute);
 		public abstract float GetHeight(SerializedProperty property, GUIContent label);
 		public abstract void Draw(Rect position, SerializedProperty property, GUIContent label);
 	}

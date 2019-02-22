@@ -67,7 +67,7 @@ namespace PiRhoSoft.UtilityEditor
 						var changed = editor.DrawDefaultInspector();
 
 						if (changed)
-							SaveGenerator(_settingsFile.Value);
+							SaveGenerator(_generator, _settingsFile.Value);
 
 						_scrollPosition = scrolling.scrollPosition;
 					}
@@ -90,13 +90,17 @@ namespace PiRhoSoft.UtilityEditor
 				if (GUILayout.Button(_newButton.Content, GUILayout.MinWidth(20), GUILayout.MaxWidth(40.0f)))
 				{
 					var path = EditorUtility.SaveFilePanel("Create Settings File", DocumentationGenerator.RootPath, "settings", "json");
-					CreateGenerator(path);
+
+					if (!string.IsNullOrEmpty(path))
+						CreateGenerator(path);
 				}
 
 				if (GUILayout.Button(_openButton.Content, GUILayout.MinWidth(20), GUILayout.MaxWidth(40.0f)))
 				{
 					var path = EditorUtility.OpenFilePanel("Open Settings File", DocumentationGenerator.RootPath, "json");
-					LoadGenerator(path);
+
+					if (!string.IsNullOrEmpty(path))
+						LoadGenerator(path);
 				}
 			}
 		}
@@ -189,7 +193,7 @@ namespace PiRhoSoft.UtilityEditor
 			var generator = CreateInstance<DocumentationGenerator>();
 			generator.SetDefaults();
 
-			if (SaveGenerator(path))
+			if (SaveGenerator(generator, path))
 				SetGenerator(generator, path);
 			else
 				DestroyImmediate(generator);
@@ -230,11 +234,11 @@ namespace PiRhoSoft.UtilityEditor
 			_editor = generator != null ? Editor.CreateEditor(_generator) : null;
 		}
 
-		private bool SaveGenerator(string path)
+		private bool SaveGenerator(DocumentationGenerator generator, string path)
 		{
 			try
 			{
-				var content = JsonUtility.ToJson(_generator, true);
+				var content = JsonUtility.ToJson(generator, true);
 				var outputFile = new FileInfo(path);
 
 				Directory.CreateDirectory(outputFile.Directory.FullName);

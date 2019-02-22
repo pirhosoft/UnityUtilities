@@ -4,19 +4,22 @@ using UnityEngine;
 
 namespace PiRhoSoft.UtilityEditor
 {
-	[CustomPropertyDrawer(typeof(DisableInInspectorAttribute))]
-	public class DisableInInspectorDrawer : PropertyDrawer
+	public class DisableInInspectorControl : PropertyScopeControl
 	{
-		public override float GetPropertyHeight(SerializedProperty property, GUIContent label)
+		public override float GetHeight(SerializedProperty property, GUIContent label)
 		{
-			return EditorGUI.GetPropertyHeight(property, label, true);
+			return GetNextHeight(property, label);
 		}
 
-		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+		public override void Draw(Rect position, SerializedProperty property, GUIContent label)
 		{
-			GUI.enabled = false;
-			EditorGUI.PropertyField(position, property, label, true);
-			GUI.enabled = true;
+			using (new EditorGUI.DisabledScope())
+				DrawNext(position, property, label);
 		}
+	}
+
+	[CustomPropertyDrawer(typeof(DisableInInspectorAttribute))]
+	public class DisableInInspectorDrawer : ControlDrawer<DisableInInspectorControl>
+	{
 	}
 }

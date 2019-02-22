@@ -1,8 +1,7 @@
-﻿using UnityEngine;
-
-namespace PiRhoSoft.UtilityEngine
+﻿namespace PiRhoSoft.UtilityEngine
 {
-	public class DisableInInspectorAttribute : PropertyAttribute
+	public class DisableInInspectorAttribute : PropertyScopeAttribute
 	{
+		public DisableInInspectorAttribute() : base(int.MaxValue - 100) { }
 	}
 }

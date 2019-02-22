@@ -45,7 +45,7 @@ namespace PiRhoSoft.UtilityEditor
 					Control = new ControlType()
 				};
 
-				control.Control.Setup(property, fieldInfo);
+				control.Control.Setup(property, fieldInfo, attribute);
 				_controls[path] = control;
 			}
 

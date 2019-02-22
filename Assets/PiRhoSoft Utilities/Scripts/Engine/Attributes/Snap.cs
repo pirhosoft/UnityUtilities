@@ -1,12 +1,10 @@
-﻿using UnityEngine;
-
-namespace PiRhoSoft.UtilityEngine
+﻿namespace PiRhoSoft.UtilityEngine
 {
-	public class SnapAttribute : PropertyAttribute
+	public class SnapAttribute : PropertyScopeAttribute
 	{
 		public float SnapValue { get; private set; }
 
-		public SnapAttribute(int snapValue) => SnapValue = snapValue;
-		public SnapAttribute(float snapValue) => SnapValue = snapValue;
+		public SnapAttribute(int snapValue) : base(int.MaxValue - 10) => SnapValue = snapValue;
+		public SnapAttribute(float snapValue) : base(int.MaxValue - 10) => SnapValue = snapValue;
 	}
 }
