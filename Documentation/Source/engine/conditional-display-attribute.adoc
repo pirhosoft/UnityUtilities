@@ -2,26 +2,26 @@
 
 ## ConditionalDisplayAttribute
 
-PiRhoSoft.UtilityEngine.ConditionalDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.ConditionalDisplayAttribute : <<engine/property-scope-attribute,PropertyScopeAttribute>>
 
 ### Description
 
-### Constructors
-
-ConditionalDisplayAttribute()::
-
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _StringValue_::
+string _StringValue_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] _EnumValue_::
+int _EnumValue_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] _IntValue_::
+int _IntValue_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _FloatValue_::
+float _FloatValue_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _Invert_::
+bool _Invert_::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Property
+string Property _(read only)_
+
+### Protected Constructors
+
+ConditionalDisplayAttribute()::

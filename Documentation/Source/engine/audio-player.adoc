@@ -1,0 +1,25 @@
+[#engine/audio-player]
+
+## AudioPlayer
+
+PiRhoSoft.UtilityEngine.AudioPlayer : MonoBehaviour, <<engine/i-audio-notifier,IAudioNotifier>>
+
+### Description
+
+### Constructors
+
+AudioPlayer()::
+
+### Public Properties
+
+bool IsDone _(read only)_ _(virtual)_
+
+### Public Methods
+
+void PlaySound(AudioClip sound)::
+
+IEnumerator PlaySoundAndWait(AudioClip sound)::
+
+### Protected Methods
+
+void Awake() _(virtual)_::

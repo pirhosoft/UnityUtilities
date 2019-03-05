@@ -2,14 +2,14 @@
 
 ## ContextMarginScope
 
-PiRhoSoft.UtilityEditor.ContextMarginScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+PiRhoSoft.UtilityEditor.ContextMarginScope : Scope
 
 ### Description
 
 ### Constructors
 
-ContextMarginScope({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] margin)::
+ContextMarginScope(float margin)::
 
 ### Protected Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::
+void CloseScope() _(virtual)_::

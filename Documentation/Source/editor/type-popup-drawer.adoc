@@ -8,8 +8,8 @@ PiRhoSoft.UtilityEditor.TypePopupDrawer
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+float GetHeight()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] Draw<BaseType>({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+Type Draw<BaseType>(GUIContent label, Type type)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] Draw<BaseType>({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+Type Draw<BaseType>(Rect position, GUIContent label, Type type)::

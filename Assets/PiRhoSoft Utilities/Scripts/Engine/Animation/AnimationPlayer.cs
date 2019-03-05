@@ -15,6 +15,8 @@ namespace PiRhoSoft.UtilityEngine
 	[AddComponentMenu("PiRhoSoft Utility/Animation/Animation Player")]
 	public class AnimationPlayer : MonoBehaviour, IAnimationNotifier
 	{
+		private const string _infiniteLoopingWarning = "(UAAPIL) Unable to wait on animation for {0}: the animation '{1}' was set to loop and would have never finished";
+
 		private Animator _animator;
 		private PlayableGraph _graph;
 		private AnimationPlayableOutput _output;
@@ -65,15 +67,24 @@ namespace PiRhoSoft.UtilityEngine
 			_currentAnimation = AnimationClipPlayable.Create(_graph, animation);
 			_output.SetSourcePlayable(_currentAnimation);
 			_currentAnimation.Play();
-			_currentAnimation.SetDuration(_currentAnimation.GetAnimationClip().length);
+
+			if (!animation.isLooping)
+				_currentAnimation.SetDuration(_currentAnimation.GetAnimationClip().length);
 		}
 
 		public IEnumerator PlayAnimationAndWait(AnimationClip animation)
 		{
 			PlayAnimation(animation);
 
-			while (!IsDone)
-				yield return null;
+			if (!animation.isLooping)
+			{
+				while (!IsDone)
+					yield return null;
+			}
+			else
+			{
+				Debug.LogFormat(this, _infiniteLoopingWarning, name, animation.name);
+			}
 		}
 
 		public void Pause()

@@ -8,7 +8,7 @@ PiRhoSoft.UtilityEditor.StaticContent
 
 ### Public Properties
 
-{Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] Content
+GUIContent Content _(read only)_
 
 ### Protected Constructors
 
@@ -16,4 +16,4 @@ StaticContent()::
 
 ### Protected Methods
 
-{Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] Create()::
+GUIContent Create() _(abstract)_::

@@ -1,0 +1,21 @@
+[#engine/simple-audio-player]
+
+## SimpleAudioPlayer
+
+PiRhoSoft.UtilityEngine.SimpleAudioPlayer : <<engine/audio-player,AudioPlayer>>
+
+### Description
+
+### Constructors
+
+SimpleAudioPlayer()::
+
+### Public Fields
+
+bool _PlayOnAwake_::
+
+AudioClip _Sound_::
+
+### Protected Methods
+
+void Awake() _(virtual)_::

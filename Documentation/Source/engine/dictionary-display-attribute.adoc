@@ -2,7 +2,7 @@
 
 ## DictionaryDisplayAttribute
 
-PiRhoSoft.UtilityEngine.DictionaryDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.DictionaryDisplayAttribute : PropertyAttribute
 
 ### Description
 
@@ -12,18 +12,18 @@ DictionaryDisplayAttribute()::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _AllowAdd_::
+bool _AllowAdd_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _AllowRemove_::
+bool _AllowRemove_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _AllowCollapse_::
+bool _AllowCollapse_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _ShowEditButton_::
+bool _ShowEditButton_::
 
 <<engine/list-item-display-type,ListItemDisplayType>> _ItemDisplay_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] _AssetType_::
+Type _AssetType_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _AddLabel_::
+string _AddLabel_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _EmptyText_::
+string _EmptyText_::

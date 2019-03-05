@@ -1,0 +1,21 @@
+[#editor/property-scope-control]
+
+## PropertyScopeControl
+
+PiRhoSoft.UtilityEditor.PropertyScopeControl : <<editor/property-control,PropertyControl>>
+
+### Description
+
+### Public Methods
+
+void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(virtual)_::
+
+### Protected Constructors
+
+PropertyScopeControl()::
+
+### Protected Methods
+
+float GetNextHeight(SerializedProperty property, GUIContent label)::
+
+void DrawNext(Rect position, SerializedProperty property, GUIContent label)::

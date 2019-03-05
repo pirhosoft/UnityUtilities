@@ -1,0 +1,11 @@
+[#engine/property-scope-attribute]
+
+## PropertyScopeAttribute
+
+PiRhoSoft.UtilityEngine.PropertyScopeAttribute : PropertyAttribute
+
+### Description
+
+### Protected Constructors
+
+PropertyScopeAttribute(int drawOrder)::

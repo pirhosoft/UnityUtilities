@@ -1,0 +1,15 @@
+[#editor/json-preference-1]
+
+## JsonPreference
+
+PiRhoSoft.UtilityEditor.JsonPreference<T>
+
+### Description
+
+### Constructors
+
+JsonPreference(string name)::
+
+### Public Properties
+
+T Value

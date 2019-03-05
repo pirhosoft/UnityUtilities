@@ -8,20 +8,20 @@ PiRhoSoft.UtilityEditor.Label : <<editor/static-content,StaticContent>>
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetTooltip({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] propertyName)::
+string GetTooltip(Type type, string propertyName)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetTooltip({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo[FieldInfo^] field)::
+string GetTooltip(FieldInfo field)::
 
 ### Constructors
 
-Label({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] property)::
+Label(Type type, string property)::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Text
+string Text _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Tooltip
+string Tooltip _(read only)_
 
 ### Protected Methods
 
-{Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] Create()::
+GUIContent Create() _(virtual)_::

@@ -2,7 +2,7 @@
 
 ## EnumButtonsAttribute
 
-PiRhoSoft.UtilityEngine.EnumButtonsAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.EnumButtonsAttribute : PropertyAttribute
 
 ### Description
 
@@ -12,4 +12,4 @@ EnumButtonsAttribute()::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _MinimumWidth_::
+float _MinimumWidth_::

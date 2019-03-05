@@ -8,6 +8,6 @@ PiRhoSoft.UtilityEngine.IReloadable
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnEnable()::
+void OnEnable() _(abstract)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnDisable()::
+void OnDisable() _(abstract)_::

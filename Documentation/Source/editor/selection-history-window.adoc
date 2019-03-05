@@ -2,13 +2,13 @@
 
 ## SelectionHistoryWindow
 
-PiRhoSoft.UtilityEditor.SelectionHistoryWindow : https://docs.unity3d.com/ScriptReference/EditorWindow.html[EditorWindow^]
+PiRhoSoft.UtilityEditor.SelectionHistoryWindow : EditorWindow
 
 ### Description
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Open()::
+void Open()::
 
 ### Constructors
 

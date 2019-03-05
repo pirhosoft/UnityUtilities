@@ -8,7 +8,7 @@ PiRhoSoft.UtilityEditor.DictionaryDisplayAttributeControl : <<editor/property-co
 
 ### Static Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] __invalidTypeWarning_::
+string __invalidTypeWarning_::
 
 ### Constructors
 
@@ -16,8 +16,8 @@ DictionaryDisplayAttributeControl()::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Setup({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.FieldInfo[FieldInfo^] fieldInfo)::
+void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+float GetHeight(SerializedProperty property, GUIContent label) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+void Draw(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

@@ -2,22 +2,22 @@
 
 ## ColorScope
 
-PiRhoSoft.UtilityEditor.ColorScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+PiRhoSoft.UtilityEditor.ColorScope : Scope
 
 ### Description
 
 ### Static Methods
 
-{Decorator} <<editor/color-scope,ColorScope>> Color({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+<<editor/color-scope,ColorScope>> Color(Color color)::
 
-{Decorator} <<editor/color-scope,ColorScope>> BackgroundColor({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] backgroundColor)::
+<<editor/color-scope,ColorScope>> BackgroundColor(Color backgroundColor)::
 
-{Decorator} <<editor/color-scope,ColorScope>> ContentColor({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] contentColor)::
+<<editor/color-scope,ColorScope>> ContentColor(Color contentColor)::
 
 ### Constructors
 
-ColorScope({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] backgroundColor, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] contentColor)::
+ColorScope(Color color, Color backgroundColor, Color contentColor)::
 
 ### Protected Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::
+void CloseScope() _(virtual)_::

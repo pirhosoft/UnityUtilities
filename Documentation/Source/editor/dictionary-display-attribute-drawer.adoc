@@ -2,7 +2,7 @@
 
 ## DictionaryDisplayAttributeDrawer
 
-PiRhoSoft.UtilityEditor.DictionaryDisplayAttributeDrawer : <<editor/control-drawer,ControlDrawer>><<<editor/dictionary-display-attribute-control,DictionaryDisplayAttributeControl>>>
+PiRhoSoft.UtilityEditor.DictionaryDisplayAttributeDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/dictionary-display-attribute-control,DictionaryDisplayAttributeControl>>>
 
 ### Description
 

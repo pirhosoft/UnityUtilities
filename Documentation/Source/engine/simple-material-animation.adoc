@@ -1,0 +1,19 @@
+[#engine/simple-material-animation]
+
+## SimpleMaterialAnimation
+
+PiRhoSoft.UtilityEngine.SimpleMaterialAnimation : MonoBehaviour, <<engine/i-animation-notifier,IAnimationNotifier>>
+
+### Description
+
+### Constructors
+
+SimpleMaterialAnimation()::
+
+### Public Fields
+
+float _Duration_::
+
+### Public Properties
+
+bool IsDone _(read only)_ _(virtual)_

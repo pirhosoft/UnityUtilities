@@ -1,0 +1,25 @@
+[#editor/input-manager-event-trigger]
+
+## EventTrigger
+
+PiRhoSoft.UtilityEditor.EventTrigger
+
+### Description
+
+### Constructors
+
+EventTrigger()::
+
+### Public Fields
+
+List<Func<bool>> _Conditions_::
+
+Action _Action_::
+
+### Public Methods
+
+<<editor/input-manager-event-trigger,EventTrigger>> SetEvent(EventType type, bool shift, bool control, bool alt)::
+
+<<editor/input-manager-event-trigger,EventTrigger>> AddCondition(Func<bool> condition)::
+
+<<editor/input-manager-event-trigger,EventTrigger>> AddAction(Action action)::

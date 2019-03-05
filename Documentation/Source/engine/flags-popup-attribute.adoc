@@ -2,7 +2,7 @@
 
 ## FlagsPopupAttribute
 
-PiRhoSoft.UtilityEngine.FlagsPopupAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.FlagsPopupAttribute : PropertyAttribute
 
 ### Description
 

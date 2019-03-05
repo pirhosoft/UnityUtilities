@@ -2,7 +2,7 @@
 
 ## ReloadOnChangeAttribute
 
-PiRhoSoft.UtilityEngine.ReloadOnChangeAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.ReloadOnChangeAttribute : <<engine/property-scope-attribute,PropertyScopeAttribute>>
 
 ### Description
 
@@ -12,4 +12,4 @@ ReloadOnChangeAttribute()::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _UseAssetPopup_::
+bool _UseAssetPopup_::

@@ -1,0 +1,19 @@
+[#editor/documentation-section-access-level]
+
+## AccessLevel
+
+PiRhoSoft.UtilityEditor.AccessLevel
+
+### Description
+
+### Values
+
+<<editor/documentation-section-access-level,AccessLevel>> _Serializable_::
+
+<<editor/documentation-section-access-level,AccessLevel>> _Public_::
+
+<<editor/documentation-section-access-level,AccessLevel>> _Protected_::
+
+<<editor/documentation-section-access-level,AccessLevel>> _Private_::
+
+<<editor/documentation-section-access-level,AccessLevel>> _Internal_::

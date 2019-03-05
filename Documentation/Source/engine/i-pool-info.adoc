@@ -8,6 +8,6 @@ PiRhoSoft.UtilityEngine.IPoolInfo
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Size
+int Size _(read only)_ _(abstract)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Growth
+int Growth _(read only)_ _(abstract)_

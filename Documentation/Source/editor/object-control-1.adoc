@@ -1,0 +1,27 @@
+[#editor/object-control-1]
+
+## ObjectControl
+
+PiRhoSoft.UtilityEditor.ObjectControl<T> : <<editor/property-control,PropertyControl>>
+
+### Description
+
+### Public Methods
+
+void Setup(T target, SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(abstract)_::
+
+float GetHeight(GUIContent label) _(abstract)_::
+
+void Draw(Rect position, GUIContent label) _(abstract)_::
+
+void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(virtual)_::
+
+float GetHeight(SerializedProperty property, GUIContent label) _(virtual)_::
+
+void Draw(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::
+
+void Draw(GUIContent label)::
+
+### Protected Constructors
+
+ObjectControl()::

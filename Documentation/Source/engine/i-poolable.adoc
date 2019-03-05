@@ -8,4 +8,4 @@ PiRhoSoft.UtilityEngine.IPoolable
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Reset()::
+void Reset() _(abstract)_::

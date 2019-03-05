@@ -8,14 +8,14 @@ PiRhoSoft.UtilityEngine.MathHelper
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] IntExponent({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] exponent)::
+int IntExponent(int value, int exponent)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Snap({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] snap)::
+int Snap(int value, int snap)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Snap({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] snap)::
+float Snap(float value, float snap)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Wrap({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] size)::
+int Wrap(int value, int size)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Wrap({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] length)::
+float Wrap(float value, float length)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] LeastCommonMultiple({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] a, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] b)::
+int LeastCommonMultiple(int a, int b)::

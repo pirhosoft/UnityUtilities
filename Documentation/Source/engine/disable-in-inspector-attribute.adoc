@@ -2,7 +2,7 @@
 
 ## DisableInInspectorAttribute
 
-PiRhoSoft.UtilityEngine.DisableInInspectorAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.DisableInInspectorAttribute : <<engine/property-scope-attribute,PropertyScopeAttribute>>
 
 ### Description
 

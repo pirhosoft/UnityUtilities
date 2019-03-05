@@ -12,22 +12,22 @@ ObjectListControl()::
 
 ### Public Methods
 
-{Decorator} <<editor/object-list-control,ObjectListControl>> Setup({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^] list)::
+<<editor/object-list-control,ObjectListControl>> Setup(IList list)::
 
-{Decorator} <<editor/object-list-control,ObjectListControl>> MakeDrawable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`3[Action^]<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> callback)::
+<<editor/object-list-control,ObjectListControl>> MakeDrawable(Action<Rect, Rect, Rect> callback)::
 
-{Decorator} <<editor/object-list-control,ObjectListControl>> MakeAddable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`1[Action^]<https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]> callback)::
+<<editor/object-list-control,ObjectListControl>> MakeAddable(<<editor/icon-button,IconButton>> icon, Action<IList> callback)::
 
-{Decorator} <<editor/object-list-control,ObjectListControl>> MakeRemovable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]> callback)::
+<<editor/object-list-control,ObjectListControl>> MakeRemovable(<<editor/icon-button,IconButton>> icon, Action<IList, IList> callback)::
 
-{Decorator} <<editor/object-list-control,ObjectListControl>> MakeEditable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]> callback)::
+<<editor/object-list-control,ObjectListControl>> MakeEditable(<<editor/icon-button,IconButton>> icon, Action<IList, IList> callback)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultAdd()::
+void DoDefaultAdd()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultEdit({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+void DoDefaultEdit(int index)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultRemove({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+void DoDefaultRemove(int index)::
 
 ### Protected Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+void Draw(Rect rect, int index) _(virtual)_::

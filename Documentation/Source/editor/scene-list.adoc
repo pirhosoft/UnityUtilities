@@ -12,20 +12,20 @@ SceneList()::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _HasNone_::
+bool _HasNone_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _HasCreate_::
+bool _HasCreate_::
 
-https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][] _Names_::
+GUIContent[] _Names_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.microsoft.com/en-us/dotnet/api/System.String[string^]> _Paths_::
+List<string> _Paths_::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] CreateIndex
+int CreateIndex _(read only)_
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] GetIndex({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] path)::
+int GetIndex(string path)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GetPath({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+string GetPath(int index)::

@@ -8,8 +8,8 @@ PiRhoSoft.UtilityEditor.FloatPreference
 
 ### Constructors
 
-FloatPreference({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] defaultValue)::
+FloatPreference(string name, float defaultValue)::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Value
+float Value

@@ -1,0 +1,17 @@
+[#editor/control-drawer-1]
+
+## ControlDrawer
+
+PiRhoSoft.UtilityEditor.ControlDrawer<ControlType> : PropertyDrawer
+
+### Description
+
+### Constructors
+
+ControlDrawer()::
+
+### Public Methods
+
+float GetPropertyHeight(SerializedProperty property, GUIContent label) _(virtual)_::
+
+void OnGUI(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

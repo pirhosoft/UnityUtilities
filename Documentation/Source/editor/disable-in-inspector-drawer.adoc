@@ -2,16 +2,10 @@
 
 ## DisableInInspectorDrawer
 
-PiRhoSoft.UtilityEditor.DisableInInspectorDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+PiRhoSoft.UtilityEditor.DisableInInspectorDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/disable-in-inspector-control,DisableInInspectorControl>>>
 
 ### Description
 
 ### Constructors
 
 DisableInInspectorDrawer()::
-
-### Public Methods
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetPropertyHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::

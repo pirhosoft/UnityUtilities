@@ -1,0 +1,31 @@
+[#engine/animation-player]
+
+## AnimationPlayer
+
+PiRhoSoft.UtilityEngine.AnimationPlayer : MonoBehaviour, <<engine/i-animation-notifier,IAnimationNotifier>>
+
+### Description
+
+### Constructors
+
+AnimationPlayer()::
+
+### Public Properties
+
+bool IsDone _(read only)_ _(virtual)_
+
+### Public Methods
+
+void PlayAnimation(AnimationClip animation)::
+
+IEnumerator PlayAnimationAndWait(AnimationClip animation)::
+
+void Pause()::
+
+void Unpause()::
+
+### Protected Methods
+
+void Awake() _(virtual)_::
+
+void OnDestroy() _(virtual)_::

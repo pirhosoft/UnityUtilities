@@ -2,13 +2,13 @@
 
 ## AutoSnappingWindow
 
-PiRhoSoft.UtilityEditor.AutoSnappingWindow : https://docs.unity3d.com/ScriptReference/EditorWindow.html[EditorWindow^]
+PiRhoSoft.UtilityEditor.AutoSnappingWindow : EditorWindow
 
 ### Description
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Open()::
+void Open()::
 
 ### Constructors
 
@@ -16,4 +16,4 @@ AutoSnappingWindow()::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI()::
+void OnGUI()::

@@ -2,7 +2,7 @@
 
 ## SceneReferenceDrawer
 
-PiRhoSoft.UtilityEditor.SceneReferenceDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+PiRhoSoft.UtilityEditor.SceneReferenceDrawer : PropertyDrawer
 
 ### Description
 
@@ -16,9 +16,9 @@ PiRhoSoft.UtilityEditor.SceneReferenceDrawer : https://docs.unity3d.com/ScriptRe
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} link:engine/scene-reference.html[SceneReference] scene, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] newSceneName, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action[Action^] creator)::
+void Draw(<<engine/scene-reference,SceneReference>> scene, GUIContent label, string newSceneName, Action creator)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} link:engine/scene-reference.html[SceneReference] scene, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] newSceneName, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action[Action^] newSceneSetup)::
+void Draw(Rect position, <<engine/scene-reference,SceneReference>> scene, GUIContent label, string newSceneName, Action newSceneSetup)::
 
 ### Constructors
 
@@ -26,4 +26,4 @@ SceneReferenceDrawer()::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+void OnGUI(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

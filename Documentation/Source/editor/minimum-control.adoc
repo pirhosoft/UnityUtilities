@@ -1,0 +1,23 @@
+[#editor/minimum-control]
+
+## MinimumControl
+
+PiRhoSoft.UtilityEditor.MinimumControl : <<editor/property-scope-control,PropertyScopeControl>>
+
+### Description
+
+### Static Fields
+
+string __invalidTypeWarning_::
+
+### Constructors
+
+MinimumControl()::
+
+### Public Methods
+
+void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(virtual)_::
+
+float GetHeight(SerializedProperty property, GUIContent label) _(virtual)_::
+
+void Draw(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

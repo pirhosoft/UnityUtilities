@@ -2,7 +2,7 @@
 
 ## SceneReferenceMaintainer
 
-PiRhoSoft.UtilityEditor.SceneReferenceMaintainer : https://docs.unity3d.com/ScriptReference/AssetModificationProcessor.html[AssetModificationProcessor^]
+PiRhoSoft.UtilityEditor.SceneReferenceMaintainer : AssetModificationProcessor
 
 ### Description
 

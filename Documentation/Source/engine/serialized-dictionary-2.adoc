@@ -1,0 +1,23 @@
+[#engine/serialized-dictionary-2]
+
+## SerializedDictionary
+
+PiRhoSoft.UtilityEngine.SerializedDictionary<KeyType, KeyType> : Dictionary<KeyType, KeyType>, <<engine/i-editable-dictionary,IEditableDictionary>>
+
+### Description
+
+### Constructors
+
+SerializedDictionary()::
+
+### Public Methods
+
+void PrepareForEdit() _(virtual)_::
+
+void ApplyEdits() _(virtual)_::
+
+### Protected Fields
+
+List<KeyType> __keys_::
+
+List<ValueType> __values_::

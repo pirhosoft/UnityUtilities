@@ -2,40 +2,10 @@
 
 ## MaximumDrawer
 
-PiRhoSoft.UtilityEditor.MaximumDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+PiRhoSoft.UtilityEditor.MaximumDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/maximum-control,MaximumControl>>>
 
 ### Description
-
-### Static Fields
-
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] __invalidTypeWarning_::
-
-### Static Methods
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] maximum)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] maximum)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] maximum)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] maximum)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] maximum)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] maximum)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] maximum)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] maximum)::
 
 ### Constructors
 
 MaximumDrawer()::
-
-### Public Methods
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetPropertyHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
-
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::

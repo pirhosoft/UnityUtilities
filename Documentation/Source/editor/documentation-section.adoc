@@ -12,14 +12,14 @@ DocumentationSection()::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Name_::
+string _Name_::
 
-<<editor/declaration-type,DeclarationType>> _IncludedDeclarations_::
+<<editor/documentation-section-declaration-type,DeclarationType>> _IncludedDeclarations_::
 
-<<editor/access-level,AccessLevel>> _IncludedAccessLevels_::
+<<editor/documentation-section-access-level,AccessLevel>> _IncludedAccessLevels_::
 
-<<editor/member-type,MemberType>> _IncludedMemberTypes_::
+<<editor/documentation-section-member-type,MemberType>> _IncludedMemberTypes_::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Generate({Decorator} <<editor/documentation-type,DocumentationType>> type, {Decorator} <<editor/documentation-category,DocumentationCategory>> category)::
+string Generate(<<editor/documentation-type,DocumentationType>> type, <<editor/documentation-category,DocumentationCategory>> category)::

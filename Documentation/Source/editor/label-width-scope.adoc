@@ -2,14 +2,14 @@
 
 ## LabelWidthScope
 
-PiRhoSoft.UtilityEditor.LabelWidthScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+PiRhoSoft.UtilityEditor.LabelWidthScope : Scope
 
 ### Description
 
 ### Constructors
 
-LabelWidthScope({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width)::
+LabelWidthScope(float width)::
 
 ### Protected Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::
+void CloseScope() _(virtual)_::

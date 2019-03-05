@@ -2,7 +2,7 @@
 
 ## InlineDisplayAttribute
 
-PiRhoSoft.UtilityEngine.InlineDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.InlineDisplayAttribute : PropertyAttribute
 
 ### Description
 
@@ -12,4 +12,4 @@ InlineDisplayAttribute()::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _PropagateLabel_::
+bool _PropagateLabel_::

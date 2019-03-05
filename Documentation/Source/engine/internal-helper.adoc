@@ -8,14 +8,18 @@ PiRhoSoft.UtilityEngine.InternalHelper
 
 ### Static Methods
 
-{Decorator} DelegateType CreateDelegate<DelegateType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Reflection.MethodInfo[MethodInfo^] method)::
+DelegateType CreateDelegate<DelegateType>(MethodInfo method)::
 
-{Decorator} DelegateType CreateDelegate<DelegateType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] methodName)::
+DelegateType CreateDelegate<DelegateType>(Type type, string methodName)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Func`1[Func^]<PropertyType> CreateGetDelegate<PropertyType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] propertyName)::
+Func<PropertyType> CreateGetDelegate<PropertyType>(Type type, string propertyName)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`1[Action^]<PropertyType> CreateSetDelegate<PropertyType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] propertyName)::
+Action<PropertyType> CreateSetDelegate<PropertyType>(Type type, string propertyName)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Func`1[Func^]<FieldType> CreateGetField<FieldType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] fieldName)::
+Func<FieldType> CreateGetField<FieldType>(Type type, string fieldName)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`1[Action^]<FieldType> CreateSetField<FieldType>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] fieldName)::
+Action<FieldType> CreateSetField<FieldType>(Type type, string fieldName)::
+
+Func<FieldType> CreateGetField<FieldType>(Type type, string fieldName, Object obj)::
+
+Action<FieldType> CreateSetField<FieldType>(Type type, string fieldName, Object obj)::

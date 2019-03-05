@@ -8,32 +8,32 @@ PiRhoSoft.UtilityEngine.InputHelper
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] LateUpdate()::
+void LateUpdate()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] SetButton({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] button, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] down)::
+void SetButton(string button, bool down)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] RemoveButton({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] button)::
+void RemoveButton(string button)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] SetAxis({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] axis, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] value)::
+void SetAxis(string axis, float value)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] RemoveAxis({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] axis)::
+void RemoveAxis(string axis)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsButtonAvailable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] button)::
+bool IsButtonAvailable(string button)::
 
-{Decorator} <<engine/button-state,ButtonState>> GetButtonState({Decorator} https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] key, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] button)::
+<<engine/button-state,ButtonState>> GetButtonState(KeyCode key, string button)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] GetButtonDown({Decorator} https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] key, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] button)::
+bool GetButtonDown(KeyCode key, string button)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] GetWasButtonPressed({Decorator} https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] key, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] button)::
+bool GetWasButtonPressed(KeyCode key, string button)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] GetWasButtonReleased({Decorator} https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] key, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] button)::
+bool GetWasButtonReleased(KeyCode key, string button)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetAxis({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] axis)::
+float GetAxis(string axis)::
 
-{Decorator} <<engine/button-state,ButtonState>> GetAxisState({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] axis, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] magnitude)::
+<<engine/button-state,ButtonState>> GetAxisState(string axis, float magnitude)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] GetAxisDown({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] axis, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] magnitude)::
+bool GetAxisDown(string axis, float magnitude)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] GetWasAxisPressed({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] axis, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] magnitude)::
+bool GetWasAxisPressed(string axis, float magnitude)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] GetWasAxisReleased({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] axis, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] magnitude)::
+bool GetWasAxisReleased(string axis, float magnitude)::

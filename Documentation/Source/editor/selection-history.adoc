@@ -8,19 +8,19 @@ PiRhoSoft.UtilityEditor.SelectionHistory
 
 ### Static Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Window_::
+string _Window_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _ShowMenu_::
+string _ShowMenu_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _MoveBackMenu_::
+string _MoveBackMenu_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _MoveForwardMenu_::
+string _MoveForwardMenu_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _EmptyLabel_::
+string _EmptyLabel_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _MultipleLabel_::
+string _MultipleLabel_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _DeletedLabel_::
+string _DeletedLabel_::
 
 <<editor/text-button,TextButton>> _BackButton_::
 
@@ -28,20 +28,20 @@ https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _DeletedLabel
 
 ### Static Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Current
+int Current _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<https://docs.unity3d.com/ScriptReference/Object.html[Object^][]> History
+List<Object[]> History _(read only)_
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] CanMoveBack()::
+bool CanMoveBack()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] CanMoveForward()::
+bool CanMoveForward()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] MoveBack()::
+void MoveBack()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] MoveForward()::
+void MoveForward()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] GoTo({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+void GoTo(int index)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Clear()::
+void Clear()::

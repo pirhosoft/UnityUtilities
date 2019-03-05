@@ -2,25 +2,25 @@
 
 ## EnumButtonsDrawer
 
-PiRhoSoft.UtilityEditor.EnumButtonsDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+PiRhoSoft.UtilityEditor.EnumButtonsDrawer : PropertyDrawer
 
 ### Description
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] count, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] useLabel, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimumButtonWidth)::
+float GetHeight(int count, bool useLabel, float minimumButtonWidth)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] count, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimumButtonWidth)::
+int Draw(GUIContent label, int value, Type type, int count, float minimumButtonWidth)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] flags, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Array[Array^] values, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][] names, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimumButtonWidth)::
+int Draw(GUIContent label, int value, bool flags, Array values, GUIContent[] names, float minimumButtonWidth)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimumButtonWidth)::
+int Draw(Rect position, GUIContent label, int value, Type type, float minimumButtonWidth)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] value, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] flags, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Array[Array^] values, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][] names, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimumButtonWidth)::
+int Draw(Rect position, GUIContent label, int value, bool flags, Array values, GUIContent[] names, float minimumButtonWidth)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] count, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimumButtonWidth)::
+void Draw(SerializedProperty property, GUIContent label, Type type, int count, float minimumButtonWidth)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] minimumButtonWidth)::
+void Draw(Rect position, SerializedProperty property, GUIContent label, Type type, float minimumButtonWidth)::
 
 ### Constructors
 
@@ -28,6 +28,6 @@ EnumButtonsDrawer()::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetPropertyHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+float GetPropertyHeight(SerializedProperty property, GUIContent label) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+void OnGUI(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

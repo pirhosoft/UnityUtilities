@@ -2,7 +2,7 @@
 
 ## ListDisplayAttributeDrawer
 
-PiRhoSoft.UtilityEditor.ListDisplayAttributeDrawer : <<editor/control-drawer,ControlDrawer>><<<editor/list-display-attribute-control,ListDisplayAttributeControl>>>
+PiRhoSoft.UtilityEditor.ListDisplayAttributeDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/list-display-attribute-control,ListDisplayAttributeControl>>>
 
 ### Description
 

@@ -1,5 +1,9 @@
 :imagesdir: engine/
 
+include::engine/animation-player.adoc[]
+
+<<<
+
 include::engine/application-helper.adoc[]
 
 <<<
@@ -12,11 +16,15 @@ include::engine/asset-popup-attribute.adoc[]
 
 <<<
 
+include::engine/audio-player.adoc[]
+
+<<<
+
 include::engine/button-state.adoc[]
 
 <<<
 
-include::engine/class-pool.adoc[]
+include::engine/class-pool-2.adoc[]
 
 <<<
 
@@ -44,7 +52,7 @@ include::engine/disable-in-inspector-attribute.adoc[]
 
 <<<
 
-include::engine/drop-table.adoc[]
+include::engine/drop-table-1.adoc[]
 
 <<<
 
@@ -60,11 +68,11 @@ include::engine/foldout-string.adoc[]
 
 <<<
 
-include::engine/global-behaviour.adoc[]
+include::engine/global-behaviour-1.adoc[]
 
 <<<
 
-include::engine/i-class-pool.adoc[]
+include::engine/i-class-pool-1.adoc[]
 
 <<<
 
@@ -100,11 +108,19 @@ include::engine/i-reloadable.adoc[]
 
 <<<
 
+include::engine/join-enumerator.adoc[]
+
+<<<
+
 include::engine/list-display-attribute.adoc[]
 
 <<<
 
 include::engine/list-item-display-type.adoc[]
+
+<<<
+
+include::engine/material-animation.adoc[]
 
 <<<
 
@@ -144,11 +160,15 @@ include::engine/pool-info_50_10.adoc[]
 
 <<<
 
-include::engine/priority-queue.adoc[]
+include::engine/priority-queue-1.adoc[]
 
 <<<
 
 include::engine/priority-queue-node.adoc[]
+
+<<<
+
+include::engine/property-scope-attribute.adoc[]
 
 <<<
 
@@ -168,19 +188,31 @@ include::engine/scene-reference-attribute.adoc[]
 
 <<<
 
-include::engine/serialized-array.adoc[]
+include::engine/serialized-array-1.adoc[]
 
 <<<
 
-include::engine/serialized-dictionary.adoc[]
+include::engine/serialized-dictionary-2.adoc[]
 
 <<<
 
-include::engine/serialized-list.adoc[]
+include::engine/serialized-list-1.adoc[]
 
 <<<
 
-include::engine/singleton-behaviour.adoc[]
+include::engine/simple-animation-player.adoc[]
+
+<<<
+
+include::engine/simple-audio-player.adoc[]
+
+<<<
+
+include::engine/simple-material-animation.adoc[]
+
+<<<
+
+include::engine/singleton-behaviour-1.adoc[]
 
 <<<
 

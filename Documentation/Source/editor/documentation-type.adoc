@@ -8,26 +8,26 @@ PiRhoSoft.UtilityEditor.DocumentationType
 
 ### Constructors
 
-DocumentationType({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} <<editor/documentation-category,DocumentationCategory>> category)::
+DocumentationType(Type type, <<editor/documentation-category,DocumentationCategory>> category)::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] _Type_::
+Type _Type_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Name_::
+string _Name_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _RawName_::
+string _RawName_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _NiceName_::
+string _NiceName_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Id_::
+string _Id_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Filename_::
+string _Filename_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _Link_::
+string _Link_::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GenerateIndex({Decorator} <<editor/documentation-category,DocumentationCategory>> category)::
+string GenerateIndex(<<editor/documentation-category,DocumentationCategory>> category)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] GenerateFile({Decorator} <<editor/documentation-category,DocumentationCategory>> category)::
+string GenerateFile(<<editor/documentation-category,DocumentationCategory>> category)::

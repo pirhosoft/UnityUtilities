@@ -2,7 +2,7 @@
 
 ## HandleColorScope
 
-PiRhoSoft.UtilityEditor.HandleColorScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
+PiRhoSoft.UtilityEditor.HandleColorScope : Scope
 
 ### Description
 
@@ -10,8 +10,8 @@ PiRhoSoft.UtilityEditor.HandleColorScope : https://docs.unity3d.com/ScriptRefere
 
 HandleColorScope()::
 
-HandleColorScope({Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+HandleColorScope(Color color)::
 
 ### Protected Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CloseScope()::
+void CloseScope() _(virtual)_::

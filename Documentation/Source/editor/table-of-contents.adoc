@@ -12,14 +12,14 @@ TableOfContents()::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _OutputFile_::
+string _OutputFile_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _CodePath_::
+string _CodePath_::
 
-<<editor/section-list,SectionList>> _Sections_::
+<<editor/table-of-contents-section-list,SectionList>> _Sections_::
 
-<<editor/template-set,TemplateSet>> _Templates_::
+<<editor/table-of-contents-template-set,TemplateSet>> _Templates_::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Generate({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] applicationPath, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable`1[IEnumerable^]<<<editor/documentation-category,DocumentationCategory>>> categories, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] outputFolder)::
+void Generate(string applicationPath, IEnumerable<<<editor/documentation-category,DocumentationCategory>>> categories, string outputFolder)::

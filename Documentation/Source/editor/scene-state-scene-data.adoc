@@ -1,0 +1,15 @@
+[#editor/scene-state-scene-data]
+
+## SceneData
+
+PiRhoSoft.UtilityEditor.SceneData : ValueType
+
+### Description
+
+### Public Fields
+
+bool _IsActive_::
+
+bool _IsLoaded_::
+
+string _Path_::

@@ -1,0 +1,17 @@
+[#engine/global-behaviour-1]
+
+## GlobalBehaviour
+
+PiRhoSoft.UtilityEngine.GlobalBehaviour<T> : MonoBehaviour
+
+### Description
+
+### Static Properties
+
+bool Exists _(read only)_
+
+T Instance _(read only)_
+
+### Protected Constructors
+
+GlobalBehaviour()::

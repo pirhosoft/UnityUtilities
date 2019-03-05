@@ -6,8 +6,6 @@ PiRhoSoft.UtilityEngine.ApplicationHelper
 
 ### Description
 
-image::example.png[]
-
 ### Static Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsPlaying
+bool IsPlaying _(read only)_

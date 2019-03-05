@@ -2,21 +2,21 @@
 
 ## AssetPopupDrawer
 
-PiRhoSoft.UtilityEditor.AssetPopupDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+PiRhoSoft.UtilityEditor.AssetPopupDrawer : PropertyDrawer
 
 ### Description
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+float GetHeight()::
 
-{Decorator} AssetType Draw<AssetType>({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} AssetType asset, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showNoneOption, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showEditButton, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showCreateOptions)::
+AssetType Draw<AssetType>(GUIContent label, AssetType asset, bool showNoneOption, bool showEditButton, bool showCreateOptions)::
 
-{Decorator} AssetType Draw<AssetType>({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} AssetType asset, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showNoneOption, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showEditButton, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showCreateOptions)::
+AssetType Draw<AssetType>(Rect position, GUIContent label, AssetType asset, bool showNoneOption, bool showEditButton, bool showCreateOptions)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showNoneOption, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showEditButton, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showCreateOptions)::
+void Draw(GUIContent label, SerializedProperty property, Type type, bool showNoneOption, bool showEditButton, bool showCreateOptions)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showNoneOption, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showEditButton, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] showCreateOptions)::
+void Draw(Rect position, GUIContent label, SerializedProperty property, Type type, bool showNoneOption, bool showEditButton, bool showCreateOptions)::
 
 ### Constructors
 
@@ -24,6 +24,6 @@ AssetPopupDrawer()::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetPropertyHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+float GetPropertyHeight(SerializedProperty property, GUIContent label) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+void OnGUI(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

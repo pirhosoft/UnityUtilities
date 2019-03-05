@@ -2,7 +2,7 @@
 
 ## DocumentationSectionList
 
-PiRhoSoft.UtilityEditor.DocumentationSectionList : link:engine/serialized-list.html[SerializedList]<<<editor/documentation-section,DocumentationSection>>>
+PiRhoSoft.UtilityEditor.DocumentationSectionList : <<engine/serialized-list-1,SerializedList>><<<editor/documentation-section,DocumentationSection>>>
 
 ### Description
 

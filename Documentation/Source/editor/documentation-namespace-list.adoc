@@ -2,7 +2,7 @@
 
 ## DocumentationNamespaceList
 
-PiRhoSoft.UtilityEditor.DocumentationNamespaceList : link:engine/serialized-list.html[SerializedList]<https://docs.microsoft.com/en-us/dotnet/api/System.String[string^]>
+PiRhoSoft.UtilityEditor.DocumentationNamespaceList : <<engine/serialized-list-1,SerializedList>><string>
 
 ### Description
 

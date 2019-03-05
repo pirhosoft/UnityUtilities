@@ -1,0 +1,11 @@
+[#editor/table-of-contents-section-list]
+
+## SectionList
+
+PiRhoSoft.UtilityEditor.SectionList : <<engine/serialized-list-1,SerializedList>><string>
+
+### Description
+
+### Constructors
+
+SectionList()::

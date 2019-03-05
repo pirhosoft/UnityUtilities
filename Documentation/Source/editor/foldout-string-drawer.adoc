@@ -2,17 +2,17 @@
 
 ## FoldoutStringDrawer
 
-PiRhoSoft.UtilityEditor.FoldoutStringDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+PiRhoSoft.UtilityEditor.FoldoutStringDrawer : PropertyDrawer
 
 ### Description
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] expanded)::
+float GetHeight(bool expanded)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] text, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean&[bool^] expanded)::
+string Draw(GUIContent label, string text, bool expanded _(ref)_)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] text, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean&[bool^] expanded)::
+string Draw(Rect position, GUIContent label, string text, bool expanded _(ref)_)::
 
 ### Constructors
 
@@ -20,6 +20,6 @@ FoldoutStringDrawer()::
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetPropertyHeight({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+float GetPropertyHeight(SerializedProperty property, GUIContent label) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] position, {Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+void OnGUI(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

@@ -8,8 +8,8 @@ PiRhoSoft.UtilityEditor.GUIClip
 
 ### Static Properties
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] topmostRect
+Rect topmostRect _(read only)_
 
 ### Static Methods
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] GetTopRect()::
+Rect GetTopRect()::

@@ -8,4 +8,4 @@ PiRhoSoft.UtilityEngine.ConditionalDisplaySelfAttribute : <<engine/conditional-d
 
 ### Constructors
 
-ConditionalDisplaySelfAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] property)::
+ConditionalDisplaySelfAttribute(string property)::

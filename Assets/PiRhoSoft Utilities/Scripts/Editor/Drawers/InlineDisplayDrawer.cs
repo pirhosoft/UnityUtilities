@@ -9,6 +9,8 @@ namespace PiRhoSoft.UtilityEditor
 	{
 		#region Static Interface
 
+		private static readonly GUIContent _emptyContent = new GUIContent(" "); // Need a space to force drawing of the blank prefix label
+
 		public static float GetHeight(SerializedProperty property)
 		{
 			var height = 0.0f;
@@ -48,7 +50,7 @@ namespace PiRhoSoft.UtilityEditor
 				var rect = RectHelper.TakeHeight(ref position, height);
 
 				if (label != null)
-					EditorGUI.PropertyField(rect, property, first ? label : null);
+					EditorGUI.PropertyField(rect, property, first ? label : _emptyContent);
 				else
 					EditorGUI.PropertyField(rect, property);
 

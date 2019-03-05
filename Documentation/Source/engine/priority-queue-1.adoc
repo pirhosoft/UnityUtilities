@@ -1,0 +1,35 @@
+[#engine/priority-queue-1]
+
+## PriorityQueue
+
+PiRhoSoft.UtilityEngine.PriorityQueue<T>
+
+### Description
+
+### Constructors
+
+PriorityQueue(int maxNodes)::
+
+### Public Properties
+
+int Count _(read only)_
+
+int MaxSize _(read only)_
+
+T First _(read only)_
+
+### Public Methods
+
+void Clear()::
+
+bool Contains(T node)::
+
+void Enqueue(T node, float priority)::
+
+T Dequeue()::
+
+void Resize(int maxNodes)::
+
+void UpdatePriority(T node, float priority)::
+
+void Remove(T node)::

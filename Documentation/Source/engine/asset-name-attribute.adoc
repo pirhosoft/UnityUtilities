@@ -2,7 +2,7 @@
 
 ## AssetNameAttribute
 
-PiRhoSoft.UtilityEngine.AssetNameAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.AssetNameAttribute : PropertyAttribute
 
 ### Description
 

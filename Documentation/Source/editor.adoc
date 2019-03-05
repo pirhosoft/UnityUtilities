@@ -1,6 +1,6 @@
 :imagesdir: editor/
 
-include::editor/access-level.adoc[]
+include::editor/documentation-section-access-level.adoc[]
 
 <<<
 
@@ -32,6 +32,10 @@ include::editor/auto-snapping-window.adoc[]
 
 <<<
 
+include::editor/base64-button.adoc[]
+
+<<<
+
 include::editor/base64-texture.adoc[]
 
 <<<
@@ -44,11 +48,19 @@ include::editor/color-scope.adoc[]
 
 <<<
 
-include::editor/conditional-display-drawer.adoc[]
+include::editor/conditional-display-control.adoc[]
+
+<<<
+
+include::editor/conditional-display-other-control.adoc[]
 
 <<<
 
 include::editor/conditional-display-other-drawer.adoc[]
+
+<<<
+
+include::editor/conditional-display-self-control.adoc[]
 
 <<<
 
@@ -60,11 +72,11 @@ include::editor/context-margin-scope.adoc[]
 
 <<<
 
-include::editor/control-drawer.adoc[]
+include::editor/control-drawer-1.adoc[]
 
 <<<
 
-include::editor/declaration-type.adoc[]
+include::editor/documentation-section-declaration-type.adoc[]
 
 <<<
 
@@ -77,6 +89,10 @@ include::editor/dictionary-display-attribute-control.adoc[]
 <<<
 
 include::editor/dictionary-display-attribute-drawer.adoc[]
+
+<<<
+
+include::editor/disable-in-inspector-control.adoc[]
 
 <<<
 
@@ -128,7 +144,15 @@ include::editor/enum-buttons-drawer.adoc[]
 
 <<<
 
-include::editor/event-trigger.adoc[]
+include::editor/input-manager-event-trigger.adoc[]
+
+<<<
+
+include::editor/documentation-category-external-namespace.adoc[]
+
+<<<
+
+include::editor/documentation-category-external-namespace-list.adoc[]
 
 <<<
 
@@ -180,11 +204,11 @@ include::editor/invalid-scope.adoc[]
 
 <<<
 
-include::editor/json-preference.adoc[]
+include::editor/json-preference-1.adoc[]
 
 <<<
 
-include::editor/keyboard-trigger.adoc[]
+include::editor/input-manager-keyboard-trigger.adoc[]
 
 <<<
 
@@ -216,11 +240,19 @@ include::editor/log-descriptions.adoc[]
 
 <<<
 
+include::editor/maximum-control.adoc[]
+
+<<<
+
 include::editor/maximum-drawer.adoc[]
 
 <<<
 
-include::editor/member-type.adoc[]
+include::editor/documentation-section-member-type.adoc[]
+
+<<<
+
+include::editor/minimum-control.adoc[]
 
 <<<
 
@@ -232,15 +264,15 @@ include::editor/min-max-slider-drawer.adoc[]
 
 <<<
 
-include::editor/mouse-button.adoc[]
+include::editor/input-manager-mouse-button.adoc[]
 
 <<<
 
-include::editor/mouse-trigger.adoc[]
+include::editor/input-manager-mouse-trigger.adoc[]
 
 <<<
 
-include::editor/object-control.adoc[]
+include::editor/object-control-1.adoc[]
 
 <<<
 
@@ -248,7 +280,7 @@ include::editor/object-list-control.adoc[]
 
 <<<
 
-include::editor/preferences.adoc[]
+include::editor/auto-snapping-preferences.adoc[]
 
 <<<
 
@@ -264,6 +296,10 @@ include::editor/property-list-control.adoc[]
 
 <<<
 
+include::editor/property-scope-control.adoc[]
+
+<<<
+
 include::editor/rect-helper.adoc[]
 
 <<<
@@ -276,11 +312,15 @@ include::editor/rect-vertical-alignment.adoc[]
 
 <<<
 
+include::editor/reload-on-change-control.adoc[]
+
+<<<
+
 include::editor/reload-on-change-drawer.adoc[]
 
 <<<
 
-include::editor/scene-data.adoc[]
+include::editor/scene-state-scene-data.adoc[]
 
 <<<
 
@@ -304,7 +344,7 @@ include::editor/scene-state.adoc[]
 
 <<<
 
-include::editor/section-list.adoc[]
+include::editor/table-of-contents-section-list.adoc[]
 
 <<<
 
@@ -317,6 +357,10 @@ include::editor/selection-history-window.adoc[]
 <<<
 
 include::editor/slider-drawer.adoc[]
+
+<<<
+
+include::editor/snap-control.adoc[]
 
 <<<
 
@@ -340,11 +384,11 @@ include::editor/table-of-contents.adoc[]
 
 <<<
 
-include::editor/template-set.adoc[]
+include::editor/documentation-category-template-set.adoc[]
 
 <<<
 
-include::editor/template-set.adoc[]
+include::editor/table-of-contents-template-set.adoc[]
 
 <<<
 

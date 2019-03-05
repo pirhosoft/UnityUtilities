@@ -1,0 +1,19 @@
+[#editor/snap-control]
+
+## SnapControl
+
+PiRhoSoft.UtilityEditor.SnapControl : <<editor/property-scope-control,PropertyScopeControl>>
+
+### Description
+
+### Constructors
+
+SnapControl()::
+
+### Public Methods
+
+void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(virtual)_::
+
+float GetHeight(SerializedProperty property, GUIContent label) _(virtual)_::
+
+void Draw(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

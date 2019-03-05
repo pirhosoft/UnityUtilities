@@ -1,0 +1,15 @@
+[#editor/input-manager-mouse-button]
+
+## MouseButton
+
+PiRhoSoft.UtilityEditor.MouseButton
+
+### Description
+
+### Values
+
+<<editor/input-manager-mouse-button,MouseButton>> _Left_::
+
+<<editor/input-manager-mouse-button,MouseButton>> _Right_::
+
+<<editor/input-manager-mouse-button,MouseButton>> _Middle_::

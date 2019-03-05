@@ -1,0 +1,43 @@
+[#engine/serialized-list-1]
+
+## SerializedList
+
+PiRhoSoft.UtilityEngine.SerializedList<T> : ICollection, IEnumerable<T>, IList<T>, IEnumerable, IReadOnlyCollection<T>, IReadOnlyList<T>, IList, ICollection<T>
+
+### Description
+
+### Constructors
+
+SerializedList()::
+
+### Public Properties
+
+List<T> List _(read only)_
+
+int Count _(read only)_ _(virtual)_
+
+T Item _(virtual)_
+
+### Public Methods
+
+void Add(T item) _(virtual)_::
+
+bool Remove(T item) _(virtual)_::
+
+void Clear() _(virtual)_::
+
+bool Contains(T item) _(virtual)_::
+
+void CopyTo(T[] array, int arrayIndex) _(virtual)_::
+
+IEnumerator<T> GetEnumerator() _(virtual)_::
+
+int IndexOf(T item) _(virtual)_::
+
+void Insert(int index, T item) _(virtual)_::
+
+void RemoveAt(int index) _(virtual)_::
+
+### Protected Fields
+
+List<T> __items_::

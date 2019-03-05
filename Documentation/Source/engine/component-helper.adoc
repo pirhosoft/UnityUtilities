@@ -8,20 +8,20 @@ PiRhoSoft.UtilityEngine.ComponentHelper
 
 ### Static Methods
 
-{Decorator} T GetComponentInScene<T>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] sceneIndex, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeDisabled)::
+T GetComponentInScene<T>(int sceneIndex, bool includeDisabled)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] GetComponentsInScene<T>({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] sceneIndex, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List`1[List^]<T> components, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeDisabled)::
+void GetComponentsInScene<T>(int sceneIndex, List<T> components, bool includeDisabled)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/GameObject.html[GameObject^] FindObject({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] sceneIndex)::
+GameObject FindObject(string name, int sceneIndex)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] HasType({Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] unityObject, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] type)::
+bool HasType(Object unityObject, Type type)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] GetAsBaseObject({Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] unityObject)::
+Object GetAsBaseObject(Object unityObject)::
 
-{Decorator} T GetAsObject<T>({Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] unityObject)::
+T GetAsObject<T>(Object unityObject)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/GameObject.html[GameObject^] GetAsGameObject({Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] unityObject)::
+GameObject GetAsGameObject(Object unityObject)::
 
-{Decorator} T GetAsComponent<T>({Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] unityObject)::
+T GetAsComponent<T>(Object unityObject)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Component.html[Component^] GetAsComponent({Decorator} https://docs.unity3d.com/ScriptReference/Object.html[Object^] unityObject, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] componentName)::
+Component GetAsComponent(Object unityObject, string componentName)::

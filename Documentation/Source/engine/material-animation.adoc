@@ -1,0 +1,19 @@
+[#engine/material-animation]
+
+## MaterialAnimation
+
+PiRhoSoft.UtilityEngine.MaterialAnimation : MonoBehaviour
+
+### Description
+
+### Constructors
+
+MaterialAnimation()::
+
+### Public Fields
+
+float _Progress_::
+
+### Protected Methods
+
+void LateUpdate() _(virtual)_::

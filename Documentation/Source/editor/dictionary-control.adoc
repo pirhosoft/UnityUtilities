@@ -12,22 +12,22 @@ DictionaryControl()::
 
 ### Public Methods
 
-{Decorator} <<editor/dictionary-control,DictionaryControl>> Setup({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} link:engine/i-editable-dictionary.html[IEditableDictionary] dictionary)::
+<<editor/dictionary-control,DictionaryControl>> Setup(SerializedProperty property, <<engine/i-editable-dictionary,IEditableDictionary>> dictionary)::
 
-{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeDrawable({Decorator} link:engine/list-item-display-type.html[ListItemDisplayType] itemDisplay, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Type[Type^] assetPopupType)::
+<<editor/dictionary-control,DictionaryControl>> MakeDrawable(<<engine/list-item-display-type,ListItemDisplayType>> itemDisplay, Type assetPopupType)::
 
-{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeDrawable({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`3[Action^]<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> callback)::
+<<editor/dictionary-control,DictionaryControl>> MakeDrawable(Action<Rect, Rect, Rect> callback)::
 
-{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeAddable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<link:engine/i-editable-dictionary.html[IEditableDictionary], link:engine/i-editable-dictionary.html[IEditableDictionary]> callback)::
+<<editor/dictionary-control,DictionaryControl>> MakeAddable(<<editor/icon-button,IconButton>> icon, GUIContent label, Action<<<engine/i-editable-dictionary,IEditableDictionary>>, <<engine/i-editable-dictionary,IEditableDictionary>>> callback)::
 
-{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeRemovable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<link:engine/i-editable-dictionary.html[IEditableDictionary], link:engine/i-editable-dictionary.html[IEditableDictionary]> callback)::
+<<editor/dictionary-control,DictionaryControl>> MakeRemovable(<<editor/icon-button,IconButton>> icon, Action<<<engine/i-editable-dictionary,IEditableDictionary>>, <<engine/i-editable-dictionary,IEditableDictionary>>> callback)::
 
-{Decorator} <<editor/dictionary-control,DictionaryControl>> MakeEditable({Decorator} <<editor/icon-button,IconButton>> icon, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action`2[Action^]<link:engine/i-editable-dictionary.html[IEditableDictionary], link:engine/i-editable-dictionary.html[IEditableDictionary]> callback)::
+<<editor/dictionary-control,DictionaryControl>> MakeEditable(<<editor/icon-button,IconButton>> icon, Action<<<engine/i-editable-dictionary,IEditableDictionary>>, <<engine/i-editable-dictionary,IEditableDictionary>>> callback)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetItemHeight({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+float GetItemHeight(int index)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DoDefaultDraw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] key, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+void DoDefaultDraw(Rect rect, string key, int index)::
 
 ### Protected Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Draw({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+void Draw(Rect rect, int index) _(virtual)_::

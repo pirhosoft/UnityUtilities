@@ -8,8 +8,8 @@ PiRhoSoft.UtilityEditor.StaticStyle
 
 ### Constructors
 
-StaticStyle({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Func`1[Func^]<https://docs.unity3d.com/ScriptReference/GUIStyle.html[GUIStyle^]> create)::
+StaticStyle(Func<GUIStyle> create)::
 
 ### Public Properties
 
-{Decorator} https://docs.unity3d.com/ScriptReference/GUIStyle.html[GUIStyle^] Style
+GUIStyle Style _(read only)_

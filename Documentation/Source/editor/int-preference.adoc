@@ -8,8 +8,8 @@ PiRhoSoft.UtilityEditor.IntPreference
 
 ### Constructors
 
-IntPreference({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] defaultValue)::
+IntPreference(string name, int defaultValue)::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Value
+int Value

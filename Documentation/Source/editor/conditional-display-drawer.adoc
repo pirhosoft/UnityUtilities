@@ -12,4 +12,4 @@ ConditionalDisplayDrawer()::
 
 ### Protected Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsVisible({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property)::
+https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsVisible(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property)::

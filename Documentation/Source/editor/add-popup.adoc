@@ -2,16 +2,16 @@
 
 ## AddPopup
 
-PiRhoSoft.UtilityEditor.AddPopup : https://docs.unity3d.com/ScriptReference/PopupWindowContent.html[PopupWindowContent^]
+PiRhoSoft.UtilityEditor.AddPopup : PopupWindowContent
 
 ### Description
 
 ### Constructors
 
-AddPopup({Decorator} <<editor/i-add-content,IAddContent>> content, {Decorator} https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] label)::
+AddPopup(<<editor/i-add-content,IAddContent>> content, GUIContent label)::
 
 ### Public Methods
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] GetWindowSize()::
+Vector2 GetWindowSize() _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] OnGUI({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect)::
+void OnGUI(Rect rect) _(virtual)_::

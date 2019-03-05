@@ -1,0 +1,39 @@
+[#engine/serialized-array-1]
+
+## SerializedArray
+
+PiRhoSoft.UtilityEngine.SerializedArray<T> : ICollection, ICloneable, IEnumerable, IList, IStructuralComparable, IStructuralEquatable
+
+### Description
+
+### Constructors
+
+SerializedArray(int count)::
+
+### Public Properties
+
+T[] Array _(read only)_
+
+int Length _(read only)_
+
+T Item
+
+bool IsSynchronized _(read only)_ _(virtual)_
+
+Object SyncRoot _(read only)_ _(virtual)_
+
+bool IsFixedSize _(read only)_ _(virtual)_
+
+bool IsReadOnly _(read only)_ _(virtual)_
+
+### Public Methods
+
+void CopyTo(Array array, int index) _(virtual)_::
+
+Object Clone() _(virtual)_::
+
+IEnumerator GetEnumerator() _(virtual)_::
+
+### Protected Fields
+
+T[] __items_::

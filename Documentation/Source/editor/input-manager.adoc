@@ -12,8 +12,8 @@ InputManager()::
 
 ### Public Methods
 
-{Decorator} T Create<T>()::
+T Create<T>()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Clear()::
+void Clear()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Update()::
+void Update()::

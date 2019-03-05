@@ -8,60 +8,62 @@ PiRhoSoft.UtilityEditor.RectHelper
 
 ### Static Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _VerticalSpace_::
+float _VerticalSpace_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _HorizontalSpace_::
+float _HorizontalSpace_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _IconWidth_::
+float _IconWidth_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _LineHeight_::
+float _LineHeight_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _LeftMargin_::
+float _LeftMargin_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] _RightMargin_::
+float _RightMargin_::
 
 ### Static Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] CurrentIndentWidth
+float CurrentIndentWidth _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] CurrentLabelWidth
+float CurrentLabelWidth _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] CurrentFieldWidth
+float CurrentFieldWidth _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] CurrentViewWidth
+float CurrentViewWidth _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] ContextMargin
+float ContextMargin
 
 ### Static Methods
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLine({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+Rect TakeLine(Rect full _(ref)_)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeHeight({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] height)::
+Rect TakeHeight(Rect full _(ref)_, float height)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingHeight({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] height)::
+Rect TakeTrailingHeight(Rect full _(ref)_, float height)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeVerticalSpace({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+Rect TakeVerticalSpace(Rect full _(ref)_)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeHorizontalSpace({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+Rect TakeHorizontalSpace(Rect full _(ref)_)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] TakeIndent({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+void TakeIndent(Rect full _(ref)_)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLabel({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+Rect TakeLabel(Rect full _(ref)_)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLeadingIcon({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+Rect TakeLeadingIcon(Rect full _(ref)_)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingIcon({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full)::
+Rect TakeTrailingIcon(Rect full _(ref)_)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeWidth({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width)::
+Rect TakeWidth(Rect full _(ref)_, float width)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingWidth({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] full, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width)::
+Rect TakeTrailingWidth(Rect full _(ref)_, float width)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] Inset({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] padding)::
+Rect Inset(Rect rect, float padding)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] Adjust({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] height, {Decorator} <<editor/rect-horizontal-alignment,RectHorizontalAlignment>> horizontal, {Decorator} <<editor/rect-vertical-alignment,RectVerticalAlignment>> vertical)::
+Rect Inset(Rect rect, float left, float right, float top, float bottom)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] AdjustHeight({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] height, {Decorator} <<editor/rect-vertical-alignment,RectVerticalAlignment>> alignment)::
+Rect Adjust(Rect rect, float width, float height, <<editor/rect-horizontal-alignment,RectHorizontalAlignment>> horizontal, <<editor/rect-vertical-alignment,RectVerticalAlignment>> vertical)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] AdjustWidth({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rect, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] width, {Decorator} <<editor/rect-horizontal-alignment,RectHorizontalAlignment>> alignment)::
+Rect AdjustHeight(Rect rect, float height, <<editor/rect-vertical-alignment,RectVerticalAlignment>> alignment)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetIndentWidth({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] levels)::
+Rect AdjustWidth(Rect rect, float width, <<editor/rect-horizontal-alignment,RectHorizontalAlignment>> alignment)::
+
+float GetIndentWidth(int levels)::

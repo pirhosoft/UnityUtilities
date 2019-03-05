@@ -2,13 +2,13 @@
 
 ## DocumentationGeneratorWindow
 
-PiRhoSoft.UtilityEditor.DocumentationGeneratorWindow : https://docs.unity3d.com/ScriptReference/EditorWindow.html[EditorWindow^]
+PiRhoSoft.UtilityEditor.DocumentationGeneratorWindow : EditorWindow
 
 ### Description
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Open()::
+void Open()::
 
 ### Constructors
 

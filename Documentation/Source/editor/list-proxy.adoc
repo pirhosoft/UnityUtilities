@@ -2,43 +2,43 @@
 
 ## ListProxy
 
-PiRhoSoft.UtilityEditor.ListProxy : https://docs.microsoft.com/en-us/dotnet/api/System.Collections.ICollection[ICollection^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable[IEnumerable^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]
+PiRhoSoft.UtilityEditor.ListProxy : ICollection, IEnumerable, IList
 
 ### Description
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Count
+int Count _(read only)_ _(abstract)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] Item
+Object Item _(abstract)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsFixedSize
+bool IsFixedSize _(read only)_ _(virtual)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsReadOnly
+bool IsReadOnly _(read only)_ _(virtual)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] IsSynchronized
+bool IsSynchronized _(read only)_ _(virtual)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] SyncRoot
+Object SyncRoot _(read only)_ _(virtual)_
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] Add({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+int Add(Object value) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Clear()::
+void Clear() _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Contains({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+bool Contains(Object value) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] CopyTo({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Array[Array^] array, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+void CopyTo(Array array, int index) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerator[IEnumerator^] GetEnumerator()::
+IEnumerator GetEnumerator() _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] IndexOf({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+int IndexOf(Object value) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Insert({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+void Insert(int index, Object value) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Remove({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Object[Object^] value)::
+void Remove(Object value) _(virtual)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] RemoveAt({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] index)::
+void RemoveAt(int index) _(virtual)_::
 
 ### Protected Constructors
 

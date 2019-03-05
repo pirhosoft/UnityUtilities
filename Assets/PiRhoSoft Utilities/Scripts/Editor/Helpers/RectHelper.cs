@@ -117,6 +117,15 @@ namespace PiRhoSoft.UtilityEditor
 			return rect;
 		}
 
+		public static Rect Inset(Rect rect, float left, float right, float top, float bottom)
+		{
+			TakeWidth(ref rect, left);
+			TakeTrailingWidth(ref rect, right);
+			TakeHeight(ref rect, top);
+			TakeTrailingHeight(ref rect, bottom);
+			return rect;
+		}
+
 		public static Rect Adjust(Rect rect, float width, float height, RectHorizontalAlignment horizontal, RectVerticalAlignment vertical)
 		{
 			var h = AdjustWidth(rect, width, horizontal);

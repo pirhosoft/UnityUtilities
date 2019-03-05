@@ -12,6 +12,6 @@ PriorityQueueNode()::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] Priority
+float Priority _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^] QueueIndex
+int QueueIndex _(read only)_

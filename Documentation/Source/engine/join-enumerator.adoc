@@ -1,0 +1,21 @@
+[#engine/join-enumerator]
+
+## JoinEnumerator
+
+PiRhoSoft.UtilityEngine.JoinEnumerator : IEnumerator
+
+### Description
+
+### Constructors
+
+JoinEnumerator(IEnumerator coroutine)::
+
+### Public Properties
+
+Object Current _(read only)_ _(virtual)_
+
+### Public Methods
+
+bool MoveNext() _(virtual)_::
+
+void Reset() _(virtual)_::

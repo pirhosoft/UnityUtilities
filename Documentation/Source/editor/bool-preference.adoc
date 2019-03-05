@@ -8,8 +8,8 @@ PiRhoSoft.UtilityEditor.BoolPreference
 
 ### Constructors
 
-BoolPreference({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] defaultValue)::
+BoolPreference(string name, bool defaultValue)::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Value
+bool Value

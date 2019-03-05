@@ -2,16 +2,16 @@
 
 ## IntPopupAttribute
 
-PiRhoSoft.UtilityEngine.IntPopupAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+PiRhoSoft.UtilityEngine.IntPopupAttribute : PropertyAttribute
 
 ### Description
 
 ### Constructors
 
-IntPopupAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^][] values, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^][] names)::
+IntPopupAttribute(int[] values, string[] names)::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Int32[int^][] Values
+int[] Values _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^][] Names
+string[] Names _(read only)_

@@ -8,12 +8,12 @@ PiRhoSoft.UtilityEditor.IAddContent
 
 ### Public Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] GetHeight()::
+float GetHeight() _(abstract)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Draw({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] clean)::
+bool Draw(bool clean) _(abstract)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] Validate()::
+bool Validate() _(abstract)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Add()::
+void Add() _(abstract)_::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] Reset()::
+void Reset() _(abstract)_::

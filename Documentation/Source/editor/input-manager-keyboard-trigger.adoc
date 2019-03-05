@@ -1,0 +1,15 @@
+[#editor/input-manager-keyboard-trigger]
+
+## KeyboardTrigger
+
+PiRhoSoft.UtilityEditor.KeyboardTrigger : <<editor/input-manager-event-trigger,EventTrigger>>
+
+### Description
+
+### Constructors
+
+KeyboardTrigger()::
+
+### Public Methods
+
+<<editor/input-manager-keyboard-trigger,KeyboardTrigger>> SetEvent(EventType type, KeyCode key, bool shift, bool control, bool alt)::

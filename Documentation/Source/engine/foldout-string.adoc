@@ -12,6 +12,6 @@ FoldoutString()::
 
 ### Public Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] _String_::
+string _String_::
 
-https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] _IsExpanded_::
+bool _IsExpanded_::

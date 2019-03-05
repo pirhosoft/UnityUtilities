@@ -1,0 +1,21 @@
+[#engine/simple-animation-player]
+
+## SimpleAnimationPlayer
+
+PiRhoSoft.UtilityEngine.SimpleAnimationPlayer : <<engine/animation-player,AnimationPlayer>>
+
+### Description
+
+### Constructors
+
+SimpleAnimationPlayer()::
+
+### Public Fields
+
+bool _PlayOnAwake_::
+
+AnimationClip _Animation_::
+
+### Protected Methods
+
+void Awake() _(virtual)_::

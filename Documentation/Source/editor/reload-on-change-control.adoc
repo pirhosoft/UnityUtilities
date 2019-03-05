@@ -1,0 +1,19 @@
+[#editor/reload-on-change-control]
+
+## ReloadOnChangeControl
+
+PiRhoSoft.UtilityEditor.ReloadOnChangeControl : <<editor/property-scope-control,PropertyScopeControl>>
+
+### Description
+
+### Constructors
+
+ReloadOnChangeControl()::
+
+### Public Methods
+
+void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(virtual)_::
+
+float GetHeight(SerializedProperty property, GUIContent label) _(virtual)_::
+
+void Draw(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

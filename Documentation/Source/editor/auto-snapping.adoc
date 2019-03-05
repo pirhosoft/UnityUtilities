@@ -8,4 +8,4 @@ PiRhoSoft.UtilityEditor.AutoSnapping
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] SetEnabled({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] enabled)::
+void SetEnabled(bool enabled)::

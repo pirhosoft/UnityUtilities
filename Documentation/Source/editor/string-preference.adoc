@@ -8,8 +8,8 @@ PiRhoSoft.UtilityEditor.StringPreference
 
 ### Constructors
 
-StringPreference({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] defaultValue)::
+StringPreference(string name, string defaultValue)::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Value
+string Value

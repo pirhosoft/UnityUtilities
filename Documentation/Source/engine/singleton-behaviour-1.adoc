@@ -1,0 +1,21 @@
+[#engine/singleton-behaviour-1]
+
+## SingletonBehaviour
+
+PiRhoSoft.UtilityEngine.SingletonBehaviour<T> : MonoBehaviour
+
+### Description
+
+### Static Properties
+
+T Instance _(read only)_
+
+### Protected Constructors
+
+SingletonBehaviour()::
+
+### Protected Methods
+
+void Awake() _(virtual)_::
+
+void OnDestroy() _(virtual)_::

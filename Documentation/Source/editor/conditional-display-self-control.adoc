@@ -1,0 +1,17 @@
+[#editor/conditional-display-self-control]
+
+## ConditionalDisplaySelfControl
+
+PiRhoSoft.UtilityEditor.ConditionalDisplaySelfControl : <<editor/conditional-display-control,ConditionalDisplayControl>>
+
+### Description
+
+### Constructors
+
+ConditionalDisplaySelfControl()::
+
+### Public Methods
+
+float GetHeight(SerializedProperty property, GUIContent label) _(virtual)_::
+
+void Draw(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

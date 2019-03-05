@@ -2,17 +2,17 @@
 
 ## Resource
 
-PiRhoSoft.UtilityEngine.Resource : https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^]
+PiRhoSoft.UtilityEngine.Resource : ScriptableObject
 
 ### Description
 
 ### Static Fields
 
-https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] __invalidPathWarning_::
+string __invalidPathWarning_::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Path
+string Path _(read only)_
 
 ### Protected Constructors
 

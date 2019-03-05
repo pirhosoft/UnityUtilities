@@ -2,23 +2,23 @@
 
 ## SceneHelper
 
-PiRhoSoft.UtilityEditor.SceneHelper : https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html[AssetPostprocessor^]
+PiRhoSoft.UtilityEditor.SceneHelper : AssetPostprocessor
 
 ### Description
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] RefreshLists()::
+void RefreshLists()::
 
-{Decorator} <<editor/scene-list,SceneList>> GetSceneList({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeNone, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Boolean[bool^] includeCreate)::
+<<editor/scene-list,SceneList>> GetSceneList(bool includeNone, bool includeCreate)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Scene.html[Scene^] CreateScene({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Action[Action^] create)::
+Scene CreateScene(string name, Action create)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] AddSceneToBuild({Decorator} https://docs.unity3d.com/ScriptReference/Scene.html[Scene^] scene)::
+void AddSceneToBuild(Scene scene)::
 
-{Decorator} <<editor/scene-state,SceneState>> CaptureState()::
+<<editor/scene-state,SceneState>> CaptureState()::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] RestoreState({Decorator} <<editor/scene-state,SceneState>> state)::
+void RestoreState(<<editor/scene-state,SceneState>> state)::
 
 ### Constructors
 

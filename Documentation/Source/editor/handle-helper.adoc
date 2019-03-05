@@ -8,20 +8,20 @@ PiRhoSoft.UtilityEditor.HandleHelper
 
 ### Static Methods
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DrawText({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] position, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] text, {Decorator} https://docs.unity3d.com/ScriptReference/TextAnchor.html[TextAnchor^] alignment, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+void DrawText(Vector2 position, string text, TextAnchor alignment, Color color)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DrawArrow({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] position, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] direction, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] length, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+void DrawArrow(Vector2 position, Vector2 direction, float length, Color color)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DrawLine({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] start, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] end, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+void DrawLine(Vector2 start, Vector2 end, Color color)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DrawCircle({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] position, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] radius, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+void DrawCircle(Vector2 position, float radius, Color color)::
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Void[void^] DrawBezier({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] start, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] end, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] color)::
+void DrawBezier(Vector2 start, Vector2 end, Color color)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] BoundsHandle({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] bounds, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] snap, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] rectangleOutline, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] rectangleFill, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] circleOutline, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] circleFill, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] handleSize)::
+Rect BoundsHandle(Rect bounds, Vector2 snap, Color rectangleOutline, Color rectangleFill, Color circleOutline, Color circleFill, float handleSize)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] MoveHandle({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] position, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] size, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] snap, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] outline, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] fill)::
+Vector2 MoveHandle(Vector2 position, Vector2 size, Vector2 snap, Color outline, Color fill)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] MoveHandle({Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] position, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] snap, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] outline, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] fill, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] handleSize)::
+Vector2 MoveHandle(Vector2 position, Vector2 snap, Color outline, Color fill, float handleSize)::
 
-{Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] ScaleHandles({Decorator} https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] bounds, {Decorator} https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] snap, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] outline, {Decorator} https://docs.unity3d.com/ScriptReference/Color.html[Color^] fill, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.Single[float^] handleSize)::
+Rect ScaleHandles(Rect bounds, Vector2 snap, Color outline, Color fill, float handleSize)::

@@ -2,16 +2,16 @@
 
 ## SceneReferenceAttribute
 
-PiRhoSoft.UtilityEngine.SceneReferenceAttribute : https://docs.microsoft.com/en-us/dotnet/api/System.Attribute[Attribute^]
+PiRhoSoft.UtilityEngine.SceneReferenceAttribute : Attribute
 
 ### Description
 
 ### Constructors
 
-SceneReferenceAttribute({Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] name, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] creator)::
+SceneReferenceAttribute(string name, string creator)::
 
 ### Public Properties
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Name
+string Name _(read only)_
 
-{Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] Creator
+string Creator _(read only)_

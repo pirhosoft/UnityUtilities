@@ -1,0 +1,15 @@
+[#editor/documentation-section-declaration-type]
+
+## DeclarationType
+
+PiRhoSoft.UtilityEditor.DeclarationType
+
+### Description
+
+### Values
+
+<<editor/documentation-section-declaration-type,DeclarationType>> _Static_::
+
+<<editor/documentation-section-declaration-type,DeclarationType>> _Instance_::
+
+<<editor/documentation-section-declaration-type,DeclarationType>> _Inherited_::

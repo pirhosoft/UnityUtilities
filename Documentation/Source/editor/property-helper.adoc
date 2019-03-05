@@ -8,6 +8,6 @@ PiRhoSoft.UtilityEditor.PropertyHelper
 
 ### Static Methods
 
-{Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] GetSibling({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property, {Decorator} https://docs.microsoft.com/en-us/dotnet/api/System.String[string^] siblingName)::
+SerializedProperty GetSibling(SerializedProperty property, string siblingName)::
 
-{Decorator} T GetObject<T>({Decorator} https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] property)::
+T GetObject<T>(SerializedProperty property)::
