@@ -4,7 +4,7 @@ namespace PiRhoSoft.UtilityEngine
 {
 	[DisallowMultipleComponent]
 	[RequireComponent(typeof(Renderer))]
-	[AddComponentMenu("PiRhoSoft Utility/Animation/Simple Material Animation")]
+	[AddComponentMenu("PiRho Soft/Animation/Simple Material Animation")]
 	public class SimpleMaterialAnimation : MonoBehaviour, IAnimationNotifier
 	{
 		private static readonly int _progressId = Shader.PropertyToID("_Progress");

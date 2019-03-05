@@ -3,7 +3,7 @@
 namespace PiRhoSoft.UtilityEngine
 {
 	[DisallowMultipleComponent]
-	[AddComponentMenu("PiRhoSoft Utility/Animation/Simple Animation Player")]
+	[AddComponentMenu("PiRho Soft/Animation/Simple Animation Player")]
 	public class SimpleAnimationPlayer : AnimationPlayer
 	{
 		[Tooltip("Whether to play the animation when the object awakes")]

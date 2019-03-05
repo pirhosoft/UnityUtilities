@@ -12,7 +12,7 @@ namespace PiRhoSoft.UtilityEngine
 
 	[DisallowMultipleComponent]
 	[RequireComponent(typeof(Animator))]
-	[AddComponentMenu("PiRhoSoft Utility/Animation/Animation Player")]
+	[AddComponentMenu("PiRho Soft/Animation/Animation Player")]
 	public class AnimationPlayer : MonoBehaviour, IAnimationNotifier
 	{
 		private const string _infiniteLoopingWarning = "(UAAPIL) Unable to wait on animation for {0}: the animation '{1}' was set to loop and would have never finished";

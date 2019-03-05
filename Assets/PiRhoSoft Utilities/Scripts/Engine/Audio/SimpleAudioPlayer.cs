@@ -3,7 +3,7 @@
 namespace PiRhoSoft.UtilityEngine
 {
 	[DisallowMultipleComponent]
-	[AddComponentMenu("PiRhoSoft Utility/Audio/Simple Audio Player")]
+	[AddComponentMenu("PiRho Soft/Audio/Simple Audio Player")]
 	public class SimpleAudioPlayer : AudioPlayer
 	{
 		[Tooltip("Whether to play the sound when the object awakes")]
