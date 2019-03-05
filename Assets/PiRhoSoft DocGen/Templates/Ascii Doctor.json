@@ -2,15 +2,13 @@
     "OutputDirectory": "Documentation/Generated",
     "Categories": [
         {
-            "Name": "Engine",
+            "Name": "Manual",
             "CategoryFilename": "{CategoryId}.adoc",
             "TypeFilename": "{CategoryId}/{TypeId}.adoc",
             "IncludeInTableOfContents": true,
-            "IncludedTypes": -1,
+            "IncludedTypes": 19,
             "IncludedNamespaces": {
-                "_items": [
-                    "PiRhoSoft.UtilityEngine"
-                ]
+                "_items": []
             },
             "ExternalNamespaces": {
                 "_items": [
@@ -27,76 +25,10 @@
             "Sections": {
                 "_items": [
                     {
-                        "Name": "Values",
-                        "IncludedDeclarations": 1,
-                        "IncludedAccessLevels": 1,
-                        "IncludedMemberTypes": 16
-                    },
-                    {
-                        "Name": "Static Fields",
-                        "IncludedDeclarations": 1,
-                        "IncludedAccessLevels": 1,
+                        "Name": "Fields",
+                        "IncludedDeclarations": 2,
+                        "IncludedAccessLevels": 0,
                         "IncludedMemberTypes": 2
-                    },
-                    {
-                        "Name": "Static Properties",
-                        "IncludedDeclarations": 1,
-                        "IncludedAccessLevels": 1,
-                        "IncludedMemberTypes": 4
-                    },
-                    {
-                        "Name": "Static Methods",
-                        "IncludedDeclarations": 1,
-                        "IncludedAccessLevels": 1,
-                        "IncludedMemberTypes": 8
-                    },
-                    {
-                        "Name": "Constructors",
-                        "IncludedDeclarations": 2,
-                        "IncludedAccessLevels": 1,
-                        "IncludedMemberTypes": 1
-                    },
-                    {
-                        "Name": "Public Fields",
-                        "IncludedDeclarations": 2,
-                        "IncludedAccessLevels": 1,
-                        "IncludedMemberTypes": 2
-                    },
-                    {
-                        "Name": "Public Properties",
-                        "IncludedDeclarations": 2,
-                        "IncludedAccessLevels": 1,
-                        "IncludedMemberTypes": 4
-                    },
-                    {
-                        "Name": "Public Methods",
-                        "IncludedDeclarations": 2,
-                        "IncludedAccessLevels": 1,
-                        "IncludedMemberTypes": 8
-                    },
-                    {
-                        "Name": "Protected Constructors",
-                        "IncludedDeclarations": 2,
-                        "IncludedAccessLevels": 2,
-                        "IncludedMemberTypes": 1
-                    },
-                    {
-                        "Name": "Protected Fields",
-                        "IncludedDeclarations": 2,
-                        "IncludedAccessLevels": 2,
-                        "IncludedMemberTypes": 2
-                    },
-                    {
-                        "Name": "Protected Properties",
-                        "IncludedDeclarations": 2,
-                        "IncludedAccessLevels": 2,
-                        "IncludedMemberTypes": 4
-                    },
-                    {
-                        "Name": "Protected Methods",
-                        "IncludedDeclarations": 2,
-                        "IncludedAccessLevels": 2,
-                        "IncludedMemberTypes": 8
                     }
                 ]
             },
@@ -104,38 +36,36 @@
                 "CategoryFile": ":imagesdir: {CategoryId}/\n\n{Types}",
                 "Type": "include::{TypeFilename}[]",
                 "TypeSeparator": "\n\n<<<\n\n",
-                "TypeFile": "[#{CategoryId}/{TypeId}]\n\n## {TypeName}\n\n{TypeNamespace}.{TypeName}{Generics}{Bases}\n\n### Description\n\n{Sections}",
+                "TypeFile": "[#{CategoryId}/{TypeId}]\n\n## {TypeNiceName}\n\n{Sections}\n\nifdef::backend-multipage_html5[]\nlink:reference/{TypeId}.html[Reference]\nendif::[]",
                 "Generic": "__{Name}__",
-                "GenericOpener": "<",
-                "GenericCloser": ">",
-                "GenericSeparator": ", ",
-                "BaseOpener": " : ",
-                "BaseSeparator": ", ",
+                "GenericOpener": "",
+                "GenericCloser": "",
+                "GenericSeparator": "",
+                "BaseOpener": "",
+                "BaseSeparator": "",
                 "Section": "### {SectionName}\n\n{Members}",
-                "SectionSeparator": "\n\n",
-                "Constructor": "{Name}({Parameters})::",
-                "Field": "{Type} _{Name}_::",
-                "Property": "{Type} _{Name}_{Decorators}::",
-                "Method": "{Type} {Name}({Parameters}){Decorators}::",
+                "SectionSeparator": "",
+                "Constructor": "",
+                "Field": "{Type} _{NiceName}_::",
+                "Property": "",
+                "Method": "",
                 "MemberSeparator": "\n\n",
-                "Parameter": "{Type} _{Name}_{Decorators}",
-                "ParameterSeparator": ", ",
-                "Decorator": " _({Name})_",
+                "Parameter": "",
+                "ParameterSeparator": "",
+                "Decorator": "",
                 "DecoratorSeparator": "",
-                "InternalLink": "<<{CategoryId}/{TypeId}.html,{TypeName}>>",
+                "InternalLink": "<<{CategoryId}/{TypeId}.html,{TypeNiceName}>>",
                 "UnknownLink": "{TypeName}"
             }
         },
         {
-            "Name": "Editor",
+            "Name": "Reference",
             "CategoryFilename": "{CategoryId}.adoc",
             "TypeFilename": "{CategoryId}/{TypeId}.adoc",
             "IncludeInTableOfContents": true,
             "IncludedTypes": -1,
             "IncludedNamespaces": {
-                "_items": [
-                    "PiRhoSoft.UtilityEditor"
-                ]
+                "_items": []
             },
             "ExternalNamespaces": {
                 "_items": [
@@ -146,10 +76,6 @@
                     {
                         "Namespace": "Unity",
                         "LinkTemplate": "https://docs.unity3d.com/ScriptReference/{TypeName}.html[{TypeName}^]"
-                    },
-                    {
-                        "Namespace": "PiRhoSoft.UtilityEngine",
-                        "LinkTemplate": "<<Engine/{TypeId}.html,{TypeName}>>"
                     }
                 ]
             },
@@ -258,24 +184,9 @@
     ],
     "TableOfContents": {
         "OutputFile": "table-of-contents.html",
-        "CodePath": "PiRhoSoft Utilities/Scripts",
+        "CodePath": "",
         "Sections": {
-            "_items": [
-                "Attributes",
-                "Content",
-                "Controls",
-                "DataStructures",
-                "Drawers",
-                "Helpers",
-                "Internals",
-                "Managers",
-                "Objects",
-                "Preferences",
-                "Scopes",
-                "Tools",
-                "Windows",
-                "Wrappers"
-            ]
+            "_items": []
         },
         "Templates": {
             "File": "<ul>\n{Categories}</ul>",
@@ -288,10 +199,7 @@
         "OutputFile": "log-descriptions.adoc",
         "IncludedTypes": -1,
         "IncludedNamespaces": {
-            "_items": [
-                "PiRhoSoft.UtilityEngine",
-                "PiRhoSoft.UtilityEditor"
-            ]
+            "_items": []
         },
         "DocumentTemplate": "[#manual/log-descriptions]\r\n## Log Descriptions\r\n\r\n### Warnings\r\n{Warnings}\r\n### Errors\r\n{Errors}",
         "MessageTemplate": "\r\n{Id}:: {Message}\r\n--\r\n--\r\n"
