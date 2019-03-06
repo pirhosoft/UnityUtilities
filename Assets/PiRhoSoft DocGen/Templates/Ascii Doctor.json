@@ -191,7 +191,7 @@
         "Templates": {
             "File": "<ul>\n{Categories}</ul>",
             "Category": "\t<li>\n\t\t<span class='menu-header'>{CategoryName}</span>\n\t\t<ul>\n{Sections}\t\t</ul>\n\t</li>\n",
-            "Section": "\t\t\t<li>\n\t\t\t\t<a class='menu-section' data-section='{CategoryId}' href>{SectionName}</a>\n\t\t\t\t<ul class='submenu'>\n{Types}\t\t\t\t</ul>\n\t\t\t</li>\n",
+            "Section": "\t\t\t<li>\n\t\t\t\t<a class='menu-section' data-section='{CategoryId}-{SectionId}' href>{SectionName}</a>\n\t\t\t\t<ul class='submenu'>\n{Types}\t\t\t\t</ul>\n\t\t\t</li>\n",
             "Type": "\t\t\t\t\t<li><a class='menu-link' href='{CategoryId}/{TypeId}.html'>{TypeName}</a></li>\n"
         }
     },
