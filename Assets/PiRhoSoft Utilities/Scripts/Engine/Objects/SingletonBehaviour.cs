@@ -8,13 +8,14 @@ namespace PiRhoSoft.UtilityEngine
 
 		public static T Instance { get; private set; }
 
+		public SingletonBehaviour()
+		{
+			Instance = this as T;
+		}
+
 		protected virtual void Awake()
 		{
-			if (Instance == null)
-			{
-				Instance = this as T;
-			}
-			else
+			if (Instance != this)
 			{
 				Debug.LogWarningFormat(_secondInstanceWarning, GetType().Name);
 				Destroy(this);
