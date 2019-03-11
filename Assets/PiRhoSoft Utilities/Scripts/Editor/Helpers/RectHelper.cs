@@ -33,9 +33,15 @@ namespace PiRhoSoft.UtilityEditor
 		public static float CurrentIndentWidth => GetIndentWidth(EditorGUI.indentLevel);
 		public static float CurrentLabelWidth => EditorGUIUtility.labelWidth - CurrentIndentWidth;
 		public static float CurrentFieldWidth => CurrentViewWidth - EditorGUIUtility.labelWidth;
-		public static float CurrentViewWidth => GetContextWidth() - LeftMargin - RightMargin - ContextMargin;
+		public static float CurrentViewWidth => CurrentContextWidth - LeftMargin - RightMargin - ContextMargin;
+		public static float CurrentContextWidth => GetContextWidth();
 
 		public static float ContextMargin { get; set; }
+
+		public static float GetLabeledWidth(GUIContent label)
+		{
+			return label.text != "" ? CurrentFieldWidth : CurrentViewWidth;
+		}
 
 		public static Rect TakeLine(ref Rect full)
 		{

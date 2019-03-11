@@ -121,6 +121,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464669167}
+  - component: {fileID: 464669168}
   - component: {fileID: 464669166}
   m_Layer: 0
   m_Name: Example
@@ -138,47 +139,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 464669165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c20b1655f3958664a8efb8164fcf3e3c, type: 3}
+  m_Script: {fileID: 11500000, guid: 0f2fe6dae79257e40be6b282779f6eb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IntPopup: 5
-  StringPopup: Yes
-  Asset: {fileID: 11400000, guid: c7559cdbc33f04af1a5a42d2aa5b40a5, type: 3}
-  PopupFlags: 3
-  ButtonFlags: 0
-  Buttons: 3
-  StringList:
-    _items:
-    - Tiger
-    - Lion
-    - Monkey
-  IntArray:
-    _items: 000000000700000004000000fdffffff
-  StringDictionary:
-    _keys:
-    - Shark
-    - Whale
-    - Shrimp
-    _values:
-    - Great White
-    - Orca
-    - Mantis
-  InlineVector: {x: 5, y: 8}
-  ShowConditional: 1
-  ConditionalString: Show Conditional is checked!
-  Disabled: 0
-  MaximumFloat: 100
-  MaximumInt: 100
-  MinimumFloat: 3.47
-  MinimumInt: 87
-  IntSlider: 75
-  FloatSlider: 5.625
-  IntMinMaxSlider: 2
-  IntMinMaxSliderMax: 6
-  FloatMinMaxSlider: 3.5
-  FloatMinMaxSliderMax: 7.5
-  SnapInt: 30
-  SnapFloat: 5.5
+  Normal: 0
+  Popup: 90
+  Slider: 0
+  Minimum: -6.4
+  Maximum: 16.4
 --- !u!4 &464669167
 Transform:
   m_ObjectHideFlags: 0
@@ -193,3 +161,20 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &464669168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 464669165}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 808c44f58c0713a4983d55e5d47c863c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Normal: 0
+  Popup: 90
+  Slider: 1000
+  Minimum: -6
+  Maximum: 12

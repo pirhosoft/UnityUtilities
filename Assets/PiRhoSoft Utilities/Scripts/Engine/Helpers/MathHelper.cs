@@ -33,20 +33,5 @@ namespace PiRhoSoft.UtilityEngine
 		{
 			return Mathf.Repeat(value, length);
 		}
-
-		public static int LeastCommonMultiple(int a, int b)
-		{
-			var num1 = a > b ? a : b;
-			var num2 = a > b ? b : a;
-
-			for (var i = 1; i < num2; i++)
-			{
-				var multiple = num1 * i;
-				if (multiple % num2 == 0)
-					return multiple;
-			}
-
-			return num1 * num2;
-		}
 	}
 }

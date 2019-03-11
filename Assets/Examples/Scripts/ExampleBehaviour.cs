@@ -32,6 +32,7 @@ public enum Toggles
 
 public class ExampleBehaviour : MonoBehaviour
 {
+	/*
 	[IntPopup(new int[] { 0, 5, 10 }, new string[] { "Zero", "Five", "Ten" })] public int IntPopup;
 	[StringPopup(new string[] { "Yes", "No" })] public string StringPopup;
 
@@ -70,4 +71,5 @@ public class ExampleBehaviour : MonoBehaviour
 
 	[Snap(5)] public int SnapInt;
 	[Snap(0.5f)] public float SnapFloat;
+	*/
 }

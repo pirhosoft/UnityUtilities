@@ -63,7 +63,7 @@ namespace PiRhoSoft.DocGenEditor
 
 		public bool IncludeInTableOfContents = true;
 
-		[EnumButtons] public DocumentationTypeCategory IncludedTypes = DocumentationTypeCategory.All;
+		[EnumDisplay] public DocumentationTypeCategory IncludedTypes = DocumentationTypeCategory.All;
 		[ListDisplay] public DocumentationNamespaceList IncludedNamespaces = new DocumentationNamespaceList();
 		[ListDisplay(ItemDisplay = ListItemDisplayType.Inline)] public ExternalNamespaceList ExternalNamespaces = new ExternalNamespaceList();
 		[ListDisplay(ItemDisplay = ListItemDisplayType.Inline)] public DocumentationSectionList Sections = new DocumentationSectionList();

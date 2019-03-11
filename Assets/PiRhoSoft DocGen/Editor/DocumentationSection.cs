@@ -42,9 +42,9 @@ namespace PiRhoSoft.DocGenEditor
 
 		public string Name = "";
 
-		[EnumButtons(MinimumWidth = 80)] public DeclarationType IncludedDeclarations = DeclarationType.Instance;
-		[EnumButtons(MinimumWidth = 80)] public AccessLevel IncludedAccessLevels = AccessLevel.Public | AccessLevel.Protected;
-		[EnumButtons(MinimumWidth = 80)] public MemberType IncludedMemberTypes = MemberType.Field;
+		[EnumDisplay(MinimumWidth = 80)] public DeclarationType IncludedDeclarations = DeclarationType.Instance;
+		[EnumDisplay(MinimumWidth = 80)] public AccessLevel IncludedAccessLevels = AccessLevel.Public | AccessLevel.Protected;
+		[EnumDisplay(MinimumWidth = 80)] public MemberType IncludedMemberTypes = MemberType.Field;
 
 		private const string _membersTag = "{Members}";
 

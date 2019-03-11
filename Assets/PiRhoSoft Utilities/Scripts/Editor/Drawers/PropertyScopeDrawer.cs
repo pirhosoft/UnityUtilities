@@ -52,14 +52,13 @@ namespace PiRhoSoft.UtilityEditor
 
 		private PropertyDrawer _nextDrawer = null;
 
-		public override void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute)
+		public static PropertyDrawer GetNextDrawer(FieldInfo fieldInfo, PropertyAttribute attribute)
 		{
 			SetupDrawerDictionary();
 
 			var nextAttribute = attribute;
-			var found = false;
 
-			while (!found)
+			while (true)
 			{
 				var attributes = fieldInfo.GetCustomAttributes<PropertyAttribute>(true);
 				var drawerAttribute = attributes.LastOrDefault(next => next.order < nextAttribute.order && !_ignoredTypes.Contains(next.GetType()));
@@ -74,13 +73,20 @@ namespace PiRhoSoft.UtilityEditor
 						continue;
 					}
 
-					_nextDrawer = Activator.CreateInstance(drawer) as PropertyDrawer;
-					_fieldInfoField.SetValue(_nextDrawer, fieldInfo);
-					_attributeField.SetValue(_nextDrawer, drawerAttribute);
+					var nextDrawer = Activator.CreateInstance(drawer) as PropertyDrawer;
+					_fieldInfoField.SetValue(nextDrawer, fieldInfo);
+					_attributeField.SetValue(nextDrawer, drawerAttribute);
+
+					return nextDrawer;
 				}
 
-				found = true;
+				return null;
 			}
+		}
+
+		public override void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute)
+		{
+			_nextDrawer = GetNextDrawer(fieldInfo, attribute);
 		}
 
 		protected float GetNextHeight(SerializedProperty property, GUIContent label)

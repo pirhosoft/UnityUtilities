@@ -14,7 +14,7 @@ namespace PiRhoSoft.DocGenEditor
 	{
 		public string OutputFile = "log.txt";
 
-		[EnumButtons] public DocumentationTypeCategory IncludedTypes = DocumentationTypeCategory.All;
+		[EnumDisplay] public DocumentationTypeCategory IncludedTypes = DocumentationTypeCategory.All;
 		[ListDisplay] public DocumentationNamespaceList IncludedNamespaces = new DocumentationNamespaceList();
 
 		[TextArea(2, 8)] public string DocumentTemplate = "{Warnings}\n\n{Errors}";

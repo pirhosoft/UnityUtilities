@@ -13,10 +13,10 @@ namespace PiRhoSoft.DocGenEditor
 	{
 		private static string _settingsFile;
 
-		private static readonly TextButton _newButton = new TextButton("New", "Create a new settings file");
-		private static readonly TextButton _openButton = new TextButton("Open", "Open an existing settings file");
-		private static readonly TextButton _generateButton = new TextButton("Generate", "Generate the categories, log descriptions, and table of contents and validate help url attributes");
-		private static readonly TextButton _saveButton = new TextButton("Save", "Save the changes made to the settings");
+		private static readonly Button _newButton = new Button(null, "New", "Create a new settings file");
+		private static readonly Button _openButton = new Button(null, "Open", "Open an existing settings file");
+		private static readonly Button _generateButton = new Button(null, "Generate", "Generate the categories, log descriptions, and table of contents and validate help url attributes");
+		private static readonly Button _saveButton = new Button(null, "Save", "Save the changes made to the settings");
 		private const string _templatesFolder = "Assets/PiRhoSoft DocGen/Templates";
 
 		private Dictionary<string, string> _templates;

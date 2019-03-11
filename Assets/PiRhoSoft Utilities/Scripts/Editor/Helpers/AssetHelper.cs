@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace PiRhoSoft.UtilityEditor
 {
@@ -13,12 +14,12 @@ namespace PiRhoSoft.UtilityEditor
 		public bool HasCreate;
 
 		public GUIContent[] Names;
-		public List<ScriptableObject> Assets;
+		public List<Object> Assets;
 		public TypeList Types;
 
 		#region Lookup
 
-		public int GetIndex(ScriptableObject asset)
+		public int GetIndex(Object asset)
 		{
 			var index = Assets.IndexOf(asset);
 
@@ -31,7 +32,7 @@ namespace PiRhoSoft.UtilityEditor
 			return index;
 		}
 
-		public ScriptableObject GetAsset(int index)
+		public Object GetAsset(int index)
 		{
 			if (HasNone) index -= 2;  // skip 'None' and separator
 			return index >= 0 && index < Assets.Count ? Assets[index] : null;
@@ -94,10 +95,25 @@ namespace PiRhoSoft.UtilityEditor
 
 		public static ScriptableObject GetOrCreateAsset(string name, Type type)
 		{
-			var asset = GetAsset(type);
+			var asset = GetAsset(type) as ScriptableObject;
 
 			if (asset == null)
 				asset = CreateAsset(name, type);
+
+			return asset;
+		}
+
+		public static ScriptableObject CreateAssetAtPath(string path, Type type)
+		{
+			if (!path.StartsWith(Application.dataPath))
+				return null;
+
+			path = path.Substring(Application.dataPath.Length - 6); // keep 'Assets' as the root folder
+			
+			var asset = ScriptableObject.CreateInstance(type);
+
+			AssetDatabase.CreateAsset(asset, path);
+			AssetDatabase.SaveAssets();
 
 			return asset;
 		}
@@ -106,69 +122,69 @@ namespace PiRhoSoft.UtilityEditor
 
 		#region Lookup
 
-		public static AssetType GetAsset<AssetType>() where AssetType : ScriptableObject
+		public static AssetType GetAsset<AssetType>() where AssetType : Object
 		{
 			return FindAssets<AssetType>().FirstOrDefault();
 		}
 
-		public static AssetType GetAssetWithId<AssetType>(string id) where AssetType : ScriptableObject
+		public static AssetType GetAssetWithId<AssetType>(string id) where AssetType : Object
 		{
 			var path = AssetDatabase.GUIDToAssetPath(id);
 			return GetAssetAtPath<AssetType>(path);
 		}
 
-		public static AssetType GetAssetAtPath<AssetType>(string path) where AssetType : ScriptableObject
+		public static AssetType GetAssetAtPath<AssetType>(string path) where AssetType : Object
 		{
 			return AssetDatabase.LoadAssetAtPath<AssetType>(path);
 		}
 
-		public static ScriptableObject GetAsset(Type assetType)
+		public static Object GetAsset(Type assetType)
 		{
 			return FindAssets(assetType).FirstOrDefault();
 		}
 
-		public static ScriptableObject GetAssetWithId(string id, Type type)
+		public static Object GetAssetWithId(string id, Type type)
 		{
 			var path = AssetDatabase.GUIDToAssetPath(id);
 			return GetAssetAtPath(path, type);
 		}
 
-		public static ScriptableObject GetAssetAtPath(string path, Type type)
+		public static Object GetAssetAtPath(string path, Type type)
 		{
-			return AssetDatabase.LoadAssetAtPath(path, type) as ScriptableObject;
+			return AssetDatabase.LoadAssetAtPath(path, type) as Object;
 		}
 
 		#endregion
 
 		#region Listing
 
-		public static List<AssetType> ListAssets<AssetType>() where AssetType : ScriptableObject
+		public static List<AssetType> ListAssets<AssetType>() where AssetType : Object
 		{
 			return FindAssets<AssetType>().ToList();
 		}
 
-		public static IEnumerable<AssetType> FindAssets<AssetType>() where AssetType : ScriptableObject
+		public static IEnumerable<AssetType> FindAssets<AssetType>() where AssetType : Object
 		{
 			return FindAssets(typeof(AssetType)).Select(asset => asset as AssetType);
 		}
 
-		public static List<ScriptableObject> ListAssets(Type assetType)
+		public static List<Object> ListAssets(Type assetType)
 		{
 			return FindAssets(assetType).ToList();
 		}
 
-		public static IEnumerable<ScriptableObject> FindAssets(Type assetType)
+		public static IEnumerable<Object> FindAssets(Type assetType)
 		{
 			// This query seems to occassionally miss finding some objects. Renaming, moving, or modifying the missing
 			// object seems to fix it but the underlying cause is unknown. It might have something to do with loading
 			// objects whose serialized representation has changed in which case AssetDatabase.ForceReserializeAssets
 			// might also fix it. That could be exposed as a workaround with a refresh button in the AssetPopup ui.
 
-			var query = string.Format("t:{0}", assetType);
+			var query = string.Format("t:{0}", assetType).Replace("UnityEngine.", "");
 			return AssetDatabase.FindAssets(query).Select(id => GetAssetWithId(id, assetType));
 		}
 
-		public static AssetList GetAssetList<AssetType>(bool includeNone, bool includeCreate) where AssetType : ScriptableObject
+		public static AssetList GetAssetList<AssetType>(bool includeNone, bool includeCreate) where AssetType : Object
 		{
 			return GetAssetList(typeof(AssetType), includeNone, includeCreate);
 		}
@@ -225,7 +241,7 @@ namespace PiRhoSoft.UtilityEditor
 			return list;
 		}
 
-		private static string GetPath(ScriptableObject asset)
+		private static string GetPath(Object asset)
 		{
 			var path = AssetDatabase.GetAssetPath(asset);
 			var slash = path.LastIndexOf('/');
