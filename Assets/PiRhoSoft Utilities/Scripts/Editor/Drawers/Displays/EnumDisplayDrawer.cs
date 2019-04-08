@@ -63,7 +63,7 @@ namespace PiRhoSoft.UtilityEditor
 		{
 			if (type == EnumDisplayType.Buttons)
 			{
-				var width = label.text != "" ? RectHelper.CurrentFieldWidth : RectHelper.CurrentViewWidth;
+				var width = label.text != string.Empty ? RectHelper.CurrentFieldWidth : RectHelper.CurrentViewWidth;
 				GetButtonInfo(enumType, width, minimumButtonWidth, out var info, out float buttonWidth, out int rows, out int columns);
 				return EditorGUIUtility.singleLineHeight * rows;
 			}
@@ -83,7 +83,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		public static int Draw(Rect position, GUIContent label, int value, Type enumType, EnumDisplayType type, bool forceFlags, float minimumButtonWidth = EnumDisplayAttribute.DefaultMinimumWidth)
 		{
-			var width = label.text != "" ? RectHelper.CurrentFieldWidth : RectHelper.CurrentViewWidth;
+			var width = label.text != string.Empty ? RectHelper.CurrentFieldWidth : RectHelper.CurrentViewWidth;
 			GetButtonInfo(enumType, width, minimumButtonWidth, out var info, out var buttonWidth, out var rows, out var columns);
 
 			var useFlags = forceFlags || info.IsFlags;

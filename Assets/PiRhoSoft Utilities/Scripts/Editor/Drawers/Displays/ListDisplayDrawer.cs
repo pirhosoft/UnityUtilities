@@ -9,8 +9,8 @@ namespace PiRhoSoft.UtilityEditor
 	{
 		private const string _invalidTypeWarning = "(ULDCIT) Invalid type for ListDisplay on field {0}: ListDisplay can only be applied to SerializedList or SerializedArray fields";
 
-		private static Label _addButton = new Label(Icon.BuiltIn(Icon.Add), "", "Add an item to this list");
-		private static Label _removeButton = new Label(Icon.BuiltIn(Icon.Remove), "", "Remove this item from the list");
+		private static Label _addButton = new Label(Icon.BuiltIn(Icon.Add), string.Empty, "Add an item to this list");
+		private static Label _removeButton = new Label(Icon.BuiltIn(Icon.Remove), string.Empty, "Remove this item from the list");
 
 		private SerializedProperty _property;
 		private GUIContent _label;

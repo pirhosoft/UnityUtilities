@@ -63,15 +63,12 @@ namespace PiRhoSoft.UtilityEngine
 		public static Object GetAsBaseObject(Object unityObject)
 		{
 			// The 'base' object is the GameObject for Component types and the actual object for all other types.
-
-			var component = unityObject as Component;
-			return component != null ? component.gameObject : unityObject;
+			return unityObject is Component component ? component.gameObject : unityObject;
 		}
 
 		public static T GetAsObject<T>(Object unityObject) where T : Object
 		{
-			var t = unityObject as T;
-			if (t != null)
+			if (unityObject is T t)
 				return t;
 
 			if (typeof(T) == typeof(GameObject))
@@ -83,14 +80,26 @@ namespace PiRhoSoft.UtilityEngine
 			return null;
 		}
 
+		public static Object GetAsObject(Type type, Object unityObject)
+		{
+			if (type.IsAssignableFrom(unityObject.GetType()))
+				return unityObject;
+
+			if (type == typeof(GameObject))
+				return GetAsGameObject(unityObject);
+
+			if (typeof(Component).IsAssignableFrom(type))
+				return GetAsComponent(type, unityObject);
+
+			return null;
+		}
+
 		public static GameObject GetAsGameObject(Object unityObject)
 		{
-			var gameObject = unityObject as GameObject;
-			if (gameObject != null)
+			if (unityObject is GameObject gameObject)
 				return gameObject;
 
-			var component = unityObject as Component;
-			if (component != null)
+			if (unityObject is Component component)
 				return component.gameObject;
 
 			return null;
@@ -98,29 +107,38 @@ namespace PiRhoSoft.UtilityEngine
 
 		public static T GetAsComponent<T>(Object unityObject) where T : Object
 		{
-			var t = unityObject as Component as T;
-			if (t != null)
+			if (unityObject is T t)
 				return t;
 
-			var gameObject = unityObject as GameObject;
-			if (gameObject != null)
+			if (unityObject is GameObject gameObject)
 				return gameObject.GetComponent<T>();
 
-			var component = unityObject as Component;
-			if (component != null)
+			if (unityObject is Component component)
 				return component.GetComponent<T>();
+
+			return null;
+		}
+
+		public static Component GetAsComponent(Type componentType, Object unityObject)
+		{
+			if (componentType.IsAssignableFrom(unityObject.GetType()))
+				return unityObject as Component;
+
+			if (unityObject is GameObject gameObject)
+				return gameObject.GetComponent(componentType);
+
+			if (unityObject is Component component)
+				return component.GetComponent(componentType);
 
 			return null;
 		}
 
 		public static Component GetAsComponent(Object unityObject, string componentName)
 		{
-			var gameObject = unityObject as GameObject;
-			if (gameObject != null)
+			if (unityObject is GameObject gameObject)
 				return gameObject.GetComponent(componentName);
 
-			var component = unityObject as Component;
-			if (component != null)
+			if (unityObject is Component component)
 				return component.GetComponent(componentName);
 
 			return null;

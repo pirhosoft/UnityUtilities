@@ -138,59 +138,31 @@ MonoBehaviour:
   m_GameObject: {fileID: 464669165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4a85b94b708c23840b791b39c8f44314, type: 3}
+  m_Script: {fileID: 11500000, guid: 343f9bb4d7ec53041838605e00604236, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Field: 
-  FoldoutField: 
-  FullField: 
-  FoldoutAndFullField: 
-  Box: 
-  FoldoutBox: 
-  FullBox: 'aoeu
-
-    ao
-
-    euao
-
-    euao
-
-    euaoe
-
-    uaoe
-
-    uao
-
-    euaoe aoed udnaoehu saoetuhsa oetuhasoeu thaoseu taoehus aoetuha oseuthaoes utaohseu
-    taoe
-
-    u'
-  FoldoutAndFullBox: 
-  Area: 'aoeu
-
-    ao
-
-    euao aoehusthaoeu staoehu saoteuhs aoteuhsa oetuhaose utsaoehu saoetuh saoteuh
-    saoteuh aoesuth
-
-    euaoe
-
-    uaoe
-
-    uao
-
-    euaoe
-
-    uaoeu
-
-'
-  FoldoutArea: 
-  FullArea: 
-  FoldoutAndFullArea: 
-  Popup: 
-  FoldoutPopup: 
-  FullPopup: Two
-  FoldoutAndFullPopup: 
+  Normal: []
+  DefaultStringList:
+    _items:
+    - 
+    - 
+    - 
+  DefaultAssetList:
+    _items:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  AssetList:
+    _items:
+    - {fileID: 0}
+    - {fileID: 0}
+    - {fileID: 0}
+  IndentedClassList:
+    _items: []
+  InlineClassList:
+    _items: []
+  FoldoutClassList:
+    _items: []
 --- !u!4 &464669167
 Transform:
   m_ObjectHideFlags: 0

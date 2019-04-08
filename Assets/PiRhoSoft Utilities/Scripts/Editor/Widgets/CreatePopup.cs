@@ -117,7 +117,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		protected override void Reset()
 		{
-			Name = "";
+			Name = string.Empty;
 		}
 	}
 }

@@ -102,6 +102,30 @@ namespace PiRhoSoft.UtilityEngine
 
 		#endregion
 
+		#region Key State
+
+		public static ButtonState GetKeyState(KeyCode key)
+		{
+			return new ButtonState(key);
+		}
+
+		public static bool GetKeyDown(KeyCode key)
+		{
+			return Input.GetKey(key);
+		}
+
+		public static bool GetWasKeyPressed(KeyCode key)
+		{
+			return Input.GetKeyDown(key);
+		}
+
+		public static bool GetWasKeyReleased(KeyCode key)
+		{
+			return Input.GetKeyUp(key);
+		}
+
+		#endregion
+
 		#region Button State
 
 		public static bool IsButtonAvailable(string button)
@@ -120,72 +144,40 @@ namespace PiRhoSoft.UtilityEngine
 			}
 		}
 
-		public static ButtonState GetButtonState(KeyCode key, string button)
+		public static ButtonState GetButtonState(string button)
 		{
-			if (!string.IsNullOrEmpty(button))
-			{
-				if (_manualButtons.TryGetValue(button, out ButtonData state))
-					return new ButtonState(state.Pressed, state.Held, state.Released);
+			if (_manualButtons.TryGetValue(button, out ButtonData state))
+				return new ButtonState(state.Pressed, state.Held, state.Released);
 
-				try
-				{
-					return new ButtonState(button);
-				}
-				catch { }
-			}
-
-			return new ButtonState(key);
+			try { return new ButtonState(button); }
+			catch { return new ButtonState(false, false, false); }
 		}
 
-		public static bool GetButtonDown(KeyCode key, string button)
+		public static bool GetButtonDown(string button)
 		{
-			if (!string.IsNullOrEmpty(button))
-			{
-				if (_manualButtons.TryGetValue(button, out ButtonData state))
-					return state.Held;
+			if (_manualButtons.TryGetValue(button, out ButtonData state))
+				return state.Held;
 
-				try
-				{
-					return Input.GetButton(button);
-				}
-				catch { }
-			}
-
-			return Input.GetKey(key);
+			try { return Input.GetButton(button); }
+			catch { return false; }
 		}
 		
-		public static bool GetWasButtonPressed(KeyCode key, string button)
+		public static bool GetWasButtonPressed(string button)
 		{
-			if (!string.IsNullOrEmpty(button))
-			{
-				if (_manualButtons.TryGetValue(button, out ButtonData state))
-					return state.Pressed;
+			if (_manualButtons.TryGetValue(button, out ButtonData state))
+				return state.Pressed;
 
-				try
-				{
-					return Input.GetButtonDown(button);
-				}
-				catch { }
-			}
-
-			return Input.GetKeyDown(key);
+			try { return Input.GetButtonDown(button); }
+			catch { return false; }
 		}
 		
-		public static bool GetWasButtonReleased(KeyCode key, string button)
+		public static bool GetWasButtonReleased(string button)
 		{
-			if (!string.IsNullOrEmpty(button))
-			{
-				if (_manualButtons.TryGetValue(button, out ButtonData state))
-					return state.Released;
+			if (_manualButtons.TryGetValue(button, out ButtonData state))
+				return state.Released;
 
-				try
-				{
-					return Input.GetButtonUp(button);
-				}
-				catch { }
-			}
-
-			return Input.GetKeyUp(key);
+			try { return Input.GetButtonUp(button); }
+			catch { return false; }
 		}
 
 		#endregion

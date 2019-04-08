@@ -112,7 +112,7 @@ namespace PiRhoSoft.UtilityEditor
 				if (list.HasNone)
 				{
 					list.Names[index++] = new GUIContent("None");
-					list.Names[index++] = new GUIContent("");
+					list.Names[index++] = new GUIContent();
 				}
 
 				foreach (var path in list.Paths)
@@ -123,7 +123,7 @@ namespace PiRhoSoft.UtilityEditor
 
 				if (list.HasCreate)
 				{
-					list.Names[index++] = new GUIContent("");
+					list.Names[index++] = new GUIContent();
 					list.Names[index++] = new GUIContent("Create Scene");
 				}
 			}

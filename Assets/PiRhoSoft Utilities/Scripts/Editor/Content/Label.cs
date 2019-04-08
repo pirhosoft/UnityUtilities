@@ -68,7 +68,7 @@ namespace PiRhoSoft.UtilityEditor
 			if (field == null)
 			{
 				Debug.LogWarningFormat(_missingPropertyWarning, propertyName, type.Name);
-				return "";
+				return string.Empty;
 			}
 			else
 			{
@@ -78,7 +78,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		public static string GetTooltip(FieldInfo field)
 		{
-			return field?.GetCustomAttribute<TooltipAttribute>()?.tooltip ?? "";
+			return field?.GetCustomAttribute<TooltipAttribute>()?.tooltip ?? string.Empty;
 		}
 
 		#endregion

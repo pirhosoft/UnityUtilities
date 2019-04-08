@@ -40,8 +40,8 @@ namespace PiRhoSoft.UtilityEditor
 		public const float ItemPadding = 5.0f;
 		public const float TotalMargin = 12.0f; // measured as the width of the rect passed to Draw minus the width of the rect passed to DrawElement
 
-		private static Label _expandButton = new Label(Icon.BuiltIn(Icon.Collapsed), "", "Expand the contents of this list");
-		private static Label _collapseButton = new Label(Icon.BuiltIn(Icon.Expanded), "", "Collapse the contents of this list");
+		private static Label _expandButton = new Label(Icon.BuiltIn(Icon.Collapsed), string.Empty, "Expand the contents of this list");
+		private static Label _collapseButton = new Label(Icon.BuiltIn(Icon.Expanded), string.Empty, "Collapse the contents of this list");
 
 		public ReorderableList List { get; private set; } // this is Unity's undocumented list class that does the bulk of the drawing and layout
 

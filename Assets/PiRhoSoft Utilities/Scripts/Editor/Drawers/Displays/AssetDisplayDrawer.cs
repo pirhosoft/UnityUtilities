@@ -12,7 +12,7 @@ namespace PiRhoSoft.UtilityEditor
 		private const string _invalidTypeWarning = "(UASDDIT) Invalid type for AssetDisplay of field {0}: AssetDisplay can only be used with Object derived fields";
 		private const string _invalidPathError = "(UASDDIP) failed to create asset at path {0}: the path must be inside the 'Assets' folder for this project";
 
-		private static readonly Label _editButton = new Label(Icon.BuiltIn(Icon.Edit), "", "Show this asset in the inspector");
+		private static readonly Label _editButton = new Label(Icon.BuiltIn(Icon.Edit), string.Empty, "Show this asset in the inspector");
 
 		#region Static Property Interface
 

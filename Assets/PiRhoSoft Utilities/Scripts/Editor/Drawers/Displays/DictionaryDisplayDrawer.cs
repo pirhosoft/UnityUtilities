@@ -9,8 +9,8 @@ namespace PiRhoSoft.UtilityEditor
 	{
 		private const string _invalidTypeWarning = "(UDDCIT) Invalid type for DictionaryDisplay on field {0}: DictionaryDisplay can only be applied to IEditableDictionary fields";
 
-		private static Label _addButton = new Label(Icon.BuiltIn(Icon.CustomAdd), "", "Add an item to this dictionary");
-		private static Label _removeButton = new Label(Icon.BuiltIn(Icon.Remove), "", "Remove this item from the dictionary");
+		private static Label _addButton = new Label(Icon.BuiltIn(Icon.CustomAdd), string.Empty, "Add an item to this dictionary");
+		private static Label _removeButton = new Label(Icon.BuiltIn(Icon.Remove), string.Empty, "Remove this item from the dictionary");
 
 		private IEditableDictionary _dictionary;
 		private GUIContent _label;
@@ -41,7 +41,7 @@ namespace PiRhoSoft.UtilityEditor
 						_dictionaryControl.MakeDrawable(DrawItem);
 
 					if (display.AllowAdd)
-						_dictionaryControl.MakeAddable(_addButton, display.AddLabel == null ? new GUIContent("Add Item") : (display.AddLabel == "" ? GUIContent.none : new GUIContent(display.AddLabel)));
+						_dictionaryControl.MakeAddable(_addButton, display.AddLabel == null ? new GUIContent("Add Item") : (display.AddLabel == string.Empty ? GUIContent.none : new GUIContent(display.AddLabel)));
 
 					if (display.AllowRemove)
 						_dictionaryControl.MakeRemovable(_removeButton);

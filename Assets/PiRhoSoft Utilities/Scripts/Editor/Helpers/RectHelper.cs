@@ -29,6 +29,7 @@ namespace PiRhoSoft.UtilityEditor
 		// find the style(s) they are read from
 		public static float LeftMargin = 14.0f;
 		public static float RightMargin = 4.0f;
+		public static float Indent = 15.0f; // this is the value of kIndentPerLevel at the time of writing
 
 		public static float CurrentIndentWidth => GetIndentWidth(EditorGUI.indentLevel);
 		public static float CurrentLabelWidth => EditorGUIUtility.labelWidth - CurrentIndentWidth;
@@ -37,11 +38,6 @@ namespace PiRhoSoft.UtilityEditor
 		public static float CurrentContextWidth => GetContextWidth();
 
 		public static float ContextMargin { get; set; }
-
-		public static float GetLabeledWidth(GUIContent label)
-		{
-			return label.text != "" ? CurrentFieldWidth : CurrentViewWidth;
-		}
 
 		public static Rect TakeLine(ref Rect full)
 		{
@@ -139,6 +135,16 @@ namespace PiRhoSoft.UtilityEditor
 			return v;
 		}
 
+		public static Rect Union(Rect one, Rect two)
+		{
+			var left = Mathf.Min(one.xMin, two.xMin);
+			var right = Mathf.Max(one.xMax, two.xMax);
+			var top = Mathf.Min(one.yMin, two.yMin);
+			var bottom = Mathf.Max(one.yMax, two.yMax);
+
+			return new Rect(left, top, right - left, bottom - top);
+		}
+
 		public static Rect AdjustHeight(Rect rect, float height, RectVerticalAlignment alignment)
 		{
 			var offset = 0.0f;
@@ -167,7 +173,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		public static float GetIndentWidth(int levels)
 		{
-			var indent = 15.0f; // this is the value of kIndentPerLevel at the time of writing
+			var indent = Indent;
 			var prop = typeof(EditorGUI).GetProperty("kIndentPerLevel", BindingFlags.NonPublic | BindingFlags.Static);
 
 			if (prop != null)
