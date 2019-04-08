@@ -2,16 +2,10 @@
 
 ## HandleColorScope
 
-PiRhoSoft.UtilityEditor.HandleColorScope : Scope
+PiRhoSoft.UtilityEditor.HandleColorScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
 
 ### Description
 
 ### Constructors
 
-HandleColorScope()::
-
-HandleColorScope(Color color)::
-
-### Protected Methods
-
-void CloseScope() _(virtual)_::
+HandleColorScope(https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::

@@ -1,0 +1,19 @@
+[#editor/style]
+
+## Style
+
+PiRhoSoft.UtilityEditor.Style
+
+### Description
+
+A helper class for creating styles as static fields on custom -editor/control/drawer/etc-.
+
+NOTE: Styles cannot be created during load so this class defers creation until first use.
+
+### Constructors
+
+Style(Func<https://docs.unity3d.com/ScriptReference/GUIStyle.html[GUIStyle^]> _create_)::
+
+### Public Properties
+
+https://docs.unity3d.com/ScriptReference/GUIStyle.html[GUIStyle^] _Content_ _(read only)_::

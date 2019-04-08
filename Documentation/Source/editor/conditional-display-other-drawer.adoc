@@ -2,10 +2,7 @@
 
 ## ConditionalDisplayOtherDrawer
 
-PiRhoSoft.UtilityEditor.ConditionalDisplayOtherDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/conditional-display-other-control,ConditionalDisplayOtherControl>>>
+PiRhoSoft.UtilityEditor.ConditionalDisplayOtherDrawer : <<editor/property-drawer-1.html,PropertyDrawer>><<<editor/conditional-display-other-control.html,ConditionalDisplayOtherControl>>>
 
 ### Description
 
-### Constructors
-
-ConditionalDisplayOtherDrawer()::

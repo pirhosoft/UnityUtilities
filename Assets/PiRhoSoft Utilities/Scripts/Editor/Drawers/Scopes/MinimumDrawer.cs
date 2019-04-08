@@ -7,7 +7,7 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public class MinimumControl : PropertyScopeControl
 	{
-		public const string _invalidTypeWarning = "Invalid type for Minimum on field {0}: Minimum can only be applied to int or float fields";
+		public const string _invalidTypeWarning = "(UMICIT) Invalid type for Minimum on field {0}: Minimum can only be applied to int or float fields";
 
 		private float _minimum = 0.0f;
 
@@ -39,7 +39,7 @@ namespace PiRhoSoft.UtilityEditor
 	}
 
 	[CustomPropertyDrawer(typeof(MinimumAttribute))]
-	public class MinimumDrawer : ControlDrawer<MinimumControl>
+	public class MinimumDrawer : PropertyDrawer<MinimumControl>
 	{
 	}
 }

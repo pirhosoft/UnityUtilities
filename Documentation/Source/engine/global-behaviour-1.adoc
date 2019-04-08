@@ -2,16 +2,16 @@
 
 ## GlobalBehaviour
 
-PiRhoSoft.UtilityEngine.GlobalBehaviour<T> : MonoBehaviour
+PiRhoSoft.UtilityEngine.GlobalBehaviour<__T__> : https://docs.unity3d.com/ScriptReference/MonoBehaviour.html[MonoBehaviour^]
 
 ### Description
 
 ### Static Properties
 
-bool Exists _(read only)_
+bool _Exists_ _(read only)_::
 
-T Instance _(read only)_
+T _Instance_ _(read only)_::
 
-### Protected Constructors
+### Static Methods
 
-GlobalBehaviour()::
+void Destroy()::

@@ -2,42 +2,38 @@
 
 ## SerializedList
 
-PiRhoSoft.UtilityEngine.SerializedList<T> : ICollection, IEnumerable<T>, IList<T>, IEnumerable, IReadOnlyCollection<T>, IReadOnlyList<T>, IList, ICollection<T>
+PiRhoSoft.UtilityEngine.SerializedList<__T__> : https://docs.microsoft.com/en-us/dotnet/api/System.Collections.ICollection[ICollection^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1[IEnumerable^]<T>, https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IList-1[IList^]<T>, https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable[IEnumerable^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyCollection-1[IReadOnlyCollection^]<T>, https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IReadOnlyList-1[IReadOnlyList^]<T>, https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.ICollection-1[ICollection^]<T>
 
 ### Description
 
-### Constructors
-
-SerializedList()::
-
 ### Public Properties
 
-List<T> List _(read only)_
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<T> _List_ _(read only)_::
 
-int Count _(read only)_ _(virtual)_
+int _Count_ _(read only)_ _(virtual)_::
 
-T Item _(virtual)_
+T _Item_ _(virtual)_::
 
 ### Public Methods
 
-void Add(T item) _(virtual)_::
+void Add(T _item_) _(virtual)_::
 
-bool Remove(T item) _(virtual)_::
+bool Remove(T _item_) _(virtual)_::
 
 void Clear() _(virtual)_::
 
-bool Contains(T item) _(virtual)_::
+bool Contains(T _item_) _(virtual)_::
 
-void CopyTo(T[] array, int arrayIndex) _(virtual)_::
+void CopyTo(T[] _array_, int _arrayIndex_) _(virtual)_::
 
-IEnumerator<T> GetEnumerator() _(virtual)_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerator-1[IEnumerator^]<T> GetEnumerator() _(virtual)_::
 
-int IndexOf(T item) _(virtual)_::
+int IndexOf(T _item_) _(virtual)_::
 
-void Insert(int index, T item) _(virtual)_::
+void Insert(int _index_, T _item_) _(virtual)_::
 
-void RemoveAt(int index) _(virtual)_::
+void RemoveAt(int _index_) _(virtual)_::
 
 ### Protected Fields
 
-List<T> __items_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<T> __items_::

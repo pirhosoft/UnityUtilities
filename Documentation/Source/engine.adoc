@@ -1,6 +1,10 @@
 :imagesdir: engine/
 
-include::engine/animation-player.adoc[]
+include::engine/angle-display-attribute.adoc[]
+
+<<<
+
+include::engine/angle-display-type.adoc[]
 
 <<<
 
@@ -8,15 +12,11 @@ include::engine/application-helper.adoc[]
 
 <<<
 
-include::engine/asset-name-attribute.adoc[]
+include::engine/asset-display-attribute.adoc[]
 
 <<<
 
-include::engine/asset-popup-attribute.adoc[]
-
-<<<
-
-include::engine/audio-player.adoc[]
+include::engine/asset-display-save-location.adoc[]
 
 <<<
 
@@ -24,7 +24,15 @@ include::engine/button-state.adoc[]
 
 <<<
 
-include::engine/class-pool-2.adoc[]
+include::engine/change-trigger-attribute.adoc[]
+
+<<<
+
+include::engine/class-display-attribute.adoc[]
+
+<<<
+
+include::engine/class-display-type.adoc[]
 
 <<<
 
@@ -52,19 +60,19 @@ include::engine/disable-in-inspector-attribute.adoc[]
 
 <<<
 
-include::engine/drop-table-1.adoc[]
+include::engine/enum-display-attribute.adoc[]
 
 <<<
 
-include::engine/enum-buttons-attribute.adoc[]
+include::engine/enum-display-type.adoc[]
 
 <<<
 
-include::engine/flags-popup-attribute.adoc[]
+include::engine/float-display-attribute.adoc[]
 
 <<<
 
-include::engine/foldout-string.adoc[]
+include::engine/float-display-type.adoc[]
 
 <<<
 
@@ -72,15 +80,7 @@ include::engine/global-behaviour-1.adoc[]
 
 <<<
 
-include::engine/i-class-pool-1.adoc[]
-
-<<<
-
 include::engine/i-editable-dictionary.adoc[]
-
-<<<
-
-include::engine/inline-display-attribute.adoc[]
 
 <<<
 
@@ -88,27 +88,15 @@ include::engine/input-helper.adoc[]
 
 <<<
 
+include::engine/int-display-attribute.adoc[]
+
+<<<
+
+include::engine/int-display-type.adoc[]
+
+<<<
+
 include::engine/internal-helper.adoc[]
-
-<<<
-
-include::engine/int-popup-attribute.adoc[]
-
-<<<
-
-include::engine/i-poolable.adoc[]
-
-<<<
-
-include::engine/i-pool-info.adoc[]
-
-<<<
-
-include::engine/i-reloadable.adoc[]
-
-<<<
-
-include::engine/join-enumerator.adoc[]
 
 <<<
 
@@ -117,10 +105,6 @@ include::engine/list-display-attribute.adoc[]
 <<<
 
 include::engine/list-item-display-type.adoc[]
-
-<<<
-
-include::engine/material-animation.adoc[]
 
 <<<
 
@@ -136,43 +120,7 @@ include::engine/minimum-attribute.adoc[]
 
 <<<
 
-include::engine/min-max-slider-attribute.adoc[]
-
-<<<
-
-include::engine/pool-info_10_5.adoc[]
-
-<<<
-
-include::engine/pool-info_100_10.adoc[]
-
-<<<
-
-include::engine/pool-info_2_1.adoc[]
-
-<<<
-
-include::engine/pool-info_25_5.adoc[]
-
-<<<
-
-include::engine/pool-info_50_10.adoc[]
-
-<<<
-
-include::engine/priority-queue-1.adoc[]
-
-<<<
-
-include::engine/priority-queue-node.adoc[]
-
-<<<
-
 include::engine/property-scope-attribute.adoc[]
-
-<<<
-
-include::engine/reload-on-change-attribute.adoc[]
 
 <<<
 
@@ -181,10 +129,6 @@ include::engine/resource.adoc[]
 <<<
 
 include::engine/scene-reference.adoc[]
-
-<<<
-
-include::engine/scene-reference-attribute.adoc[]
 
 <<<
 
@@ -200,23 +144,7 @@ include::engine/serialized-list-1.adoc[]
 
 <<<
 
-include::engine/simple-animation-player.adoc[]
-
-<<<
-
-include::engine/simple-audio-player.adoc[]
-
-<<<
-
-include::engine/simple-material-animation.adoc[]
-
-<<<
-
 include::engine/singleton-behaviour-1.adoc[]
-
-<<<
-
-include::engine/slider-attribute.adoc[]
 
 <<<
 
@@ -224,4 +152,12 @@ include::engine/snap-attribute.adoc[]
 
 <<<
 
-include::engine/string-popup-attribute.adoc[]
+include::engine/string-display-attribute.adoc[]
+
+<<<
+
+include::engine/string-display-type.adoc[]
+
+<<<
+
+include::engine/type-display-attribute.adoc[]

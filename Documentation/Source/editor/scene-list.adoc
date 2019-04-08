@@ -6,26 +6,22 @@ PiRhoSoft.UtilityEditor.SceneList
 
 ### Description
 
-### Constructors
-
-SceneList()::
-
 ### Public Fields
 
 bool _HasNone_::
 
 bool _HasCreate_::
 
-GUIContent[] _Names_::
+https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][] _Names_::
 
-List<string> _Paths_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<string> _Paths_::
 
 ### Public Properties
 
-int CreateIndex _(read only)_
+int _CreateIndex_ _(read only)_::
 
 ### Public Methods
 
-int GetIndex(string path)::
+int GetIndex(string _path_)::
 
-string GetPath(int index)::
+string GetPath(int _index_)::

@@ -1,0 +1,15 @@
+[#engine/class-display-type]
+
+## ClassDisplayType
+
+PiRhoSoft.UtilityEngine.ClassDisplayType
+
+### Description
+
+### Values
+
+<<engine/class-display-type.html,ClassDisplayType>> _Indented_::
+
+<<engine/class-display-type.html,ClassDisplayType>> _Inline_::
+
+<<engine/class-display-type.html,ClassDisplayType>> _Contained_::

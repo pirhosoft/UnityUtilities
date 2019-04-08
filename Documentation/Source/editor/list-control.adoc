@@ -20,42 +20,38 @@ float _TotalMargin_::
 
 ### Public Properties
 
-ReorderableList List _(read only)_
+https://docs.unity3d.com/ScriptReference/ReorderableList.html[ReorderableList^] _List_ _(read only)_::
 
-bool Visible
+bool _Visible_::
 
 ### Public Methods
 
-<<editor/list-control,ListControl>> MakeCollapsable(string preferenceName)::
+<<editor/list-control.html,ListControl>> MakeCollapsable(string _preferenceName_)::
 
-<<editor/list-control,ListControl>> MakeEmptyLabel(GUIContent label)::
+<<editor/list-control.html,ListControl>> MakeEmptyLabel(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_)::
 
-<<editor/list-control,ListControl>> MakeReorderable(Action<int, int> callback)::
+<<editor/list-control.html,ListControl>> MakeReorderable(Action<int, int> _callback_)::
 
-<<editor/list-control,ListControl>> MakeHeaderButton(<<editor/icon-button,IconButton>> icon, Action<Rect> callback, Color color)::
+<<editor/list-control.html,ListControl>> MakeHeaderButton(<<editor/label.html,Label>> _button_, Action<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> _callback_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-<<editor/list-control,ListControl>> MakeHeaderButton(<<editor/icon-button,IconButton>> icon, GenericMenu menu, Color color)::
+<<editor/list-control.html,ListControl>> MakeHeaderButton(<<editor/label.html,Label>> _button_, https://docs.unity3d.com/ScriptReference/GenericMenu.html[GenericMenu^] _menu_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-<<editor/list-control,ListControl>> MakeHeaderButton(<<editor/icon-button,IconButton>> icon, PopupWindowContent popup, Color color)::
+<<editor/list-control.html,ListControl>> MakeHeaderButton(<<editor/label.html,Label>> _button_, https://docs.unity3d.com/ScriptReference/PopupWindowContent.html[PopupWindowContent^] _popup_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-<<editor/list-control,ListControl>> MakeItemButton(<<editor/icon-button,IconButton>> icon, Action<Rect, Rect> callback, Color color)::
+<<editor/list-control.html,ListControl>> MakeItemButton(<<editor/label.html,Label>> _button_, Action<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> _callback_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-<<editor/list-control,ListControl>> MakeCustomHeight(ElementHeightCallbackDelegate callback)::
+<<editor/list-control.html,ListControl>> MakeCustomHeight(https://docs.unity3d.com/ScriptReference/ElementHeightCallbackDelegate.html[ElementHeightCallbackDelegate^] _callback_)::
 
 float GetHeight()::
 
-void Draw(GUIContent label)::
+void Draw(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_)::
 
-void Draw(Rect position, GUIContent label)::
-
-### Protected Constructors
-
-ListControl()::
+void Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_)::
 
 ### Protected Methods
 
-void Draw(Rect rect, int index) _(abstract)_::
+void Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, int _index_) _(abstract)_::
 
-void Setup(ReorderableList list)::
+void Setup(https://docs.unity3d.com/ScriptReference/ReorderableList.html[ReorderableList^] _list_)::
 
-void ElementsMoved(ReorderableList list, int oldIndex, int newIndex) _(virtual)_::
+void ElementsMoved(https://docs.unity3d.com/ScriptReference/ReorderableList.html[ReorderableList^] _list_, int _oldIndex_, int _newIndex_) _(virtual)_::

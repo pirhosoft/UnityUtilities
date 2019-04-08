@@ -2,7 +2,7 @@
 
 ## SceneHelper
 
-PiRhoSoft.UtilityEditor.SceneHelper : AssetPostprocessor
+PiRhoSoft.UtilityEditor.SceneHelper : https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html[AssetPostprocessor^]
 
 ### Description
 
@@ -10,16 +10,12 @@ PiRhoSoft.UtilityEditor.SceneHelper : AssetPostprocessor
 
 void RefreshLists()::
 
-<<editor/scene-list,SceneList>> GetSceneList(bool includeNone, bool includeCreate)::
+<<editor/scene-list.html,SceneList>> GetSceneList(bool _includeNone_, bool _includeCreate_)::
 
-Scene CreateScene(string name, Action create)::
+https://docs.unity3d.com/ScriptReference/Scene.html[Scene^] CreateScene(string _name_, Action _create_)::
 
-void AddSceneToBuild(Scene scene)::
+void AddSceneToBuild(https://docs.unity3d.com/ScriptReference/Scene.html[Scene^] _scene_)::
 
-<<editor/scene-state,SceneState>> CaptureState()::
+<<editor/scene-state.html,SceneState>> CaptureState()::
 
-void RestoreState(<<editor/scene-state,SceneState>> state)::
-
-### Constructors
-
-SceneHelper()::
+void RestoreState(<<editor/scene-state.html,SceneState>> _state_)::

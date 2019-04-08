@@ -6,10 +6,18 @@ PiRhoSoft.UtilityEditor.BoolPreference
 
 ### Description
 
+A wrapper for bool values stored in https://docs.unity3d.com/ScriptReference/EditorPrefs.html[EditorPrefs^].
+
+NOTE: EditorPrefs are stored globally, not per project.
+
 ### Constructors
 
-BoolPreference(string name, bool defaultValue)::
+BoolPreference(string _name_, bool _defaultValue_)::
+
+Creates a preference that references _name_, and assigns it _defaultValue_ if it hasn't been previously saved.
 
 ### Public Properties
 
-bool Value
+bool _Value_::
+
+Gets or sets the value saved to the preference.

@@ -1,0 +1,15 @@
+[#engine/float-display-type]
+
+## FloatDisplayType
+
+PiRhoSoft.UtilityEngine.FloatDisplayType
+
+### Description
+
+### Values
+
+<<engine/float-display-type.html,FloatDisplayType>> _Popup_::
+
+<<engine/float-display-type.html,FloatDisplayType>> _Slider_::
+
+<<engine/float-display-type.html,FloatDisplayType>> _MinMaxSlider_::

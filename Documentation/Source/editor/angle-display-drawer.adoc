@@ -1,0 +1,31 @@
+[#editor/angle-display-drawer]
+
+## AngleDisplayDrawer
+
+PiRhoSoft.UtilityEditor.AngleDisplayDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+
+### Description
+
+Draws an editor for a https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^]. Use the <<engine/angle-display-attribute.html,AngleDisplayAttribute>> to automatically use this drawer or the static methods to draw a https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] manually (i.e from a https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[drawer^], <<editor/control-drawer-1,control>>, or https://docs.unity3d.com/ScriptReference/Editor.html[editor^]).
+
+### Static Methods
+
+float GetHeight(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, <<Engine/angle-display-type.html,AngleDisplayType>> _type_)::
+
+Returns the height the drawer needs to display a https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] with the specified label and type.
+
+void Draw(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, <<Engine/angle-display-type.html,AngleDisplayType>> _type_)::
+
+Draws the editor for a property referencing a https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] field using the specified label and type with https://docs.unity3d.com/Manual/gui-Layout.html[automatic layout^].
+
+void Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, <<Engine/angle-display-type.html,AngleDisplayType>> _type_)::
+
+Draws the editor for a property referencing a https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] field using the specified label and type at the specified position and size.
+
+https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] Draw(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] _quaternion_, <<Engine/angle-display-type.html,AngleDisplayType>> _type_)::
+
+Draws the editor for a https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] using the specified label and type with https://docs.unity3d.com/Manual/gui-Layout.html[automatic layout^]. Changes are reflected in the return value.
+
+https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] _quaternion_, <<Engine/angle-display-type.html,AngleDisplayType>> _type_)::
+
+Draws the editor for a https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] using the specified label and type at the specified position and size. Changes are reflected in the return value.

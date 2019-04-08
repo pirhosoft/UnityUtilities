@@ -1,0 +1,23 @@
+[#engine/float-display-attribute]
+
+## FloatDisplayAttribute
+
+PiRhoSoft.UtilityEngine.FloatDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+FloatDisplayAttribute(string[] _names_, float[] _values_)::
+
+FloatDisplayAttribute(float _minimum_, float _maximum_, float _snap_)::
+
+FloatDisplayAttribute(string _maximumProperty_, float _minimum_, float _maximum_, float _snap_)::
+
+### Public Properties
+
+<<engine/float-display-type.html,FloatDisplayType>> _Type_ _(read only)_::
+
+string[] _Names_ _(read only)_::
+
+float[] _Values_ _(read only)_::

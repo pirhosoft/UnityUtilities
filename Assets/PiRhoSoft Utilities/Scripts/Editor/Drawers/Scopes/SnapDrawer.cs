@@ -7,7 +7,7 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public class SnapControl : PropertyScopeControl
 	{
-		private const string _invalidTypeWarning = "Invalid type for MinMaxSlider on field {0}: MinMaxSlider can only be applied to a float or int field";
+		private const string _invalidTypeWarning = "(USDIT) Invalid type for Snap on field {0}: Snap can only be applied to a float or int field";
 
 		private float _snapValue = 0.0f;
 
@@ -39,7 +39,7 @@ namespace PiRhoSoft.UtilityEditor
 	}
 
 	[CustomPropertyDrawer(typeof(SnapAttribute))]
-	public class SnapDrawer : ControlDrawer<SnapControl>
+	public class SnapDrawer : PropertyDrawer<SnapControl>
 	{
 	}
 }

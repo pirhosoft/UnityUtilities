@@ -2,10 +2,10 @@
 
 ## PropertyScopeAttribute
 
-PiRhoSoft.UtilityEngine.PropertyScopeAttribute : PropertyAttribute
+PiRhoSoft.UtilityEngine.PropertyScopeAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
 
 ### Description
 
 ### Protected Constructors
 
-PropertyScopeAttribute(int drawOrder)::
+PropertyScopeAttribute(int _drawOrder_)::

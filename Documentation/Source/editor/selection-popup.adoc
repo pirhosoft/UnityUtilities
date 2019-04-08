@@ -1,0 +1,15 @@
+[#editor/selection-popup]
+
+## SelectionPopup
+
+PiRhoSoft.UtilityEditor.SelectionPopup : https://docs.unity3d.com/ScriptReference/EditorWindow.html[EditorWindow^]
+
+### Description
+
+### Static Methods
+
+void Show(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][]> _trees_, https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^]> _tabs_, Action<int, int> _onSelected_, int _currentTab_, int _currentIndex_)::
+
+### Public Fields
+
+int __currentTab_::

@@ -8,12 +8,8 @@ PiRhoSoft.UtilityEditor.PropertyControl
 
 ### Public Methods
 
-void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(abstract)_::
+void Setup(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, FieldInfo _fieldInfo_, https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^] _attribute_) _(abstract)_::
 
-float GetHeight(SerializedProperty property, GUIContent label) _(abstract)_::
+float GetHeight(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_) _(abstract)_::
 
-void Draw(Rect position, SerializedProperty property, GUIContent label) _(abstract)_::
-
-### Protected Constructors
-
-PropertyControl()::
+void Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_) _(abstract)_::

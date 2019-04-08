@@ -2,7 +2,7 @@
 
 ## IEditableDictionary
 
-PiRhoSoft.UtilityEngine.IEditableDictionary : ICollection, IDictionary, IEnumerable
+PiRhoSoft.UtilityEngine.IEditableDictionary : https://docs.microsoft.com/en-us/dotnet/api/System.Collections.ICollection[ICollection^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IDictionary[IDictionary^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable[IEnumerable^]
 
 ### Description
 

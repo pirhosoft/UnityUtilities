@@ -2,37 +2,37 @@
 
 ## SerializedArray
 
-PiRhoSoft.UtilityEngine.SerializedArray<T> : ICollection, ICloneable, IEnumerable, IList, IStructuralComparable, IStructuralEquatable
+PiRhoSoft.UtilityEngine.SerializedArray<__T__> : https://docs.microsoft.com/en-us/dotnet/api/System.Collections.ICollection[ICollection^], ICloneable, https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable[IEnumerable^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IStructuralComparable[IStructuralComparable^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IStructuralEquatable[IStructuralEquatable^]
 
 ### Description
 
 ### Constructors
 
-SerializedArray(int count)::
+SerializedArray(int _count_)::
 
 ### Public Properties
 
-T[] Array _(read only)_
+T[] _Array_ _(read only)_::
 
-int Length _(read only)_
+int _Length_ _(read only)_::
 
-T Item
+T _Item_::
 
-bool IsSynchronized _(read only)_ _(virtual)_
+bool _IsSynchronized_ _(read only)_ _(virtual)_::
 
-Object SyncRoot _(read only)_ _(virtual)_
+Object _SyncRoot_ _(read only)_ _(virtual)_::
 
-bool IsFixedSize _(read only)_ _(virtual)_
+bool _IsFixedSize_ _(read only)_ _(virtual)_::
 
-bool IsReadOnly _(read only)_ _(virtual)_
+bool _IsReadOnly_ _(read only)_ _(virtual)_::
 
 ### Public Methods
 
-void CopyTo(Array array, int index) _(virtual)_::
+void CopyTo(Array _array_, int _index_) _(virtual)_::
 
 Object Clone() _(virtual)_::
 
-IEnumerator GetEnumerator() _(virtual)_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerator[IEnumerator^] GetEnumerator() _(virtual)_::
 
 ### Protected Fields
 

@@ -8,20 +8,20 @@ PiRhoSoft.UtilityEngine.ComponentHelper
 
 ### Static Methods
 
-T GetComponentInScene<T>(int sceneIndex, bool includeDisabled)::
+T GetComponentInScene<T>(int _sceneIndex_, bool _includeDisabled_)::
 
-void GetComponentsInScene<T>(int sceneIndex, List<T> components, bool includeDisabled)::
+void GetComponentsInScene<T>(int _sceneIndex_, https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<T> _components_, bool _includeDisabled_)::
 
-GameObject FindObject(string name, int sceneIndex)::
+https://docs.unity3d.com/ScriptReference/GameObject.html[GameObject^] FindObject(string _name_, int _sceneIndex_)::
 
-bool HasType(Object unityObject, Type type)::
+bool HasType(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _unityObject_, Type _type_)::
 
-Object GetAsBaseObject(Object unityObject)::
+https://docs.unity3d.com/ScriptReference/Object.html[Object^] GetAsBaseObject(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _unityObject_)::
 
-T GetAsObject<T>(Object unityObject)::
+T GetAsObject<T>(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _unityObject_)::
 
-GameObject GetAsGameObject(Object unityObject)::
+https://docs.unity3d.com/ScriptReference/GameObject.html[GameObject^] GetAsGameObject(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _unityObject_)::
 
-T GetAsComponent<T>(Object unityObject)::
+T GetAsComponent<T>(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _unityObject_)::
 
-Component GetAsComponent(Object unityObject, string componentName)::
+https://docs.unity3d.com/ScriptReference/Component.html[Component^] GetAsComponent(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _unityObject_, string _componentName_)::

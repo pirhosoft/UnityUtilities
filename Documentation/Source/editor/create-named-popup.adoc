@@ -1,0 +1,15 @@
+[#editor/create-named-popup]
+
+## CreateNamedPopup
+
+PiRhoSoft.UtilityEditor.CreateNamedPopup : <<editor/create-popup.html,CreatePopup>>
+
+### Description
+
+### Public Fields
+
+bool _IsNameValid_::
+
+### Public Properties
+
+string _Name_ _(read only)_::

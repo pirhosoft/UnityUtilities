@@ -2,46 +2,44 @@
 
 ## AssetHelper
 
-PiRhoSoft.UtilityEditor.AssetHelper : AssetPostprocessor
+PiRhoSoft.UtilityEditor.AssetHelper : https://docs.unity3d.com/ScriptReference/AssetPostprocessor.html[AssetPostprocessor^]
 
 ### Description
 
 ### Static Methods
 
-AssetType CreateAsset<AssetType>(string name)::
+AssetType CreateAsset<AssetType>(string _name_)::
 
-AssetType GetOrCreateAsset<AssetType>(string name)::
+AssetType GetOrCreateAsset<AssetType>(string _name_)::
 
-ScriptableObject CreateAsset(string name, Type type)::
+https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] CreateAsset(string _name_, Type _type_)::
 
-ScriptableObject GetOrCreateAsset(string name, Type type)::
+https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] GetOrCreateAsset(string _name_, Type _type_)::
+
+https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] CreateAssetAtPath(string _path_, Type _type_)::
 
 AssetType GetAsset<AssetType>()::
 
-AssetType GetAssetWithId<AssetType>(string id)::
+AssetType GetAssetWithId<AssetType>(string _id_)::
 
-AssetType GetAssetAtPath<AssetType>(string path)::
+AssetType GetAssetAtPath<AssetType>(string _path_)::
 
-ScriptableObject GetAsset(Type assetType)::
+https://docs.unity3d.com/ScriptReference/Object.html[Object^] GetAsset(Type _assetType_)::
 
-ScriptableObject GetAssetWithId(string id, Type type)::
+https://docs.unity3d.com/ScriptReference/Object.html[Object^] GetAssetWithId(string _id_, Type _type_)::
 
-ScriptableObject GetAssetAtPath(string path, Type type)::
+https://docs.unity3d.com/ScriptReference/Object.html[Object^] GetAssetAtPath(string _path_, Type _type_)::
 
-List<AssetType> ListAssets<AssetType>()::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<AssetType> ListAssets<AssetType>()::
 
-IEnumerable<AssetType> FindAssets<AssetType>()::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1[IEnumerable^]<AssetType> FindAssets<AssetType>()::
 
-List<ScriptableObject> ListAssets(Type assetType)::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<https://docs.unity3d.com/ScriptReference/Object.html[Object^]> ListAssets(Type _assetType_)::
 
-IEnumerable<ScriptableObject> FindAssets(Type assetType)::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1[IEnumerable^]<https://docs.unity3d.com/ScriptReference/Object.html[Object^]> FindAssets(Type _assetType_)::
 
-<<editor/asset-list,AssetList>> GetAssetList<AssetType>(bool includeNone, bool includeCreate)::
+<<editor/asset-list.html,AssetList>> GetAssetList<AssetType>(bool _includeNone_, bool _includeCreate_)::
 
-<<editor/asset-list,AssetList>> GetAssetList(Type assetType, bool includeNone, bool includeCreate)::
+<<editor/asset-list.html,AssetList>> GetAssetList(Type _assetType_, bool _includeNone_, bool _includeCreate_)::
 
-string FindCommonPath(IEnumerable<string> paths)::
-
-### Constructors
-
-AssetHelper()::
+string FindCommonPath(https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1[IEnumerable^]<string> _paths_)::

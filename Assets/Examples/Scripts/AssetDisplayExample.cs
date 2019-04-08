@@ -6,14 +6,12 @@ namespace PiRhoSoft.UtilityExample
 	[AddComponentMenu("PiRho Soft/Examples/Asset Display")]
 	public class AssetDisplayExample : MonoBehaviour
 	{
-		public ExampleAsset Normal;
+		[AssetDisplay] public ExampleAsset Pick;
+		[AssetDisplay(ShowNoneOption = false)] public ExampleAsset PickRequired;
+		[AssetDisplay(ShowEditButton = true)] public ExampleAsset PickAndEdit;
+		[AssetDisplay(SaveLocation = AssetDisplaySaveLocation.AssetRoot)] public ExampleAsset PickAndCreate;
+		[AssetDisplay(SaveLocation = AssetDisplaySaveLocation.Selectable)] public ExampleAsset PickAndSave;
 
-		[AssetDisplay(ShowNoneOption = false, ShowEditButton = false, SaveLocation = AssetDisplaySaveLocation.None)] public ExampleAsset Pick;
-		[AssetDisplay(ShowNoneOption = false, ShowEditButton = false, SaveLocation = AssetDisplaySaveLocation.Selectable)] public ExampleAsset Create;
-		[AssetDisplay(ShowNoneOption = false, ShowEditButton = true, SaveLocation = AssetDisplaySaveLocation.Selectable)] public ExampleAsset CreateAndEdit;
-		[AssetDisplay(ShowNoneOption = true, ShowEditButton = true, SaveLocation = AssetDisplaySaveLocation.Selectable)] public ExampleAsset NoneCreateAndEdit;
-
-		[AssetDisplay(SaveLocation = AssetDisplaySaveLocation.AssetRoot)] public ExampleAsset DefaultCreate;
-		[AssetDisplay(SaveLocation = AssetDisplaySaveLocation.AssetRoot, DefaultName = "My Example Asset")] public ExampleAsset CreateWithName;
+		public ExampleAsset Default;
 	}
 }

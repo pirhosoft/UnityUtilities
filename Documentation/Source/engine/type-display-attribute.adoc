@@ -1,0 +1,19 @@
+[#engine/type-display-attribute]
+
+## TypeDisplayAttribute
+
+PiRhoSoft.UtilityEngine.TypeDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+TypeDisplayAttribute(Type _rootType_)::
+
+### Public Fields
+
+bool _AllowNone_::
+
+### Public Properties
+
+Type _RootType_ _(read only)_::

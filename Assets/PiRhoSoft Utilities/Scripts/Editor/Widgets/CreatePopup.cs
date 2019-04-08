@@ -7,9 +7,8 @@ namespace PiRhoSoft.UtilityEditor
 	public class CreatePopup : PopupWindowContent
 	{
 		public const float DefaultWidth = 200.0f;
-
-		private static readonly Icon _createIcon = Icon.BuiltIn(Icon.Add);
-		private static readonly Button _createButton = new Button(_createIcon, "Create", "Create this item");
+		
+		private static readonly Label _createButton = new Label(Icon.BuiltIn(Icon.Add), "Create", "Create this item");
 
 		private GUIContent _label;
 		private Action _creator;

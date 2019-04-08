@@ -13,19 +13,19 @@ namespace PiRhoSoft.UtilityExample
 
 	[Serializable]
 	public class AssetList : SerializedList<ExampleAsset> { }
-
+	
 	[AddComponentMenu("PiRho Soft/Examples/List Display")]
 	public class ListDisplayExample : MonoBehaviour
 	{
 		[Serializable]
-		public class Data
+		public class Class
 		{
-			public int Intfield;
+			public int IntField;
 			public string StringField;
 		}
 		
 		[Serializable]
-		public class DataList : SerializedList<Data> { }
+		public class ClassList : SerializedList<Class> { }
 
 		public List<string> Normal = new List<string>();
 
@@ -38,5 +38,17 @@ namespace PiRhoSoft.UtilityExample
 		[ListDisplay]
 		[AssetDisplay]
 		public AssetList AssetList = new AssetList();
+
+		[ListDisplay]
+		[ClassDisplay]
+		public ClassList IndentedClassList = new ClassList();
+
+		[ListDisplay]
+		[ClassDisplay(Type = ClassDisplayType.Inline)]
+		public ClassList InlineClassList = new ClassList();
+
+		[ListDisplay]
+		[ClassDisplay(Type = ClassDisplayType.Foldout)]
+		public ClassList FoldoutClassList = new ClassList();
 	}
 }

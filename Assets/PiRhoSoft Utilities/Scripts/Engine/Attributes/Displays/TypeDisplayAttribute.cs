@@ -6,7 +6,8 @@ namespace PiRhoSoft.UtilityEngine
 	public class TypeDisplayAttribute : PropertyAttribute
 	{
 		public Type RootType { get; private set; }
-		public bool AllowNone = true;
+		public bool ShowNoneOption = true;
+		public bool ShowAbstractOptions = true;
 
 		public TypeDisplayAttribute(Type rootType) => RootType = rootType;
 	}

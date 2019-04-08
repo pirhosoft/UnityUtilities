@@ -2,7 +2,7 @@
 
 ## Resource
 
-PiRhoSoft.UtilityEngine.Resource : ScriptableObject
+PiRhoSoft.UtilityEngine.Resource : https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^]
 
 ### Description
 
@@ -12,8 +12,4 @@ string __invalidPathWarning_::
 
 ### Public Properties
 
-string Path _(read only)_
-
-### Protected Constructors
-
-Resource()::
+string _Path_ _(read only)_::

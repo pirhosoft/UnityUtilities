@@ -2,40 +2,30 @@
 
 ## PropertyListControl
 
-PiRhoSoft.UtilityEditor.PropertyListControl : <<editor/list-control,ListControl>>
+PiRhoSoft.UtilityEditor.PropertyListControl : <<editor/list-control.html,ListControl>>
 
 ### Description
 
-### Constructors
-
-PropertyListControl()::
-
 ### Public Methods
 
-<<editor/property-list-control,PropertyListControl>> Setup(SerializedProperty property)::
+<<editor/property-list-control.html,PropertyListControl>> Setup(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_)::
 
-<<editor/property-list-control,PropertyListControl>> MakeDrawable(<<engine/list-item-display-type,ListItemDisplayType>> itemDisplay, Type assetPopupType)::
+<<editor/property-list-control.html,PropertyListControl>> MakeDrawable(<<Engine/list-item-display-type.html,ListItemDisplayType>> _itemDisplay_)::
 
-<<editor/property-list-control,PropertyListControl>> MakeDrawable(Action<Rect, Rect, Rect> callback)::
+<<editor/property-list-control.html,PropertyListControl>> MakeDrawable(Action<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> _callback_)::
 
-<<editor/property-list-control,PropertyListControl>> MakeAddable(<<editor/icon-button,IconButton>> icon, Action<SerializedProperty> callback)::
+<<editor/property-list-control.html,PropertyListControl>> MakeAddable(<<editor/label.html,Label>> _button_, Action<https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^]> _callback_)::
 
-<<editor/property-list-control,PropertyListControl>> MakeRemovable(<<editor/icon-button,IconButton>> icon, Action<SerializedProperty, SerializedProperty> callback)::
+<<editor/property-list-control.html,PropertyListControl>> MakeRemovable(<<editor/label.html,Label>> _button_, Action<https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^], https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^]> _callback_)::
 
-<<editor/property-list-control,PropertyListControl>> MakeEditable(<<editor/icon-button,IconButton>> icon, Action<SerializedProperty, SerializedProperty> callback)::
+<<editor/property-list-control.html,PropertyListControl>> MakeEditable(<<editor/label.html,Label>> _button_, Action<https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^], https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^]> _callback_)::
 
 void DoDefaultAdd()::
 
-void DoDefaultEdit(int index)::
+void DoDefaultEdit(int _index_)::
 
-void DoDefaultRemove(int index)::
+void DoDefaultRemove(int _index_)::
 
-float GetItemHeight(int index)::
+float GetItemHeight(int _index_)::
 
-void DoDefaultDraw(Rect rect, int index)::
-
-### Protected Methods
-
-void Draw(Rect rect, int index) _(virtual)_::
-
-void ElementsMoved(ReorderableList list, int oldIndex, int newIndex) _(virtual)_::
+void DoDefaultDraw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, int _index_)::

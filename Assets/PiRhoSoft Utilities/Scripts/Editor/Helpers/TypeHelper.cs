@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UnityEditor;
 using UnityEngine;
 using Object = UnityEngine.Object;
 
@@ -15,6 +16,8 @@ namespace PiRhoSoft.UtilityEditor
 		public GUIContent[] Names;
 		public List<Type> Types;
 
+		public SelectionTree Tree;
+
 		#region Lookup
 
 		public int GetIndex(Type type)
@@ -23,7 +26,7 @@ namespace PiRhoSoft.UtilityEditor
 
 			if (HasNone)
 			{
-				if (index >= 0) index += 2; // skip 'None' and separator
+				if (index >= 0) index++; // skip 'None'
 				else index = 0;
 			}
 
@@ -32,7 +35,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		public Type GetType(int index)
 		{
-			if (HasNone) index -= 2;  // skip 'None' and separator
+			if (HasNone) index--;  // skip 'None'
 			return index >= 0 && index < Types.Count ? Types[index] : null;
 		}
 
@@ -105,14 +108,14 @@ namespace PiRhoSoft.UtilityEditor
 
 		#region Listing
 
-		public static List<Type> ListDerivedTypes<BaseType>()
+		public static List<Type> ListDerivedTypes<BaseType>(bool includeAbstract)
 		{
-			return FindTypes(type => IsCreatableAs<BaseType>(type)).ToList();
+			return ListDerivedTypes(typeof(BaseType), includeAbstract);
 		}
 
-		public static List<Type> ListDerivedTypes(Type baseType)
+		public static List<Type> ListDerivedTypes(Type baseType, bool includeAbstract)
 		{
-			return FindTypes(type => IsCreatableAs(baseType, type)).ToList();
+			return FindTypes(type => includeAbstract ? baseType.IsAssignableFrom(type) : IsCreatableAs(baseType, type)).ToList();
 		}
 
 		public static List<Type> ListTypesWithAttribute<AttributeType>() where AttributeType : Attribute
@@ -136,18 +139,17 @@ namespace PiRhoSoft.UtilityEditor
 				.Where(predicate);
 		}
 
-		public static TypeList GetTypeList<T>(bool includeNone)
+		public static TypeList GetTypeList<T>(bool includeNone, bool includeAbstract)
 		{
-			return GetTypeList(typeof(T), includeNone);
+			return GetTypeList(typeof(T), includeNone, includeAbstract);
 		}
 
-		public static TypeList GetTypeList(Type baseType, bool includeNone)
+		public static TypeList GetTypeList(Type baseType, bool includeNone, bool includeAbstract)
 		{
 			// include the settings in the name so lists of the same type can be created with different settings
-			var listName = string.Format("{0}-{1}", includeNone, baseType.AssemblyQualifiedName);
-
-			TypeList list;
-			if (!_derivedTypeLists.TryGetValue(listName, out list))
+			var listName = string.Format("{0}-{1}-{2}", includeNone, includeAbstract, baseType.AssemblyQualifiedName);
+			
+			if (!_derivedTypeLists.TryGetValue(listName, out var list))
 			{
 				list = new TypeList { BaseType = baseType, HasNone = includeNone };
 				_derivedTypeLists.Add(listName, list);
@@ -155,12 +157,15 @@ namespace PiRhoSoft.UtilityEditor
 
 			if (list.Types == null)
 			{
-				var types = ListDerivedTypes(baseType);
+				var types = ListDerivedTypes(baseType, includeAbstract);
 				var ordered = types.Select(type => new ListedType(types, baseType, type)).OrderBy(type => type.Name);
-				var none = includeNone ? new List<GUIContent> { new GUIContent("None"), new GUIContent("") } : new List<GUIContent>();
+				var none = includeNone ? new List<GUIContent> { new GUIContent("None") } : new List<GUIContent>();
 
 				list.Types = ordered.Select(type => type.Type).ToList();
-				list.Names = Enumerable.Concat(none, ordered.Select(type => new GUIContent(type.Name))).ToArray();
+				list.Names = none.Concat(ordered.Select(type => new GUIContent(type.Name, AssetPreview.GetMiniTypeThumbnail(type.Type)))).ToArray();
+
+				list.Tree = new SelectionTree();
+				list.Tree.Add(baseType.Name, list.Names);
 			}
 
 			return list;

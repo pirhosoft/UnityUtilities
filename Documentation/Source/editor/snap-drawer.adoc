@@ -2,10 +2,7 @@
 
 ## SnapDrawer
 
-PiRhoSoft.UtilityEditor.SnapDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/snap-control,SnapControl>>>
+PiRhoSoft.UtilityEditor.SnapDrawer : <<editor/property-drawer-1.html,PropertyDrawer>><<<editor/snap-control.html,SnapControl>>>
 
 ### Description
 
-### Constructors
-
-SnapDrawer()::

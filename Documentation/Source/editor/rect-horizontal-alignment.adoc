@@ -6,10 +6,12 @@ PiRhoSoft.UtilityEditor.RectHorizontalAlignment
 
 ### Description
 
+Used with <<editor/rect-helper.html,RectHelper>> to specify how to horizontally align rects when using the _Adjust_ methods.
+
 ### Values
 
-<<editor/rect-horizontal-alignment,RectHorizontalAlignment>> _Left_::
+<<editor/rect-horizontal-alignment.html,RectHorizontalAlignment>> _Left_
 
-<<editor/rect-horizontal-alignment,RectHorizontalAlignment>> _Center_::
+<<editor/rect-horizontal-alignment.html,RectHorizontalAlignment>> _Center_
 
-<<editor/rect-horizontal-alignment,RectHorizontalAlignment>> _Right_::
+<<editor/rect-horizontal-alignment.html,RectHorizontalAlignment>> _Right_

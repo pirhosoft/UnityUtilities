@@ -2,20 +2,12 @@
 
 ## PropertyScopeControl
 
-PiRhoSoft.UtilityEditor.PropertyScopeControl : <<editor/property-control,PropertyControl>>
+PiRhoSoft.UtilityEditor.PropertyScopeControl : <<editor/property-control.html,PropertyControl>>
 
 ### Description
 
-### Public Methods
-
-void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(virtual)_::
-
-### Protected Constructors
-
-PropertyScopeControl()::
-
 ### Protected Methods
 
-float GetNextHeight(SerializedProperty property, GUIContent label)::
+float GetNextHeight(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_)::
 
-void DrawNext(Rect position, SerializedProperty property, GUIContent label)::
+void DrawNext(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_)::

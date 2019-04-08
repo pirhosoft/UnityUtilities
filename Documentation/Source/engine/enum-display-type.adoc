@@ -1,0 +1,13 @@
+[#engine/enum-display-type]
+
+## EnumDisplayType
+
+PiRhoSoft.UtilityEngine.EnumDisplayType
+
+### Description
+
+### Values
+
+<<engine/enum-display-type.html,EnumDisplayType>> _Buttons_::
+
+<<engine/enum-display-type.html,EnumDisplayType>> _Popup_::

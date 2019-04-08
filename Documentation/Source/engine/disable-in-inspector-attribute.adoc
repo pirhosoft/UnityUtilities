@@ -2,10 +2,10 @@
 
 ## DisableInInspectorAttribute
 
-PiRhoSoft.UtilityEngine.DisableInInspectorAttribute : <<engine/property-scope-attribute,PropertyScopeAttribute>>
+PiRhoSoft.UtilityEngine.DisableInInspectorAttribute : <<engine/property-scope-attribute.html,PropertyScopeAttribute>>
 
 ### Description
 
-### Constructors
+### Static Fields
 
-DisableInInspectorAttribute()::
+int _DefaultOrder_::

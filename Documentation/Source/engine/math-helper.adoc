@@ -8,14 +8,12 @@ PiRhoSoft.UtilityEngine.MathHelper
 
 ### Static Methods
 
-int IntExponent(int value, int exponent)::
+int IntExponent(int _value_, int _exponent_)::
 
-int Snap(int value, int snap)::
+int Snap(int _value_, int _snap_)::
 
-float Snap(float value, float snap)::
+float Snap(float _value_, float _snap_)::
 
-int Wrap(int value, int size)::
+int Wrap(int _value_, int _size_)::
 
-float Wrap(float value, float length)::
-
-int LeastCommonMultiple(int a, int b)::
+float Wrap(float _value_, float _length_)::

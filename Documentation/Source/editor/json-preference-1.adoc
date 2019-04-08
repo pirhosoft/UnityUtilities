@@ -2,14 +2,55 @@
 
 ## JsonPreference
 
-PiRhoSoft.UtilityEditor.JsonPreference<T>
+PiRhoSoft.UtilityEditor.JsonPreference<__T__>
 
 ### Description
 
+A wrapper for storing custom classes in https://docs.unity3d.com/ScriptReference/EditorPrefs.html[EditorPrefs^]. The contents of the class are serialized to a json string using Unity's https://docs.unity3d.com/ScriptReference/JsonUtility.html[JsonUtility^].
+
+NOTE: EditorPrefs are stored globally, not per project.
+
+[source,cs]
+----
+using PiRhoSoft.UtilityEditor;
+using UnityEditor;
+
+namespace PiRhoSoft.UtilityExample
+{
+	[Serializable] <1>
+	public class CustomState
+	{
+		public string SomeString;
+		public bool SomeBool;
+		public int SomeInt;
+	}
+
+	public class PreferenceExample
+	{
+		public static readonly JsonPreference<CustomState> StatePreference = new JsonPreference<CustomState>("UtilityExample.PreferenceExample.State");
+
+		public static void SaveState(CustomState state)
+		{
+			StatePreference.Value = state;
+		}
+
+		public static CustomState GetSavedState()
+		{
+			return StatePreference.Value;
+		}
+	}
+}
+----
+<1> The Serializable attribute is very important as https://docs.unity3d.com/ScriptReference/JsonUtility.html[JsonUtility^] follows the same https://docs.unity3d.com/Manual/script-Serialization.html[serialization rules^] as the rest of Unity.
+
 ### Constructors
 
-JsonPreference(string name)::
+JsonPreference(string _name_)::
+
+Creates a preference that references _name_, and assigns it a default _T_ if it hasn't been previously saved.
 
 ### Public Properties
 
-T Value
+T _Value_::
+
+Gets or sets the value saved to the preference.

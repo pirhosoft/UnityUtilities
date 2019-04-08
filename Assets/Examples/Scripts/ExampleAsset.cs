@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using PiRhoSoft.UtilityEngine;
+using UnityEngine;
 
 namespace PiRhoSoft.UtilityExample
 {

@@ -17,6 +17,8 @@ namespace PiRhoSoft.UtilityEditor
 		public List<Object> Assets;
 		public TypeList Types;
 
+		public SelectionTree Tree;
+
 		#region Lookup
 
 		public int GetIndex(Object asset)
@@ -25,7 +27,7 @@ namespace PiRhoSoft.UtilityEditor
 
 			if (HasNone)
 			{
-				if (index >= 0) index += 2; // skip 'None' and separator
+				if (index >= 0) index++; // skip 'None'
 				else index = 0;
 			}
 
@@ -34,23 +36,13 @@ namespace PiRhoSoft.UtilityEditor
 
 		public Object GetAsset(int index)
 		{
-			if (HasNone) index -= 2;  // skip 'None' and separator
+			if (HasNone) index--;  // skip 'None'
 			return index >= 0 && index < Assets.Count ? Assets[index] : null;
 		}
 
 		public Type GetType(int index)
 		{
-			if (Types != null)
-			{
-				if (HasNone) index -= 2; // skip 'None' and separator
-				index -= Assets.Count + 1; // skip assets and separator
-
-				return Types.GetType(index);
-			}
-			else
-			{
-				return null;
-			}
+			return Types?.GetType(index);
 		}
 
 		#endregion
@@ -203,39 +195,34 @@ namespace PiRhoSoft.UtilityEditor
 			if (list.Assets == null)
 			{
 				list.Assets = ListAssets(assetType);
-				list.Types = includeCreate ? TypeHelper.GetTypeList(assetType, false) : null;
+				list.Types = includeCreate ? TypeHelper.GetTypeList(assetType, false, false) : null;
 
 				var index = 0;
-				var count = 0;
+				var count = list.Assets.Count;
 				var paths = list.Assets.Select(asset => GetPath(asset));
 				var prefix = FindCommonPath(paths);
 
-				if (includeNone) count += 2; // 'None' and separator
-				count += list.Assets.Count;
-				if (includeCreate) count += list.Types.Names.Length + 1; // separator and types
+				if (includeNone)
+					count++;
 
 				list.Names = new GUIContent[count];
 
 				if (includeNone)
-				{
 					list.Names[index++] = new GUIContent("None");
-					list.Names[index++] = new GUIContent("");
-				}
 
 				for (var i = 0; i < list.Assets.Count; i++)
 				{
-					var path = GetPath(list.Assets[i]).Substring(prefix.Length);
-					var name = path.Length > 0 ? path + list.Assets[i].name : list.Assets[i].name;
-					list.Names[index++] = new GUIContent(name);
+					var asset = list.Assets[i];
+					var path = GetPath(asset).Substring(prefix.Length);
+					var name = path.Length > 0 ? path + asset.name : asset.name;
+					list.Names[index++] = new GUIContent(name, AssetPreview.GetMiniThumbnail(asset) ?? AssetPreview.GetMiniTypeThumbnail(asset.GetType()));
 				}
 
+				list.Tree = new SelectionTree();
+				list.Tree.Add(assetType.Name, list.Names);
+				
 				if (includeCreate)
-				{
-					list.Names[index++] = new GUIContent("");
-
-					foreach (var name in list.Types.Names)
-						list.Names[index++] = new GUIContent("Create/" + name.text);
-				}
+					list.Tree.Add("Create", list.Types.Names);
 			}
 
 			return list;
@@ -255,7 +242,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		public static string FindCommonPath(IEnumerable<string> paths)
 		{
-			var prefix = paths.FirstOrDefault() ?? "";
+			var prefix = paths.FirstOrDefault() ?? string.Empty;
 
 			foreach (var path in paths)
 			{
@@ -272,7 +259,7 @@ namespace PiRhoSoft.UtilityEditor
 
 				var slash = prefix.LastIndexOf('/');
 				if (slash != prefix.Length - 1)
-					prefix = slash >= 0 ? prefix.Substring(0, slash + 1) : "";
+					prefix = slash >= 0 ? prefix.Substring(0, slash + 1) : string.Empty;
 			}
 
 			return prefix;

@@ -8,10 +8,8 @@ PiRhoSoft.UtilityEngine.ListItemDisplayType
 
 ### Values
 
-<<engine/list-item-display-type,ListItemDisplayType>> _Normal_::
+<<engine/list-item-display-type.html,ListItemDisplayType>> _Normal_::
 
-<<engine/list-item-display-type,ListItemDisplayType>> _Inline_::
+<<engine/list-item-display-type.html,ListItemDisplayType>> _Inline_::
 
-<<engine/list-item-display-type,ListItemDisplayType>> _Foldout_::
-
-<<engine/list-item-display-type,ListItemDisplayType>> _AssetPopup_::
+<<engine/list-item-display-type.html,ListItemDisplayType>> _Foldout_::

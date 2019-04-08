@@ -1,0 +1,11 @@
+[#engine/class-display-attribute]
+
+## ClassDisplayAttribute
+
+PiRhoSoft.UtilityEngine.ClassDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Public Fields
+
+<<engine/class-display-type.html,ClassDisplayType>> _Type_::

@@ -2,10 +2,7 @@
 
 ## MaximumDrawer
 
-PiRhoSoft.UtilityEditor.MaximumDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/maximum-control,MaximumControl>>>
+PiRhoSoft.UtilityEditor.MaximumDrawer : <<editor/property-drawer-1.html,PropertyDrawer>><<<editor/maximum-control.html,MaximumControl>>>
 
 ### Description
 
-### Constructors
-
-MaximumDrawer()::

@@ -1,0 +1,29 @@
+[#engine/angle-display-type]
+
+## AngleDisplayType
+
+PiRhoSoft.UtilityEngine.AngleDisplayType
+
+### Description
+
+Controls how to display a https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] in the inspector using the <<engine/angle-display-attribute.html,AngleDisplayAttribute>>.
+
+### Values
+
+<<engine/angle-display-type.html,AngleDisplayType>> _Euler_::
+
+Shows the https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] as a set of euler angles. Angles are specified in degrees.
+
+NOTE: The angles are shown in the order they are applied: rotation about the z axis first, followed by the rotation about x, and finally the rotation about y.
+
+<<engine/angle-display-type.html,AngleDisplayType>> _AxisAngle_::
+
+Shows the https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] as an axis and the rotation about that axis in degrees.
+
+<<engine/angle-display-type.html,AngleDisplayType>> _Look_::
+
+Shows the https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] as a look at vector and up vector.
+
+<<engine/angle-display-type.html,AngleDisplayType>> _Raw_::
+
+Shows the 4 raw components of the https://docs.unity3d.com/ScriptReference/Quaternion.html[Quaternion^] in a single row.

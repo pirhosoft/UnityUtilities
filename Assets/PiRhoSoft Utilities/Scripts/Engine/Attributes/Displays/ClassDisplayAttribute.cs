@@ -6,11 +6,12 @@ namespace PiRhoSoft.UtilityEngine
 	{
 		Indented,
 		Inline,
-		Contained
+		Propogated,
+		Foldout
 	}
 
 	public class ClassDisplayAttribute : PropertyAttribute
 	{
-		public ClassDisplayType Type = ClassDisplayType.Contained;
+		public ClassDisplayType Type = ClassDisplayType.Indented;
 	}
 }

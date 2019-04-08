@@ -2,17 +2,13 @@
 
 ## SingletonBehaviour
 
-PiRhoSoft.UtilityEngine.SingletonBehaviour<T> : MonoBehaviour
+PiRhoSoft.UtilityEngine.SingletonBehaviour<__T__> : https://docs.unity3d.com/ScriptReference/MonoBehaviour.html[MonoBehaviour^]
 
 ### Description
 
 ### Static Properties
 
-T Instance _(read only)_
-
-### Protected Constructors
-
-SingletonBehaviour()::
+T _Instance_ _(read only)_::
 
 ### Protected Methods
 

@@ -2,44 +2,40 @@
 
 ## ListProxy
 
-PiRhoSoft.UtilityEditor.ListProxy : ICollection, IEnumerable, IList
+PiRhoSoft.UtilityEditor.ListProxy : https://docs.microsoft.com/en-us/dotnet/api/System.Collections.ICollection[ICollection^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerable[IEnumerable^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]
 
 ### Description
 
 ### Public Properties
 
-int Count _(read only)_ _(abstract)_
+int _Count_ _(read only)_ _(abstract)_::
 
-Object Item _(abstract)_
+Object _Item_ _(abstract)_::
 
-bool IsFixedSize _(read only)_ _(virtual)_
+bool _IsFixedSize_ _(read only)_ _(virtual)_::
 
-bool IsReadOnly _(read only)_ _(virtual)_
+bool _IsReadOnly_ _(read only)_ _(virtual)_::
 
-bool IsSynchronized _(read only)_ _(virtual)_
+bool _IsSynchronized_ _(read only)_ _(virtual)_::
 
-Object SyncRoot _(read only)_ _(virtual)_
+Object _SyncRoot_ _(read only)_ _(virtual)_::
 
 ### Public Methods
 
-int Add(Object value) _(virtual)_::
+int Add(Object _value_) _(virtual)_::
 
 void Clear() _(virtual)_::
 
-bool Contains(Object value) _(virtual)_::
+bool Contains(Object _value_) _(virtual)_::
 
-void CopyTo(Array array, int index) _(virtual)_::
+void CopyTo(Array _array_, int _index_) _(virtual)_::
 
-IEnumerator GetEnumerator() _(virtual)_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IEnumerator[IEnumerator^] GetEnumerator() _(virtual)_::
 
-int IndexOf(Object value) _(virtual)_::
+int IndexOf(Object _value_) _(virtual)_::
 
-void Insert(int index, Object value) _(virtual)_::
+void Insert(int _index_, Object _value_) _(virtual)_::
 
-void Remove(Object value) _(virtual)_::
+void Remove(Object _value_) _(virtual)_::
 
-void RemoveAt(int index) _(virtual)_::
-
-### Protected Constructors
-
-ListProxy()::
+void RemoveAt(int _index_) _(virtual)_::

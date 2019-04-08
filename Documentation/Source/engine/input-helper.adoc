@@ -10,30 +10,30 @@ PiRhoSoft.UtilityEngine.InputHelper
 
 void LateUpdate()::
 
-void SetButton(string button, bool down)::
+void SetButton(string _button_, bool _down_)::
 
-void RemoveButton(string button)::
+void RemoveButton(string _button_)::
 
-void SetAxis(string axis, float value)::
+void SetAxis(string _axis_, float _value_)::
 
-void RemoveAxis(string axis)::
+void RemoveAxis(string _axis_)::
 
-bool IsButtonAvailable(string button)::
+bool IsButtonAvailable(string _button_)::
 
-<<engine/button-state,ButtonState>> GetButtonState(KeyCode key, string button)::
+<<engine/button-state.html,ButtonState>> GetButtonState(https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] _key_, string _button_)::
 
-bool GetButtonDown(KeyCode key, string button)::
+bool GetButtonDown(https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] _key_, string _button_)::
 
-bool GetWasButtonPressed(KeyCode key, string button)::
+bool GetWasButtonPressed(https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] _key_, string _button_)::
 
-bool GetWasButtonReleased(KeyCode key, string button)::
+bool GetWasButtonReleased(https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] _key_, string _button_)::
 
-float GetAxis(string axis)::
+float GetAxis(string _axis_)::
 
-<<engine/button-state,ButtonState>> GetAxisState(string axis, float magnitude)::
+<<engine/button-state.html,ButtonState>> GetAxisState(string _axis_, float _magnitude_)::
 
-bool GetAxisDown(string axis, float magnitude)::
+bool GetAxisDown(string _axis_, float _magnitude_)::
 
-bool GetWasAxisPressed(string axis, float magnitude)::
+bool GetWasAxisPressed(string _axis_, float _magnitude_)::
 
-bool GetWasAxisReleased(string axis, float magnitude)::
+bool GetWasAxisReleased(string _axis_, float _magnitude_)::

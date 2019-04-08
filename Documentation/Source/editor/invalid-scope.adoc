@@ -2,16 +2,24 @@
 
 ## InvalidScope
 
-PiRhoSoft.UtilityEditor.InvalidScope : <<editor/color-scope,ColorScope>>
+PiRhoSoft.UtilityEditor.InvalidScope : <<editor/color-scope.html,ColorScope>>
 
 ### Description
 
+Modifies https://docs.unity3d.com/ScriptReference/GUI-backgroundColor.html[GUI.backgroundColor] depending on whether or not the current state is valid and resets it when disposed.
+
 ### Static Fields
 
-Color _ValidBackground_::
+https://docs.unity3d.com/ScriptReference/Color.html[Color^] _ValidBackground_::
 
-Color _InvalidBackground_::
+The color to use when the state is valid. The default is white.
+
+https://docs.unity3d.com/ScriptReference/Color.html[Color^] _InvalidBackground_::
+
+The color to use when the state is invalid. The default is a pale red.
 
 ### Constructors
 
-InvalidScope(bool valid)::
+InvalidScope(bool _valid_)::
+
+If _valid_ is true, https://docs.unity3d.com/ScriptReference/GUI-backgroundColor.html[GUI.backgroundColor] will be set to _ValidBackground_, otherwise it will be set to _InvalidBackground_.

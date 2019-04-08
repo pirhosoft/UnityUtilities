@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using PiRhoSoft.UtilityEngine;
 using UnityEditor;
 using UnityEditorInternal;
 using UnityEngine;
@@ -9,28 +7,15 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public class PropertyListControl : ListControl
 	{
-		private static readonly Button _collapseButton = new Button(Icon.BuiltIn(Icon.Expanded), "", "Collapse this item's fields");
-		private static readonly Button _expandButton = new Button(Icon.BuiltIn(Icon.Collapsed), "", "Expand this item's fields");
-
 		private Action<SerializedProperty> _customAdd;
 		private Action<SerializedProperty, int> _customEdit;
 		private Action<SerializedProperty, int> _customRemove;
 		private Action<Rect, SerializedProperty, int> _customDraw;
 
-		private ListItemDisplayType _itemDisplay = ListItemDisplayType.Normal;
-		private List<bool> _isExpanded = new List<bool>();
-
 		public PropertyListControl Setup(SerializedProperty property)
 		{
 			var reorderableList = new ReorderableList(property.serializedObject, property, false, true, false, false);
 			Setup(reorderableList);
-			return this;
-		}
-
-		public PropertyListControl MakeDrawable(ListItemDisplayType itemDisplay)
-		{
-			MakeCustomHeight(GetItemHeight);
-			_itemDisplay = itemDisplay;
 			return this;
 		}
 
@@ -40,21 +25,21 @@ namespace PiRhoSoft.UtilityEditor
 			return this;
 		}
 
-		public PropertyListControl MakeAddable(Button button, Action<SerializedProperty> callback = null)
+		public PropertyListControl MakeAddable(Label button, Action<SerializedProperty> callback = null)
 		{
 			MakeHeaderButton(button, Add, Color.white);
 			_customAdd = callback;
 			return this;
 		}
 
-		public PropertyListControl MakeRemovable(Button button, Action<SerializedProperty, int> callback = null)
+		public PropertyListControl MakeRemovable(Label button, Action<SerializedProperty, int> callback = null)
 		{
 			MakeItemButton(button, Remove, Color.white);
 			_customRemove = callback;
 			return this;
 		}
 
-		public PropertyListControl MakeEditable(Button button, Action<SerializedProperty, int> callback = null)
+		public PropertyListControl MakeEditable(Label button, Action<SerializedProperty, int> callback = null)
 		{
 			MakeItemButton(button, Edit, Color.white);
 			_customEdit = callback;
@@ -87,72 +72,10 @@ namespace PiRhoSoft.UtilityEditor
 			List.serializedProperty.DeleteArrayElementAtIndex(index);
 		}
 
-		public float GetItemHeight(int index)
-		{
-			var property = List.serializedProperty.GetArrayElementAtIndex(index);
-
-			switch (_itemDisplay)
-			{
-				case ListItemDisplayType.Normal:
-				{
-					return EditorGUI.GetPropertyHeight(property);
-				}
-				case ListItemDisplayType.Inline:
-				{
-					return ClassDisplayDrawer.GetHeight(property);
-				}
-				case ListItemDisplayType.Foldout:
-				{
-					using (new EditorGUI.IndentLevelScope(1))
-					{
-						var expanded = IsExpanded(index);
-						return expanded ? RectHelper.LineHeight + ClassDisplayDrawer.GetHeight(property) : EditorGUIUtility.singleLineHeight;
-					}
-				}
-			}
-
-			return 0.0f;
-		}
-
 		public void DoDefaultDraw(Rect rect, int index)
 		{
 			var property = List.serializedProperty.GetArrayElementAtIndex(index);
-
-			switch (_itemDisplay)
-			{
-				case ListItemDisplayType.Normal:
-				{
-					EditorGUI.PropertyField(rect, property, GUIContent.none);
-					break;
-				}
-				case ListItemDisplayType.Inline:
-				{
-					ClassDisplayDrawer.Draw(rect, property, null);
-					break;
-				}
-				case ListItemDisplayType.Foldout:
-				{
-					var expanded = IsExpanded(index);
-					var labelRect = expanded ? RectHelper.TakeLine(ref rect) : rect;
-					var foldoutRect = RectHelper.TakeLeadingIcon(ref labelRect);
-
-					using (ColorScope.Color(new Color(0.3f, 0.3f, 0.3f)))
-					{
-						if (GUI.Button(foldoutRect, expanded ? _collapseButton.Content : _expandButton.Content, GUIStyle.none))
-							SetExpanded(index, !expanded);
-					}
-
-					EditorGUI.LabelField(labelRect, "Item " + index, EditorStyles.boldLabel);
-
-					if (expanded)
-					{
-						using (new EditorGUI.IndentLevelScope(1))
-							ClassDisplayDrawer.Draw(rect, property, null);
-					}
-
-					break;
-				}
-			}
+			EditorGUI.PropertyField(rect, property, GUIContent.none);
 		}
 
 		private void Add(Rect rect)
@@ -173,8 +96,6 @@ namespace PiRhoSoft.UtilityEditor
 
 		private void Remove(Rect rect, int index)
 		{
-			RemoveExpanded(index);
-
 			if (_customRemove != null)
 				_customRemove(List.serializedProperty, index);
 			else
@@ -187,46 +108,6 @@ namespace PiRhoSoft.UtilityEditor
 				_customDraw(rect, List.serializedProperty, index);
 			else
 				DoDefaultDraw(rect, index);
-		}
-
-		protected override void ElementsMoved(ReorderableList list, int oldIndex, int newIndex)
-		{
-			base.ElementsMoved(list, oldIndex, newIndex);
-
-			var expanded = IsExpanded(oldIndex);
-
-			RemoveExpanded(oldIndex);
-			AddExpanded(newIndex, expanded);
-		}
-
-		private void AddExpanded(int index, bool isExpanded)
-		{
-			EnsureExpandedCount(index);
-			_isExpanded.Insert(index, isExpanded);
-		}
-
-		private void RemoveExpanded(int index)
-		{
-			if (index < _isExpanded.Count)
-				_isExpanded.RemoveAt(index);
-		}
-
-		private void SetExpanded(int index, bool isExpanded)
-		{
-			EnsureExpandedCount(index);
-			_isExpanded[index] = isExpanded;
-		}
-
-		private bool IsExpanded(int index)
-		{
-			EnsureExpandedCount(index);
-			return _isExpanded[index];
-		}
-
-		private void EnsureExpandedCount(int count)
-		{
-			while (_isExpanded.Count <= count)
-				_isExpanded.Add(false);
 		}
 	}
 }

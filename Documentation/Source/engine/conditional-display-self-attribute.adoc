@@ -2,10 +2,10 @@
 
 ## ConditionalDisplaySelfAttribute
 
-PiRhoSoft.UtilityEngine.ConditionalDisplaySelfAttribute : <<engine/conditional-display-attribute,ConditionalDisplayAttribute>>
+PiRhoSoft.UtilityEngine.ConditionalDisplaySelfAttribute : <<engine/conditional-display-attribute.html,ConditionalDisplayAttribute>>
 
 ### Description
 
 ### Constructors
 
-ConditionalDisplaySelfAttribute(string property)::
+ConditionalDisplaySelfAttribute(string _property_)::

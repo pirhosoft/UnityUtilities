@@ -1,0 +1,8 @@
+[#editor/dictionary-display-drawer]
+
+## DictionaryDisplayDrawer
+
+PiRhoSoft.UtilityEditor.DictionaryDisplayDrawer : <<editor/property-drawer-1.html,PropertyDrawer>><<<editor/dictionary-display-control.html,DictionaryDisplayControl>>>
+
+### Description
+

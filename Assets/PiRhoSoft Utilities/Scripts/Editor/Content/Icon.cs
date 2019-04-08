@@ -15,6 +15,7 @@ namespace PiRhoSoft.UtilityEditor
 		public const string Refresh = "d_preAudioLoopOff";
 		public const string Load = "SceneLoadIn";
 		public const string Unload = "SceneLoadOut";
+		public const string Close = "LookDevClose";
 
 		private const string _invalidIconError = "(UIII) failed to create icon content: the built in icon {0} could not be loaded";
 		private const string _invalidDataError = "(UIID) failed to create icon content: the supplied data is not a valid base 64 string";

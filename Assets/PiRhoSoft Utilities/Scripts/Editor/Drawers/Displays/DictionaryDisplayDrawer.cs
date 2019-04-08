@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace PiRhoSoft.UtilityEditor
 {
-	public class DictionaryDisplayAttributeControl : PropertyControl
+	public class DictionaryDisplayControl : PropertyControl
 	{
-		public const string _invalidTypeWarning = "Invalid type for DictionaryDisplay on field {0}: DictionaryDisplay can only be applied to IEditableDictionary fields";
+		private const string _invalidTypeWarning = "(UDDCIT) Invalid type for DictionaryDisplay on field {0}: DictionaryDisplay can only be applied to IEditableDictionary fields";
 
-		private static Button _addButton = new Button(Icon.BuiltIn(Icon.CustomAdd), "", "Add an item to this dictionary");
-		private static Button _removeButton = new Button(Icon.BuiltIn(Icon.Remove), "", "Remove this item from the dictionary");
+		private static Label _addButton = new Label(Icon.BuiltIn(Icon.CustomAdd), "", "Add an item to this dictionary");
+		private static Label _removeButton = new Label(Icon.BuiltIn(Icon.Remove), "", "Remove this item from the dictionary");
 
 		private IEditableDictionary _dictionary;
 		private GUIContent _label;
@@ -25,7 +25,7 @@ namespace PiRhoSoft.UtilityEditor
 		public override void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute)
 		{
 			_dictionary = PropertyHelper.GetObject<IEditableDictionary>(property);
-			_itemDrawer = PropertyScopeControl.GetNextDrawer(fieldInfo, attribute);
+			_itemDrawer = PropertyHelper.GetNextDrawer(fieldInfo, attribute);
 
 			if (_dictionary == null)
 			{
@@ -37,9 +37,7 @@ namespace PiRhoSoft.UtilityEditor
 
 				if (attribute is DictionaryDisplayAttribute display)
 				{
-					if (display.ItemDisplay != ListItemDisplayType.Normal)
-						_dictionaryControl.MakeDrawable(display.ItemDisplay);
-					else if (_itemDrawer != null)
+					if (_itemDrawer != null)
 						_dictionaryControl.MakeDrawable(DrawItem);
 
 					if (display.AllowAdd)
@@ -87,7 +85,7 @@ namespace PiRhoSoft.UtilityEditor
 	}
 
 	[CustomPropertyDrawer(typeof(DictionaryDisplayAttribute))]
-	public class DictionaryDisplayAttributeDrawer : ControlDrawer<DictionaryDisplayAttributeControl>
+	public class DictionaryDisplayDrawer : PropertyDrawer<DictionaryDisplayControl>
 	{
 	}
 }

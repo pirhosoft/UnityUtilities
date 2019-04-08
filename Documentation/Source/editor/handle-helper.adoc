@@ -8,20 +8,20 @@ PiRhoSoft.UtilityEditor.HandleHelper
 
 ### Static Methods
 
-void DrawText(Vector2 position, string text, TextAnchor alignment, Color color)::
+void DrawText(https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _position_, string _text_, https://docs.unity3d.com/ScriptReference/TextAnchor.html[TextAnchor^] _alignment_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-void DrawArrow(Vector2 position, Vector2 direction, float length, Color color)::
+void DrawArrow(https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _position_, https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _direction_, float _length_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-void DrawLine(Vector2 start, Vector2 end, Color color)::
+void DrawLine(https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _start_, https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _end_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-void DrawCircle(Vector2 position, float radius, Color color)::
+void DrawCircle(https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _position_, float _radius_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-void DrawBezier(Vector2 start, Vector2 end, Color color)::
+void DrawBezier(https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _start_, https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _end_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-Rect BoundsHandle(Rect bounds, Vector2 snap, Color rectangleOutline, Color rectangleFill, Color circleOutline, Color circleFill, float handleSize)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] BoundsHandle(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _bounds_, https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _snap_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _rectangleOutline_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _rectangleFill_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _circleOutline_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _circleFill_, float _handleSize_)::
 
-Vector2 MoveHandle(Vector2 position, Vector2 size, Vector2 snap, Color outline, Color fill)::
+https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] MoveHandle(https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _position_, https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _size_, https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _snap_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _outline_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _fill_)::
 
-Vector2 MoveHandle(Vector2 position, Vector2 snap, Color outline, Color fill, float handleSize)::
+https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] MoveHandle(https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _position_, https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _snap_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _outline_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _fill_, float _handleSize_)::
 
-Rect ScaleHandles(Rect bounds, Vector2 snap, Color outline, Color fill, float handleSize)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] ScaleHandles(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _bounds_, https://docs.unity3d.com/ScriptReference/Vector2.html[Vector2^] _snap_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _outline_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _fill_, float _handleSize_)::

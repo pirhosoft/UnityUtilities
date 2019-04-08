@@ -2,14 +2,14 @@
 
 ## ContextMarginScope
 
-PiRhoSoft.UtilityEditor.ContextMarginScope : Scope
+PiRhoSoft.UtilityEditor.ContextMarginScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
 
 ### Description
 
+Modifies the _ContextMargin_ of <<editor/rect-helper.html,RectHelper>> and automatically resets it when disposed.
+
 ### Constructors
 
-ContextMarginScope(float margin)::
+ContextMarginScope(float _margin_)::
 
-### Protected Methods
-
-void CloseScope() _(virtual)_::
+Sets _ContextMargin_ on <<editor/rect-helper.html,RectHelper>> to _margin_.

@@ -2,10 +2,7 @@
 
 ## DisableInInspectorDrawer
 
-PiRhoSoft.UtilityEditor.DisableInInspectorDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/disable-in-inspector-control,DisableInInspectorControl>>>
+PiRhoSoft.UtilityEditor.DisableInInspectorDrawer : <<editor/property-drawer-1.html,PropertyDrawer>><<<editor/disable-in-inspector-control.html,DisableInInspectorControl>>>
 
 ### Description
 
-### Constructors
-
-DisableInInspectorDrawer()::

@@ -1,0 +1,15 @@
+[#editor/class-display-drawer]
+
+## ClassDisplayDrawer
+
+PiRhoSoft.UtilityEditor.ClassDisplayDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+
+### Description
+
+### Static Methods
+
+float GetHeight(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_)::
+
+void Draw(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_)::
+
+void Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_)::

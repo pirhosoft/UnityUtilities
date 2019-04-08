@@ -6,10 +6,12 @@ PiRhoSoft.UtilityEditor.RectVerticalAlignment
 
 ### Description
 
+Used with <<editor/rect-helper.html,RectHelper>> to specify how to vertically align rects when using the _Adjust_ methods.
+
 ### Values
 
-<<editor/rect-vertical-alignment,RectVerticalAlignment>> _Top_::
+<<editor/rect-vertical-alignment.html,RectVerticalAlignment>> _Top_
 
-<<editor/rect-vertical-alignment,RectVerticalAlignment>> _Middle_::
+<<editor/rect-vertical-alignment.html,RectVerticalAlignment>> _Middle_
 
-<<editor/rect-vertical-alignment,RectVerticalAlignment>> _Bottom_::
+<<editor/rect-vertical-alignment.html,RectVerticalAlignment>> _Bottom_

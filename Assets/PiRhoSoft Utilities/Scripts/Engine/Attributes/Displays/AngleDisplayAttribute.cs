@@ -4,10 +4,10 @@ namespace PiRhoSoft.UtilityEngine
 {
 	public enum AngleDisplayType
 	{
-		Raw,
 		Euler,
 		AxisAngle,
-		Look
+		Look,
+		Raw
 	}
 
 	public class AngleDisplayAttribute : PropertyAttribute

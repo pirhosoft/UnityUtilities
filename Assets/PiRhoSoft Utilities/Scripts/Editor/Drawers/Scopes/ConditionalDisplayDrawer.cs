@@ -7,7 +7,7 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public abstract class ConditionalDisplayControl : PropertyScopeControl
 	{
-		private const string _invalidPropertyTypeWarning = "Invalid Property for ConditionalDisplay: the field {0} must be an int, bool, float, string, enum, or Object";
+		private const string _invalidPropertyTypeWarning = "(UCDCIPT) Invalid Property for ConditionalDisplay: the field {0} must be an int, bool, float, string, enum, or Object";
 
 		protected ConditionalDisplayAttribute _attribute;
 
@@ -37,7 +37,7 @@ namespace PiRhoSoft.UtilityEditor
 
 	public class ConditionalDisplaySelfControl : ConditionalDisplayControl
 	{
-		private const string _invalidPropertyNameWarning = "Invalid Property for ConditionalDisplaySelf on {0}: the referenced field {1} could not be found";
+		private const string _invalidPropertyNameWarning = "(UCDSCIPN) Invalid Property for ConditionalDisplaySelf on {0}: the referenced field {1} could not be found";
 
 		public override float GetHeight(SerializedProperty property, GUIContent label)
 		{
@@ -65,7 +65,7 @@ namespace PiRhoSoft.UtilityEditor
 
 	public class ConditionalDisplayOtherControl : ConditionalDisplayControl
 	{
-		private const string _invalidPropertyNameWarning = "Invalid Property for ConditionalDisplayOther on {0}: the referenced field {1} could not be found";
+		private const string _invalidPropertyNameWarning = "(UCDOCIPN) Invalid Property for ConditionalDisplayOther on {0}: the referenced field {1} could not be found";
 
 		public override float GetHeight(SerializedProperty property, GUIContent label)
 		{
@@ -100,12 +100,12 @@ namespace PiRhoSoft.UtilityEditor
 	}
 
 	[CustomPropertyDrawer(typeof(ConditionalDisplaySelfAttribute))]
-	public class ConditionalDisplaySelfDrawer : ControlDrawer<ConditionalDisplaySelfControl>
+	public class ConditionalDisplaySelfDrawer : PropertyDrawer<ConditionalDisplaySelfControl>
 	{
 	}
 
 	[CustomPropertyDrawer(typeof(ConditionalDisplayOtherAttribute))]
-	public class ConditionalDisplayOtherDrawer : ControlDrawer<ConditionalDisplayOtherControl>
+	public class ConditionalDisplayOtherDrawer : PropertyDrawer<ConditionalDisplayOtherControl>
 	{
 	}
 }

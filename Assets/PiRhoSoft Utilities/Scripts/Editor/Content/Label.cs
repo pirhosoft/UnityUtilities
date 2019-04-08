@@ -9,8 +9,11 @@ namespace PiRhoSoft.UtilityEditor
 	{
 		private const string _missingPropertyWarning = "(ULMP) unable to find property {0} on type {1} for Label";
 
-		private string _text;
+		private string _label;
 		private string _tooltip;
+
+		private Icon _icon;
+		private string _name;
 		private GUIContent _content;
 
 		public GUIContent Content
@@ -19,8 +22,10 @@ namespace PiRhoSoft.UtilityEditor
 			{
 				if (_content == null)
 				{
-					var text = ObjectNames.NicifyVariableName(_text); // this is the reason the content can't be created in the constructor - NicifyVariableName can't be called on startup
-					_content = new GUIContent(text, _tooltip);
+					var label = !string.IsNullOrEmpty(_name) ? ObjectNames.NicifyVariableName(_name) : _label;// NicifyVariableName can't be called during startup
+					var icon = _icon?.Content; // Texture's cannot be created during startup
+
+					_content = new GUIContent(label, icon, _tooltip);
 				}
 
 				return _content;
@@ -29,7 +34,27 @@ namespace PiRhoSoft.UtilityEditor
 
 		public Label(Type type, string property)
 		{
-			_text = property;
+			_name = property;
+			_tooltip = GetTooltip(type, property);
+		}
+
+		public Label(string label, string tooltip = "")
+		{
+			_label = label;
+			_tooltip = tooltip;
+		}
+
+		public Label(Icon icon, string label = "", string tooltip = "")
+		{
+			_icon = icon;
+			_label = label;
+			_tooltip = tooltip;
+		}
+
+		public Label(Icon icon, Type type, string property)
+		{
+			_icon = icon;
+			_name = property;
 			_tooltip = GetTooltip(type, property);
 		}
 

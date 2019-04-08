@@ -1,0 +1,89 @@
+[#editor/icon]
+
+## Icon
+
+PiRhoSoft.UtilityEditor.Icon
+
+### Description
+
+A helper class for creating a https://docs.unity3d.com/ScriptReference/Texture.html[Texture^] as a static field in editor classes. Icons can reference built in textures or loaded from https://docs.microsoft.com/en-us/dotnet/api/system.convert.frombase64string[base 64^] encoded data. This class is most commonly used with <<editor/label.html,Label>>.
+
+[source,cs]
+----
+using PiRhoSoft.UtilityEditor;
+using UnityEditor;
+
+namespace PiRhoSoft.UtilityExample
+{
+	public class IconExample
+	{
+		private const string _iconName = "_Help";
+		private const string _iconData = "iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAACBjSFJNAAB6JgAAgIQAAPoAAACA6AAAdTAAAOpgAAA6mAAAF3CculE8AAAACXBIWXMAABJ0AAASdAHeZh94AAAAB3RJTUUH4wEOBR4Wp+XVagAAABh0RVh0U29mdHdhcmUAcGFpbnQubmV0IDQuMS41ZEdYUgAAATdJREFUOE+lkUtuglAYhWnnfQwITUdEQF6CPFRimBqcdKCzdl3GCZg0cS8O3IeJ2NA90HNSBsqlsYkkPx+H++VcbpDqur5pfm+SdJem6UOSJI/Xhh79i4LRaPQ0Ho8PmNNkMqnAsqGQMQf6FwVBEDzj5ck0zfcwDD/7/f4badv2x3nmOj36QkEcx5XneVs878FNQyHToy8URFFUYsdsOByuDcOYksjzVs7odRZg+AU5xJ3v+ysSuWjlnF5nAYQSZ1wOBoMCnDUUMr3OAuxSOY6zhbgHNw2FTE8oUFWVBWWv18sgrZGnJM4+P89cp0dfKMD5+AW567o7cNWwaOWcXmcBFktd1xeWZRWaps1I5GUrL+j9VXDEb/oCv8FTw658FApw3SuK8iLL8uu1oUf/ouCW6Xz5/6mlH0LCqCZdcm2YAAAAAElFTkSuQmCC";
+
+		private static Icon _builtInIcon = Icon.BuiltIn(_iconName);
+		private static Icon _base64Icon = Icon.Base64(_iconData);
+	}
+}
+----
+
+### Static Fields
+
+string _Add_::
+
+image:icon-add.png[Toolbar Plus] The name of the built in icon "Toolbar Plus"
+
+string _CustomAdd_::
+
+image:icon-custom-add.png[Toolbar Plus More] The name of the built in icon "Toolbar Plus More"
+
+string _Remove_::
+
+image:icon-remove.png[Toolbar Minus] The name of the built in icon "Toolbar Minus"
+
+string _Edit_::
+
+image:icon-edit.png[UnityEditor.InspectorWindow] The name of the built in icon "UnityEditor.InspectorWindow"
+
+string _Expanded_::
+
+image:icon-expanded.png[IN foldout focus on] The name of the built in icon "IN foldout focus on"
+
+string _Collapsed_::
+
+image:icon-collapsed.png[IN foldout focus] The name of the built in icon "IN foldout focus"
+
+string _Refresh_::
+
+image:icon-refresh.png[d_preAudioLoopOff] The name of the built in icon "d_preAudioLoopOff"
+
+string _Load_::
+
+image:icon-load.png[SceneLoadIn] The name of the built in icon "SceneLoadIn"
+
+string _Unload_::
+
+image:icon-unload.png[SceneLoadOut] The name of the built in icon "SceneLoadOut"
+
+string _Close_::
+
+image:icon-close.png[LookDevClose] The name of the built in icon "LookDevClose"
+
+### Static Methods
+
+<<editor/icon.html,Icon>> BuiltIn(string _name_)::
+
+Looks up a https://docs.unity3d.com/ScriptReference/Texture.html[Texture^] built in to Unity by _name_.
+
+TIP: A list of built in icons can be found https://unitylist.com/p/5c3/Unity-editor-icons[here^]. The most common of these can be referenced using the static fields listed above.
+
+<<editor/icon.html,Icon>> Base64(string _data_)::
+
+Creates a https://docs.unity3d.com/ScriptReference/Texture.html[Texture^] from the base 64 encoded image _data_.
+
+TIP: Many web services exist to convert files to a base 64 string. Search for 'convert to base64' to find one.
+
+### Public Properties
+
+https://docs.unity3d.com/ScriptReference/Texture.html[Texture^] _Content_ _(read only)_::
+
+Retrieves the https://docs.unity3d.com/ScriptReference/Texture.html[Texture^] created for this Icon. The https://docs.unity3d.com/ScriptReference/Texture.html[Texture^] will be created or loaded on first access and reused after that.

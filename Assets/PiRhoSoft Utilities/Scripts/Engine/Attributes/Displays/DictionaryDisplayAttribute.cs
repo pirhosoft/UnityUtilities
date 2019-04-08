@@ -7,11 +7,8 @@ namespace PiRhoSoft.UtilityEngine
 		public bool AllowAdd = true;
 		public bool AllowRemove = true;
 		public bool AllowCollapse = true;
-		public ListItemDisplayType ItemDisplay = ListItemDisplayType.Normal;
+
 		public string AddLabel = null;
 		public string EmptyText = null;
-
-		public string AddMethod = null;
-		public string RemoveMethod = null;
 	}
 }

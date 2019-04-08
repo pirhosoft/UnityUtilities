@@ -2,32 +2,24 @@
 
 ## ObjectListControl
 
-PiRhoSoft.UtilityEditor.ObjectListControl : <<editor/list-control,ListControl>>
+PiRhoSoft.UtilityEditor.ObjectListControl : <<editor/list-control.html,ListControl>>
 
 ### Description
 
-### Constructors
-
-ObjectListControl()::
-
 ### Public Methods
 
-<<editor/object-list-control,ObjectListControl>> Setup(IList list)::
+<<editor/object-list-control.html,ObjectListControl>> Setup(https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^] _list_)::
 
-<<editor/object-list-control,ObjectListControl>> MakeDrawable(Action<Rect, Rect, Rect> callback)::
+<<editor/object-list-control.html,ObjectListControl>> MakeDrawable(Action<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> _callback_)::
 
-<<editor/object-list-control,ObjectListControl>> MakeAddable(<<editor/icon-button,IconButton>> icon, Action<IList> callback)::
+<<editor/object-list-control.html,ObjectListControl>> MakeAddable(<<editor/label.html,Label>> _button_, Action<https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]> _callback_)::
 
-<<editor/object-list-control,ObjectListControl>> MakeRemovable(<<editor/icon-button,IconButton>> icon, Action<IList, IList> callback)::
+<<editor/object-list-control.html,ObjectListControl>> MakeRemovable(<<editor/label.html,Label>> _button_, Action<https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]> _callback_)::
 
-<<editor/object-list-control,ObjectListControl>> MakeEditable(<<editor/icon-button,IconButton>> icon, Action<IList, IList> callback)::
+<<editor/object-list-control.html,ObjectListControl>> MakeEditable(<<editor/label.html,Label>> _button_, Action<https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^], https://docs.microsoft.com/en-us/dotnet/api/System.Collections.IList[IList^]> _callback_)::
 
 void DoDefaultAdd()::
 
-void DoDefaultEdit(int index)::
+void DoDefaultEdit(int _index_)::
 
-void DoDefaultRemove(int index)::
-
-### Protected Methods
-
-void Draw(Rect rect, int index) _(virtual)_::
+void DoDefaultRemove(int _index_)::

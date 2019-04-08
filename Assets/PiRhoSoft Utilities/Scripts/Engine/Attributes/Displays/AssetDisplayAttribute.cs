@@ -15,7 +15,7 @@ namespace PiRhoSoft.UtilityEngine
 	{
 		public bool ShowNoneOption = true;
 		public bool ShowEditButton = true;
-		public AssetDisplaySaveLocation SaveLocation = AssetDisplaySaveLocation.Selectable;
+		public AssetDisplaySaveLocation SaveLocation = AssetDisplaySaveLocation.None;
 		public string DefaultName = null;
 	}
 }

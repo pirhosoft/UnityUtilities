@@ -19,7 +19,7 @@ namespace PiRhoSoft.UtilityExample
 
 		[Tooltip("A two component slider with range from -20 to 40 in increments of 0.1")]
 		[FloatDisplay(nameof(Maximum), -20.0f, 40.0f, 0.1f)]
-		public float Minimum;
+		public float Range;
 		[HideInInspector]
 		public float Maximum;
 	}

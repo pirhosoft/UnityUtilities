@@ -2,22 +2,14 @@
 
 ## ConditionalDisplayControl
 
-PiRhoSoft.UtilityEditor.ConditionalDisplayControl : <<editor/property-scope-control,PropertyScopeControl>>
+PiRhoSoft.UtilityEditor.ConditionalDisplayControl : <<editor/property-scope-control.html,PropertyScopeControl>>
 
 ### Description
 
-### Public Methods
-
-void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute) _(virtual)_::
-
-### Protected Constructors
-
-ConditionalDisplayControl()::
-
 ### Protected Fields
 
-<<engine/conditional-display-attribute,ConditionalDisplayAttribute>> __attribute_::
+<<Engine/conditional-display-attribute.html,ConditionalDisplayAttribute>> __attribute_::
 
 ### Protected Methods
 
-bool IsVisible(SerializedProperty property)::
+bool IsVisible(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_)::

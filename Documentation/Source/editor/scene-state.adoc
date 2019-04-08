@@ -6,10 +6,6 @@ PiRhoSoft.UtilityEditor.SceneState
 
 ### Description
 
-### Constructors
-
-SceneState()::
-
 ### Public Fields
 
-<<editor/scene-state-scene-data,SceneData>>[] _Scenes_::
+<<editor/scene-state-scene-data.html,SceneData>>[] _Scenes_::

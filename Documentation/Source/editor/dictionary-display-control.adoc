@@ -1,0 +1,8 @@
+[#editor/dictionary-display-control]
+
+## DictionaryDisplayControl
+
+PiRhoSoft.UtilityEditor.DictionaryDisplayControl : <<editor/property-control.html,PropertyControl>>
+
+### Description
+

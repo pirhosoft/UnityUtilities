@@ -1,0 +1,27 @@
+[#engine/string-display-attribute]
+
+## StringDisplayAttribute
+
+PiRhoSoft.UtilityEngine.StringDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+StringDisplayAttribute(<<engine/string-display-type.html,StringDisplayType>> _type_)::
+
+StringDisplayAttribute(string[] _options_)::
+
+### Public Fields
+
+bool _WordWrap_::
+
+int _MinimumLines_::
+
+int _MaximumLines_::
+
+### Public Properties
+
+<<engine/string-display-type.html,StringDisplayType>> _Type_ _(read only)_::
+
+string[] _Options_ _(read only)_::

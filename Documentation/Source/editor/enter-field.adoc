@@ -1,0 +1,21 @@
+[#editor/enter-field]
+
+## EnterField
+
+PiRhoSoft.UtilityEditor.EnterField
+
+### Description
+
+### Static Methods
+
+bool DrawInt(string _controlName_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, int _value_ _(ref)_)::
+
+bool DrawInt(string _controlName_, https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, int _value_ _(ref)_)::
+
+bool DrawFloat(string _controlName_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, float _value_ _(ref)_)::
+
+bool DrawFloat(string _controlName_, https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, float _value_ _(ref)_)::
+
+bool DrawString(string _controlName_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, string _text_ _(ref)_)::
+
+bool DrawString(string _controlName_, https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, string _text_ _(ref)_)::

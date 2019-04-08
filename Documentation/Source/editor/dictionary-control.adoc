@@ -2,32 +2,24 @@
 
 ## DictionaryControl
 
-PiRhoSoft.UtilityEditor.DictionaryControl : <<editor/list-control,ListControl>>
+PiRhoSoft.UtilityEditor.DictionaryControl : <<editor/list-control.html,ListControl>>
 
 ### Description
 
-### Constructors
-
-DictionaryControl()::
-
 ### Public Methods
 
-<<editor/dictionary-control,DictionaryControl>> Setup(SerializedProperty property, <<engine/i-editable-dictionary,IEditableDictionary>> dictionary)::
+<<editor/dictionary-control.html,DictionaryControl>> Setup(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, <<Engine/i-editable-dictionary.html,IEditableDictionary>> _dictionary_)::
 
-<<editor/dictionary-control,DictionaryControl>> MakeDrawable(<<engine/list-item-display-type,ListItemDisplayType>> itemDisplay, Type assetPopupType)::
+<<editor/dictionary-control.html,DictionaryControl>> MakeDrawable(<<Engine/list-item-display-type.html,ListItemDisplayType>> _itemDisplay_)::
 
-<<editor/dictionary-control,DictionaryControl>> MakeDrawable(Action<Rect, Rect, Rect> callback)::
+<<editor/dictionary-control.html,DictionaryControl>> MakeDrawable(Action<https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^], https://docs.unity3d.com/ScriptReference/Rect.html[Rect^]> _callback_)::
 
-<<editor/dictionary-control,DictionaryControl>> MakeAddable(<<editor/icon-button,IconButton>> icon, GUIContent label, Action<<<engine/i-editable-dictionary,IEditableDictionary>>, <<engine/i-editable-dictionary,IEditableDictionary>>> callback)::
+<<editor/dictionary-control.html,DictionaryControl>> MakeAddable(<<editor/label.html,Label>> _button_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, Action<<<Engine/i-editable-dictionary.html,IEditableDictionary>>, <<Engine/i-editable-dictionary.html,IEditableDictionary>>> _callback_)::
 
-<<editor/dictionary-control,DictionaryControl>> MakeRemovable(<<editor/icon-button,IconButton>> icon, Action<<<engine/i-editable-dictionary,IEditableDictionary>>, <<engine/i-editable-dictionary,IEditableDictionary>>> callback)::
+<<editor/dictionary-control.html,DictionaryControl>> MakeRemovable(<<editor/label.html,Label>> _button_, Action<<<Engine/i-editable-dictionary.html,IEditableDictionary>>, <<Engine/i-editable-dictionary.html,IEditableDictionary>>> _callback_)::
 
-<<editor/dictionary-control,DictionaryControl>> MakeEditable(<<editor/icon-button,IconButton>> icon, Action<<<engine/i-editable-dictionary,IEditableDictionary>>, <<engine/i-editable-dictionary,IEditableDictionary>>> callback)::
+<<editor/dictionary-control.html,DictionaryControl>> MakeEditable(<<editor/label.html,Label>> _button_, Action<<<Engine/i-editable-dictionary.html,IEditableDictionary>>, <<Engine/i-editable-dictionary.html,IEditableDictionary>>> _callback_)::
 
-float GetItemHeight(int index)::
+float GetItemHeight(int _index_)::
 
-void DoDefaultDraw(Rect rect, string key, int index)::
-
-### Protected Methods
-
-void Draw(Rect rect, int index) _(virtual)_::
+void DoDefaultDraw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, string _key_, int _index_)::

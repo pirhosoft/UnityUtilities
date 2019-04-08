@@ -8,6 +8,10 @@ PiRhoSoft.UtilityEditor.PropertyHelper
 
 ### Static Methods
 
-SerializedProperty GetSibling(SerializedProperty property, string siblingName)::
+https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] GetSibling(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, string _siblingName_)::
 
-T GetObject<T>(SerializedProperty property)::
+T GetObject<T>(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_)::
+
+T GetAncestor<T>(https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, int _generations_)::
+
+https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^] GetNextDrawer(FieldInfo _fieldInfo_, https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^] _attribute_)::

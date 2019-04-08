@@ -2,13 +2,9 @@
 
 ## SerializedDictionary
 
-PiRhoSoft.UtilityEngine.SerializedDictionary<KeyType, KeyType> : Dictionary<KeyType, KeyType>, <<engine/i-editable-dictionary,IEditableDictionary>>
+PiRhoSoft.UtilityEngine.SerializedDictionary<__KeyType__, __KeyType__> : https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.Dictionary-2[Dictionary^]<KeyType, KeyType>, <<engine/i-editable-dictionary.html,IEditableDictionary>>
 
 ### Description
-
-### Constructors
-
-SerializedDictionary()::
 
 ### Public Methods
 
@@ -18,6 +14,6 @@ void ApplyEdits() _(virtual)_::
 
 ### Protected Fields
 
-List<KeyType> __keys_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<KeyType> __keys_::
 
-List<ValueType> __values_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<ValueType> __values_::

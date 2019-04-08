@@ -1,0 +1,8 @@
+[#editor/list-display-control]
+
+## ListDisplayControl
+
+PiRhoSoft.UtilityEditor.ListDisplayControl : <<editor/property-control.html,PropertyControl>>
+
+### Description
+

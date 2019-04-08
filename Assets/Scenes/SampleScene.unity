@@ -121,7 +121,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 464669167}
-  - component: {fileID: 464669168}
   - component: {fileID: 464669166}
   m_Layer: 0
   m_Name: Example
@@ -139,14 +138,59 @@ MonoBehaviour:
   m_GameObject: {fileID: 464669165}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0f2fe6dae79257e40be6b282779f6eb7, type: 3}
+  m_Script: {fileID: 11500000, guid: 4a85b94b708c23840b791b39c8f44314, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Normal: 0
-  Popup: 90
-  Slider: 0
-  Minimum: -6.4
-  Maximum: 16.4
+  Field: 
+  FoldoutField: 
+  FullField: 
+  FoldoutAndFullField: 
+  Box: 
+  FoldoutBox: 
+  FullBox: 'aoeu
+
+    ao
+
+    euao
+
+    euao
+
+    euaoe
+
+    uaoe
+
+    uao
+
+    euaoe aoed udnaoehu saoetuhsa oetuhasoeu thaoseu taoehus aoetuha oseuthaoes utaohseu
+    taoe
+
+    u'
+  FoldoutAndFullBox: 
+  Area: 'aoeu
+
+    ao
+
+    euao aoehusthaoeu staoehu saoteuhs aoteuhsa oetuhaose utsaoehu saoetuh saoteuh
+    saoteuh aoesuth
+
+    euaoe
+
+    uaoe
+
+    uao
+
+    euaoe
+
+    uaoeu
+
+'
+  FoldoutArea: 
+  FullArea: 
+  FoldoutAndFullArea: 
+  Popup: 
+  FoldoutPopup: 
+  FullPopup: Two
+  FoldoutAndFullPopup: 
 --- !u!4 &464669167
 Transform:
   m_ObjectHideFlags: 0
@@ -161,20 +205,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &464669168
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464669165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 808c44f58c0713a4983d55e5d47c863c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Normal: 0
-  Popup: 90
-  Slider: 1000
-  Minimum: -6
-  Maximum: 12

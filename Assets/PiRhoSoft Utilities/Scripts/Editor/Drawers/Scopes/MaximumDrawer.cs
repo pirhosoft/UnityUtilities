@@ -7,7 +7,7 @@ namespace PiRhoSoft.UtilityEditor
 {
 	public class MaximumControl : PropertyScopeControl
 	{
-		public const string _invalidTypeWarning = "Invalid type for Maximum on field {0}: Maximum can only be applied to int or float fields";
+		public const string _invalidTypeWarning = "(UMACIT) Invalid type for Maximum on field {0}: Maximum can only be applied to int or float fields";
 
 		private float _maximum = 0.0f;
 
@@ -39,7 +39,7 @@ namespace PiRhoSoft.UtilityEditor
 	}
 
 	[CustomPropertyDrawer(typeof(MaximumAttribute))]
-	public class MaximumDrawer : ControlDrawer<MaximumControl>
+	public class MaximumDrawer : PropertyDrawer<MaximumControl>
 	{
 	}
 }

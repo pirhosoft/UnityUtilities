@@ -1,0 +1,19 @@
+[#engine/string-display-type]
+
+## StringDisplayType
+
+PiRhoSoft.UtilityEngine.StringDisplayType
+
+### Description
+
+### Values
+
+<<engine/string-display-type.html,StringDisplayType>> _TextBox_::
+
+<<engine/string-display-type.html,StringDisplayType>> _TextArea_::
+
+<<engine/string-display-type.html,StringDisplayType>> _FoldoutBox_::
+
+<<engine/string-display-type.html,StringDisplayType>> _FoldoutArea_::
+
+<<engine/string-display-type.html,StringDisplayType>> _Popup_::

@@ -10,26 +10,22 @@ PiRhoSoft.UtilityEngine.SceneReference
 
 Action<string, string> _SceneMoved_::
 
-### Constructors
-
-SceneReference()::
-
 ### Public Fields
 
 string _Path_::
 
 ### Public Properties
 
-bool IsAssigned _(read only)_
+bool _IsAssigned_ _(read only)_::
 
-bool IsLoaded _(read only)_
+bool _IsLoaded_ _(read only)_::
 
-Scene Scene _(read only)_
+https://docs.unity3d.com/ScriptReference/Scene.html[Scene^] _Scene_ _(read only)_::
 
-int Index _(read only)_
+int _Index_ _(read only)_::
 
 ### Public Methods
 
-void Setup(Object owner)::
+void Setup(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _owner_)::
 
 void Teardown()::

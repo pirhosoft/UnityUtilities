@@ -5,48 +5,11 @@ using UnityEngine;
 namespace PiRhoSoft.UtilityEditor
 {
 	[CustomPropertyDrawer(typeof(AngleDisplayAttribute))]
-	class AngleDisplayDrawer : PropertyDrawer
+	public class AngleDisplayDrawer : PropertyDrawer
 	{
 		private const string _invalidTypeWarning = "(UANDDIT) Invalid type for AngleDisplay of field {0}: AngleDisplay can only be used with Quaternion fields";
 
 		#region Static Property Interface
-
-		private static GUIContent[] _rawLabels = new GUIContent[]
-		{
-			new GUIContent("X", "The x component of the quaternion"),
-			new GUIContent("Y", "The y component of the quaternion"),
-			new GUIContent("Z", "The z component of the quaternion"),
-			new GUIContent("W", "The w component of the quaternion")
-		};
-
-		private static GUIContent[] _eulerLabels = new GUIContent[]
-		{
-			new GUIContent("Z", "The rotation about the z axis (applied first)"),
-			new GUIContent("X", "The rotation about the x axis (applied second)"),
-			new GUIContent("Y", "The rotation about the y axis (applied third)")
-		};
-
-		private static GUIContent[] _axisAngleLabels = new GUIContent[]
-		{
-			new GUIContent("X", "The x component of the vector to rotate about"),
-			new GUIContent("Y", "The y component of the vector to rotate about"),
-			new GUIContent("Z", "The z component of the vector to rotate about"),
-			new GUIContent("A", "The angle of rotation about the axis (in degrees)")
-		};
-
-		private static GUIContent[] _lookForwardLabels = new GUIContent[]
-		{
-			new GUIContent("X", "The x component of the forward vector"),
-			new GUIContent("Y", "The y component of the forward vector"),
-			new GUIContent("Z", "The z component of the forward vector")
-		};
-
-		private static GUIContent[] _lookUpLabels = new GUIContent[]
-		{
-			new GUIContent("X", "The x component of the up vector"),
-			new GUIContent("Y", "The y component of the up vector"),
-			new GUIContent("Z", "The z component of the up vector")
-		};
 
 		private static float[] _rawValues = new float[4];
 		private static float[] _eulerValues = new float[3];
@@ -88,6 +51,43 @@ namespace PiRhoSoft.UtilityEditor
 		#endregion
 
 		#region Static Object Interface
+
+		private static GUIContent[] _rawLabels = new GUIContent[]
+		{
+			new GUIContent("X", "The x component of the quaternion"),
+			new GUIContent("Y", "The y component of the quaternion"),
+			new GUIContent("Z", "The z component of the quaternion"),
+			new GUIContent("W", "The w component of the quaternion")
+		};
+
+		private static GUIContent[] _eulerLabels = new GUIContent[]
+		{
+			new GUIContent("Z", "The rotation about the z axis (applied first)"),
+			new GUIContent("X", "The rotation about the x axis (applied second)"),
+			new GUIContent("Y", "The rotation about the y axis (applied third)")
+		};
+
+		private static GUIContent[] _axisAngleLabels = new GUIContent[]
+		{
+			new GUIContent("X", "The x component of the vector to rotate about"),
+			new GUIContent("Y", "The y component of the vector to rotate about"),
+			new GUIContent("Z", "The z component of the vector to rotate about"),
+			new GUIContent("A", "The angle of rotation about the axis (in degrees)")
+		};
+
+		private static GUIContent[] _lookForwardLabels = new GUIContent[]
+		{
+			new GUIContent("X", "The x component of the forward vector"),
+			new GUIContent("Y", "The y component of the forward vector"),
+			new GUIContent("Z", "The z component of the forward vector")
+		};
+
+		private static GUIContent[] _lookUpLabels = new GUIContent[]
+		{
+			new GUIContent("X", "The x component of the up vector"),
+			new GUIContent("Y", "The y component of the up vector"),
+			new GUIContent("Z", "The z component of the up vector")
+		};
 
 		public static Quaternion Draw(GUIContent label, Quaternion quaternion, AngleDisplayType type)
 		{

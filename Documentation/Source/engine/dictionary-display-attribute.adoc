@@ -2,13 +2,9 @@
 
 ## DictionaryDisplayAttribute
 
-PiRhoSoft.UtilityEngine.DictionaryDisplayAttribute : PropertyAttribute
+PiRhoSoft.UtilityEngine.DictionaryDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
 
 ### Description
-
-### Constructors
-
-DictionaryDisplayAttribute()::
 
 ### Public Fields
 
@@ -18,12 +14,12 @@ bool _AllowRemove_::
 
 bool _AllowCollapse_::
 
-bool _ShowEditButton_::
-
-<<engine/list-item-display-type,ListItemDisplayType>> _ItemDisplay_::
-
-Type _AssetType_::
+<<engine/list-item-display-type.html,ListItemDisplayType>> _ItemDisplay_::
 
 string _AddLabel_::
 
 string _EmptyText_::
+
+string _AddMethod_::
+
+string _RemoveMethod_::

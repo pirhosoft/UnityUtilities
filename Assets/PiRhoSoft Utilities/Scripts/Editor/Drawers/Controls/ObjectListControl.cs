@@ -28,21 +28,21 @@ namespace PiRhoSoft.UtilityEditor
 			return this;
 		}
 
-		public ObjectListControl MakeAddable(Button button, Action<IList> callback = null)
+		public ObjectListControl MakeAddable(Label button, Action<IList> callback = null)
 		{
 			MakeHeaderButton(button, Add, Color.white);
 			_customAdd = callback;
 			return this;
 		}
 
-		public ObjectListControl MakeRemovable(Button button, Action<IList, int> callback = null)
+		public ObjectListControl MakeRemovable(Label button, Action<IList, int> callback = null)
 		{
 			MakeItemButton(button, Remove, Color.white);
 			_customRemove = callback;
 			return this;
 		}
 
-		public ObjectListControl MakeEditable(Button button, Action<IList, int> callback = null)
+		public ObjectListControl MakeEditable(Label button, Action<IList, int> callback = null)
 		{
 			MakeItemButton(button, Edit, Color.white);
 			_customEdit = callback;

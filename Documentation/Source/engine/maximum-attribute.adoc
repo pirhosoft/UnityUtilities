@@ -2,16 +2,20 @@
 
 ## MaximumAttribute
 
-PiRhoSoft.UtilityEngine.MaximumAttribute : <<engine/property-scope-attribute,PropertyScopeAttribute>>
+PiRhoSoft.UtilityEngine.MaximumAttribute : <<engine/property-scope-attribute.html,PropertyScopeAttribute>>
 
 ### Description
 
+### Static Fields
+
+int _DefaultOrder_::
+
 ### Constructors
 
-MaximumAttribute(float maximum)::
+MaximumAttribute(float _maximum_)::
 
-MaximumAttribute(int maximum)::
+MaximumAttribute(int _maximum_)::
 
 ### Public Properties
 
-float MaximumValue _(read only)_
+float _MaximumValue_ _(read only)_::

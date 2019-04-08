@@ -263,18 +263,13 @@
             "_items": [
                 "Attributes",
                 "Content",
-                "Controls",
-                "DataStructures",
                 "Drawers",
                 "Helpers",
-                "Internals",
-                "Managers",
                 "Objects",
                 "Preferences",
                 "Scopes",
-                "Tools",
-                "Windows",
-                "Wrappers"
+                "Types",
+                "Widgets"
             ]
         },
         "Templates": {

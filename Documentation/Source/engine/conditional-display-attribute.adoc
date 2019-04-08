@@ -2,9 +2,13 @@
 
 ## ConditionalDisplayAttribute
 
-PiRhoSoft.UtilityEngine.ConditionalDisplayAttribute : <<engine/property-scope-attribute,PropertyScopeAttribute>>
+PiRhoSoft.UtilityEngine.ConditionalDisplayAttribute : <<engine/property-scope-attribute.html,PropertyScopeAttribute>>
 
 ### Description
+
+### Static Fields
+
+int _DefaultOrder_::
 
 ### Public Fields
 
@@ -20,8 +24,4 @@ bool _Invert_::
 
 ### Public Properties
 
-string Property _(read only)_
-
-### Protected Constructors
-
-ConditionalDisplayAttribute()::
+string _Property_ _(read only)_::

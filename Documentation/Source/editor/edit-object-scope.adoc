@@ -2,14 +2,14 @@
 
 ## EditObjectScope
 
-PiRhoSoft.UtilityEditor.EditObjectScope : Scope
+PiRhoSoft.UtilityEditor.EditObjectScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
 
 ### Description
 
+Manages the update of a https://docs.unity3d.com/ScriptReference/SerializedObject.html[SerializedObject^] when edits need to be made directly to the underlying object.
+
 ### Constructors
 
-EditObjectScope(SerializedObject serializedObject)::
+EditObjectScope(https://docs.unity3d.com/ScriptReference/SerializedObject.html[SerializedObject^] _serializedObject_)::
 
-### Protected Methods
-
-void CloseScope() _(virtual)_::
+Creates a scope that, while open, allows for the underlying object of _serializedObject_ to be edited with proper updating and undo management.

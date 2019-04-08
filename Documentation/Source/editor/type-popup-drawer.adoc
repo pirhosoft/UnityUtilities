@@ -10,6 +10,6 @@ PiRhoSoft.UtilityEditor.TypePopupDrawer
 
 float GetHeight()::
 
-Type Draw<BaseType>(GUIContent label, Type type)::
+Type Draw<BaseType>(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, Type _type_)::
 
-Type Draw<BaseType>(Rect position, GUIContent label, Type type)::
+Type Draw<BaseType>(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, Type _type_)::

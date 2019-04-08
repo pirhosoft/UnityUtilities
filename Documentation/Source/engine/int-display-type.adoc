@@ -1,0 +1,15 @@
+[#engine/int-display-type]
+
+## IntDisplayType
+
+PiRhoSoft.UtilityEngine.IntDisplayType
+
+### Description
+
+### Values
+
+<<engine/int-display-type.html,IntDisplayType>> _Popup_::
+
+<<engine/int-display-type.html,IntDisplayType>> _Slider_::
+
+<<engine/int-display-type.html,IntDisplayType>> _MinMaxSlider_::

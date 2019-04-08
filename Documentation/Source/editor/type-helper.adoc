@@ -8,42 +8,42 @@ PiRhoSoft.UtilityEditor.TypeHelper
 
 ### Static Fields
 
-List<Type> _SerializableTypes_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<Type> _SerializableTypes_::
 
 ### Static Methods
 
-bool HasAttribute<AttributeType>(Type type)::
+bool HasAttribute<AttributeType>(Type _type_)::
 
-AttributeType GetAttribute<AttributeType>(Type type)::
+AttributeType GetAttribute<AttributeType>(Type _type_)::
 
-AttributeType GetAttribute<AttributeType>(FieldInfo field)::
+AttributeType GetAttribute<AttributeType>(FieldInfo _field_)::
 
-bool HasAttribute(Type type, Type attributeType)::
+bool HasAttribute(Type _type_, Type _attributeType_)::
 
-Attribute GetAttribute(Type type, Type attributeType)::
+Attribute GetAttribute(Type _type_, Type _attributeType_)::
 
-Attribute GetAttribute(FieldInfo field, Type attributeType)::
+Attribute GetAttribute(FieldInfo _field_, Type _attributeType_)::
 
-T CreateInstance<T>(Type type)::
+T CreateInstance<T>(Type _type_)::
 
-bool IsCreatableAs<BaseType>(Type type)::
+bool IsCreatableAs<BaseType>(Type _type_)::
 
-bool IsCreatableAs(Type baseType, Type type)::
+bool IsCreatableAs(Type _baseType_, Type _type_)::
 
-List<Type> ListDerivedTypes<BaseType>()::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<Type> ListDerivedTypes<BaseType>()::
 
-List<Type> ListDerivedTypes(Type baseType)::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<Type> ListDerivedTypes(Type _baseType_)::
 
-List<Type> ListTypesWithAttribute<AttributeType>()::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<Type> ListTypesWithAttribute<AttributeType>()::
 
-List<Type> ListTypesWithAttribute(Type attributeType)::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<Type> ListTypesWithAttribute(Type _attributeType_)::
 
-IEnumerable<Type> FindTypes(Func<Type, Type> predicate)::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.IEnumerable-1[IEnumerable^]<Type> FindTypes(Func<Type, Type> _predicate_)::
 
-<<editor/type-list,TypeList>> GetTypeList<T>(bool includeNone)::
+<<editor/type-list.html,TypeList>> GetTypeList<T>(bool _includeNone_)::
 
-<<editor/type-list,TypeList>> GetTypeList(Type baseType, bool includeNone)::
+<<editor/type-list.html,TypeList>> GetTypeList(Type _baseType_, bool _includeNone_)::
 
-bool IsSerializable(FieldInfo field)::
+bool IsSerializable(FieldInfo _field_)::
 
-bool IsSerializable(Type type)::
+bool IsSerializable(Type _type_)::

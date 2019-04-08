@@ -1,0 +1,8 @@
+[#editor/change-trigger-control]
+
+## ChangeTriggerControl
+
+PiRhoSoft.UtilityEditor.ChangeTriggerControl : <<editor/property-scope-control.html,PropertyScopeControl>>
+
+### Description
+

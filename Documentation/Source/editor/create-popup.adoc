@@ -1,0 +1,29 @@
+[#editor/create-popup]
+
+## CreatePopup
+
+PiRhoSoft.UtilityEditor.CreatePopup : https://docs.unity3d.com/ScriptReference/PopupWindowContent.html[PopupWindowContent^]
+
+### Description
+
+### Static Fields
+
+float _DefaultWidth_::
+
+### Public Methods
+
+void Setup(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, Action _creator_, Func<bool> _validator_) _(virtual)_::
+
+### Protected Properties
+
+bool _IsValid_ _(read only)_::
+
+bool _HasChanged_ _(read only)_::
+
+### Protected Methods
+
+float GetContentHeight() _(virtual)_::
+
+bool DrawContent() _(virtual)_::
+
+void Reset() _(virtual)_::

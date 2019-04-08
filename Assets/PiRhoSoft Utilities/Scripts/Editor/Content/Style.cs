@@ -24,4 +24,25 @@ namespace PiRhoSoft.UtilityEditor
 			_create = create;
 		}
 	}
+
+
+	public class NewStyle
+	{
+		public bool? WordWrap;
+
+		private GUIStyle _content;
+
+		public GUIStyle GetContent(GUIStyle template)
+		{
+			if (_content == null)
+			{
+				_content = template != null ? new GUIStyle(template) : new GUIStyle();
+
+				if (WordWrap.HasValue)
+					_content.wordWrap = WordWrap.Value;
+			}
+
+			return _content;
+		}
+	}
 }

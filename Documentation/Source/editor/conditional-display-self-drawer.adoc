@@ -2,10 +2,7 @@
 
 ## ConditionalDisplaySelfDrawer
 
-PiRhoSoft.UtilityEditor.ConditionalDisplaySelfDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/conditional-display-self-control,ConditionalDisplaySelfControl>>>
+PiRhoSoft.UtilityEditor.ConditionalDisplaySelfDrawer : <<editor/property-drawer-1.html,PropertyDrawer>><<<editor/conditional-display-self-control.html,ConditionalDisplaySelfControl>>>
 
 ### Description
 
-### Constructors
-
-ConditionalDisplaySelfDrawer()::

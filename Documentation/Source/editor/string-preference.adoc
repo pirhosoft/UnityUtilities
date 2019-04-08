@@ -6,10 +6,18 @@ PiRhoSoft.UtilityEditor.StringPreference
 
 ### Description
 
+A wrapper for string values stored in https://docs.unity3d.com/ScriptReference/EditorPrefs.html[EditorPrefs^].
+
+NOTE: EditorPrefs are stored globally, not per project.
+
 ### Constructors
 
-StringPreference(string name, string defaultValue)::
+StringPreference(string _name_, string _defaultValue_)::
+
+Creates a preference that references _name_, and assigns it _defaultValue_ if it hasn't been previously saved.
 
 ### Public Properties
 
-string Value
+string _Value_::
+
+Gets or sets the value saved to the preference.

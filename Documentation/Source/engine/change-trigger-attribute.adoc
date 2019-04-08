@@ -1,0 +1,15 @@
+[#engine/change-trigger-attribute]
+
+## ChangeTriggerAttribute
+
+PiRhoSoft.UtilityEngine.ChangeTriggerAttribute : <<engine/property-scope-attribute.html,PropertyScopeAttribute>>
+
+### Description
+
+### Constructors
+
+ChangeTriggerAttribute(string _callback_)::
+
+### Public Properties
+
+string _Callback_ _(read only)_::

@@ -6,10 +6,6 @@ PiRhoSoft.UtilityEditor.AssetList
 
 ### Description
 
-### Constructors
-
-AssetList()::
-
 ### Public Fields
 
 Type _Type_::
@@ -18,16 +14,16 @@ bool _HasNone_::
 
 bool _HasCreate_::
 
-GUIContent[] _Names_::
+https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][] _Names_::
 
-List<ScriptableObject> _Assets_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<https://docs.unity3d.com/ScriptReference/Object.html[Object^]> _Assets_::
 
-<<editor/type-list,TypeList>> _Types_::
+<<editor/type-list.html,TypeList>> _Types_::
 
 ### Public Methods
 
-int GetIndex(ScriptableObject asset)::
+int GetIndex(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _asset_)::
 
-ScriptableObject GetAsset(int index)::
+https://docs.unity3d.com/ScriptReference/Object.html[Object^] GetAsset(int _index_)::
 
-Type GetType(int index)::
+Type GetType(int _index_)::

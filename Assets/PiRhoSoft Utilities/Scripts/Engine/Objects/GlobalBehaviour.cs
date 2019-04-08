@@ -23,5 +23,11 @@ namespace PiRhoSoft.UtilityEngine
 				return _instance;
 			}
 		}
+
+		public static void Destroy()
+		{
+			if (Exists)
+				Destroy(_instance.gameObject);
+		}
 	}
 }

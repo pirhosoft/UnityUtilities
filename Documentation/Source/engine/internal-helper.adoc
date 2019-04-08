@@ -8,18 +8,18 @@ PiRhoSoft.UtilityEngine.InternalHelper
 
 ### Static Methods
 
-DelegateType CreateDelegate<DelegateType>(MethodInfo method)::
+DelegateType CreateDelegate<DelegateType>(MethodInfo _method_)::
 
-DelegateType CreateDelegate<DelegateType>(Type type, string methodName)::
+DelegateType CreateDelegate<DelegateType>(Type _type_, string _methodName_)::
 
-Func<PropertyType> CreateGetDelegate<PropertyType>(Type type, string propertyName)::
+Func<PropertyType> CreateGetDelegate<PropertyType>(Type _type_, string _propertyName_)::
 
-Action<PropertyType> CreateSetDelegate<PropertyType>(Type type, string propertyName)::
+Action<PropertyType> CreateSetDelegate<PropertyType>(Type _type_, string _propertyName_)::
 
-Func<FieldType> CreateGetField<FieldType>(Type type, string fieldName)::
+Func<FieldType> CreateGetField<FieldType>(Type _type_, string _fieldName_)::
 
-Action<FieldType> CreateSetField<FieldType>(Type type, string fieldName)::
+Action<FieldType> CreateSetField<FieldType>(Type _type_, string _fieldName_)::
 
-Func<FieldType> CreateGetField<FieldType>(Type type, string fieldName, Object obj)::
+Func<FieldType> CreateGetField<FieldType>(Type _type_, string _fieldName_, Object _obj_)::
 
-Action<FieldType> CreateSetField<FieldType>(Type type, string fieldName, Object obj)::
+Action<FieldType> CreateSetField<FieldType>(Type _type_, string _fieldName_, Object _obj_)::

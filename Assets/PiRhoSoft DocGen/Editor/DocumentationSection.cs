@@ -192,6 +192,18 @@ namespace PiRhoSoft.DocGenEditor
 			return builder.ToString();
 		}
 
+		private bool IsIncluded(ConstructorInfo constructor, AccessLevel access)
+		{
+			if (constructor != null && constructor.GetParameters().Length == 0) return false;
+			return IsIncluded((MethodBase)constructor, access);
+		}
+
+		private bool IsIncluded(MethodInfo method, AccessLevel access)
+		{
+			if (method != null && !IncludedDeclarations.HasFlag(DeclarationType.Inherited) && method.GetBaseDefinition() != method) return false;
+			return IsIncluded((MethodBase)method, access);
+		}
+
 		private bool IsIncluded(MethodBase method, AccessLevel access)
 		{
 			if (method == null) return false;

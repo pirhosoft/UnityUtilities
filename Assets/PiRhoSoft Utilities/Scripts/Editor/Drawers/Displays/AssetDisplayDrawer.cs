@@ -12,7 +12,7 @@ namespace PiRhoSoft.UtilityEditor
 		private const string _invalidTypeWarning = "(UASDDIT) Invalid type for AssetDisplay of field {0}: AssetDisplay can only be used with Object derived fields";
 		private const string _invalidPathError = "(UASDDIP) failed to create asset at path {0}: the path must be inside the 'Assets' folder for this project";
 
-		private static readonly Button _editButton = new Button(Icon.BuiltIn(Icon.Edit), "", "Show this asset in the inspector");
+		private static readonly Label _editButton = new Label(Icon.BuiltIn(Icon.Edit), "", "Show this asset in the inspector");
 
 		#region Static Property Interface
 
@@ -74,49 +74,60 @@ namespace PiRhoSoft.UtilityEditor
 			{
 				var editRect = RectHelper.TakeTrailingIcon(ref position);
 
-				if (asset != null)
+				if (asset)
 				{
 					if (GUI.Button(editRect, _editButton.Content, GUIStyle.none))
 						Selection.activeObject = asset;
 				}
 			}
 
+			var rect = EditorGUI.PrefixLabel(position, label);
 			var creatable = saveLocation != AssetDisplaySaveLocation.None && typeof(ScriptableObject).IsAssignableFrom(assetType);
 			var list = AssetHelper.GetAssetList(assetType, showNoneOption, creatable);
 			var index = list.GetIndex(asset);
+			var thumbnail = asset != null ? AssetPreview.GetMiniThumbnail(asset) ?? AssetPreview.GetMiniTypeThumbnail(asset.GetType()) : null;
+			var popupLabel = asset ? new GUIContent(asset.name, thumbnail) : new GUIContent("None");
 
-			index = EditorGUI.Popup(position, label, index, list.Names);
-			asset = list.GetAsset(index);
+			var selection = SelectionPopup.Draw(rect, popupLabel, new SelectionState { Tab = 0, Index = index }, list.Tree);
 
-			if (creatable && asset == null)
+			if (selection.Tab == 0)
 			{
-				var createType = list.GetType(index);
-
-				if (createType != null)
-				{
-					var title = string.Format("Create a new {0}", createType.Name);
-					var name = string.IsNullOrEmpty(defaultName) ? createType.Name : defaultName;
-
-					if (saveLocation == AssetDisplaySaveLocation.Selectable)
-					{
-						var path = EditorUtility.SaveFilePanel(title, "Assets", name + ".asset", "asset");
-
-						if (!string.IsNullOrEmpty(path))
-						{
-							asset = AssetHelper.CreateAssetAtPath(path, createType);
-
-							if (asset == null)
-								Debug.LogErrorFormat(_invalidPathError, path);
-						}
-					}
-					else if (saveLocation == AssetDisplaySaveLocation.AssetRoot)
-					{
-						asset = AssetHelper.CreateAsset(name, createType);
-					}
-				}
+				return list.GetAsset(selection.Index);
+			}
+			else if (selection.Tab == 1)
+			{
+				var type = list.GetType(selection.Index);
+				return Create(type, saveLocation, defaultName);
 			}
 
 			return asset;
+		}
+
+		public static Object Create(Type createType, AssetDisplaySaveLocation saveLocation, string defaultName)
+		{
+			var title = string.Format("Create a new {0}", createType.Name);
+			var name = string.IsNullOrEmpty(defaultName) ? createType.Name : defaultName;
+
+			if (saveLocation == AssetDisplaySaveLocation.Selectable)
+			{
+				var path = EditorUtility.SaveFilePanel(title, "Assets", name + ".asset", "asset");
+
+				if (!string.IsNullOrEmpty(path))
+				{
+					var asset = AssetHelper.CreateAssetAtPath(path, createType);
+
+					if (asset == null)
+						Debug.LogErrorFormat(_invalidPathError, path);
+
+					return asset;
+				}
+			}
+			else if (saveLocation == AssetDisplaySaveLocation.AssetRoot)
+			{
+				return AssetHelper.CreateAsset(name, createType);
+			}
+
+			return null;
 		}
 
 		#endregion

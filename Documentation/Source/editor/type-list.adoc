@@ -6,22 +6,18 @@ PiRhoSoft.UtilityEditor.TypeList
 
 ### Description
 
-### Constructors
-
-TypeList()::
-
 ### Public Fields
 
 Type _BaseType_::
 
 bool _HasNone_::
 
-GUIContent[] _Names_::
+https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^][] _Names_::
 
-List<Type> _Types_::
+https://docs.microsoft.com/en-us/dotnet/api/System.Collections.Generic.List-1[List^]<Type> _Types_::
 
 ### Public Methods
 
-int GetIndex(Type type)::
+int GetIndex(Type _type_)::
 
-Type GetType(int index)::
+Type GetType(int _index_)::

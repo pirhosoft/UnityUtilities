@@ -2,26 +2,82 @@
 
 ## Label
 
-PiRhoSoft.UtilityEditor.Label : <<editor/static-content,StaticContent>>
+PiRhoSoft.UtilityEditor.Label
 
 ### Description
 
+A helper class for creating a https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] as a static field in editor classes.
+
+TIP: Use of this class is only necessary when looking up the label for a property or when using an <<editor/icon.html,Icon>> in a static context. For consistency, it can be used when specifying the text and tooltip directly, but https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] will also work in this situation.
+
+[source,cs]
+----
+using UnityEngine;
+
+namespace PiRhoSoft.UtilityExample
+{
+	public class LabelExample
+	{
+		[Tooltip("A number used in the label example")]
+		public Int Number;
+	}
+}
+
+using PiRhoSoft.UtilityEditor;
+using UnityEditor;
+
+namespace PiRhoSoft.UtilityExample
+{
+	[CustomPropertyDrawer(typeof(LabelExample))]
+	public class LabelExampleDrawer : PropertyDrawer
+	{
+		private static Label _numberLabel = new Label(typeof(LabelExample), nameof(LabelExample.Number));
+		private static Label _incrementLabel = new Label(Icon.BuiltIn(Icon.Add), "", "Increment the number");
+		
+		public override void OnGUI(Rect position, SerializedProperty property, GUIContent label)
+		{
+			var iconRect = RectHelper.TakeTrailingIcon(ref position);
+
+			EditorGUI.PropertyField(position, property, _numberLabel); <1>
+			
+			if (GUI.Button(iconRect, _incrementLabel.Content, GUIStyle.none))
+				property.intValue++;
+		}
+	}
+}
+----
+<1> The label parameter holds the label for the LabelExample field on the owner class, not the label for the Number field
+
 ### Static Methods
 
-string GetTooltip(Type type, string propertyName)::
+string GetTooltip(Type _type_, string _propertyName_)::
 
-string GetTooltip(FieldInfo field)::
+Retrieves the https://docs.unity3d.com/ScriptReference/TooltipAttribute.html[tooltip^] decorating the property _propertyName_ on type _type_.
+
+string GetTooltip(FieldInfo _field_)::
+
+Retrieves the https://docs.unity3d.com/ScriptReference/TooltipAttribute.html[tooltip^] that is decorating _field_.
 
 ### Constructors
 
-Label(Type type, string property)::
+Label(Type _type_, string _property_)::
+
+Creates a https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent] with _text_ set to _property_ cleaned up with https://docs.unity3d.com/ScriptReference/ObjectNames.NicifyVariableName.html[NicifyVariableName^] and _https://docs.unity3d.com/ScriptReference/TooltipAttribute.html[tooltip^]_ looked up from the property _property_ on type _type_.
+
+Label(string _label_, string _tooltip_)::
+
+Creates a https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] with _text_ set to _label_ and _tooltip_ set to _tooltip_.
+
+Label(<<editor/icon.html,Icon>> _icon_, string _label_, string _tooltip_)::
+
+Creates a https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] with _image_ loaded from _icon_, _text_ set to _label_, and _tooltip_ set to _tooltip_.
+
+Label(<<editor/icon.html,Icon>> _icon_, Type _type_, string _property_)::
+
+Creates a https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] with _image_ loaded from _icon_, _text_ set to _property_ cleaned up with https://docs.unity3d.com/ScriptReference/ObjectNames.NicifyVariableName.html[NicifyVariableName^], and _https://docs.unity3d.com/ScriptReference/TooltipAttribute.html[tooltip^]_ looked up from the property _property_ on type _type_.
 
 ### Public Properties
 
-string Text _(read only)_
+https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _Content_ _(read only)_::
 
-string Tooltip _(read only)_
-
-### Protected Methods
-
-GUIContent Create() _(virtual)_::
+Retrieves the https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] created for this Label. The https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] will be created on first access and reused after that.

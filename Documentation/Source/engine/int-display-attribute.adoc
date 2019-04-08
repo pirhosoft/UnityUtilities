@@ -1,0 +1,23 @@
+[#engine/int-display-attribute]
+
+## IntDisplayAttribute
+
+PiRhoSoft.UtilityEngine.IntDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Constructors
+
+IntDisplayAttribute(string[] _names_, int[] _values_)::
+
+IntDisplayAttribute(int _minimum_, int _maximum_, int _snap_)::
+
+IntDisplayAttribute(string _maximumProperty_, int _minimum_, int _maximum_, int _snap_)::
+
+### Public Properties
+
+<<engine/int-display-type.html,IntDisplayType>> _Type_ _(read only)_::
+
+string[] _Names_ _(read only)_::
+
+int[] _Values_ _(read only)_::

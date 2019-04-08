@@ -8,11 +8,11 @@ PiRhoSoft.UtilityEngine.ButtonState : ValueType
 
 ### Constructors
 
-ButtonState(bool pressed, bool held, bool released)::
+ButtonState(bool _pressed_, bool _held_, bool _released_)::
 
-ButtonState(string button)::
+ButtonState(string _button_)::
 
-ButtonState(KeyCode key)::
+ButtonState(https://docs.unity3d.com/ScriptReference/KeyCode.html[KeyCode^] _key_)::
 
 ### Public Fields
 

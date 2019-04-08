@@ -2,16 +2,18 @@
 
 ## UndoScope
 
-PiRhoSoft.UtilityEditor.UndoScope : Scope
+PiRhoSoft.UtilityEditor.UndoScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
 
 ### Description
 
+Automatically manages https://docs.unity3d.com/ScriptReference/Undo.html[undo^] state for any changes that happen while this object is alive. This can be used for both https://docs.unity3d.com/ScriptReference/Object.html[Objects^] and https://docs.unity3d.com/ScriptReference/SerializedObject.html[SerializedObjects^]. Scenes, assets, and prefabs are all properly handled and multiple changes are collapsed into a single undo entry.
+
 ### Constructors
 
-UndoScope(Object objectToTrack, bool forceDirty)::
+UndoScope(https://docs.unity3d.com/ScriptReference/Object.html[Object^] _objectToTrack_, bool _forceDirty_)::
 
-UndoScope(SerializedObject serializedObject)::
+Tracks _objectToTrack_ and adds an undo entry if it changes. If any changes are https://docs.unity3d.com/ScriptReference/EditorGUI.BeginChangeCheck.html[detected^], _objectToTrack_ (if it's an asset) or the scene containing _objectToTrack_ will be marked dirty so it can be saved. To mark _objectToTrack_ dirty regardless of whether or not any changes were made in the gui, pass true as the value for _forceDirty_.
 
-### Protected Methods
+UndoScope(https://docs.unity3d.com/ScriptReference/SerializedObject.html[SerializedObject^] _serializedObject_)::
 
-void CloseScope() _(virtual)_::
+Tracks _serializedObject_ and adds an undo entry if it changes. _serializedObject_ is https://docs.unity3d.com/ScriptReference/SerializedObject.Update.html[updated^] when the scope is created and https://docs.unity3d.com/ScriptReference/SerializedObject.ApplyModifiedProperties.html[applied^] when the scope closes so the underlying object will be automatically kept in sync. 

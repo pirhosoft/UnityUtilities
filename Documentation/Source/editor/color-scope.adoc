@@ -2,22 +2,28 @@
 
 ## ColorScope
 
-PiRhoSoft.UtilityEditor.ColorScope : Scope
+PiRhoSoft.UtilityEditor.ColorScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
 
 ### Description
 
+Modifies the https://docs.unity3d.com/ScriptReference/Color.html[Colors^] to use for https://docs.unity3d.com/Manual/GUIScriptingGuide.html[IMGUI^] controls and resets it when disposed.
+
 ### Static Methods
 
-<<editor/color-scope,ColorScope>> Color(Color color)::
+<<editor/color-scope.html,ColorScope>> Color(https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_)::
 
-<<editor/color-scope,ColorScope>> BackgroundColor(Color backgroundColor)::
+Creates a ColorScope that sets https://docs.unity3d.com/ScriptReference/GUI-color.html[GUI.color^] to _color_.
 
-<<editor/color-scope,ColorScope>> ContentColor(Color contentColor)::
+<<editor/color-scope.html,ColorScope>> BackgroundColor(https://docs.unity3d.com/ScriptReference/Color.html[Color^] _backgroundColor_)::
+
+Creates a ColorScope that sets https://docs.unity3d.com/ScriptReference/GUI-backgroundColor.html[GUI.backgroundColor] to _backgroundColor_.
+
+<<editor/color-scope.html,ColorScope>> ContentColor(https://docs.unity3d.com/ScriptReference/Color.html[Color^] _contentColor_)::
+
+Creates a ColorScope that sets https://docs.unity3d.com/ScriptReference/GUI-contentColor.html[GUI.contentColor] to _contentColor_.
 
 ### Constructors
 
-ColorScope(Color color, Color backgroundColor, Color contentColor)::
+ColorScope(https://docs.unity3d.com/ScriptReference/Color.html[Color^] _color_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _backgroundColor_, https://docs.unity3d.com/ScriptReference/Color.html[Color^] _contentColor_)::
 
-### Protected Methods
-
-void CloseScope() _(virtual)_::
+Creates a ColorScope that sets https://docs.unity3d.com/ScriptReference/GUI-color.html[GUI.color^] to _color_, https://docs.unity3d.com/ScriptReference/GUI-backgroundColor.html[GUI.backgroundColor] to _backgroundColor_, and https://docs.unity3d.com/ScriptReference/GUI-contentColor.html[GUI.contentColor] to _contentColor_.

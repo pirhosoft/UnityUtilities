@@ -1,0 +1,19 @@
+[#engine/enum-display-attribute]
+
+## EnumDisplayAttribute
+
+PiRhoSoft.UtilityEngine.EnumDisplayAttribute : https://docs.unity3d.com/ScriptReference/PropertyAttribute.html[PropertyAttribute^]
+
+### Description
+
+### Static Fields
+
+float _DefaultMinimumWidth_::
+
+### Public Fields
+
+<<engine/enum-display-type.html,EnumDisplayType>> _Type_::
+
+bool _ForceFlags_::
+
+float _MinimumWidth_::

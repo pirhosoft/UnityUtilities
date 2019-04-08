@@ -1,0 +1,23 @@
+[#editor/asset-display-drawer]
+
+## AssetDisplayDrawer
+
+PiRhoSoft.UtilityEditor.AssetDisplayDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+
+### Description
+
+### Static Methods
+
+float GetHeight(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_)::
+
+void Draw(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, Type _assetType_, bool _showNoneOption_, bool _showEditButton_, <<Engine/asset-display-save-location.html,AssetDisplaySaveLocation>> _saveLocation_, string _defaultName_)::
+
+void Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, Type _assetType_, bool _showNoneOption_, bool _showEditButton_, <<Engine/asset-display-save-location.html,AssetDisplaySaveLocation>> _saveLocation_, string _defaultName_)::
+
+AssetType Draw<AssetType>(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, AssetType _asset_, bool _showNoneOption_, bool _showEditButton_, <<Engine/asset-display-save-location.html,AssetDisplaySaveLocation>> _saveLocation_, string _defaultName_)::
+
+AssetType Draw<AssetType>(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, AssetType _asset_, bool _showNoneOption_, bool _showEditButton_, <<Engine/asset-display-save-location.html,AssetDisplaySaveLocation>> _saveLocation_, string _defaultName_)::
+
+https://docs.unity3d.com/ScriptReference/Object.html[Object^] Draw(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/Object.html[Object^] _asset_, Type _assetType_, bool _showNoneOption_, bool _showEditButton_, <<Engine/asset-display-save-location.html,AssetDisplaySaveLocation>> _saveLocation_, string _defaultName_)::
+
+https://docs.unity3d.com/ScriptReference/Object.html[Object^] Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/Object.html[Object^] _asset_, Type _assetType_, bool _showNoneOption_, bool _showEditButton_, <<Engine/asset-display-save-location.html,AssetDisplaySaveLocation>> _saveLocation_, string _defaultName_)::

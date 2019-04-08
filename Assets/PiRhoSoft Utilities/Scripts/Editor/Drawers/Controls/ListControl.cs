@@ -40,8 +40,8 @@ namespace PiRhoSoft.UtilityEditor
 		public const float ItemPadding = 5.0f;
 		public const float TotalMargin = 12.0f; // measured as the width of the rect passed to Draw minus the width of the rect passed to DrawElement
 
-		private static Button _expandButton = new Button(Icon.BuiltIn(Icon.Collapsed), "", "Expand the contents of this list");
-		private static Button _collapseButton = new Button(Icon.BuiltIn(Icon.Expanded), "", "Collapse the contents of this list");
+		private static Label _expandButton = new Label(Icon.BuiltIn(Icon.Collapsed), "", "Expand the contents of this list");
+		private static Label _collapseButton = new Label(Icon.BuiltIn(Icon.Expanded), "", "Collapse the contents of this list");
 
 		public ReorderableList List { get; private set; } // this is Unity's undocumented list class that does the bulk of the drawing and layout
 
@@ -99,27 +99,27 @@ namespace PiRhoSoft.UtilityEditor
 			return this;
 		}
 
-		public ListControl MakeHeaderButton(Button button, Action<Rect> callback, Color color)
+		public ListControl MakeHeaderButton(Label button, Action<Rect> callback, Color color)
 		{
-			_headerButtons.Add(new HeaderButton { Button = button, Callback = callback, Color = color });
+			_headerButtons.Add(new HeaderButton { Label = button, Callback = callback, Color = color });
 			return this;
 		}
 
-		public ListControl MakeHeaderButton(Button button, GenericMenu menu, Color color)
+		public ListControl MakeHeaderButton(Label button, GenericMenu menu, Color color)
 		{
-			_headerButtons.Add(new HeaderButton { Button = button, Menu = menu, Color = color });
+			_headerButtons.Add(new HeaderButton { Label = button, Menu = menu, Color = color });
 			return this;
 		}
 
-		public ListControl MakeHeaderButton(Button button, PopupWindowContent popup, Color color)
+		public ListControl MakeHeaderButton(Label button, PopupWindowContent popup, Color color)
 		{
-			_headerButtons.Add(new HeaderButton { Button = button, Popup = popup, Color = color });
+			_headerButtons.Add(new HeaderButton { Label = button, Popup = popup, Color = color });
 			return this;
 		}
 
-		public ListControl MakeItemButton(Button button, Action<Rect, int> callback, Color color)
+		public ListControl MakeItemButton(Label button, Action<Rect, int> callback, Color color)
 		{
-			_itemButtons.Add(new ItemButton { Button = button, Callback = callback, Color = color });
+			_itemButtons.Add(new ItemButton { Label = button, Callback = callback, Color = color });
 			return this;
 		}
 
@@ -178,7 +178,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		private class HeaderButton
 		{
-			public Button Button;
+			public Label Label;
 			public Action<Rect> Callback;
 			public PopupWindowContent Popup;
 			public GenericMenu Menu;
@@ -197,7 +197,7 @@ namespace PiRhoSoft.UtilityEditor
 
 		private class ItemButton
 		{
-			public Button Button;
+			public Label Label;
 			public Action<Rect, int> Callback;
 			public Color Color;
 
@@ -321,7 +321,7 @@ namespace PiRhoSoft.UtilityEditor
 
 					using (ColorScope.ContentColor(button.Color))
 					{
-						if (GUI.Button(buttonRect, button.Button.Content, GUIStyle.none))
+						if (GUI.Button(buttonRect, button.Label.Content, GUIStyle.none))
 							SetClickedButton(-1, i, buttonRect);
 					}
 				}
@@ -347,7 +347,7 @@ namespace PiRhoSoft.UtilityEditor
 
 					using (ColorScope.ContentColor(button.Color))
 					{
-						if (GUI.Button(buttonRect, button.Button.Content, GUIStyle.none))
+						if (GUI.Button(buttonRect, button.Label.Content, GUIStyle.none))
 							SetClickedButton(index, i, buttonRect);
 					}
 				}

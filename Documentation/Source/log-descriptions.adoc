@@ -3,19 +3,59 @@
 
 ### Warnings
 
-UHUVIHU:: {0}'s HelpURL attribute is {1} and should be {2}
+UANDDIT:: Invalid type for AngleDisplay of field {0}: AngleDisplay can only be used with Quaternion fields
 --
 --
 
-UHUVMHU:: {0} does not have a HelpURL attribute
+UASDDIT:: Invalid type for AssetDisplay of field {0}: AssetDisplay can only be used with Object derived fields
 --
 --
 
-ULDII:: {0} '{1}' on type '{2}' has duplicate id '{3}'
+UCDCIPT:: Invalid Property for ConditionalDisplay: the field {0} must be an int, bool, float, string, enum, or Object
 --
 --
 
-ULDMI:: {0} '{1}' on type '{2}' does not have an id
+UCDOCIPN:: Invalid Property for ConditionalDisplayOther on {0}: the referenced field {1} could not be found
+--
+--
+
+UCDSCIPN:: Invalid Property for ConditionalDisplaySelf on {0}: the referenced field {1} could not be found
+--
+--
+
+UCTMM:: failed to setup ChangeTrigger for '{0}': a method named '{1}' with no parameters could not be found
+--
+--
+
+UCTMO:: failed to setup ChangeTrigger for '{0}': the object could not be resolved
+--
+--
+
+UDDCIT:: Invalid type for DictionaryDisplay on field {0}: DictionaryDisplay can only be applied to IEditableDictionary fields
+--
+--
+
+UEDDIE:: Invalid type for EnumDisplay: type {0} is not an enum
+--
+--
+
+UEDDIT:: Invalid type for EnumDisplay on field {0}: EnumDisplay can only be used with to Enum fields
+--
+--
+
+ULDCIT:: Invalid type for ListDisplay on field {0}: ListDisplay can only be applied to SerializedList or SerializedArray fields
+--
+--
+
+ULMP:: unable to find property {0} on type {1} for Label
+--
+--
+
+UMACIT:: Invalid type for Maximum on field {0}: Maximum can only be applied to int or float fields
+--
+--
+
+UMICIT:: Invalid type for Minimum on field {0}: Minimum can only be applied to int or float fields
 --
 --
 
@@ -27,4 +67,28 @@ USBSI:: A second instance of SingletonBehaviour type {0} was created
 --
 --
 
+USCIT:: Unable to show search tree: invalid tabs and content
+--
+--
+
+USDIT:: Invalid type for Snap on field {0}: Snap can only be applied to a float or int field
+--
+--
+
 ### Errors
+
+UASDDIP:: failed to create asset at path {0}: the path must be inside the 'Assets' folder for this project
+--
+--
+
+UIIC:: failed to create icon content: the supplied data could not be loaded
+--
+--
+
+UIID:: failed to create icon content: the supplied data is not a valid base 64 string
+--
+--
+
+UIII:: failed to create icon content: the built in icon {0} could not be loaded
+--
+--

@@ -19,7 +19,7 @@ namespace PiRhoSoft.UtilityEditor
 	}
 
 	[CustomPropertyDrawer(typeof(DisableInInspectorAttribute))]
-	public class DisableInInspectorDrawer : ControlDrawer<DisableInInspectorControl>
+	public class DisableInInspectorDrawer : PropertyDrawer<DisableInInspectorControl>
 	{
 	}
 }

@@ -2,16 +2,7 @@
 
 ## DisableInInspectorControl
 
-PiRhoSoft.UtilityEditor.DisableInInspectorControl : <<editor/property-scope-control,PropertyScopeControl>>
+PiRhoSoft.UtilityEditor.DisableInInspectorControl : <<editor/property-scope-control.html,PropertyScopeControl>>
 
 ### Description
 
-### Constructors
-
-DisableInInspectorControl()::
-
-### Public Methods
-
-float GetHeight(SerializedProperty property, GUIContent label) _(virtual)_::
-
-void Draw(Rect position, SerializedProperty property, GUIContent label) _(virtual)_::

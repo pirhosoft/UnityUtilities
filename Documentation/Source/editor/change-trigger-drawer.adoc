@@ -1,0 +1,8 @@
+[#editor/change-trigger-drawer]
+
+## ChangeTriggerDrawer
+
+PiRhoSoft.UtilityEditor.ChangeTriggerDrawer : <<editor/property-drawer-1.html,PropertyDrawer>><<<editor/change-trigger-control.html,ChangeTriggerControl>>>
+
+### Description
+

@@ -2,14 +2,14 @@
 
 ## LabelWidthScope
 
-PiRhoSoft.UtilityEditor.LabelWidthScope : Scope
+PiRhoSoft.UtilityEditor.LabelWidthScope : https://docs.unity3d.com/ScriptReference/Scope.html[Scope^]
 
 ### Description
 
+Modifies https://docs.unity3d.com/ScriptReference/EditorGUIUtility-labelWidth.html[EditorGUIUtility.labelWidth^] and resets it when disposed.
+
 ### Constructors
 
-LabelWidthScope(float width)::
+LabelWidthScope(float _width_)::
 
-### Protected Methods
-
-void CloseScope() _(virtual)_::
+Sets https://docs.unity3d.com/ScriptReference/EditorGUIUtility-labelWidth.html[EditorGUIUtility.labelWidth^] to _width_.

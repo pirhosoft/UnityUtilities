@@ -5,12 +5,12 @@ using UnityEngine;
 
 namespace PiRhoSoft.UtilityEditor
 {
-	public class ListDisplayAttributeControl : PropertyControl
+	public class ListDisplayControl : PropertyControl
 	{
-		private const string _invalidTypeWarning = "Invalid type for ListDisplay on field {0}: ListDisplay can only be applied to SerializedList or SerializedArray fields";
+		private const string _invalidTypeWarning = "(ULDCIT) Invalid type for ListDisplay on field {0}: ListDisplay can only be applied to SerializedList or SerializedArray fields";
 
-		private static Button _addButton = new Button(Icon.BuiltIn(Icon.Add), "", "Add an item to this list");
-		private static Button _removeButton = new Button(Icon.BuiltIn(Icon.Remove), "", "Remove this item from the list");
+		private static Label _addButton = new Label(Icon.BuiltIn(Icon.Add), "", "Add an item to this list");
+		private static Label _removeButton = new Label(Icon.BuiltIn(Icon.Remove), "", "Remove this item from the list");
 
 		private SerializedProperty _property;
 		private GUIContent _label;
@@ -25,7 +25,7 @@ namespace PiRhoSoft.UtilityEditor
 		public override void Setup(SerializedProperty property, FieldInfo fieldInfo, PropertyAttribute attribute)
 		{
 			_property = property.FindPropertyRelative("_items");
-			_itemDrawer = PropertyScopeControl.GetNextDrawer(fieldInfo, attribute);
+			_itemDrawer = PropertyHelper.GetNextDrawer(fieldInfo, attribute);
 
 			if (_property == null || !_property.isArray)
 			{
@@ -38,9 +38,7 @@ namespace PiRhoSoft.UtilityEditor
 
 				if (attribute is ListDisplayAttribute display)
 				{
-					if (display.ItemDisplay != ListItemDisplayType.Normal)
-						_listControl.MakeDrawable(display.ItemDisplay);
-					else if (_itemDrawer != null)
+					if (_itemDrawer != null)
 						_listControl.MakeDrawable(DrawItem);
 
 					if (display.AllowAdd)
@@ -91,7 +89,7 @@ namespace PiRhoSoft.UtilityEditor
 	}
 
 	[CustomPropertyDrawer(typeof(ListDisplayAttribute))]
-	public class ListDisplayAttributeDrawer : ControlDrawer<ListDisplayAttributeControl>
+	public class ListDisplayDrawer : PropertyDrawer<ListDisplayControl>
 	{
 	}
 }

@@ -6,64 +6,126 @@ PiRhoSoft.UtilityEditor.RectHelper
 
 ### Description
 
+RectHelper contains a set of static functions to help with layout and positioning of ui elements in custom editor controls. The functions work on the concept of taking pieces out of a larger https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] rather than trying to build them manually.
+
 ### Static Fields
 
 float _VerticalSpace_::
 
+Initialized to the value of https://docs.unity3d.com/ScriptReference/EditorGUIUtility-standardVerticalSpacing.html[EditorGUIUtility.standardVerticalSpacing^].
+
 float _HorizontalSpace_::
+
+Initialized to the value of https://docs.unity3d.com/ScriptReference/EditorGUIUtility-standardVerticalSpacing.html[EditorGUIUtility.standardVerticalSpacing^].
 
 float _IconWidth_::
 
+Initialized to the value of https://docs.unity3d.com/ScriptReference/EditorGUIUtility-singleLineHeight.html[EditorGUIUtility.singleLineHeight^].
+
 float _LineHeight_::
+
+Initialized to the value of https://docs.unity3d.com/ScriptReference/EditorGUIUtility-singleLineHeight.html[EditorGUIUtility.singleLineHeight^] + _VerticalSpace_.
 
 float _LeftMargin_::
 
+Initialized to 14 which seems to match the value used by Unity in the https://docs.unity3d.com/Manual/UsingTheInspector.html[Inspector].
+
 float _RightMargin_::
+
+Initialized to 4 which seems to match the value used by Unity in the https://docs.unity3d.com/Manual/UsingTheInspector.html[Inspector].
 
 ### Static Properties
 
-float CurrentIndentWidth _(read only)_
+float _CurrentIndentWidth_ _(read only)_::
 
-float CurrentLabelWidth _(read only)_
+Returns the width of the current indent according to https://docs.unity3d.com/ScriptReference/EditorGUI-indentLevel.html[EditorGUI.indentLevel^].
 
-float CurrentFieldWidth _(read only)_
+float _CurrentLabelWidth_ _(read only)_::
 
-float CurrentViewWidth _(read only)_
+Returns the width to use for a label taking in to account _CurrentIndentWidth_. https://docs.unity3d.com/ScriptReference/EditorGUIUtility-labelWidth.html[EditorGUIUtility.labelWidth^] includes the indent whereas this does not.
 
-float ContextMargin
+float _CurrentFieldWidth_ _(read only)_::
+
+Returns the width to use for a field without the portion reserved for the label.
+
+float _CurrentViewWidth_ _(read only)_::
+
+Returns the width of the view area inside the margins specified by _LeftMargin_, _RightMargin_, and _ContextMargin_ while taking scroll bars into account if they are visible.
+
+float _CurrentContextWidth_ _(read only)_::
+
+Returns the entire width of the view area while taking scroll bars into account if they are visible.
+
+float _ContextMargin_::
+
+Initialized to 0 and customizable to adjust margins for anything that uses _CurrentViewWidth_ to determine available area. <<editor/context-margin-scope.html>> can be used to modify this value and automatically reset it.
 
 ### Static Methods
 
-Rect TakeLine(Rect full _(ref)_)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLine(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_)::
 
-Rect TakeHeight(Rect full _(ref)_, float height)::
+Removes a Rect with height of single line from the top of _full_ and returns it. A rect with height _VerticalSpace_ is also removed from the top of _full_ but not included in the returned Rect.
 
-Rect TakeTrailingHeight(Rect full _(ref)_, float height)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeHeight(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_, float _height_)::
 
-Rect TakeVerticalSpace(Rect full _(ref)_)::
+Removes a Rect with height _height_ from the top of _full_ and returns it.
 
-Rect TakeHorizontalSpace(Rect full _(ref)_)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingHeight(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_, float _height_)::
 
-void TakeIndent(Rect full _(ref)_)::
+Removes a Rect with height _height_ from the bottom of _full_ and returns it.
 
-Rect TakeLabel(Rect full _(ref)_)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeVerticalSpace(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_)::
 
-Rect TakeLeadingIcon(Rect full _(ref)_)::
+Removes a Rect with height _VerticalSpace_ from the top of _full_ and returns it.
 
-Rect TakeTrailingIcon(Rect full _(ref)_)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeHorizontalSpace(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_)::
 
-Rect TakeWidth(Rect full _(ref)_, float width)::
+Removes a Rect with width _HorizontalSpace_ from the left of _full_ and returns it.
 
-Rect TakeTrailingWidth(Rect full _(ref)_, float width)::
+void TakeIndent(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_)::
 
-Rect Inset(Rect rect, float padding)::
+Removes a Rect with width _CurrentIndentWidth_ from the left of _full_ and returns it.
 
-Rect Inset(Rect rect, float left, float right, float top, float bottom)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLabel(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_)::
 
-Rect Adjust(Rect rect, float width, float height, <<editor/rect-horizontal-alignment,RectHorizontalAlignment>> horizontal, <<editor/rect-vertical-alignment,RectVerticalAlignment>> vertical)::
+Removes a Rect with width _CurrentLabelWidth_ from the left of _full_ and returns it.
 
-Rect AdjustHeight(Rect rect, float height, <<editor/rect-vertical-alignment,RectVerticalAlignment>> alignment)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeLeadingIcon(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_)::
 
-Rect AdjustWidth(Rect rect, float width, <<editor/rect-horizontal-alignment,RectHorizontalAlignment>> alignment)::
+Removes a Rect with width _IconWidth_ from the left of _full_ and returns it. A rect with width _HorizontalSpace_ is also removed from the left of _full_ but not included in the returned Rect.
 
-float GetIndentWidth(int levels)::
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingIcon(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_)::
+
+Removes a Rect with width _IconWidth_ from the right of _full_ and returns it. A rect with width _HorizontalSpace_ is also removed from the right of _full_ but not included in the returned Rect.
+
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeWidth(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_, float _width_)::
+
+Removes a Rect with width _width_ from the left of _full_ and returns it.
+
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] TakeTrailingWidth(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _full_ _(ref)_, float _width_)::
+
+Removes a Rect with width _width_ from the right of _full_ and returns it.
+
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] Inset(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, float _padding_)::
+
+Returns a copy of _rect_ inset on all sides by _padding_.
+
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] Inset(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, float _left_, float _right_, float _top_, float _bottom_)::
+
+Returns a copy of _rect_ inset by _left_, _right_, _top_, and _bottom_.
+
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] Adjust(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, float _width_, float _height_, <<editor/rect-horizontal-alignment.html,RectHorizontalAlignment>> _horizontal_, <<editor/rect-vertical-alignment.html,RectVerticalAlignment>> _vertical_)::
+
+Returns a copy of _rect_ repositioned inside an area with dimensions _width_ and _height_ according to _horizontal_ and _vertical_.
+
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] AdjustHeight(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, float _height_, <<editor/rect-vertical-alignment.html,RectVerticalAlignment>> _alignment_)::
+
+Returns a copy of _rect_ with y adjusted so it is aligned inside an area with height _height_ according to _alignment_.
+
+https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] AdjustWidth(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _rect_, float _width_, <<editor/rect-horizontal-alignment.html,RectHorizontalAlignment>> _alignment_)::
+
+Returns a copy of _rect_ with x adjusted so it is aligned inside an area with width _width_ according to _alignment_.
+
+float GetIndentWidth(int _levels_)::
+
+Gets the amount to indent for indent level _levels_.

@@ -1,0 +1,25 @@
+[#editor/enum-display-drawer]
+
+## EnumDisplayDrawer
+
+PiRhoSoft.UtilityEditor.EnumDisplayDrawer : https://docs.unity3d.com/ScriptReference/PropertyDrawer.html[PropertyDrawer^]
+
+### Description
+
+### Static Methods
+
+void Draw(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, Type _enumType_, <<Engine/enum-display-type.html,EnumDisplayType>> _type_, bool _forceFlags_, float _minimumButtonWidth_)::
+
+void Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, https://docs.unity3d.com/ScriptReference/SerializedProperty.html[SerializedProperty^] _property_, Type _enumType_, <<Engine/enum-display-type.html,EnumDisplayType>> _type_, bool _forceFlags_, float _minimumButtonWidth_)::
+
+float GetHeight<EnumType>(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, <<Engine/enum-display-type.html,EnumDisplayType>> _type_, float _minimumButtonWidth_)::
+
+int Draw<EnumType>(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, int _value_, <<Engine/enum-display-type.html,EnumDisplayType>> _type_, bool _forceFlags_, float _minimumButtonWidth_)::
+
+int Draw<EnumType>(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, int _value_, <<Engine/enum-display-type.html,EnumDisplayType>> _type_, bool _forceFlags_, float _minimumButtonWidth_)::
+
+float GetHeight(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, Type _enumType_, <<Engine/enum-display-type.html,EnumDisplayType>> _type_, float _minimumButtonWidth_)::
+
+int Draw(https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, int _value_, Type _enumType_, <<Engine/enum-display-type.html,EnumDisplayType>> _type_, bool _forceFlags_, float _minimumButtonWidth_)::
+
+int Draw(https://docs.unity3d.com/ScriptReference/Rect.html[Rect^] _position_, https://docs.unity3d.com/ScriptReference/GUIContent.html[GUIContent^] _label_, int _value_, Type _enumType_, <<Engine/enum-display-type.html,EnumDisplayType>> _type_, bool _forceFlags_, float _minimumButtonWidth_)::

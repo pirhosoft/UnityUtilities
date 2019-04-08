@@ -6,10 +6,18 @@ PiRhoSoft.UtilityEditor.IntPreference
 
 ### Description
 
+A wrapper for int values stored in https://docs.unity3d.com/ScriptReference/EditorPrefs.html[EditorPrefs^].
+
+NOTE: EditorPrefs are stored globally, not per project.
+
 ### Constructors
 
-IntPreference(string name, int defaultValue)::
+IntPreference(string _name_, int _defaultValue_)::
+
+Creates a preference that references _name_, and assigns it _defaultValue_ if it hasn't been previously saved.
 
 ### Public Properties
 
-int Value
+int _Value_::
+
+Gets or sets the value saved to the preference.

@@ -2,16 +2,20 @@
 
 ## SnapAttribute
 
-PiRhoSoft.UtilityEngine.SnapAttribute : <<engine/property-scope-attribute,PropertyScopeAttribute>>
+PiRhoSoft.UtilityEngine.SnapAttribute : <<engine/property-scope-attribute.html,PropertyScopeAttribute>>
 
 ### Description
 
+### Static Fields
+
+int _DefaultOrder_::
+
 ### Constructors
 
-SnapAttribute(int snapValue)::
+SnapAttribute(int _snapValue_)::
 
-SnapAttribute(float snapValue)::
+SnapAttribute(float _snapValue_)::
 
 ### Public Properties
 
-float SnapValue _(read only)_
+float _SnapValue_ _(read only)_::

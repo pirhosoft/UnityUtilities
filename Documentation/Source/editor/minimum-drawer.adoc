@@ -2,10 +2,7 @@
 
 ## MinimumDrawer
 
-PiRhoSoft.UtilityEditor.MinimumDrawer : <<editor/control-drawer-1,ControlDrawer>><<<editor/minimum-control,MinimumControl>>>
+PiRhoSoft.UtilityEditor.MinimumDrawer : <<editor/property-drawer-1.html,PropertyDrawer>><<<editor/minimum-control.html,MinimumControl>>>
 
 ### Description
 
-### Constructors
-
-MinimumDrawer()::

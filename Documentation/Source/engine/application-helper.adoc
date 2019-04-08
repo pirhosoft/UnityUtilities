@@ -4,8 +4,8 @@
 
 PiRhoSoft.UtilityEngine.ApplicationHelper
 
-### Description
-
 ### Static Properties
 
-bool IsPlaying _(read only)_
+bool _IsPlaying_ _(read only)_::
+
+True if the application is currently playing. This is different from the built in https://docs.unity3d.com/ScriptReference/Application-isPlaying.html[Application.isPlaying] when the editor is transitioning to play mode but not yet playing. Application.isPlaying will return false in that scenario whereas this will return true. This distinction is relevant in https://docs.unity3d.com/ScriptReference/ScriptableObject.OnEnable.html[OnEnable^] for https://docs.unity3d.com/ScriptReference/ScriptableObject.html[ScriptableObject^] derived classes.
