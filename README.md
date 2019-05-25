@@ -1,5 +1,7 @@
 # Unity Utilities
 
+> We are currently working on updating these utilities to use [UIElements](https://docs.unity3d.com/Manual/UIElements.html). This updated version will include a robust set of ui controls and helper utilities and is based on the contents and architecture of the _reorg_ branch of this repository.
+
 A collection of MIT licensed general purpose utilities for use with Unity. Right now this consists of mostly editor controls and helper classes but more will be added. Contributions and feedback are welcome.
 
 ![example](Documentation/example.png)
