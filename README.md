@@ -1,3 +1,6 @@
+> **Important**
+> This repository is no longer maintained. Use the rewritten repository, [PiRhoUtilities](https://github.com/pirhosoft/PiRhoUtilities).
+
 # Unity Utilities
 
 > We are currently working on updating these utilities to use [UIElements](https://docs.unity3d.com/Manual/UIElements.html). This updated version will include a robust set of ui controls and helper utilities and is based on the contents and architecture of the _reorg_ branch of this repository.
